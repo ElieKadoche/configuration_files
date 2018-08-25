@@ -47,7 +47,7 @@ brew cask install adobe-acrobat-reader
 brew cask install android-file-transfer
 brew cask install texstudio
 brew cask install mactex
-brew cask install speectacle
+brew cask install spectacle
 brew cask install discord
 brew cask install teamviewer
 brew cask install lulu
