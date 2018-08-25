@@ -23,7 +23,6 @@ killall Finder
 echo 'Setting vim and bash...'
 cp .vimrc ~
 cp .bash_profile ~ # for termux: termux-setup-storage and vim ~/../usr/etc/bash.bashrc
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
 echo 'Installing Homebrew...'
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -41,7 +40,7 @@ brew install sl
 brew install mpv
 
 echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Dark Background and Light Text, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
@@ -60,5 +59,14 @@ brew cask install avast-security
 
 echo 'Please install JDK, Office, PostregeSQL, StarUML and DocAtor'
 
-echo 'End of process'
+echo 'Configuring git'
 
+git config --global user.name "Elie Kadoche"
+git config --global user.email eliekadoche78@gmail.com
+git config --global core.editor vim
+
+echo 'Install Vim Plug'
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo 'End of process'
