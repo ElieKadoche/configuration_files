@@ -57,7 +57,7 @@ brew cask install cgoban
 brew cask install gopanda
 brew cask install avast-security
 
-echo 'Please install JDK, Office, PostregeSQL, StarUML and DocAtor'
+echo 'Please install JDK, Office, PostregeSQL, and DocAtor'
 
 echo 'Configuring git'
 
