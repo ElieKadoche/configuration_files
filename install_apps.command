@@ -40,7 +40,7 @@ brew install sl
 brew install mpv
 
 echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewere
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
