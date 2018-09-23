@@ -38,6 +38,7 @@ brew install emojify
 brew install macvim
 brew install sl
 brew install mpv
+brew install unrar
 
 echo 'Runing brew cask...'
 brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewere
