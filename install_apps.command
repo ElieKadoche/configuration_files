@@ -56,7 +56,6 @@ brew cask install pycharm-ce
 brew cask install intellij-idea-ce
 brew cask install cgoban
 brew cask install gopanda
-brew cask install avast-security
 
 echo 'Please install JDK, Office, PostregeSQL, and DocAtor'
 
