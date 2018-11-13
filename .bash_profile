@@ -11,6 +11,7 @@ alias e="exit"
 alias m="cd storage/downloads"
 alias p="open ~/Desktop/lesspass/pure/index.html"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
+alias mpva="mpv --shuffle --no-video music/**/*"
 
 alias ls="ls -lahG"
 alias ..='cd ../'                           # Go back 1 directory level
