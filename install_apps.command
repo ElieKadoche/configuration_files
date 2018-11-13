@@ -41,7 +41,7 @@ brew install mpv
 brew install unrar
 
 echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewere
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
@@ -70,3 +70,14 @@ echo 'Install Vim Plug'
 # https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo 'End of process'
+
+# Android
+#   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar
+#   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
+#   Baduk: crazy stone deep learning lite, hactar go lite, tsumego pro, pandanet, tygem, kgs
+#   Privacy: firefox, firefox focus, orbot, orfox
+#   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, twitter
+#   Google: gmail, keep, drive, maps
+#   Moving: citymapper, uber
+#   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
+#   Others: office, leafpic
