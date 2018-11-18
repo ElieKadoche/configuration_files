@@ -16,6 +16,7 @@ defaults write com.apple.dock springboard-columns -int 10 # defaults delete com.
 defaults write com.apple.dock springboard-rows -int 7 # defaults delete com.apple.dock springboard-columns
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write -g NSWindowResizeTime -float 0
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 killall Dock
 killall Finder
@@ -45,7 +46,6 @@ brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, P
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
-brew cask install android-file-transfer
 brew cask install texstudio
 brew cask install mactex
 brew cask install spectacle
@@ -57,7 +57,7 @@ brew cask install intellij-idea-ce
 brew cask install cgoban
 brew cask install gopanda
 
-echo 'Please install JDK, Office, PostregeSQL, and DocAtor'
+echo 'Please install JDK, Office, PostregeSQL, HandShaker and DocAtor'
 
 echo 'Configuring git'
 
@@ -80,4 +80,4 @@ echo 'End of process'
 #   Google: gmail, keep, drive, maps
 #   Moving: citymapper, uber
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
-#   Others: office, leafpic
+#   Others: office, leafpic, HandShaker
