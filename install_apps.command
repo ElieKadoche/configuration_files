@@ -78,6 +78,6 @@ echo 'End of process'
 #   Privacy: firefox, firefox focus, orbot, orfox
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, twitter
 #   Google: gmail, keep, drive, maps
-#   Moving: citymapper, uber
+#   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
 #   Others: office, leafpic, HandShaker
