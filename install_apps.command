@@ -42,7 +42,7 @@ brew install mpv
 brew install unrar
 
 echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, OctoTree, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
