@@ -9,7 +9,7 @@ export PS1="\[\e[31m\]\\$\[\e[m\][\[\e[31m\]\u\[\e[m\]_\[\e[31m\]\s\[\e[m\]_\[\e
 
 alias e="exit"
 alias m="cd storage/downloads"
-alias p="open ~/Desktop/lesspass/packages/lesspass-pure/index.html"
+alias p="open ~/Desktop/lesspass/packages/pure/index.html"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
 
