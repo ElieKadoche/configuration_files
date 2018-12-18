@@ -16,6 +16,8 @@ if !has('gui_running')
     set t_Co=256
 endif
 
+set relativenumber
+
 " Allow us to use Ctrl-s and Ctrl-q as keybinds
 silent !stty -ixon
 " Restore default behaviour when leaving Vim.
