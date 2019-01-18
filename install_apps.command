@@ -42,7 +42,7 @@ brew install mpv
 brew install unrar
 
 echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer, Ecosia
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
@@ -74,7 +74,7 @@ echo 'End of process'
 # Android
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
-#   Baduk: crazy stone deep learning lite, hactar go lite, tsumego pro, pandanet, tygem, kgs
+#   Baduk: ElyGo with Gnu Go, tsumego pro, pandanet, tygem, kgs
 #   Privacy: firefox, firefox focus, orbot, orfox
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, twitter
 #   Google: gmail, keep, drive, maps
