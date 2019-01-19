@@ -17,6 +17,7 @@ if !has('gui_running')
 endif
 
 set relativenumber
+set display+=lastline
 
 " Allow us to use Ctrl-s and Ctrl-q as keybinds
 silent !stty -ixon
