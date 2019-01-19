@@ -74,7 +74,7 @@ echo 'End of process'
 # Android
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
-#   Baduk: ElyGo with Gnu Go, tsumego pro, pandanet, tygem, kgs
+#   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
 #   Privacy: firefox, firefox focus, orbot, orfox
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, twitter
 #   Google: gmail, keep, drive, maps
