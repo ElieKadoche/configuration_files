@@ -33,6 +33,7 @@ brew tap homebrew/cask-fonts
 brew install coreutils
 brew install git
 brew install python
+brew install graph-tool
 brew install swi-prolog # swipl to run
 brew install tor
 brew install emojify
