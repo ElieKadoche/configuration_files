@@ -34,6 +34,7 @@ brew install coreutils
 brew install git
 brew install python
 brew install graph-tool
+pip install tensorflow
 brew install swi-prolog # swipl to run
 brew install tor
 brew install emojify
