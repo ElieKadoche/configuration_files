@@ -42,6 +42,7 @@ brew install macvim
 brew install sl
 brew install mpv
 brew install unrar
+brew install pandoc
 
 echo 'Runing brew cask...'
 brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer, Ecosia
