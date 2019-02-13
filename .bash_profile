@@ -35,7 +35,7 @@ gitd() {
 #	find . -name "*.bak" -type f
 #	find . -name "*.bak" -type f -delete
 rmtex() {
-    rm *.aux; rm *.log; rm *.out; rm *.toc; rm *.bbl; rm *.blg
+    rm *.aux; rm *.log; rm *.out; rm *.toc; rm *.bbl; rm *.blg; rm *.synctex.gz
 }
 
 compiletex() {
