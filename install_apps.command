@@ -80,7 +80,7 @@ echo 'End of process'
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
 #   Privacy: firefox, firefox focus, orbot, orfox
-#   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, twitter, reddit
+#   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, reddit
 #   Google: gmail, keep, drive, maps
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
