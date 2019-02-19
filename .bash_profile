@@ -44,6 +44,10 @@ compiletex() {
     pdflatex $1; pdflatex $1; pdflatex $1
 }
 
+openfi() {
+    open -a /Applications/Firefox.app/ $1
+}
+
 # findPid: find out the pid of a specified process
 # Note that the command name can be specified via a regex
 # E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
