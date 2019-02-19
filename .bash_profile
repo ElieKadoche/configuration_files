@@ -12,6 +12,7 @@ alias m="cd storage/downloads"
 alias p="open ~/Desktop/lesspass/packages/pure/index.html"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 alias ls="ls -lahG"
 alias ..='cd ../'                           # Go back 1 directory level
