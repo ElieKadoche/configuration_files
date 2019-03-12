@@ -34,9 +34,10 @@ brew install coreutils
 brew install git
 brew install python
 # brew install graph-tool
-# pip install tensorflow
-# pip install keras
 # brew install jupyter
+# pip3 install pytest
+# pip3 install tensorflow
+# pip3 install keras
 brew install swi-prolog # swipl to run
 brew install tor
 brew install emojify
