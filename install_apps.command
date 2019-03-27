@@ -38,6 +38,7 @@ brew install python
 # pip3 install pytest
 # pip3 install tensorflow
 # pip3 install keras
+# python3 -m pip install --user lesspass # then add lesspass to path
 brew install swi-prolog # swipl to run
 brew install tor
 brew install emojify
