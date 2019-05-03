@@ -39,6 +39,7 @@ brew install python
 # pip3 install tensorflow
 # pip3 install keras
 # python3 -m pip install --user lesspass # then add lesspass to path
+# pip3 install virtualenv
 brew install swi-prolog # swipl to run
 brew install tor
 brew install emojify
@@ -50,7 +51,7 @@ brew install pandoc
 brew install osx-cpu-temp
 
 echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer, Ecosia
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
 brew cask install font-source-sans-pro
 brew cask install mpv
 brew cask install adobe-acrobat-reader
@@ -64,6 +65,7 @@ brew cask install pycharm-ce
 brew cask install intellij-idea-ce
 brew cask install cgoban
 brew cask install gopanda
+brew cask install libreoffice
 
 echo 'Please install JDK, Office, PostregeSQL, HandShaker and DocAtor'
 
