@@ -28,6 +28,8 @@ alias rmtrash="rm -rf ~/.Trash/*"
 # Just for Termux
 # alias lesspass="/data/data/com.termux/files/home/.local/bin/lesspass"
 
+alias pyclean="find . -name "*.pyc" -exec rm -f {} \;"
+
 alias gits="git status"
 alias gitp="git pull"
 alias gitc="git cherry -v"
