@@ -6,6 +6,7 @@ Plug 'https://github.com/vim-latex/vim-latex.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
+Plug 'https://github.com/luochen1990/rainbow.git'
 call plug#end()
 
 set nocompatible
