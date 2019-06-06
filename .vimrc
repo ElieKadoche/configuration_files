@@ -13,6 +13,8 @@ set nocompatible
 
 colorscheme gruvbox
 
+let g:rainbow_active = 1
+
 set laststatus=2
 if !has('gui_running')
     set t_Co=256
