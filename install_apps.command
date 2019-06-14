@@ -2,7 +2,7 @@
 echo 'Process begins...'
 
 echo 'Setting OS X...'
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles NO
 defaults write com.apple.dashboard mcx-disabled -boolean true
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
@@ -33,13 +33,6 @@ brew tap homebrew/cask-fonts
 brew install coreutils
 brew install git
 brew install python
-# brew install graph-tool
-# brew install jupyter
-# pip3 install pytest
-# pip3 install tensorflow
-# pip3 install keras
-# python3 -m pip install --user lesspass # then add lesspass to path
-# pip3 install virtualenv
 brew install swi-prolog # swipl to run
 brew install tor
 brew install emojify
@@ -49,6 +42,13 @@ brew install mpv
 brew install unrar
 brew install pandoc
 brew install osx-cpu-temp
+
+# Python
+# brew install graph-tool
+# brew install jupyter # jupyter notebook
+# brew install graphviz
+# brew install pyinstaller
+# pip(3) install tensorflow, keras, virtualenv, pytest, etc.
 
 echo 'Runing brew cask...'
 brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
@@ -82,7 +82,7 @@ echo 'Install Vim Plug'
 echo 'End of process'
 
 # Android
-#   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar
+#   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar, numpy, etc.
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
 #   Privacy: firefox, firefox focus, orbot, orfox
@@ -91,3 +91,4 @@ echo 'End of process'
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
 #   Others: office, leafpic, HandShaker
+

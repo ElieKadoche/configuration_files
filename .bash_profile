@@ -7,6 +7,8 @@ export PAT
 
 export PS1="\[\e[31m\]\\$\[\e[m\][\[\e[31m\]\u\[\e[m\]_\[\e[31m\]\s\[\e[m\]_\[\e[31m\]\w\[\e[m\]]\[\e[33m\]_\[\e[m\]\[\e[33m\]:\[\e[m\]"
 
+alias hd="defaults write com.apple.finder AppleShowAllFiles" # + YES or NO
+
 alias e="exit"
 alias m="cd storage/downloads"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
