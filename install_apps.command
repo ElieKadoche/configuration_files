@@ -42,6 +42,8 @@ brew install mpv
 brew install unrar
 brew install pandoc
 brew install osx-cpu-temp
+brew install cmake
+brew install htop
 
 # Python
 # brew install graph-tool
