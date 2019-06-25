@@ -7,7 +7,9 @@ Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/Valloric/YouCompleteMe'
+Plug 'https://github.com/Valloric/YouCompleteMe.git' " Then ./install.py
+Plug 'https://github.com/w0rp/ale.git'
+Plug 'https://github.com/kien/ctrlp.vim.git'
 call plug#end()
 
 set nocompatible
@@ -79,3 +81,12 @@ set background=dark
 set expandtab " use spaces instead of tabs
 
 set pastetoggle=<F2>
+
+" ALE
+let g:ale_completion_enabled=1
+let g:ale_lint_on_save=1
+let g:ale_fix_on_save=0
+" pip3 install autopep8, pylint, black
+let g:ale_fixers={'python':['autopep8', 'isort', 'black']}
+" let b:ale_linters={'python':['pylint']}
+
