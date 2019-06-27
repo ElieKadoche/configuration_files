@@ -44,6 +44,7 @@ brew install pandoc
 brew install osx-cpu-temp
 brew install cmake
 brew install htop
+brew install leela-zero
 
 # Python
 # brew install graph-tool
@@ -68,6 +69,10 @@ brew cask install intellij-idea-ce
 brew cask install cgoban
 brew cask install gopanda
 brew cask install libreoffice
+
+brew cask install sabaki
+# /usr/local/Cellar/leela-zero/0.17/bin/leelaz
+# --gtp --noponder --playouts 1000 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/LZ229
 
 echo 'Please install JDK, Office, PostregeSQL, HandShaker and DocAtor'
 
