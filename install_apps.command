@@ -45,6 +45,7 @@ brew install osx-cpu-temp
 brew install cmake
 brew install htop
 brew install leela-zero
+brew install watch
 
 # Python
 # brew install graph-tool
