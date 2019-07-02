@@ -14,6 +14,7 @@ alias m="cd storage/downloads"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias gitpp="find documents/git/ -type d -maxdepth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;"
 
 alias ls="ls -lahG"
 alias ..='cd ../'                           # Go back 1 directory level
