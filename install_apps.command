@@ -45,14 +45,24 @@ brew install osx-cpu-temp
 brew install cmake
 brew install htop
 brew install leela-zero
-brew install watch
+brew install watch # 1st January 1970 watch -n 0.5 date +%s
 
 # Python
 # brew install graph-tool
 # brew install jupyter # jupyter notebook
-# brew install graphviz
 # brew install pyinstaller
-# pip(3) install tensorflow, keras, virtualenv, pytest, etc.
+# pip(3) install ascii-graph, autokeras, emoji, gomill, h5py, humanize, imageio, isort, jedi, Keras, matplotlib, networkx, numpy, pandas, Pillow, progress, PuLP, pytest, scikit-learn, scipy, seaborn, speedtest-cli, tensorflow, termcolor, tinydb, torch, virtualenv, etc.
+
+# Virtualenv
+# virtualenv .venv
+# virtualenv -p python3 .venv
+# source .venv/bin/activate
+# deactivate
+
+# Tor
+# Run tor in terminal
+# In network preferences, create new location
+# Advanced settings, proxies, SOCKS Proxy, localhost:9050
 
 echo 'Runing brew cask...'
 brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, DuckDuckGo Privacy Essentials, Markdown Here, GitLab Markdown Viewer
@@ -73,7 +83,8 @@ brew cask install libreoffice
 
 brew cask install sabaki
 # /usr/local/Cellar/leela-zero/0.17/bin/leelaz
-# --gtp --noponder --playouts 1000 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/LZ229
+# --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/LZ229
+# GTP commands: showboard, play black c13, genmove white, etc.
 
 echo 'Please install JDK, Office, PostregeSQL, HandShaker and DocAtor'
 
@@ -82,6 +93,8 @@ echo 'Configuring git'
 git config --global user.name "Elie Kadoche"
 git config --global user.email eliekadoche78@gmail.com
 git config --global core.editor vim
+# git config credential.helper store
+
 
 echo 'Install Vim Plug'
 # curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -99,4 +112,3 @@ echo 'End of process'
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
 #   Others: office, leafpic, HandShaker
-
