@@ -48,6 +48,11 @@ brew install leela-zero
 brew install watch # 1st January 1970 watch -n 0.5 date +%s
 brew install gnu-go
 
+# Funny commands
+brew install cmatrix
+brew install rig
+brew install pi
+
 # Python
 # brew install graph-tool
 # brew install jupyter # jupyter notebook
