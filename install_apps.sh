@@ -89,7 +89,7 @@ brew cask install libreoffice
 
 brew cask install sabaki
 # /usr/local/Cellar/leela-zero/0.17/bin/leelaz
-# --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/LZ229
+# --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/last_network
 # GTP commands: showboard, play black c13, genmove white, etc.
 
 echo 'Please install JDK, Office, PostregeSQL, HandShaker and DocAtor'
