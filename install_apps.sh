@@ -51,7 +51,6 @@ brew install gnu-go
 # Funny commands
 brew install cmatrix
 brew install rig
-brew install pi
 
 # Python
 # brew install graph-tool
