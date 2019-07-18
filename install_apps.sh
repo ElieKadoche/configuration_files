@@ -57,6 +57,7 @@ brew install pi
 # brew install graph-tool
 # brew install jupyter # jupyter notebook
 # brew install pyinstaller
+# pip(3) install autopep8, pylint, black
 # pip(3) install ascii-graph, autokeras, emoji, gomill, h5py, humanize, imageio, isort, jedi, Keras, matplotlib, networkx, numpy, pandas, Pillow, progress, PuLP, pytest, scikit-learn, scipy, seaborn, speedtest-cli, tensorflow, termcolor, tinydb, torch, virtualenv, etc.
 
 # Virtualenv
