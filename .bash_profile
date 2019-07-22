@@ -5,7 +5,8 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
 export PAT
 
-export PS1="\[\e[31m\]\\$\[\e[m\][\[\e[31m\]\u\[\e[m\]_\[\e[31m\]\s\[\e[m\]_\[\e[31m\]\w\[\e[m\]]\[\e[33m\]_\[\e[m\]\[\e[33m\]:\[\e[m\]"
+# export PS1="\[\e[31m\]\\$\[\e[m\][\[\e[31m\]\u\[\e[m\]_\[\e[31m\]\s\[\e[m\]_\[\e[31m\]\w\[\e[m\]]\[\e[33m\]_\[\e[m\]\[\e[33m\]:\[\e[m\]"
+export PS1="\[$(tput bold)\]\[\033[38;5;160m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;63m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\][\[$(tput sgr0)\]\[\033[38;5;93m\]\d-\t\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]"
 
 alias hd="defaults write com.apple.finder AppleShowAllFiles" # + YES or NO
 
@@ -14,12 +15,13 @@ alias m="cd storage/downloads"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias grep="grep --color=auto"
 
 gitpp() {
     for i in */.git; do ( echo $i; cd $i/..; git pull; ); done
 }
 
-alias ls="ls -lahG"
+alias ls="ls -lahGF"
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
 alias .3='cd ../../../'                     # Go back 3 directory levels
