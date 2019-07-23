@@ -47,6 +47,7 @@ brew install htop
 brew install leela-zero
 brew install watch # 1st January 1970 watch -n 0.5 date +%s
 brew install gnu-go
+brew install ncdu # To see disk space usage
 
 # Funny commands
 brew install cmatrix
