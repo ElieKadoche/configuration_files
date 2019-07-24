@@ -16,6 +16,11 @@ set nocompatible
 
 colorscheme gruvbox
 
+augroup vimrc
+   autocmd!
+   autocmd ColorScheme * highlight Normal ctermbg=NONE guifg=white guibg=black | highlight MatchParen cterm=bold ctermfg=red ctermbg=NONE gui=bold guifg=red guibg=NONE
+augroup END
+
 let g:rainbow_active = 1
 
 set laststatus=2
