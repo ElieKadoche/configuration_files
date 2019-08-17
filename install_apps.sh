@@ -114,7 +114,7 @@ echo 'End of process'
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar, numpy, etc.
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
-#   Privacy: firefox, firefox focus, orbot, orfox
+#   Privacy: firefox, firefox focus, express vpn
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, reddit
 #   Google: gmail, keep, drive, maps
 #   Moving: citymapper
