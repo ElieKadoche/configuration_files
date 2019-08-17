@@ -116,7 +116,7 @@ echo 'End of process'
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
 #   Privacy: firefox, firefox focus, express vpn
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, reddit
-#   Google: gmail, keep, drive, maps
+#   Google: gmail, keep, drive, maps, contacts
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
 #   Others: office, leafpic, HandShaker
