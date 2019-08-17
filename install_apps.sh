@@ -88,6 +88,7 @@ brew cask install intellij-idea-ce
 brew cask install cgoban
 brew cask install gopanda
 brew cask install libreoffice
+brew cask install expressvpn
 
 brew cask install sabaki
 # /usr/local/Cellar/leela-zero/0.17/bin/leelaz
