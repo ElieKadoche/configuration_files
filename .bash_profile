@@ -17,6 +17,14 @@ alias mpva="mpv --shuffle --no-video music/**/*"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias grep="grep --color=auto"
 
+FILE=
+ADDRESS=""
+
+lamgate() {
+    cat $FILE | pbcopy
+    ssh $ADDRESS
+}
+
 gitpp() {
     for i in */.git; do ( echo $i; cd $i/..; git pull; ); done
 }
