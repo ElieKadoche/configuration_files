@@ -10,6 +10,8 @@ export PS1="\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;2m\]:[
 
 alias hd="defaults write com.apple.finder AppleShowAllFiles" # + YES or NO
 
+alias pbcopy="termux-clipboard-set"
+
 alias e="exit"
 alias m="cd storage/downloads"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"

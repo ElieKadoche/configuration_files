@@ -113,6 +113,7 @@ echo 'End of process'
 
 # Android
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar, numpy, etc.
+#   + Termux:API
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
 #   Privacy: firefox, firefox focus, express vpn
