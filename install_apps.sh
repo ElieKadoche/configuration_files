@@ -49,6 +49,7 @@ brew install watch # 1st January 1970 watch -n 0.5 date +%s
 brew install gnu-go
 brew install ncdu # To see disk space usage
 brew install tldr
+brew install pwgen
 
 # Funny commands
 brew install cmatrix
@@ -118,7 +119,7 @@ echo 'End of process'
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
 #   Privacy: firefox, firefox focus, express vpn
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, reddit
-#   Google: gmail, keep, drive, maps, contacts
+#   Google: gmail, drive, maps, contacts
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
 #   Others: office, leafpic, HandShaker
