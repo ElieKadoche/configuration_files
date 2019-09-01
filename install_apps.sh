@@ -2,7 +2,7 @@
 echo 'Process begins...'
 
 echo 'Setting OS X...'
-defaults write com.apple.finder AppleShowAllFiles NO
+defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.dashboard mcx-disabled -boolean true
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
@@ -18,8 +18,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write -g NSWindowResizeTime -float 0
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
-killall Dock
 killall Finder
+killall Dock
 
 echo 'Setting vim and bash...'
 cp .vimrc ~
@@ -30,32 +30,30 @@ echo 'Installing Homebrew...'
 
 echo 'Running brew...'
 brew tap homebrew/cask-fonts
-brew install coreutils
 brew install git
 brew install python
-brew install swi-prolog # swipl to run
-brew install tor
+brew install coreutils
 brew install emojify
 brew install macvim
-brew install sl
 brew install mpv
 brew install unrar
 brew install pandoc
 brew install osx-cpu-temp
 brew install cmake
 brew install htop
-brew install leela-zero
 brew install watch # 1st January 1970 watch -n 0.5 date +%s
-brew install gnu-go
-brew install ncdu # To see disk space usage
 brew install tldr
-brew install pwgen
-
-# Funny commands
-brew install cmatrix
-brew install rig
+# brew install leela-zero
+# brew install sl
+# brew install swi-prolog # swipl to run
+# brew install tor
+# brew install gnu-go
+# brew install ncdu # To see disk space usage
+# brew install cmatrix
+# brew install rig
 
 # Python
+pip3 install virtualenv 
 # brew install graph-tool
 # brew install jupyter # jupyter notebook
 # brew install pyinstaller
@@ -84,31 +82,31 @@ brew cask install spectacle
 brew cask install discord
 brew cask install teamviewer
 brew cask install lulu
-brew cask install pycharm-ce
-brew cask install intellij-idea-ce
 brew cask install cgoban
 brew cask install gopanda
 brew cask install libreoffice
-brew cask install expressvpn
+# brew cask install expressvpn
+# brew cask install pycharm-ce
+# brew cask install intellij-idea-ce
 
-brew cask install sabaki
+# brew cask install sabaki
 # /usr/local/Cellar/leela-zero/0.17/bin/leelaz
 # --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/last_network
 # GTP commands: showboard, play black c13, genmove white, etc.
 
-echo 'Please install JDK, Office, PostregeSQL, HandShaker and DocAtor'
+echo 'Please install JDK, Office, PostregeSQL, DocAtor'
 
 echo 'Configuring git'
-
-git config --global user.name "Elie Kadoche"
+git config --global user.name "Elie KADOCHE"
 git config --global user.email eliekadoche78@gmail.com
 git config --global core.editor vim
 # git config credential.helper store
 
-
 echo 'Install Vim Plug'
-# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Then :PlugInstall
+# ./install.py --all in the repo of YouCompleteMe
 
 echo 'End of process'
 
