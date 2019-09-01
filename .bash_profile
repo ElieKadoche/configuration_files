@@ -8,7 +8,9 @@ export PAT
 # export PS1="\[\e[31m\]\\$\[\e[m\][\[\e[31m\]\u\[\e[m\]_\[\e[31m\]\s\[\e[m\]_\[\e[31m\]\w\[\e[m\]]\[\e[33m\]_\[\e[m\]\[\e[33m\]:\[\e[m\]"
 export PS1="\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;2m\]:[\[$(tput sgr0)\]\[\033[38;5;4m\]\d\[$(tput sgr0)\]\[\033[38;5;2m\]-\[$(tput sgr0)\]\[\033[38;5;4m\]\t\[$(tput sgr0)\]\[\033[38;5;2m\]]\[$(tput sgr0)\]\[\033[38;5;93m\]\w\[$(tput sgr0)\]\[\033[38;5;2m\]$\[$(tput sgr0)\]"
 
-alias hd="defaults write com.apple.finder AppleShowAllFiles" # + YES or NO
+hd() {
+    defaults write com.apple.finder AppleShowAllFiles $1; killall Finder
+}
 
 alias pbcopy="termux-clipboard-set"
 
