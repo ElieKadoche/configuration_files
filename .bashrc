@@ -8,9 +8,7 @@ export PAT
 # export PS1="\[\e[31m\]\\$\[\e[m\][\[\e[31m\]\u\[\e[m\]_\[\e[31m\]\s\[\e[m\]_\[\e[31m\]\w\[\e[m\]]\[\e[33m\]_\[\e[m\]\[\e[33m\]:\[\e[m\]"
 export PS1="\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;2m\]:[\[$(tput sgr0)\]\[\033[38;5;4m\]\d\[$(tput sgr0)\]\[\033[38;5;2m\]-\[$(tput sgr0)\]\[\033[38;5;4m\]\t\[$(tput sgr0)\]\[\033[38;5;2m\]]\[$(tput sgr0)\]\[\033[38;5;93m\]\w\[$(tput sgr0)\]\[\033[38;5;2m\]$\[$(tput sgr0)\]"
 
-hd() {
-    defaults write com.apple.finder AppleShowAllFiles $1; killall Finder
-}
+alias pbcopy="termux-clipboard-set"
 
 alias e="exit"
 alias m="cd storage/downloads"
@@ -42,7 +40,7 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias rmtrash="rm -rf ~/.Trash/*"
 
-alias lpl="python3 ~/Desktop/lesspass/cli/lesspass/core.py"
+alias lpl="python3 ~/storage/downloads/lesspass/cli/lesspass/core.py" # For Termux
 
 alias pyclean="find . -name "*.pyc" -exec rm -f {} \;"
 
