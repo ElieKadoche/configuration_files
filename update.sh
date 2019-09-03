@@ -14,6 +14,7 @@ brew upgrade cmake
 brew upgrade htop
 brew upgrade watch
 brew upgrade tldr
+brew upgrade pwgen
 
 brew cask upgrade firefox
 brew cask upgrade font-source-sans-pro
