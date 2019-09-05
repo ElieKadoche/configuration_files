@@ -86,6 +86,7 @@ brew cask install lulu
 brew cask install cgoban
 brew cask install gopanda
 brew cask install libreoffice
+brew cask install iterm2
 # brew cask install expressvpn
 # brew cask install pycharm-ce
 # brew cask install intellij-idea-ce
@@ -115,7 +116,7 @@ echo 'End of process'
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar, numpy, etc.
 #   + Termux:API
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
-#   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, CrazyStone
+#   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, Ah Q Go
 #   Privacy: firefox, firefox focus, express vpn
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, reddit
 #   Google: gmail, drive, maps, contacts
