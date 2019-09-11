@@ -118,8 +118,8 @@ echo 'End of process'
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, Ah Q Go
 #   Privacy: firefox, firefox focus, express vpn
-#   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, snapchat, reddit
-#   Google: gmail, drive, maps, contacts
+#   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, reddit
+#   Google: gmail, drive, maps, contacts, doc
 #   Moving: citymapper
-#   System: adobe acrobat reader, calculator++, camscanner, teamviewer, lithium
-#   Others: office, leafpic, HandShaker
+#   System: adobe acrobat reader, calculator++, clearscanner, lithium
+#   Others: leafpic, HandShaker
