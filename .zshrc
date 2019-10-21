@@ -1,3 +1,5 @@
+plugins=(colorize colored-man-pages rand-quote osx web-search brew pip python)
+
 # System-wide profile for interactive zsh(1) shells.
 
 # Setup user specific overrides for this in ~/.zhsrc. See zshbuiltins(1)
@@ -18,6 +20,9 @@ SAVEHIST=1000
 
 # Beep on error
 setopt BEEP
+
+export ZSH="/Users/eliekadoche/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 # Use keycodes (generated via zkbd) if present, otherwise fallback on
 # values from terminfo
@@ -79,15 +84,10 @@ PS1="%n@%m %1~ %# "
 
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
-hd() {
-    defaults write com.apple.finder AppleShowAllFiles $1; killall Finder
-}
-
 # For Termux only
 alias pbcopy="termux-clipboard-set"
 alias lpl="python3 ~/storage/downloads/lesspass/cli/lesspass/core.py" # For Termux
 alias lpl="python3 ~/Desktop/lesspass/cli/lesspass/core.py" # For Mac
-
 
 alias e="exit"
 alias m="cd storage/downloads"
