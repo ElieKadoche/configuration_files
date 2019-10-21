@@ -22,8 +22,8 @@ killall Finder
 killall Dock
 
 echo 'Setting vim and bash...'
-cp .vimrc ~
-cp .bash_profile ~ # for termux: termux-setup-storage and vim ~/../usr/etc/bash.bashrc
+cp .vimrc ~ # for termux: termux-setup-storage and vim ~/../usr/etc/bash.bashrc
+# install oh-my-zsh (see documentation)
 
 echo 'Installing Homebrew...'
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
