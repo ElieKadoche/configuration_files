@@ -15,7 +15,6 @@ call plug#end()
 set nocompatible
 
 colorscheme gruvbox
-au BufRead,BufNewFile *.rq set filetype=sparql " Put sparql.vim in ~/.vim/syntax/
 
 augroup vimrc
    autocmd!
