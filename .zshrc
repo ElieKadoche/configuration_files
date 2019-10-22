@@ -21,7 +21,7 @@ SAVEHIST=1000
 # Beep on error
 setopt BEEP
 
-export ZSH="/Users/eliekadoche/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # Use keycodes (generated via zkbd) if present, otherwise fallback on
