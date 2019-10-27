@@ -17,7 +17,6 @@ brew upgrade tldr
 brew upgrade pwgen
 
 brew cask upgrade firefox
-brew cask upgrade iterm2
 brew cask upgrade font-source-sans-pro
 brew cask upgrade mpv
 brew cask upgrade adobe-acrobat-reader

@@ -86,7 +86,6 @@ brew cask install lulu
 brew cask install cgoban
 brew cask install gopanda
 brew cask install libreoffice
-brew cask install iterm2
 # brew cask install expressvpn
 # brew cask install pycharm-ce
 # brew cask install intellij-idea-ce
