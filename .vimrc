@@ -31,6 +31,9 @@ endif
 set relativenumber
 set display+=lastline
 
+au BufRead,BufNewFile *.rq set filetype=sparql " Put sparql.vim in ~/.vim/syntax/
+au BufRead,BufNewFile *.cypher set filetype=cypher
+
 " Allow us to use Ctrl-s and Ctrl-q as keybinds
 silent !stty -ixon
 " Restore default behaviour when leaving Vim.
