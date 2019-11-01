@@ -93,6 +93,7 @@ alias e="exit"
 alias m="cd storage/downloads"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
+alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias grep="grep --color=auto"
 
