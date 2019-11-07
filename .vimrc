@@ -96,7 +96,7 @@ let g:ale_lint_on_save=1
 let g:ale_fix_on_save=0
 
 " pip3 install autopep8, pylint, black
-let g:ale_fixers={'python':['autopep8', 'isort', 'black']}
+let b:ale_fixers={'python':['autopep8', 'isort', 'black']}
 " let b:ale_linters={'python':['pylint']}
 
 let g:ale_fixers={'json':['fixjson', 'prettier', 'jq']}
