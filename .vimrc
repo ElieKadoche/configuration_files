@@ -154,7 +154,7 @@ autocmd VimLeave * silent !stty ixon " Restore default behaviour when leaving Vi
 set nocompatible
 set display+=lastline
 set linebreak
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " See invisible characters but not spaces
 " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
