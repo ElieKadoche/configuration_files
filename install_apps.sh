@@ -21,8 +21,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 killall Finder
 killall Dock
 
-echo 'Setting vim and bash...'
-cp .vimrc ~ # for termux: termux-setup-storage and vim ~/../usr/etc/bash.bashrc
+echo 'Setting vim and zsh...'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cp .vimrc ~
+cp .zshrc ~
+
+# for termux: termux-setup-storage
 # install oh-my-zsh (see documentation)
 
 echo 'Installing Homebrew...'
@@ -44,21 +48,19 @@ brew install htop
 brew install watch # 1st January 1970 watch -n 0.5 date +%s
 brew install tldr
 brew install pwgen
+# brew install gnu-go
 # brew install leela-zero
-# brew install sl
 # brew install swi-prolog # swipl to run
 # brew install tor
-# brew install gnu-go
 # brew install ncdu # To see disk space usage
 # brew install cmatrix
 # brew install rig
 
 # Python
 pip3 install virtualenv 
-# brew install graph-tool
-# brew install jupyter # jupyter notebook
-# brew install pyinstaller
-# pip(3) install autopep8, pylint, black
+brew install jupyter # jupyter notebook
+brew install pyinstaller
+pip3 install autopep8, pylint, black
 # pip(3) install ascii-graph, autokeras, emoji, gomill, h5py, humanize, imageio, isort, jedi, Keras, matplotlib, networkx, numpy, pandas, Pillow, progress, PuLP, pytest, scikit-learn, scipy, seaborn, speedtest-cli, tensorflow, termcolor, tinydb, torch, virtualenv, etc.
 
 # Virtualenv
@@ -86,7 +88,6 @@ brew cask install lulu
 brew cask install cgoban
 brew cask install gopanda
 brew cask install libreoffice
-# brew cask install expressvpn
 # brew cask install pycharm-ce
 # brew cask install intellij-idea-ce
 
