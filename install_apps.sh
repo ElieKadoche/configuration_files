@@ -1,6 +1,10 @@
 #!/bin/bash
 echo 'Process begins...'
 
+# To update packages
+# brew update & brew upgrade & brew doctor
+# brew cask upgrade --greedy
+
 echo 'Setting OS X...'
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.dashboard mcx-disabled -boolean true
