@@ -32,6 +32,12 @@ cp .zshrc ~
 
 # for termux: termux-setup-storage
 # install oh-my-zsh (see documentation)
+# Write in ~/.termux/termux.properties:
+# extra-keys = [ \
+#  ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
+#  ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
+# ]
+# termux-reload-settings
 
 echo 'Installing Homebrew...'
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
