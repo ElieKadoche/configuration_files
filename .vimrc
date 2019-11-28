@@ -49,6 +49,7 @@ let g:ale_fix_on_save=0
 
 " pip3 install autopep8, pylint, black
 let g:ale_fixers={'python':['autopep8', 'isort', 'black', 'remove_trailing_lines', 'trim_whitespace']}
+let g:ale_fixers={'cpp':['clang-format', 'clangtidy', 'uncrustify', 'remove_trailing_lines', 'trim_whitespace']}
 let g:ale_linters = {'python': ['pylint']}
 
 " ###################
