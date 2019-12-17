@@ -1,9 +1,4 @@
-#!/bin/bash
-echo 'Process begins...'
-
-# To update packages
-# brew update & brew upgrade & brew doctor
-# brew cask upgrade --greedy
+#!/bin/zsh
 
 echo 'Setting OS X...'
 defaults write com.apple.finder AppleShowAllFiles YES
@@ -25,10 +20,131 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 killall Finder
 killall Dock
 
-echo 'Setting vim and zsh...'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Homebrew
+# ---------------------------
+# ---------------------------
+
+echo 'Installing Homebrew...'
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Brew
+# ---------------------------
+# ---------------------------
+
+# To update packages: <brew update & brew upgrade & brew doctor>
+# To see top-level packages: <brew leaves>
+
+echo 'Running brew...'
+
+brew tap homebrew/cask-fonts
+
+brew install clang-format
+brew install cmake
+brew install cmatrix
+brew install coreutils
+brew install docker
+brew instal docker-compose
+brew install emojify
+brew install gcc
+brew install git
+brew install gnu-go
+brew install graphviz
+brew install htop
+brew install jupyter
+brew install jupyterlab
+brew install leela-zero
+brew install macvim
+brew install mpv
+brew install neo4j
+brew install ncdu
+brew install osx-cpu-temp
+brew install pandoc
+brew install pyinstaller
+
+brew install python
+pip3 install -r requirements.txt
+# virtualenv .venv / virtualenv -p python3 .venv / source .venv/bin/activate /deactivate
+
+brew install pwgen
+brew install sshfs
+brew install swi-prolog
+brew install tldr
+
+brew install tor
+# Run tor in terminal. In network prefecerences, create new location, advanced settings, proxies, SOCKS Proxy, localhost:9050
+
+brew install unrar
+brew install watch # 1st January 1970 <watch -n0.1 date +%s>
+brew install wget
+
+# Brew cask
+# ---------------------------
+# ---------------------------
+
+# To update packages: <brew cask upgrade --greedy>
+
+echo 'Runing brew cask...'
+
+brew cask install adobe-acrobat-reader
+brew cask install cgoban
+brew cask install discord
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, Markdown Here, GitLab Markdown Viewer
+brew cask install font-source-sans-pro
+brew cask install gopanda
+brew cask install handshaker
+brew cask install intellij-idea-ce
+brew cask install libreoffice
+brew cask install lulu
+brew cask install mactex
+brew cask install macvim
+brew cask install mpv
+brew cask install postgres
+brew cask install pycharm-ce
+
+brew cask install sabaki
+# /usr/local/Cellar/leela-zero/0.17/bin/leelaz
+# --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/last_network
+# GTP commands: showboard, play black c13, genmove white, etc.
+
+brew cask install spectacle
+brew cask install teamviewer
+brew cask install texstudio
+
+# Git
+# ---------------------------
+# ---------------------------
+
+echo 'Configuring git...'
+
+git config --global user.name "Elie KADOCHE"
+git config --global user.email eliekadoche78@gmail.com
+git config --global core.editor vim
+# Termux: git config credential.helper store
+
+# zsh and vim
+# ---------------------------
+# ---------------------------
+
+echo 'Setting zsh and vim...'
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 cp .vimrc ~
 cp .zshrc ~
+
+# Vim Plug
+# ---------------------------
+# ---------------------------
+
+echo 'Installing Vim Plug...'
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Then :PlugInstall and <./install.py --all> in the repo of YouCompleteMe
+
+# Others
+# ---------------------------
+# ---------------------------
 
 # for termux: termux-setup-storage
 # install oh-my-zsh (see documentation)
@@ -38,90 +154,6 @@ cp .zshrc ~
 #  ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
 # ]
 # termux-reload-settings
-
-echo 'Installing Homebrew...'
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-echo 'Running brew...'
-brew tap homebrew/cask-fonts
-brew install git
-brew install python
-brew install coreutils
-brew install emojify
-brew install macvim
-brew install mpv
-brew install unrar
-brew install pandoc
-brew install osx-cpu-temp
-brew install cmake
-brew install htop
-brew install watch # 1st January 1970 watch -n 0.5 date +%s
-brew install tldr
-brew install pwgen
-brew install clang-format
-# brew install gnu-go
-# brew install leela-zero
-# brew install swi-prolog # swipl to run
-# brew install tor
-# brew install ncdu # To see disk space usage
-# brew install cmatrix
-# brew install rig
-
-# Python
-pip3 install virtualenv 
-brew install jupyter # jupyter notebook
-brew install pyinstaller
-pip3 install autopep8, pylint, black
-# pip(3) install ascii-graph, autokeras, emoji, gomill, h5py, humanize, imageio, isort, jedi, Keras, matplotlib, networkx, numpy, pandas, Pillow, progress, PuLP, pytest, scikit-learn, scipy, seaborn, speedtest-cli, tensorflow, termcolor, tinydb, torch, virtualenv, etc.
-
-# Virtualenv
-# virtualenv .venv
-# virtualenv -p python3 .venv
-# source .venv/bin/activate
-# deactivate
-
-# Tor
-# Run tor in terminal
-# In network preferences, create new location
-# Advanced settings, proxies, SOCKS Proxy, localhost:9050
-
-echo 'Runing brew cask...'
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, Markdown Here, GitLab Markdown Viewer
-brew cask install font-source-sans-pro
-brew cask install mpv
-brew cask install adobe-acrobat-reader
-brew cask install texstudio
-brew cask install mactex
-brew cask install spectacle
-brew cask install discord
-brew cask install teamviewer
-brew cask install lulu
-brew cask install cgoban
-brew cask install gopanda
-brew cask install libreoffice
-# brew cask install pycharm-ce
-# brew cask install intellij-idea-ce
-
-# brew cask install sabaki
-# /usr/local/Cellar/leela-zero/0.17/bin/leelaz
-# --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/last_network
-# GTP commands: showboard, play black c13, genmove white, etc.
-
-echo 'Please install JDK, Office, PostregeSQL, DocAtor'
-
-echo 'Configuring git'
-git config --global user.name "Elie KADOCHE"
-git config --global user.email eliekadoche78@gmail.com
-git config --global core.editor vim
-# git config credential.helper store
-
-echo 'Install Vim Plug'
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# Then :PlugInstall
-# ./install.py --all in the repo of YouCompleteMe
-
-echo 'End of process'
 
 # Android
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar, numpy, etc.
