@@ -40,6 +40,8 @@ echo 'Running brew...'
 brew tap homebrew/cask-fonts
 
 brew install clang-format
+# clang-format -i -style='{IndentWidth: 4}' <file.h>
+
 brew install cmake
 brew install cmatrix
 brew install coreutils
@@ -99,6 +101,7 @@ brew cask install lulu
 brew cask install mactex
 brew cask install macvim
 brew cask install mpv
+brew cask install osxfuse
 brew cask install postgres
 brew cask install pycharm-ce
 
