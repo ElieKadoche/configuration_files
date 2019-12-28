@@ -107,7 +107,7 @@ brew cask install pycharm-ce
 
 brew cask install sabaki
 # /usr/local/Cellar/leela-zero/0.17/bin/leelaz
-# --gtp --resignpct -1 --noponder --playouts 1500 -w /Users/eliekadoche/desktop/documents/deepmind/leela_zero_networks/last_network
+# --gtp --noponder --playouts 128 -w /Users/eliekadoche/desktop/leela_zero_LZ257_40x256
 # GTP commands: showboard, play black c13, genmove white, etc.
 
 brew cask install spectacle
@@ -148,6 +148,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # Others
 # ---------------------------
 # ---------------------------
+
+git clone https://github.com/lightvector/KataGo.git
+# Then compile and install datago
+# /Users/eliekadoche/desktop/KataGo/cpp/katago
+# gtp -model /Users/eliekadoche/desktop/KataGo/model.txt.gz -config /Users/eliekadoche/desktop/KataGo/cpp/configs/gtp_example.cfg
 
 # for termux: termux-setup-storage
 # install oh-my-zsh (see documentation)
