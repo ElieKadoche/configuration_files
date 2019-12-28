@@ -42,6 +42,7 @@ brew tap homebrew/cask-fonts
 brew install clang-format
 # clang-format -i -style='{IndentWidth: 4}' <file.h>
 
+brew install clinfo # OpenCL info
 brew install cmake
 brew install cmatrix
 brew install coreutils
