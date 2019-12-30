@@ -108,7 +108,9 @@ brew cask install pycharm-ce
 
 brew cask install sabaki
 # /usr/local/Cellar/leela-zero/0.17/bin/leelaz
-# --gtp --noponder --playouts 128 -w /Users/eliekadoche/desktop/leela_zero_LZ257_40x256
+# --gtp --noponder --playouts 128 -w /Users/eliekadoche/desktop/documents/leela_zero_LZ257_40x256
+# /Users/eliekadoche/desktop/KataGo/cpp/katago
+# gtp -model /Users/eliekadoche/desktop/documents/katago_b20c256-s447913472-d241840887.txt.gz -config /Users/eliekadoche/desktop/KataGo/cpp/configs/gtp_example.cfg
 # GTP commands: showboard, play black c13, genmove white, etc.
 
 brew cask install spectacle
