@@ -80,6 +80,7 @@ brew install tor
 brew install unrar
 brew install watch # 1st January 1970 <watch -n0.1 date +%s>
 brew install wget
+brew install youtube-dl
 
 # Brew cask
 # ---------------------------
