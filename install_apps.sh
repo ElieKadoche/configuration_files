@@ -172,7 +172,7 @@ git clone https://github.com/lightvector/KataGo.git
 #   + Termux:API
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
 #   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, Ah Q Go
-#   Privacy: firefox, firefox focus, express vpn
+#   Privacy: firefox, firefox focus, tor
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, reddit
 #   Google: gmail, drive, maps, contacts, doc
 #   Moving: citymapper
