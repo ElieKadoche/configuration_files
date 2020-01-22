@@ -52,6 +52,8 @@ let g:ale_fixers={'python':['autopep8', 'isort', 'black', 'remove_trailing_lines
 let g:ale_fixers={'cpp':['clang-format', 'clangtidy', 'uncrustify', 'remove_trailing_lines', 'trim_whitespace']}
 let g:ale_linters = {'python': ['pylint']}
 
+let g:ale_c_parse_compile_commands=1
+
 " ###################
 " identLine
 " ###################
