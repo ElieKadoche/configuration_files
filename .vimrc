@@ -161,3 +161,7 @@ set clipboard=unnamed
 " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Does not qui visual mode
+vmap < <gv
+vmap > >gv
