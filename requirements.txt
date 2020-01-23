@@ -25,5 +25,6 @@ sgfmill
 speedtest-cli
 tensorflow
 tinydb
+torch
 tqdm
 virtualenv
