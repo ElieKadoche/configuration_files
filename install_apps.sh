@@ -177,4 +177,4 @@ git clone https://github.com/lightvector/KataGo.git
 #   Google: gmail, drive, maps, contacts, doc
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, clearscanner, lithium
-#   Others: leafpic, HandShaker
+#   Others: leafpic, HandShaker, Hex
