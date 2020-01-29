@@ -26,5 +26,6 @@ speedtest-cli
 tensorflow
 tinydb
 torch
+torchvision
 tqdm
 virtualenv
