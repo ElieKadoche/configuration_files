@@ -47,7 +47,7 @@ brew install cmake
 brew install cmatrix
 brew install coreutils
 brew install docker
-brew instal docker-compose
+brew install docker-compose
 brew install emojify
 brew install gcc
 brew install git
