@@ -172,10 +172,10 @@ git clone https://github.com/lightvector/KataGo.git
 #   Termux: git, texlive, tlmgr install scheme-full, python, tor, mpv, sl, zip, unzip, unrar, numpy, etc.
 #   + Termux:API
 #   Dev: cxxdroid, quickedit pro, total commander, usb stick plugin
-#   Baduk: ElyGo, tsumego pro, pandanet, tygem, kgs, Ah Q Go
+#   Baduk: tsumego pro, pandanet, tygem, kgs, Ah Q Go
 #   Privacy: firefox, firefox focus, tor
 #   Communication: discord, facebook, instagram, messenger, linkedin, whastapp, reddit
 #   Google: gmail, drive, maps, contacts, doc
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, clearscanner, lithium
-#   Others: leafpic, HandShaker, Hex
+#   Others: leafpic, HandShaker, Hex, Morpion Solitaire
