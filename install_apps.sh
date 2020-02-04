@@ -92,6 +92,7 @@ echo 'Runing brew cask...'
 
 brew cask install adobe-acrobat-reader
 brew cask install cgoban
+brew cask install cloudcompare
 brew cask install discord
 brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, Markdown Here, GitLab Markdown Viewer
 brew cask install font-source-sans-pro
