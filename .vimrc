@@ -9,6 +9,7 @@ Plug 'https://github.com/kien/ctrlp.vim.git' " ctrl p <file_to_search>
 Plug 'https://github.com/junegunn/goyo.vim.git' " :Goyo
 Plug 'https://github.com/tomtom/tcomment_vim.git' " :gcc
 Plug 'https://github.com/ycm-core/YouCompleteMe.git' " Then ./install.py
+Plug 'https://github.com/chrisbra/csv.vim.git'
 call plug#end()
 
 " ###################
