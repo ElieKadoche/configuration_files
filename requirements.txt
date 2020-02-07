@@ -12,6 +12,7 @@ matplotlib
 numpy
 opencv-python
 pandas
+Pillow
 PuLP
 PyAutoGUI
 pybind11
