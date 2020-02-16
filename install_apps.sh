@@ -91,6 +91,7 @@ brew install youtube-dl
 echo 'Runing brew cask...'
 
 brew cask install adobe-acrobat-reader
+brew cask install android-file-transfer
 brew cask install cgoban
 brew cask install cloudcompare
 brew cask install discord
@@ -98,7 +99,6 @@ brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, P
 brew cask install flash-player
 brew cask install font-source-sans-pro
 brew cask install gopanda
-brew cask install handshaker
 brew cask install intellij-idea-ce
 brew cask install libreoffice
 brew cask install lulu
@@ -179,4 +179,4 @@ git clone https://github.com/lightvector/KataGo.git
 #   Google: gmail, drive, maps, contacts, doc
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, clearscanner, lithium
-#   Others: leafpic, HandShaker, Hex, Morpion Solitaire (qilin TicTacToe)
+#   Others: leafpic, Hex, Morpion Solitaire (qilin TicTacToe)
