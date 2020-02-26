@@ -67,6 +67,7 @@ brew install pyinstaller
 
 brew install python
 pip3 install -r requirements.txt
+# pip-review --local --interactive # To update all pip packages
 # virtualenv .venv / virtualenv -p python3 .venv / source .venv/bin/activate /deactivate
 
 brew install pwgen
