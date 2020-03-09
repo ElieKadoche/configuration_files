@@ -49,7 +49,7 @@ brew install coreutils
 brew install docker
 brew install docker-compose
 brew install emojify
-brew install gcc
+# brew install gcc
 brew install git
 brew install gnu-go
 brew install graphviz
@@ -156,10 +156,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # ---------------------------
 # ---------------------------
 
+# Install Command Line Tools for Xcode (latest version)
+
 git clone https://github.com/lightvector/KataGo.git
-# Then compile and install datago
-# /Users/eliekadoche/desktop/KataGo/cpp/katago
-# gtp -model /Users/eliekadoche/desktop/KataGo/model.txt.gz -config /Users/eliekadoche/desktop/KataGo/cpp/configs/gtp_example.cfg
+git clone https://github.com/leela-zero/leela-zero.git
+git clone https://github.com/lesspass/lesspass.git
+git clone https://github.com/afshinea/stanford-cs-229-machine-learning.git
 
 # for termux: termux-setup-storage
 # install oh-my-zsh (see documentation)
