@@ -49,7 +49,7 @@ brew install coreutils
 brew install docker
 brew install docker-compose
 brew install emojify
-# brew install gcc
+brew install gcc
 brew install git
 brew install gnu-go
 brew install graphviz
@@ -91,7 +91,6 @@ brew install youtube-dl
 
 echo 'Runing brew cask...'
 
-brew cask install adobe-acrobat-reader
 brew cask install android-file-transfer
 brew cask install cgoban
 brew cask install cloudcompare
@@ -117,6 +116,7 @@ brew cask install sabaki
 # /Users/eliekadoche/desktop/KataGo/cpp/katago
 # gtp -model /Users/eliekadoche/desktop/documents/katago_g170-b20c256x2-s1039565568-d285739972.txt.gz -config /Users/eliekadoche/desktop/KataGo/cpp/configs/gtp_example.cfg
 
+brew cask install skim
 brew cask install spectacle
 brew cask install teamviewer
 brew cask install texstudio
