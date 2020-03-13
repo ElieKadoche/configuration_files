@@ -32,6 +32,7 @@ tensorboardX
 tensorflow
 tinydb
 torch
+torchsummary
 torchvision
 tqdm
 virtualenv
