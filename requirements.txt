@@ -13,6 +13,7 @@ lesspass
 matplotlib
 numpy
 opencv-python
+openpyxl
 pandas
 Pillow
 pip-review
