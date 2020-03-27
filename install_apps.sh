@@ -182,4 +182,4 @@ git clone https://github.com/afshinea/stanford-cs-229-machine-learning.git
 #   Google: gmail, drive, maps, contacts, doc
 #   Moving: citymapper
 #   System: adobe acrobat reader, calculator++, clearscanner, lithium
-#   Others: leafpic, Hex, Morpion Solitaire (qilin TicTacToe)
+#   Others: leafpic, Hex, Trailforks Morpion Solitaire (qilin TicTacToe)
