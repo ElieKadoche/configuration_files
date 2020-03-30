@@ -6,6 +6,7 @@ docx-mailmerge
 emoji
 gym
 humanize
+imgaug
 isort
 jedi
 jupyter
