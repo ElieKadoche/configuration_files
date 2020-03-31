@@ -46,8 +46,8 @@ brew install clinfo # OpenCL info
 brew install cmake
 brew install cmatrix
 brew install coreutils
-brew install docker
-brew install docker-compose
+# brew install docker
+# brew install docker-compose
 brew install emojify
 brew install gcc
 brew install git
@@ -55,15 +55,14 @@ brew install gnu-go
 brew install graphviz
 brew install htop
 brew install jupyter
-brew install jupyterlab
+# brew install jupyterlab
 brew install leela-zero
 brew install macvim
 brew install mpv
-brew install neo4j
-brew install ncdu
+# brew install neo4j
+# brew install ncdu
 brew install osx-cpu-temp
 brew install pandoc
-brew install pyinstaller
 
 brew install python
 pip3 install -r requirements.txt
@@ -72,7 +71,7 @@ pip3 install -r requirements.txt
 
 brew install pwgen
 brew install sshfs
-brew install swi-prolog
+# brew install swi-prolog
 brew install tldr
 
 brew install tor
@@ -99,7 +98,7 @@ brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, P
 brew cask install flash-player
 brew cask install font-source-sans-pro
 brew cask install gopanda
-brew cask install intellij-idea-ce
+# brew cask install intellij-idea-ce
 brew cask install libreoffice
 brew cask install lulu
 brew cask install mactex
@@ -111,7 +110,7 @@ brew cask install pycharm-ce
 
 brew cask install sabaki
 # GTP commands: showboard, play black c13, genmove white, etc.
-# /usr/local/Cellar/leela-zero/0.17/bin/leelaz
+# /usr/local/Cellar/leela-zero/version/bin/leelaz
 # --gtp --noponder --playouts 128 -w <neural_net_path>
 # /Users/eliekadoche/desktop/KataGo/cpp/katago
 # gtp -model <neural_net_path> -config /Users/eliekadoche/desktop/KataGo/cpp/configs/gtp_example.cfg
