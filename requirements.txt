@@ -21,6 +21,7 @@ pip-review
 PuLP
 PyAutoGUI
 pybind11
+pyinstaller
 pylint
 pytest
 requests
