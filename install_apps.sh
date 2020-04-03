@@ -94,7 +94,7 @@ brew cask install android-file-transfer
 brew cask install cgoban
 brew cask install cloudcompare
 brew cask install discord
-brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, Markdown Here, GitLab Markdown Viewer
+brew cask install firefox # HTTPS everywhere, Adblock for Firefox, SAMLtracer, Popup Blocker, LessPass, Markdown Here, GitLab Markdown Viewer, Dark Reader
 brew cask install flash-player
 brew cask install font-source-sans-pro
 brew cask install gopanda
