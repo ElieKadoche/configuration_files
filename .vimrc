@@ -1,20 +1,19 @@
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/itchyny/lightline.vim.git'
-Plug 'https://github.com/scrooloose/nerdtree.git' " :NERDTree
+Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/w0rp/ale.git' " :AleFix
-Plug 'https://github.com/kien/ctrlp.vim.git' " ctrl p <file_to_search>
-Plug 'https://github.com/junegunn/goyo.vim.git' " :Goyo
-Plug 'https://github.com/tomtom/tcomment_vim.git' " :gcc
-Plug 'https://github.com/ycm-core/YouCompleteMe.git' " Then ./install.py
+Plug 'https://github.com/w0rp/ale.git'
+Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'https://github.com/junegunn/goyo.vim.git'
+Plug 'https://github.com/tomtom/tcomment_vim.git'
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
 call plug#end()
 
-" ###################
 " Syntax
-" ###################
+" ---------------------------
 
 syntax on
 syntax enable
@@ -22,9 +21,8 @@ syntax enable
 au BufRead,BufNewFile *.rq set filetype=sparql " Put sparql.vim in ~/.vim/syntax/
 au BufRead,BufNewFile *.cypher set filetype=cypher " Put sparql.vim in ~/.vim/syntax/
 
-" ###################
 " Colors
-" ###################
+" ---------------------------
 
 colorscheme gruvbox
 augroup vimrc
@@ -40,9 +38,8 @@ endif
 
 set encoding=utf8
 
-" ###################
 " ALE
-" ###################
+" ---------------------------
 
 let g:ale_completion_enabled=1
 let g:ale_lint_on_save=0
@@ -55,14 +52,13 @@ let g:ale_linters = {'python': ['pylint']}
 
 let g:ale_c_parse_compile_commands=1
 
-" ###################
 " identLine
-" ###################
+" ---------------------------
 
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-" ###################
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
+" ---------------------------
 " ###################
 
 try
@@ -71,15 +67,13 @@ try
 catch
 endtry
 
-" ###################
 " Rainbow
-" ###################
+" ---------------------------
 
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-" ###################
 " Others
-" ###################
+" ---------------------------
 
 " Enable filetype plugins
 filetype plugin on
@@ -165,6 +159,6 @@ set clipboard=unnamed
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-" Does not qui visual mode
+" Does not quit visual mode
 vmap < <gv
 vmap > >gv
