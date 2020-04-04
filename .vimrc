@@ -9,6 +9,7 @@ Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
+Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
 
@@ -147,6 +148,9 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " Does not quit visual mode
 vmap < <gv
 vmap > >gv
+
+" In tex files, no preview
+let g:tex_conceal = ''
 
 " ALE
 " ---------------------------
