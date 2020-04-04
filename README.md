@@ -55,4 +55,4 @@ Others:
 Run tor in terminal. In network prefecerences, create new location, advanced settings, proxies, SOCKS Proxy, localhost:9050.
 
 ## Vim
-After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe.
+After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe. `:PlusClean`, `:PlugUpdate` and `:PlugUpgrade`.
