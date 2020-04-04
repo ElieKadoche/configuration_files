@@ -1,7 +1,6 @@
 plugins=(
     autopep8
     brew
-    cask
     colored-man-pages
     colorize
     cp
