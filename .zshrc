@@ -1,4 +1,19 @@
-plugins=(colorize colored-man-pages rand-quote osx web-search brew pip python)
+plugins=(
+    autopep8
+    brew
+    cask
+    colored-man-pages
+    colorize
+    cp
+    extract
+    osx
+    pep8
+    pip
+    python
+    rand-quote
+    vi-mode
+    web-search
+)
 
 # System-wide profile for interactive zsh(1) shells.
 
@@ -85,66 +100,43 @@ PS1="%n@%m %1~ %# "
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
 # For Termux only
-alias pbcopy="termux-clipboard-set"
-alias lpl="python3 ~/storage/downloads/lesspass/cli/lesspass/core.py" # For Termux
-alias lpl="python3 ~/Desktop/lesspass/cli/lesspass/core.py" # For Mac
+# alias pbcopy="termux-clipboard-set"
+# alias lpl="python ~/storage/downloads/lesspass/cli/lesspass/core.py"
+# alias m="cd storage/downloads"
 
 alias e="exit"
-alias m="cd storage/downloads"
-alias mpvc="mpv --shuffle --no-video music/classical/**/*"
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ls="ls -lahGF"
+alias grep="grep --color=auto"
+alias rmtrash="rm -rf ~/.Trash/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias grep="grep --color=auto"
-
-FILE=~/habreu
-ADDRESS=""
-
-lamgate() {
-    cat $FILE | pbcopy
-    ssh $ADDRESS
-}
-
-gitpp() {
-    for i in */.git; do ( echo $i; cd $i/..; git pull; ); done
-}
-
-alias ls="ls -lahGF"
-alias ..='cd ../'                           # Go back 1 directory level
-alias ...='cd ../../'                       # Go back 2 directory levels
-alias .3='cd ../../../'                     # Go back 3 directory levels
-alias .4='cd ../../../../'                  # Go back 4 directory levels
-alias .5='cd ../../../../../'               # Go back 5 directory levels
-alias .6='cd ../../../../../../'            # Go back 6 directory levels
-
+alias mpvc="mpv --shuffle --no-video music/classical/**/*"
+alias lpl="python ~/Desktop/lesspass/cli/lesspass/core.py"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-alias rmtrash="rm -rf ~/.Trash/*"
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
+alias gitp="git pull"
+alias gits="git status"
+alias gitc="git cherry -v"
+gitd() { git add -A; git commit -m "Done"; git push }
+gitpp() { for i in */.git; do ( echo $i; cd $i/..; git pull; ); done }
 
 pyclean() {
     find . -name "*.pyc" -exec rm -f {} \;
 }
 
-alias gits="git status"
-alias gitp="git pull"
-alias gitc="git cherry -v"
-gitd() {
-    git add -A; git commit -m "Done"; git push
+openfi() {
+    open -a /Applications/Firefox.app/ $1
 }
 
-# Recursive
-#	find . -name "*.bak" -type f
-#	find . -name "*.bak" -type f -delete
 rmtex() {
     rm *.aux; rm *.log; rm *.out; rm *.toc; rm *.bbl; rm *.blg; rm *.synctex.gz
 }
 
 compiletex() {
-    # pdflatex $1; bibtex $1; pdflatex $1; pdflatex $1
-    pdflatex $1; pdflatex $1; pdflatex $1
-}
-
-openfi() {
-    open -a /Applications/Firefox.app/ $1
+    pdflatex "$1.tex"; pdflatex "$1.tex"; biber "$1"; makeglossaries "$1"; pdflatex "$1.tex"
 }
 
 # findPid: find out the pid of a specified process
@@ -165,4 +157,12 @@ renameSameExtension() {
         mv -i -- "$i" "$new"
         let a=a+1
     done
+}
+
+FILE=~/habreu
+ADDRESS=""
+
+lamgate() {
+    cat $FILE | pbcopy
+    ssh $ADDRESS
 }
