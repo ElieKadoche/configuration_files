@@ -4,6 +4,7 @@ autopep8
 black
 docx-mailmerge
 emoji
+graphviz
 gym
 humanize
 imgaug
