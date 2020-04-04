@@ -4,12 +4,12 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/w0rp/ale.git'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
+Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
 
 " Syntax
@@ -38,20 +38,6 @@ endif
 
 set encoding=utf8
 
-" ALE
-" ---------------------------
-
-let g:ale_completion_enabled=1
-let g:ale_lint_on_save=0
-let g:ale_fix_on_save=0
-
-" pip3 install autopep8, pylint, black
-let g:ale_fixers={'python':['autopep8', 'isort', 'black', 'remove_trailing_lines', 'trim_whitespace']}
-let g:ale_fixers={'cpp':['clang-format', 'clangtidy', 'uncrustify', 'remove_trailing_lines', 'trim_whitespace']}
-let g:ale_linters = {'python': ['pylint']}
-
-let g:ale_c_parse_compile_commands=1
-
 " identLine
 " ---------------------------
 
@@ -59,7 +45,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
 " ---------------------------
-" ###################
 
 try
     set undodir=~/.vim_runtime/temp_dirs/undodir
@@ -162,3 +147,34 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " Does not quit visual mode
 vmap < <gv
 vmap > >gv
+
+" ALE
+" ---------------------------
+
+let g:ale_linters = {
+\    'python': ['pylint', 'bandit', 'pycodestyle'],
+\    'markdown': ['alex', 'proselint', 'redpen', 'writegood'],
+\    'text': ['alex', 'proselint', 'redpen', 'writegood'],
+\    'tex': ['alex', 'writegood', 'redpen', 'lacheck'],
+\    'cpp': ['clang'],
+\    'bib': ['bibclean'],
+\}
+
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'python': ['autopep8', 'isort'],
+\    'markdown': ['prettier'],
+\    'tex': ['latexindent'],
+\    'cpp': ['uncrustify', 'clang-format'],
+\    'bib': ['bibclean'],
+\}
+
+let g:ale_fix_on_save=0
+let g:ale_lint_on_save=0
+let g:ale_lint_on_enter = 0
+let g:ale_completion_enabled=0
+let g:airline#extensions#ale#enabled = 1
+let g:ale_c_parse_compile_commands=1
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '•'
