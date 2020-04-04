@@ -46,6 +46,8 @@ brew tap homebrew/cask-fonts
 # ---------------------------
 echo "Running brew..."
 
+brew install alexjs
+brew install bibclean
 brew install clang-format
 brew install clinfo # OpenCL info
 brew install cmake
@@ -63,15 +65,19 @@ brew install macvim
 brew install mpv
 brew install osx-cpu-temp
 brew install pandoc
+brew install prettier
 brew install python
 brew install pwgen
+brew install redpen
 brew install sshfs
 brew install swi-prolog
 brew install tldr
 brew install tor
+brew install uncrustify
 brew install unrar
 brew install watch
 brew install wget
+brew install write-good
 brew install youtube-dl
 
 # Python packages

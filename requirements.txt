@@ -1,7 +1,7 @@
 ascii-graph
 autokeras
 autopep8
-black
+bandit
 docx-mailmerge
 emoji
 graphviz
@@ -19,9 +19,11 @@ openpyxl
 pandas
 Pillow
 pip-review
+proselint
 PuLP
 PyAutoGUI
 pybind11
+pycodestyle
 pyinstaller
 pylint
 pytest
