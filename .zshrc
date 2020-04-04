@@ -131,7 +131,7 @@ openfi() {
 }
 
 rmtex() {
-    rm *.aux; rm *.log; rm *.out; rm *.toc; rm *.bbl; rm *.blg; rm *.synctex.gz
+    rm *.aux; rm *.log; rm *.out; rm *.toc; rm *.bbl; rm *.blg; rm *.synctex.gz; rm *.acn; rm *.acr; rm *.alg; rm *.bcf; rm *.glg; rm *.glo; rm *.gls; rm *.ist; rm *.run.xml
 }
 
 compiletex() {
