@@ -1,16 +1,14 @@
 ascii-graph
 autokeras
-autopep8
 bandit
-black
 docx-mailmerge
 emoji
+flake8
 graphviz
 gym
 humanize
 imgaug
 isort
-jedi
 jupyter
 lesspass
 matplotlib
@@ -25,6 +23,7 @@ PuLP
 PyAutoGUI
 pybind11
 pycodestyle
+pydocstyle
 pyinstaller
 pytest
 requests
