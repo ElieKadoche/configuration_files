@@ -173,11 +173,11 @@ let g:ale_fixers = {
 \    'bib': ['bibclean'],
 \}
 
-let g:ale_fix_on_save=0
-let g:ale_lint_on_save=0
-let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save=1
+let g:ale_lint_on_save=1
+let g:ale_lint_on_enter=0
 let g:ale_completion_enabled=0
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled=1
 let g:ale_c_parse_compile_commands=1
 
 let g:ale_sign_error = '>>'
