@@ -2,6 +2,7 @@ ascii-graph
 autokeras
 autopep8
 bandit
+black
 docx-mailmerge
 emoji
 graphviz
