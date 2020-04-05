@@ -61,6 +61,10 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 " Others
 " ---------------------------
 
+" Leader key
+let mapleader="<"
+nnoremap <silent> <leader><space> :noh<cr>
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -152,11 +156,16 @@ vmap > >gv
 " In tex files, no preview
 let g:tex_conceal = ''
 
+" YouCompleteMe
+" ---------------------------
+
+let g:ycm_autoclose_preview_window_after_completion=1
+
 " ALE
 " ---------------------------
 
 let g:ale_linters = {
-\    'python': ['bandit', 'pycodestyle'],
+\    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
 \    'markdown': ['alex', 'proselint', 'redpen', 'writegood'],
 \    'text': ['alex', 'proselint', 'redpen', 'writegood'],
 \    'tex': ['alex', 'writegood', 'redpen', 'lacheck'],
@@ -166,7 +175,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
-\    'python': ['autopep8', 'isort', 'black'],
+\    'python': ['isort'],
 \    'markdown': ['prettier'],
 \    'tex': ['latexindent'],
 \    'cpp': ['uncrustify', 'clang-format'],
@@ -181,4 +190,4 @@ let g:airline#extensions#ale#enabled=1
 let g:ale_c_parse_compile_commands=1
 
 let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '•'
+let g:ale_sign_warning = '--'
