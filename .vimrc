@@ -156,7 +156,7 @@ let g:tex_conceal = ''
 " ---------------------------
 
 let g:ale_linters = {
-\    'python': ['pylint', 'bandit', 'pycodestyle'],
+\    'python': ['bandit', 'pycodestyle'],
 \    'markdown': ['alex', 'proselint', 'redpen', 'writegood'],
 \    'text': ['alex', 'proselint', 'redpen', 'writegood'],
 \    'tex': ['alex', 'writegood', 'redpen', 'lacheck'],

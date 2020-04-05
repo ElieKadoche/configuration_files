@@ -26,7 +26,6 @@ PyAutoGUI
 pybind11
 pycodestyle
 pyinstaller
-pylint
 pytest
 requests
 scikit-image
