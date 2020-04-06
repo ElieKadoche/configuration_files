@@ -1,21 +1,22 @@
 ## Commands to update the system
 
-    brew update
-    brew upgrade
-    brew cask upgrade --greedy
-    pip-review --local --interactive
-    :PlugInstall / :PlugUpdate / :PlugUpgrade # In Vim
+```shell
+brew update
+brew upgrade
+brew cask upgrade --greedy
+pip-review --local --interactive
+:PlugUpdate / :PlugUpgrade # In Vim
+```
 
 ## Firefox
 
 - Adblock.
-- Dark Reader
-- Gitlab Markdown Viewer.
+- Firefox Color.
+- Ghostery.
 - HTTPS everywhere.
 - LessPass.
 - Markdown Here.
 - Popup Blocker.
-- SAMLTracer.
 
 ## Git
 
@@ -50,10 +51,14 @@ gtp -model <neural_net_path> -config <config_path>
 ### Termux
 
 Install Termux (git, texlive, tlmgr install scheme-full, python, tor, mpv, zip, unzip, unrar) + Termux:API. Uncomment associated lines in `.zshrc`. Write in `~/.termux/termux.properties`:
+
+```
 extra-keys = [ \
- ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
- ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
- ]
+    ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
+    ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
+]
+```
+
 termux-reload-settings
 Others:
 termux-setup-storage
@@ -65,4 +70,4 @@ Run tor in terminal. In network prefecerences, create new location, advanced set
 
 ## Vim
 
-After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe. `:PlusClean`, `:PlugUpdate` and `:PlugUpgrade`.
+After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe. `:PlugClean` to clean.
