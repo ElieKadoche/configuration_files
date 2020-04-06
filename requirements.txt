@@ -2,6 +2,7 @@ ascii-graph
 autopep8
 autokeras
 bandit
+configparser
 docx-mailmerge
 emoji
 flake8
@@ -28,6 +29,7 @@ pycodestyle
 pydocstyle
 pyinstaller
 pytest
+regex
 requests
 scikit-image
 scikit-learn
