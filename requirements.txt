@@ -46,3 +46,4 @@ torchvision
 tqdm
 virtualenv
 xlrd
+youtube_dl

@@ -78,7 +78,6 @@ brew install unrar
 brew install watch
 brew install wget
 brew install write-good
-brew install youtube-dl
 
 # Python packages
 # ---------------------------
