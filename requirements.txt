@@ -2,6 +2,7 @@ ascii-graph
 autopep8
 autokeras
 bandit
+chroma
 configparser
 docx-mailmerge
 emoji
@@ -27,6 +28,7 @@ PyAutoGUI
 pybind11
 pycodestyle
 pydocstyle
+pygments
 pyinstaller
 pytest
 regex
