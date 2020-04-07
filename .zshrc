@@ -14,82 +14,105 @@ plugins=(
     web-search
 )
 
-# System-wide profile for interactive zsh(1) shells.
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Setup user specific overrides for this in ~/.zhsrc. See zshbuiltins(1)
-# and zshoptions(1) for more details.
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/eliekadoche/.oh-my-zsh"
 
-# Correctly display UTF-8 with combining characters.
-if [[ "$(locale LC_CTYPE)" == "UTF-8" ]]; then
-    setopt COMBINING_CHARS
-fi
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# Disable the log builtin, so we don't conflict with /usr/bin/log
-disable log
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Save command history
-HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
-HISTSIZE=2000
-SAVEHIST=1000
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Beep on error
-setopt BEEP
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-export ZSH="$HOME/.oh-my-zsh"
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+# plugins=(git)
+
 source $ZSH/oh-my-zsh.sh
 
-# Use keycodes (generated via zkbd) if present, otherwise fallback on
-# values from terminfo
-if [[ -r ${ZDOTDIR:-$HOME}/.zkbd/${TERM}-${VENDOR} ]] ; then
-    source ${ZDOTDIR:-$HOME}/.zkbd/${TERM}-${VENDOR}
-else
-    typeset -g -A key
+# User configuration
 
-    [[ -n "$terminfo[kf1]" ]] && key[F1]=$terminfo[kf1]
-    [[ -n "$terminfo[kf2]" ]] && key[F2]=$terminfo[kf2]
-    [[ -n "$terminfo[kf3]" ]] && key[F3]=$terminfo[kf3]
-    [[ -n "$terminfo[kf4]" ]] && key[F4]=$terminfo[kf4]
-    [[ -n "$terminfo[kf5]" ]] && key[F5]=$terminfo[kf5]
-    [[ -n "$terminfo[kf6]" ]] && key[F6]=$terminfo[kf6]
-    [[ -n "$terminfo[kf7]" ]] && key[F7]=$terminfo[kf7]
-    [[ -n "$terminfo[kf8]" ]] && key[F8]=$terminfo[kf8]
-    [[ -n "$terminfo[kf9]" ]] && key[F9]=$terminfo[kf9]
-    [[ -n "$terminfo[kf10]" ]] && key[F10]=$terminfo[kf10]
-    [[ -n "$terminfo[kf11]" ]] && key[F11]=$terminfo[kf11]
-    [[ -n "$terminfo[kf12]" ]] && key[F12]=$terminfo[kf12]
-    [[ -n "$terminfo[kf13]" ]] && key[F13]=$terminfo[kf13]
-    [[ -n "$terminfo[kf14]" ]] && key[F14]=$terminfo[kf14]
-    [[ -n "$terminfo[kf15]" ]] && key[F15]=$terminfo[kf15]
-    [[ -n "$terminfo[kf16]" ]] && key[F16]=$terminfo[kf16]
-    [[ -n "$terminfo[kf17]" ]] && key[F17]=$terminfo[kf17]
-    [[ -n "$terminfo[kf18]" ]] && key[F18]=$terminfo[kf18]
-    [[ -n "$terminfo[kf19]" ]] && key[F19]=$terminfo[kf19]
-    [[ -n "$terminfo[kf20]" ]] && key[F20]=$terminfo[kf20]
-    [[ -n "$terminfo[kbs]" ]] && key[Backspace]=$terminfo[kbs]
-    [[ -n "$terminfo[kich1]" ]] && key[Insert]=$terminfo[kich1]
-    [[ -n "$terminfo[kdch1]" ]] && key[Delete]=$terminfo[kdch1]
-    [[ -n "$terminfo[khome]" ]] && key[Home]=$terminfo[khome]
-    [[ -n "$terminfo[kend]" ]] && key[End]=$terminfo[kend]
-    [[ -n "$terminfo[kpp]" ]] && key[PageUp]=$terminfo[kpp]
-    [[ -n "$terminfo[knp]" ]] && key[PageDown]=$terminfo[knp]
-    [[ -n "$terminfo[kcuu1]" ]] && key[Up]=$terminfo[kcuu1]
-    [[ -n "$terminfo[kcub1]" ]] && key[Left]=$terminfo[kcub1]
-    [[ -n "$terminfo[kcud1]" ]] && key[Down]=$terminfo[kcud1]
-    [[ -n "$terminfo[kcuf1]" ]] && key[Right]=$terminfo[kcuf1]
+export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
 fi
 
-# Default key bindings
-[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
-[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
-[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
-[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
-[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
 
-# Default prompt
-PS1="%n@%m %1~ %# "
-
-# Useful support for interacting with Terminal.app or other terminal programs
-[ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ########################################################
 ########################################################
@@ -98,10 +121,16 @@ PS1="%n@%m %1~ %# "
 
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
+alias python="python3"
+alias pip="pip3"
+
 # For Termux only
 # alias pbcopy="termux-clipboard-set"
 # alias lpl="python ~/storage/downloads/lesspass/cli/lesspass/core.py"
 # alias m="cd storage/downloads"
+
+alias m="cd /Volumes/marvin_data"
+alias lpl="python lesspass/cli/lesspass/core.py"
 
 alias e="exit"
 alias ..='cd ../'
@@ -112,7 +141,6 @@ alias rmtrash="rm -rf ~/.Trash/*"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
-alias lpl="python ~/Desktop/lesspass/cli/lesspass/core.py"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
