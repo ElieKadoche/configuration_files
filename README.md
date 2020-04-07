@@ -5,14 +5,15 @@ brew update
 brew upgrade
 brew cask upgrade --greedy
 pip-review --local --interactive
+python3 -m pip3 install --upgrade pip3
 :PlugUpdate / :PlugUpgrade # In Vim
+softwareupdate --list
 ```
 
 ## Firefox
 
-- Adblock.
+- uBlock origin.
 - Firefox Color.
-- Ghostery.
 - HTTPS everywhere.
 - LessPass.
 - Markdown Here.
