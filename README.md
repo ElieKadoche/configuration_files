@@ -40,7 +40,7 @@ gtp -model <neural_net_path> -config <config_path>
 
 ### Apps
 
-- Dev: cxxdroid, quichedit pro, total commander, usb stick plugin.
+- Dev: cxxdroid, quickedit pro, total commander, usb stick plugin.
 - Baduk: tsumego pro, pandanet, tygem, kgs, Ah Q Go.
 - Privacy: firefox, firefox focus, tor.
 - Comm: discord, facebook, instagram, messenger, linkeding, whatsapp, reddit.
