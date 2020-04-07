@@ -110,6 +110,8 @@ echo "Configuring git..."
 git config --global user.name "Elie KADOCHE"
 git config --global user.email eliekadoche78@gmail.com
 git config --global core.editor vim
+git config --global core.filemode false
+git config --global credential.helper store
 
 # zsh and vim
 # ---------------------------
