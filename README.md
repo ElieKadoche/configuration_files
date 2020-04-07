@@ -7,7 +7,8 @@ brew cask upgrade --greedy
 pip-review --local --interactive
 python3 -m pip3 install --upgrade pip3
 :PlugUpdate / :PlugUpgrade # In Vim
-softwareupdate --list
+softwareupdate --list # For macOS
+pkg update / pkg upgrade # For termux
 ```
 
 ## Firefox
@@ -18,15 +19,6 @@ softwareupdate --list
 - LessPass.
 - Markdown Here.
 - Popup Blocker.
-
-## Git
-
-    git config core.filemode false
-    git config credential.helper store
-
-## Hombrew
-
-    brew leaves # See installed packages
 
 ## Sabaki
 
@@ -40,30 +32,15 @@ gtp -model <neural_net_path> -config <config_path>
 
 ### Apps
 
+- Termux + Termux:API.
 - Dev: cxxdroid, quickedit pro, total commander, usb stick plugin.
-- Baduk: tsumego pro, pandanet, tygem, kgs, Ah Q Go.
+- Baduk: tsumego pro, pandanet, tygem, kgs, ElyGo pro.
 - Privacy: firefox, firefox focus, tor.
-- Comm: discord, facebook, instagram, messenger, linkeding, whatsapp, reddit.
-- Google: gmail, drive, maps, contacts, doc.
-- Moving: citimapper, Trailforks.
+- Comm: discord, facebook, instagram, messenger, linkedin, whatsapp, reddit, outlook.
+- Google: gmail, drive, maps, contacts, docs.
+- Moving: citymapper, Trailforks.
 - System: adobe acrobat reader, calculator++, clearscanner, lithium.
-- Others: leafpic, Hex, Morpion Solitaire (qilin TicTacToe).
-
-### Termux
-
-Install Termux (git, texlive, tlmgr install scheme-full, python, tor, mpv, zip, unzip, unrar) + Termux:API. Uncomment associated lines in `.zshrc`. Write in `~/.termux/termux.properties`:
-
-```
-extra-keys = [ \
-    ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
-    ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
-]
-```
-
-termux-reload-settings
-Others:
-termux-setup-storage
-install oh-my-zsh # See doc
+- Others: Hex, Morpion Solitaire (qilin TicTacToe).
 
 ## Tor
 
