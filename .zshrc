@@ -126,11 +126,9 @@ alias pip="pip3"
 
 # For Termux only
 # alias pbcopy="termux-clipboard-set"
-# alias lpl="python ~/storage/downloads/lesspass/cli/lesspass/core.py"
-# alias m="cd storage/downloads"
 
+# alias m="cd storage/marvin_data"
 alias m="cd /Volumes/marvin_data"
-alias lpl="python lesspass/cli/lesspass/core.py"
 
 alias e="exit"
 alias ..='cd ../'
@@ -138,6 +136,7 @@ alias ...='cd ../../'
 alias ls="ls -lahGF"
 alias grep="grep --color=auto"
 alias rmtrash="rm -rf ~/.Trash/*"
+alias lpl="python lesspass/cli/lesspass/core.py"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
