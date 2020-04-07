@@ -130,7 +130,7 @@ alias pip="pip3"
 # For Termux only
 # alias pbcopy="termux-clipboard-set"
 
-# alias m="cd storage/marvin_data"
+# alias m="cd storage/shared/marvin_data"
 alias m="cd /Volumes/marvin_data"
 
 alias e="exit"
