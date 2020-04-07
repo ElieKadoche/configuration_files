@@ -51,7 +51,13 @@ pkg install git
 pkg install htop
 pkg install mpv
 pkg install termux-api
-pkg install texlive
+
+# 2 different options
+pkg install texlive-full
+# pkg install texlive
+# tlmgr update --list
+# tlmgr install scheme-full
+
 pkg install tor
 pkg install zip
 pkg install unrar
