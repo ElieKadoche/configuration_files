@@ -1,6 +1,7 @@
 ## Commands to update the system
 
 ```shell
+upgrade_oh_my_zsh
 brew update
 brew upgrade
 brew cask upgrade --greedy
