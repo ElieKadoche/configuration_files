@@ -23,11 +23,12 @@ pkg update / pkg upgrade # For termux
 
 ## Sabaki
 
-Compile with `g++-9` with: `DCMAKE_CXX_COMPILER=<path_to_g++-9>`. Set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 8`.
-/usr/local/Cellar/leela-zero/version/bin/leelaz
---gtp --noponder -w <neural_net_path>
-/Users/eliekadoche/desktop/KataGo/cpp/katago
-gtp -model <neural_net_path> -config <config_path>
+Katago: set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 8`.
+
+    <path_to_leelaz>
+    --gtp --noponder -w <neural_net_path>
+    <path_to_katago>
+    gtp -model <neural_net_path> -config <config_path>
 
 ## Android
 
