@@ -39,6 +39,7 @@ scipy
 seaborn
 sgfmill
 speedtest-cli
+sphinx
 tensorboardX
 tensorflow
 tinydb
