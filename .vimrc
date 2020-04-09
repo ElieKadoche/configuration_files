@@ -33,7 +33,7 @@ augroup END
 set background=dark
 
 " Set extra options when running in GUI mode
-if has("gui_running")
+if has('gui_running')
     set t_Co=256
 endif
 
@@ -62,7 +62,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 " ---------------------------
 
 " Leader key
-let mapleader=","
+let mapleader=','
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <leader>t :NERDTree<cr>
 
@@ -101,7 +101,7 @@ set t_vb=
 set tm=500
 
 " Properly disable sound on errors on MacVim
-if has("gui_macvim")
+if has('gui_macvim')
     autocmd GUIEnter * set vb t_vb=
 endif
 
@@ -183,7 +183,6 @@ let g:ale_fixers = {
 \    'bib': ['bibclean'],
 \}
 
-let g:ale_fix_on_save=1
 let g:ale_lint_on_save=1
 let g:ale_lint_on_enter=0
 let g:ale_completion_enabled=0
@@ -192,3 +191,7 @@ let g:ale_c_parse_compile_commands=1
 
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
+
+let g:ale_fix_on_save=1
+" Command to change variable whenever I want
+nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
