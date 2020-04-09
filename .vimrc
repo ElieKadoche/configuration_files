@@ -19,8 +19,8 @@ call plug#end()
 syntax on
 syntax enable
 
-au BufRead,BufNewFile *.rq set filetype=sparql " Put sparql.vim in ~/.vim/syntax/
-au BufRead,BufNewFile *.cypher set filetype=cypher " Put sparql.vim in ~/.vim/syntax/
+au BufRead,BufNewFile *.rq set filetype=sparql
+au BufRead,BufNewFile *.cypher set filetype=cypher
 
 " Colors
 " ---------------------------
@@ -86,13 +86,17 @@ set cmdheight=2
 set ignorecase
 set smartcase
 
-set hlsearch " Highlight search terms
-set incsearch " Show search matches as you type
+" Highlight search terms
+set hlsearch
+
+" Show search matches as you type
+set incsearch
 
 " For regular expressions turn magic on
 set magic
 
-set expandtab " use spaces instead of tabs
+" use spaces instead of tabs
+set expandtab
 
 " No annoying sound on errors
 set noerrorbells
@@ -120,25 +124,39 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-set ai " Auto indent
-set si " Smart indent
-set autoindent " always set autoindenting on
-set shiftwidth=4 " number of spaces to use for autoindenting
+" Auto indent
+set ai
+
+" Smart indent
+set si
+
+" always set autoindenting on
+set autoindent
+
+" number of spaces to use for autoindenting
+set shiftwidth=4
 
 " Always show the status line
 set laststatus=2
 
 set relativenumber
-set number " always show line numbers
 
-set showmatch " set show matching parenthesis
+" Always show line numbers
+set number
 
-set undolevels=1000 " use many muchos levels of undo
+" set show matching parenthesis
+set showmatch
+
+" use many muchos levels of undo
+set undolevels=1000
 
 set mouse=a
 
-silent !stty -ixon " Allow us to use Ctrl-s and Ctrl-q as keybinds
-autocmd VimLeave * silent !stty ixon " Restore default behaviour when leaving Vim
+" Allow us to use Ctrl-s and Ctrl-q as keybinds
+silent !stty -ixon
+
+" Restore default behaviour when leaving Vim
+autocmd VimLeave * silent !stty ixon
 
 set nocompatible
 set display+=lastline
@@ -193,5 +211,6 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 
 let g:ale_fix_on_save=1
+
 " Command to change variable whenever I want
 nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
