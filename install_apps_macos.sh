@@ -55,6 +55,7 @@ brew install cmake
 brew install cmatrix
 brew install coreutils
 brew install emojify
+brew install ffmpeg
 brew install gcc
 brew install git
 brew install gnu-go
