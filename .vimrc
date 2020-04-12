@@ -8,6 +8,7 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/w0rp/ale.git'
@@ -21,6 +22,24 @@ syntax enable
 
 au BufRead,BufNewFile *.rq set filetype=sparql
 au BufRead,BufNewFile *.cypher set filetype=cypher
+
+" Buffers
+" ---------------------------
+set hidden
+let no_buffers_menu=1
+
+" Next buffer
+noremap <C-Tab> :bn<CR>
+" Previous buffer
+noremap <C-S-Tab> :bp<CR>
+" Close buffer
+noremap <C-q> :bd<CR>
+
+" Move into the different windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
 
 " Colors
 " ---------------------------
