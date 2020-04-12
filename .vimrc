@@ -89,6 +89,10 @@ nnoremap <leader>t :NERDTree<cr>
 filetype plugin on
 filetype indent on
 
+" Spell
+set spellang=en
+set spell
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
