@@ -154,6 +154,7 @@ gitpp() { for i in */.git; do ( echo $i; cd $i/..; git pull; ); done }
 
 pyclean() {
     find . -name "*.pyc" -exec rm -f {} \;
+    find . -name "__pycache__" -ls -delete;
 }
 
 openfi() {
