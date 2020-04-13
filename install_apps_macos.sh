@@ -29,6 +29,10 @@ defaults write com.apple.dock autohide-delay -float 0.001
 # Disable automatically rearrange spaces in mission control
 defaults write com.apple.dock mru-spaces -bool false
 
+# Show full path in Finder
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+
 killall SystemUIServer
 killall Finder
 killall Dock
