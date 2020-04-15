@@ -84,6 +84,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 let mapleader=','
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <leader>t :NERDTree<cr>
+let NERDTreeShowHidden=1
 
 " Enable filetype plugins
 filetype plugin on
