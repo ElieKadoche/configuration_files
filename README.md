@@ -6,7 +6,7 @@ brew update
 brew upgrade
 brew cask upgrade --greedy
 pip-review --local --interactive
-python3 -m pip3 install --upgrade pip3
+python -m pip install --upgrade pip
 :PlugUpdate / :PlugUpgrade # In Vim
 softwareupdate --list # For macOS
 pkg update / pkg upgrade # For termux
