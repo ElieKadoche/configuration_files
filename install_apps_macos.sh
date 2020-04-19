@@ -146,7 +146,10 @@ echo "Installing python packages..."
 
 sudo pip install -r requirements.txt
 
-# Other
+# Others
 # ---------------------------
 
 # Install cgoban from https://www.gokgs.com/download.jsp
+
+# In the local lesspass repository, install lesspass python package from source
+# pip install ./cli

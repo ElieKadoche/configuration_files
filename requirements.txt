@@ -14,7 +14,6 @@ humanize
 imgaug
 isort
 jupyter
-lesspass
 matplotlib
 numpy
 opencv-python
