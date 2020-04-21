@@ -8,6 +8,8 @@ echo "Setting OS..."
 # Command line tools
 xcode-select --install
 
+# sudo spctl --master-disable
+
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture location ~/Downloads
 defaults write com.apple.finder QuitMenuItem -bool true
