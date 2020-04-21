@@ -8,6 +8,8 @@ echo "Setting OS..."
 # Command line tools
 xcode-select --install
 
+# Allow apps downloaded from anywhere
+# Security & Privacy: back to normal
 # sudo spctl --master-disable
 
 defaults write com.apple.screencapture disable-shadow -bool true
