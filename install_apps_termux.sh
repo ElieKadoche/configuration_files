@@ -71,9 +71,3 @@ pkg install unzip
 echo "Installing python packages..."
 
 sudo pip3 install -r requirements.txt
-
-# Others
-# ---------------------------
-
-# In the local lesspass repository, install lesspass python package from source
-# pip install ./cli

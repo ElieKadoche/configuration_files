@@ -25,10 +25,12 @@ pkg update / pkg upgrade # For termux
 
 Katago: set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 8`.
 
-    <path_to_leelaz>
-    --gtp --noponder -w <neural_net_path>
-    <path_to_katago>
-    gtp -model <neural_net_path> -config <config_path>
+```shell
+<path_to_leelaz>
+--gtp --noponder -w <neural_net_path>
+<path_to_katago>
+gtp -model <neural_net_path> -config <config_path>
+```
 
 ## Android
 
@@ -37,12 +39,12 @@ Katago: set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 8`.
 - Termux + Termux:API.
 - Dev: cxxdroid, quickedit pro, total commander, usb stick plugin.
 - Baduk: tsumego pro, pandanet, tygem, kgs, ElyGo pro.
-- Privacy: firefox, firefox focus, tor.
+- Privacy: firefox, firefox focus, tor, lesspass.
 - Comm: discord, facebook, instagram, messenger, linkedin, whatsapp, reddit, outlook.
-- Google: gmail, drive, maps, contacts, docs.
+- Google: gmail, drive, maps, contacts, docs, earth.
 - Moving: citymapper, Trailforks.
 - System: adobe acrobat reader, calculator++, clearscanner, lithium.
-- Others: Hex, Morpion Solitaire (qilin TicTacToe).
+- Others: Morpion Solitaire (qilin TicTacToe).
 
 ## Tor
 
@@ -51,3 +53,11 @@ Run tor in terminal. In network prefecerences, create new location, advanced set
 ## Vim
 
 After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe. `:PlugClean` to clean.
+
+## Lesspass
+
+Install lesspass pip package from source. Go into the lesspass repository and execute:
+
+```shell
+pip install ./cli
+```
