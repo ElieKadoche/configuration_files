@@ -17,11 +17,11 @@ plugins=(
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation. MacOS or Termux
+# ------------------------------------------
 export ZSH="/Users/eliekadoche/.oh-my-zsh"
-
-# For Termux
 # export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
+# ------------------------------------------
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -117,10 +117,8 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-########################################################
-########################################################
-########################################################
-########################################################
+# ------------------------------------------
+# ------------------------------------------
 
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
@@ -128,23 +126,42 @@ alias python="python3"
 alias pip="pip3"
 
 # For Termux only
+# ------------------------------------------
 # alias pbcopy="termux-clipboard-set"
+# ------------------------------------------
 
+# Main directory. MacOS or Termux
+# ------------------------------------------
 # alias m="cd /data/data/com.termux/files/home/storage/shared/marvin_data"
 alias m="cd /Volumes/marvin_data"
+# ------------------------------------------
+
+# MacOS only
+# ------------------------------------------
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias rmtrash="rm -rf ~/.Trash/*"
+# ------------------------------------------
+
+# For Termux, change gls to ls
+# ------------------------------------------
+alias ls="gls --all \
+              --author \
+              --color=auto \
+              --group-directories-first \
+              --human-readable \
+              --size \
+              -l"
 
 alias e="exit"
 alias ..='cd ../'
 alias ...='cd ../../'
-alias ls="ls -lahGF"
+alias du="du -shc * | sort -h"
 alias grep="grep --color=auto"
-alias rmtrash="rm -rf ~/.Trash/*"
 alias lpl="python lesspass/cli/lesspass/core.py"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 alias gitp="git pull"
 alias gits="git status"
