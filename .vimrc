@@ -10,6 +10,8 @@ Plug 'https://github.com/tomtom/tcomment_vim.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
+Plug 'https://github.com/SirVer/ultisnips.git'
+Plug 'https://github.com/honza/vim-snippets.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
@@ -77,22 +79,77 @@ endtry
 
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-" Others
+" YCM and UltiSnips
 " ---------------------------
 
-" Leader key
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" Make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" Leader
+" ---------------------------
+
 let mapleader=','
+
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <leader>t :NERDTree<cr>
 let NERDTreeShowHidden=1
 
+" Command to change variable whenever I want
+nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
+
+" Change spelllang
+set spell
+set spelllang=en
+nnoremap <leader>sf :set spelllang=fr<cr>
+nnoremap <leader>se :set spelllang=en<cr>
+
+" ALE
+" ---------------------------
+
+let g:ale_linters = {
+\    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
+\    'markdown': ['alex', 'proselint', 'redpen', 'writegood'],
+\    'text': ['alex', 'proselint', 'redpen', 'writegood'],
+\    'tex': ['alex', 'writegood', 'redpen', 'lacheck'],
+\    'cpp': ['clang'],
+\    'bib': ['bibclean'],
+\}
+
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'python': ['isort', 'autopep8'],
+\    'markdown': ['prettier'],
+\    'tex': ['latexindent'],
+\    'cpp': ['uncrustify', 'clang-format'],
+\    'bib': ['bibclean'],
+\}
+
+let g:ale_lint_on_save=1
+let g:ale_lint_on_enter=0
+let g:ale_completion_enabled=0
+let g:airline#extensions#ale#enabled=1
+let g:ale_c_parse_compile_commands=1
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+
+let g:ale_fix_on_save=1
+
+" Others
+" ---------------------------
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
-
-" Spell
-set spelllang=en
-set spell
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -119,7 +176,7 @@ set incsearch
 " For regular expressions turn magic on
 set magic
 
-" use spaces instead of tabs
+" Use spaces instead of tabs
 set expandtab
 
 " No annoying sound on errors
@@ -154,10 +211,10 @@ set ai
 " Smart indent
 set si
 
-" always set autoindenting on
+" Always set autoindenting on
 set autoindent
 
-" number of spaces to use for autoindenting
+" Number of spaces to use for autoindenting
 set shiftwidth=4
 
 " Always show the status line
@@ -168,10 +225,10 @@ set relativenumber
 " Always show line numbers
 set number
 
-" set show matching parenthesis
+" Set show matching parenthesis
 set showmatch
 
-" use many muchos levels of undo
+" Use many much levels of undo
 set undolevels=1000
 
 set mouse=a
@@ -198,43 +255,3 @@ vmap > >gv
 
 " In tex files, no preview
 let g:tex_conceal = ''
-
-" YouCompleteMe
-" ---------------------------
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" ALE
-" ---------------------------
-
-let g:ale_linters = {
-\    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
-\    'markdown': ['alex', 'proselint', 'redpen', 'writegood'],
-\    'text': ['alex', 'proselint', 'redpen', 'writegood'],
-\    'tex': ['alex', 'writegood', 'redpen', 'lacheck'],
-\    'cpp': ['clang'],
-\    'bib': ['bibclean'],
-\}
-
-let g:ale_fixers = {
-\    '*': ['remove_trailing_lines', 'trim_whitespace'],
-\    'python': ['isort', 'autopep8'],
-\    'markdown': ['prettier'],
-\    'tex': ['latexindent'],
-\    'cpp': ['uncrustify', 'clang-format'],
-\    'bib': ['bibclean'],
-\}
-
-let g:ale_lint_on_save=1
-let g:ale_lint_on_enter=0
-let g:ale_completion_enabled=0
-let g:airline#extensions#ale#enabled=1
-let g:ale_c_parse_compile_commands=1
-
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-
-let g:ale_fix_on_save=1
-
-" Command to change variable whenever I want
-nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
