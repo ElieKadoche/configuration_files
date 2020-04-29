@@ -4,7 +4,7 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
@@ -64,6 +64,11 @@ set encoding=utf8
 " ---------------------------
 
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" ctrl-p
+" ---------------------------
+
+let g:ctrlp_show_hidden = 1
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
 " ---------------------------
