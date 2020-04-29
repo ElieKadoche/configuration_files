@@ -1,5 +1,7 @@
 ## Commands to update the system
 
+In common.
+
 ```shell
 upgrade_oh_my_zsh
 brew update
@@ -8,8 +10,21 @@ brew cask upgrade --greedy
 pip-review --local --interactive
 python -m pip install --upgrade pip
 :PlugUpdate / :PlugUpgrade # In Vim
-softwareupdate --list # For macOS
-pkg update / pkg upgrade # For termux
+```
+
+Specific to MacOS and Termux.
+
+```
+softwareupdate --list # For MacOS
+pkg update / pkg upgrade # For Termux
+```
+
+## Lesspass
+
+Install lesspass pip package from source. Go into the lesspass repository and execute:
+
+```shell
+pip install ./cli
 ```
 
 ## Firefox
@@ -44,7 +59,7 @@ gtp -model <neural_net_path> -config <config_path>
 - Google: gmail, drive, maps, contacts, docs, earth.
 - Moving: citymapper, Trailforks.
 - System: adobe acrobat reader, calculator++, clearscanner, lithium.
-- Others: Morpion Solitaire (qilin TicTacToe).
+- Others: Morpion Solitaire (qilin TicTacToe), Missile Command: Recharged.
 
 ## Tor
 
@@ -53,11 +68,3 @@ Run tor in terminal. In network prefecerences, create new location, advanced set
 ## Vim
 
 After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe. `:PlugClean` to clean.
-
-## Lesspass
-
-Install lesspass pip package from source. Go into the lesspass repository and execute:
-
-```shell
-pip install ./cli
-```
