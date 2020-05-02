@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
@@ -7,7 +8,6 @@ Plug 'https://github.com/luochen1990/rainbow.git'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
-Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
 Plug 'https://github.com/SirVer/ultisnips.git'
@@ -47,11 +47,10 @@ noremap <C-h> <C-w>h
 " ---------------------------
 
 colorscheme gruvbox
-augroup vimrc
-   autocmd!
-   autocmd ColorScheme * highlight Normal ctermbg=NONE guifg=white guibg=black | highlight MatchParen cterm=bold ctermfg=red ctermbg=NONE gui=bold guifg=red guibg=NONE
-augroup END
 set background=dark
+if g:colors_name == "gruvbox"
+    highlight Normal ctermbg=16 guibg=#000000 guifg=#ffffff
+endif
 
 " Set extra options when running in GUI mode
 if has('gui_running')
