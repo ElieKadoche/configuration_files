@@ -169,6 +169,11 @@ alias gitc="git cherry -v"
 gitd() { git add -A; git commit -m "Done"; git push }
 gitpp() { for i in */.git; do ( echo $i; cd $i/..; git pull; ); done }
 
+# Special grep for projects
+grepp() {
+    grep -R "$1" . --exclude-dir={.git,docs,ressources,data,materials}
+}
+
 pyclean() {
     find . -name "*.pyc" -exec rm -f {} \;
     find . -name "__pycache__" -ls -delete;
