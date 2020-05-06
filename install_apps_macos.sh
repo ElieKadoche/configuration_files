@@ -105,7 +105,7 @@ brew cask install macvim
 brew cask install mpv
 brew cask install osxfuse
 brew cask install pycharm-ce
-brew cask install eabaki
+brew cask install sabaki
 brew casl install shifty
 brew cask install skim
 brew cask install spectacle
