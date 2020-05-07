@@ -37,6 +37,9 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Disable log info
+defaults write org.python.python ApplePersistenceIgnoreState NO
+
 killall SystemUIServer
 killall Finder
 killall Dock
