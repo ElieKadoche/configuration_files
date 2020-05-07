@@ -70,6 +70,8 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " ---------------------------
 
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
 " ---------------------------
