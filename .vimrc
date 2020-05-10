@@ -24,6 +24,7 @@ syntax enable
 
 au BufRead,BufNewFile *.rq set filetype=sparql
 au BufRead,BufNewFile *.cypher set filetype=cypher
+au BufRead,BufNewFile *.log set filetype=log
 
 autocmd FileType python set colorcolumn=79
 
