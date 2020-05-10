@@ -138,6 +138,7 @@ cp .zshrc ~
 mkdir ~/.vim/syntax
 cp cypher.vim ~/.vim/syntax
 cp sparql.vim ~/.vim/syntax
+cp log.vim ~/.vim/syntax
 
 # Vim Plug
 # ---------------------------

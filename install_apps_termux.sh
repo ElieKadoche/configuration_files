@@ -15,6 +15,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 cp .vimrc ~ # Uncomment termux lines and comment macOS lines
 cp .zshrc ~ # Uncomment termux lines and comment macOS lines
 
+mkdir ~/.vim/syntax
+cp cypher.vim ~/.vim/syntax
+cp sparql.vim ~/.vim/syntax
+cp log.vim ~/.vim/syntax
+
 # You can launch the script from here
 # ---------------------------
 
@@ -62,7 +67,6 @@ pkg install tor
 pkg install zip
 pkg install unrar
 pkg install unzip
-
 
 # Python packages
 # All packages will not work, be careful

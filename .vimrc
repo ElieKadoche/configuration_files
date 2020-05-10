@@ -67,9 +67,11 @@ set encoding=utf8
 
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-" ctrl-p
+" ctrlp
 " ---------------------------
 
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
