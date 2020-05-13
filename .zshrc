@@ -183,6 +183,16 @@ openfi() {
     open -a /Applications/Firefox.app/ $1
 }
 
+# youtube-dl -F to see formats
+yyy() {
+    youtube-dl $1 -f 251 -x --audio-format "mp3" --rm-cache-dir
+}
+
+# Create a password of size $1
+pwgenn() {
+    pwgen -cny --secure $1 1 | pbcopy
+}
+
 rmtex() {
     rm *.aux;
     rm *.log;
