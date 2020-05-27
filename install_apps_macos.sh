@@ -70,6 +70,7 @@ brew install ffmpeg
 brew install gcc
 brew install git
 brew install gnu-go
+brew install graphviz
 brew install htop
 brew install leela-zero
 brew install osx-cpu-temp
