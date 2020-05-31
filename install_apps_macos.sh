@@ -73,6 +73,7 @@ brew install gnu-go
 brew install graphviz
 brew install htop
 brew install leela-zero
+brew install libav
 brew install osx-cpu-temp
 brew install pandoc
 brew install prettier
