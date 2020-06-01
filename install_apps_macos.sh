@@ -74,6 +74,7 @@ brew install graphviz
 brew install htop
 brew install leela-zero
 brew install libav
+brew install nmap
 brew install osx-cpu-temp
 brew install pandoc
 brew install prettier
