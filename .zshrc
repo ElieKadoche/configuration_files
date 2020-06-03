@@ -138,7 +138,6 @@ alias m="cd /Volumes/marvin_data"
 
 # MacOS only
 # ------------------------------------------
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias rmtrash="rm -rf ~/.Trash/*"
 # ------------------------------------------
 

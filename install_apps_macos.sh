@@ -85,6 +85,7 @@ brew install sshfs
 brew install swi-prolog
 brew install tldr
 brew install tor
+brew install tree
 brew install uncrustify
 brew install unrar
 brew install watch
