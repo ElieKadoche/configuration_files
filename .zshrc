@@ -176,6 +176,7 @@ grepp() {
 pyclean() {
     find . -name "*.pyc" -exec rm -f {} \;
     find . -name "__pycache__" -ls -delete;
+    find . -name ".pytest_cache" -ls -delete;
 }
 
 openfi() {
@@ -211,6 +212,7 @@ rmtex() {
     rm *.run.xml;
     rm *.nav;
     rm *.snm;
+    rm *.vrb;
 }
 
 compiletex() {
