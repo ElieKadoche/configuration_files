@@ -72,6 +72,7 @@ brew install git
 brew install gnu-go
 brew install graphviz
 brew install htop
+brew install katago
 brew install leela-zero
 brew install libav
 brew install nmap
