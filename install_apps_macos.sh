@@ -162,4 +162,5 @@ sudo pip install -r requirements.txt
 # Others
 # ---------------------------
 
-# Install cgoban from https://www.gokgs.com/download.jsp
+# Install cgoban from https://www.gokgs.com/download.jsp.
+# Install Audacity (no hombrew support for the moment).
