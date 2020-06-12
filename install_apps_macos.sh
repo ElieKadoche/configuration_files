@@ -99,11 +99,13 @@ brew install write-good
 echo "Running brew cask..."
 
 brew cask install android-file-transfer
+brew cask install blender
 brew cask install cloudcompare
 brew cask install discord
 brew cask install firefox
 brew cask install flash-player
 brew cask install font-source-sans-pro
+brew cask install gimp
 brew cask install gopanda
 brew cask install intellij-idea-ce
 brew cask install libreoffice
