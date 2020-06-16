@@ -84,6 +84,7 @@ brew install python3
 brew install redpen
 brew install sshfs
 brew install swi-prolog
+brew install thefuck
 brew install tldr
 brew install tor
 brew install tree
