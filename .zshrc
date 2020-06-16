@@ -1,6 +1,5 @@
 plugins=(
     autopep8
-    brew
     colored-man-pages
     colorize
     cp
@@ -18,10 +17,8 @@ plugins=(
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation. MacOS or Termux
-# ------------------------------------------
 export ZSH="/Users/eliekadoche/.oh-my-zsh"
 # export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
-# ------------------------------------------
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -40,7 +37,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -117,32 +114,25 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ------------------------------------------
-# ------------------------------------------
-
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
 alias python="python3"
 alias pip="pip3"
 
+eval $(thefuck --alias)
+eval $(thefuck --alias damn)
+
 # For Termux only
-# ------------------------------------------
 # alias pbcopy="termux-clipboard-set"
-# ------------------------------------------
 
 # Main directory. MacOS or Termux
-# ------------------------------------------
 # alias m="cd /data/data/com.termux/files/home/storage/shared/marvin_data"
 alias m="cd /Volumes/marvin_data"
-# ------------------------------------------
 
 # MacOS only
-# ------------------------------------------
 alias rmtrash="rm -rf ~/.Trash/*"
-# ------------------------------------------
 
 # For Termux, change gls to ls
-# ------------------------------------------
 alias ls="gls --all \
               --author \
               --color=auto \
@@ -161,12 +151,21 @@ alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-
 alias gitp="git pull"
 alias gits="git status"
 alias gitc="git cherry -v"
-gitd() { git add -A; git commit -m "Done"; git push }
-gitpp() { for i in */.git; do ( echo $i; cd $i/..; git pull; ); done }
+
+gitd() {
+    git add -A; git commit -m "Done"; git push
+}
+
+gitpp() {
+    for i in */.git; do ( echo $i; cd $i/..; git pull; ); done
+}
+
+gitss() {
+    for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done
+}
 
 # Special grep for projects
 grepp() {
@@ -237,12 +236,4 @@ renameSameExtension() {
         mv -i -- "$i" "$new"
         let a=a+1
     done
-}
-
-FILE=~/habreu
-ADDRESS=""
-
-lamgate() {
-    cat $FILE | pbcopy
-    ssh $ADDRESS
 }
