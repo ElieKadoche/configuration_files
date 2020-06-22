@@ -1,24 +1,5 @@
 ## Commands to update the system
 
-In common.
-
-```shell
-upgrade_oh_my_zsh
-brew update
-brew upgrade
-brew cask upgrade --greedy
-pip-review --local --interactive
-python -m pip install --upgrade pip
-:PlugUpdate / :PlugUpgrade # In Vim
-```
-
-Specific to MacOS and Termux.
-
-```
-softwareupdate --list # For MacOS
-pkg update / pkg upgrade # For Termux
-```
-
 ## Lesspass
 
 Install lesspass pip package from source. Go into the lesspass repository and execute:
