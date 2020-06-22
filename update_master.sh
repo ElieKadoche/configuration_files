@@ -13,7 +13,7 @@ softwareupdate --install --all
 # Global
 upgrade_oh_my_zsh
 python -m pip install --upgrade pip
-pip-review --local --interactive
+pip-review --local --auto
 vim +"PlugUpgrade" +qa
 vim +"PlugUpdate" +qa
 vim +"PlugClean" +qa
