@@ -55,6 +55,7 @@ pkg install cmatrix
 pkg install git
 pkg install htop
 pkg install mpv
+pkg install openssl-tool
 pkg install termux-api
 
 # 2 different options
