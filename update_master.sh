@@ -14,6 +14,8 @@ softwareupdate --install --all
 upgrade_oh_my_zsh
 python -m pip install --upgrade pip
 pip-review --local --auto
+pip install ./lesspass/cli
+python ~/.vim/plugged/YouCompleteMe/install.py --all
 vim +"PlugUpgrade" +qa
 vim +"PlugUpdate" +qa
 vim +"PlugClean" +qa
