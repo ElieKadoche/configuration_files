@@ -228,12 +228,7 @@ findSameExtension() {
     find . -iname \*.$1
 }
 
-# Arguments: name extension beginAt
 renameSameExtension() {
-    a = $3
-    for i in *.$2; do
-        new=$(printf "$1_%d.$2" "$a")
-        mv -i -- "$i" "$new"
-        let a=a+1
-    done
+    # ls -tr: oldest modified file will have index 0
+    ls -tr | find . -name "*.$1" | cat -n | while read n f; do mv "$f" `printf "%d_file.jpg" $n-1`; done
 }
