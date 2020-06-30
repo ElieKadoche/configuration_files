@@ -13,10 +13,10 @@ softwareupdate --install --all
 
 # Global
 upgrade_oh_my_zsh
-python -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 pip-review --local --auto
-pip install ./lesspass/cli
-python ~/.vim/plugged/YouCompleteMe/install.py --all
+python3 -m pip install ./lesspass/cli
+python3 ~/.vim/plugged/YouCompleteMe/install.py --all
 vim +"PlugUpgrade" +qa
 vim +"PlugUpdate" +qa
 vim +"PlugClean" +qa
