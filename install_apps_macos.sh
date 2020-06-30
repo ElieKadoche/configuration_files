@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Mac OS settings
-# ---------------------------
+# ------------------------------------------
 
 echo "Setting OS..."
 
@@ -45,7 +45,7 @@ killall Finder
 killall Dock
 
 # Homebrew
-# ---------------------------
+# ------------------------------------------
 
 echo "Installing Homebrew..."
 
@@ -54,7 +54,7 @@ echo "Installing Homebrew..."
 brew tap homebrew/cask-fonts
 
 # Brew
-# ---------------------------
+# ------------------------------------------
 
 echo "Running brew..."
 
@@ -95,7 +95,7 @@ brew install wget
 brew install write-good
 
 # Brew cask
-# ---------------------------
+# ------------------------------------------
 
 echo "Running brew cask..."
 
@@ -118,14 +118,14 @@ brew cask install mpv
 brew cask install osxfuse
 brew cask install pycharm-ce
 brew cask install sabaki
-brew casl install shifty
+brew cask install shifty
 brew cask install skim
 brew cask install spectacle
 brew cask install teamviewer
 brew cask install texstudio
 
 # Git
-# ---------------------------
+# ------------------------------------------
 
 echo "Configuring git..."
 
@@ -136,7 +136,7 @@ git config --global core.filemode false
 git config --global credential.helper store
 
 # zsh and vim
-# ---------------------------
+# ------------------------------------------
 
 echo "Setting zsh and vim..."
 
@@ -150,21 +150,21 @@ cp sparql.vim ~/.vim/syntax
 cp log.vim ~/.vim/syntax
 
 # Vim Plug
-# ---------------------------
+# ------------------------------------------
 
 echo "Installing Vim Plug..."
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Python packages
-# ---------------------------
+# ------------------------------------------
 
 echo "Installing python packages..."
 
 sudo pip install -r requirements.txt
 
 # Others
-# ---------------------------
+# ------------------------------------------
 
 # Install cgoban from https://www.gokgs.com/download.jsp.
 # Install Audacity (no hombrew support for the moment).

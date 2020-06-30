@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Before all
-# ---------------------------
+# ------------------------------------------
 
 pkg install zsh
 pkg install git
@@ -21,10 +21,10 @@ cp sparql.vim ~/.vim/syntax
 cp log.vim ~/.vim/syntax
 
 # You can launch the script from here
-# ---------------------------
+# ------------------------------------------
 
 # Configuration
-# ---------------------------
+# ------------------------------------------
 
 echo "Configuring Termux..."
 
@@ -38,7 +38,7 @@ echo "$cfg$" > ~/.termux/termux.properties
 termux-reload-settings
 
 # Git
-# ---------------------------
+# ------------------------------------------
 
 echo "Configuring git..."
 
@@ -49,7 +49,7 @@ git config --global core.filemode false
 git config --global credential.helper store
 
 # pkg
-# ---------------------------
+# ------------------------------------------
 
 pkg install cmatrix
 pkg install git
@@ -71,7 +71,7 @@ pkg install unzip
 
 # Python packages
 # All packages will not work, be careful
-# ---------------------------
+# ------------------------------------------
 
 echo "Installing python packages..."
 
