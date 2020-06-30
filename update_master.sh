@@ -19,3 +19,4 @@ python ~/.vim/plugged/YouCompleteMe/install.py --all
 vim +"PlugUpgrade" +qa
 vim +"PlugUpdate" +qa
 vim +"PlugClean" +qa
+vim +"PlugInstall" +qa
