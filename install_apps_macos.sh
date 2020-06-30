@@ -107,6 +107,7 @@ brew cask install firefox
 brew cask install flash-player
 brew cask install font-source-sans-pro
 brew cask install gimp
+brew cask install google-earth-pro
 brew cask install gopanda
 brew cask install intellij-idea-ce
 brew cask install libreoffice
