@@ -3,6 +3,7 @@ atari-py
 autopep8
 autokeras
 bandit
+cartopy
 chroma
 configparser
 docx-mailmerge
@@ -41,6 +42,8 @@ scikit-learn
 scipy
 seaborn
 sgfmill
+shapely
+simplekml
 speedtest-cli
 sphinx
 tensorboardX

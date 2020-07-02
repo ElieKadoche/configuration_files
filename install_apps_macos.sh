@@ -68,6 +68,7 @@ brew install coreutils
 brew install emojify
 brew install ffmpeg
 brew install gcc
+brew install geos
 brew install git
 brew install gnu-go
 brew install graphviz
@@ -79,6 +80,7 @@ brew install nmap
 brew install osx-cpu-temp
 brew install pandoc
 brew install prettier
+brew install proj
 brew install pwgen
 brew install python3
 brew install redpen
