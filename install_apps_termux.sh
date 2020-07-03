@@ -52,6 +52,8 @@ git config --global credential.helper store
 # ------------------------------------------
 
 pkg install cmatrix
+pkg install imagemagick
+pkg install ghostscript
 pkg install git
 pkg install htop
 pkg install mpv

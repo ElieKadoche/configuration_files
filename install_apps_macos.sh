@@ -69,10 +69,12 @@ brew install emojify
 brew install ffmpeg
 brew install gcc
 brew install geos
+brew install ghostscript
 brew install git
 brew install gnu-go
 brew install graphviz
 brew install htop
+brew install imagemagick
 brew install katago
 brew install leela-zero
 brew install libav
