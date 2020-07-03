@@ -11,6 +11,7 @@ plugins=(
     rand-quote
     vi-mode
     web-search
+    zsh-autosuggestions
 )
 
 # If you come from bash you might have to change your $PATH.
@@ -232,3 +233,6 @@ renameSameExtension() {
     # ls -tr: oldest modified file will have index 0
     ls -tr | find . -name "*.$1" | cat -n | while read n f; do mv "$f" `printf "%d_file.jpg" $n-1`; done
 }
+
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

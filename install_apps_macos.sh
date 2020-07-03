@@ -97,6 +97,7 @@ brew install unrar
 brew install watch
 brew install wget
 brew install write-good
+brew install zsh-syntax-highlighting
 
 # Brew cask
 # ------------------------------------------
@@ -152,6 +153,10 @@ mkdir ~/.vim/syntax
 cp cypher.vim ~/.vim/syntax
 cp sparql.vim ~/.vim/syntax
 cp log.vim ~/.vim/syntax
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins
+
 
 # Vim Plug
 # ------------------------------------------
