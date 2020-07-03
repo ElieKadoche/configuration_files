@@ -25,6 +25,7 @@ pandas
 Pillow
 pip-review
 proselint
+ptpython
 PuLP
 PyAutoGUI
 pybind11
