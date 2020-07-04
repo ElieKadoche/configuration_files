@@ -4,22 +4,30 @@ plugins=(
     colorize
     cp
     extract
-    osx
     pep8
     pip
     python
     rand-quote
     vi-mode
     web-search
-    zsh-autosuggestions
 )
+
+# System specific
+# ------------------------------------------
+
+ORIGIN="/Volumes/marvin_data"
+# ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
+# alias pbcopy="termux-clipboard-set"
+alias m=cd $ORIGIN
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/eliekadoche/.oh-my-zsh"
+# export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
+
+# ------------------------------------------
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation. MacOS or Termux
-export ZSH="/Users/eliekadoche/.oh-my-zsh"
-# export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -115,6 +123,9 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# My custom .zshrc
+# ------------------------------------------
+
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
 alias python="python3"
@@ -123,17 +134,7 @@ alias pip="pip3"
 eval $(thefuck --alias)
 eval $(thefuck --alias damn)
 
-# For Termux only
-# alias pbcopy="termux-clipboard-set"
-
-# Main directory. MacOS or Termux
-# alias m="cd /data/data/com.termux/files/home/storage/shared/marvin_data"
-alias m="cd /Volumes/marvin_data"
-
-# MacOS only
-alias rmtrash="rm -rf ~/.Trash/*"
-
-# For Termux, change gls to ls
+# If not on MacOS, change gls to ls
 alias ls="gls --all \
               --author \
               --color=auto \
@@ -147,7 +148,8 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias du="du -shc * | sort -h"
 alias grep="grep --color=auto"
-alias lpl="python lesspass/cli/lesspass/core.py"
+alias rmtrash="rm -rf ~/.Trash/*"
+alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
@@ -234,5 +236,29 @@ renameSameExtension() {
     ls -tr | find . -name "*.$1" | cat -n | while read n f; do mv "$f" `printf "%d_file.jpg" $n-1`; done
 }
 
-source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+update_master() {
+    # MacOS
+    brew update
+    brew upgrade
+    brew cleanup
+    brew cask upgrade --greedy
+    softwareupdate --install --all
+
+    # Termux
+    # pkg upgrade
+    # pkg update
+
+    # Global
+    upgrade_oh_my_zsh
+    python3 -m pip install --upgrade pip
+    pip-review --local --auto
+    python3 -m pip install ./lesspass/cli
+    python3 ~/.vim/plugged/YouCompleteMe/install.py --all
+    vim +"PlugUpgrade" +qa
+    vim +"PlugUpdate" +qa
+    vim +"PlugClean" +qa
+    vim +"PlugInstall" +qa
+}
+
+source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
