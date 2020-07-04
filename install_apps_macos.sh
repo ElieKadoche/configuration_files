@@ -58,14 +58,12 @@ brew tap homebrew/cask-fonts
 
 echo "Running brew..."
 
-brew install alexjs
 brew install bibclean
 brew install clang-format
 brew install clinfo
 brew install cmake
 brew install cmatrix
 brew install coreutils
-brew install emojify
 brew install ffmpeg
 brew install gcc
 brew install geos
@@ -85,7 +83,6 @@ brew install prettier
 brew install proj
 brew install pwgen
 brew install python3
-brew install redpen
 brew install sshfs
 brew install swi-prolog
 brew install thefuck
@@ -96,8 +93,6 @@ brew install uncrustify
 brew install unrar
 brew install watch
 brew install wget
-brew install write-good
-brew install zsh-syntax-highlighting
 
 # Brew cask
 # ------------------------------------------
@@ -154,10 +149,6 @@ cp cypher.vim ~/.vim/syntax
 cp sparql.vim ~/.vim/syntax
 cp log.vim ~/.vim/syntax
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins
-
-
 # Vim Plug
 # ------------------------------------------
 
@@ -175,5 +166,5 @@ sudo pip install -r requirements.txt
 # Others
 # ------------------------------------------
 
-# Install cgoban from https://www.gokgs.com/download.jsp.
-# Install Audacity (no hombrew support for the moment).
+# Install cgoban from https://www.gokgs.com/download.jsp
+# Install Audacity (no hombrew support for the moment)

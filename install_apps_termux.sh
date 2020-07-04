@@ -12,8 +12,8 @@ pkg install vim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-cp .vimrc ~ # Uncomment termux lines and comment macOS lines
-cp .zshrc ~ # Uncomment termux lines and comment macOS lines
+cp .vimrc ~
+cp .zshrc ~
 
 mkdir ~/.vim/syntax
 cp cypher.vim ~/.vim/syntax
@@ -52,12 +52,14 @@ git config --global credential.helper store
 # ------------------------------------------
 
 pkg install cmatrix
+pkg install ffmpeg
 pkg install imagemagick
 pkg install ghostscript
 pkg install git
 pkg install htop
 pkg install mpv
 pkg install openssl-tool
+pkg install pwgen
 pkg install termux-api
 
 # 2 different options
@@ -71,8 +73,7 @@ pkg install zip
 pkg install unrar
 pkg install unzip
 
-# Python packages
-# All packages will not work, be careful
+# Python packages (all packages will not work, be careful)
 # ------------------------------------------
 
 echo "Installing python packages..."

@@ -17,7 +17,7 @@ Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
 
 " Syntax
-" ---------------------------
+" ------------------------------------------
 
 syntax on
 syntax enable
@@ -29,7 +29,8 @@ au BufRead,BufNewFile *.log set filetype=log
 autocmd FileType python set colorcolumn=79
 
 " Buffers
-" ---------------------------
+" ------------------------------------------
+
 set hidden
 let no_buffers_menu=1
 
@@ -47,7 +48,7 @@ noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
 " Colors
-" ---------------------------
+" ------------------------------------------
 
 colorscheme gruvbox
 set background=dark
@@ -63,12 +64,12 @@ endif
 set encoding=utf8
 
 " identLine
-" ---------------------------
+" ------------------------------------------
 
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " ctrlp
-" ---------------------------
+" ------------------------------------------
 
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
@@ -77,7 +78,7 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
-" ---------------------------
+" ------------------------------------------
 
 try
     set undodir=~/.vim_runtime/temp_dirs/undodir
@@ -86,12 +87,12 @@ catch
 endtry
 
 " Rainbow
-" ---------------------------
+" ------------------------------------------
 
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 1 " Set to 0 if you want to enable it later via :RainbowToggle
 
 " YCM and UltiSnips
-" ---------------------------
+" ------------------------------------------
 
 let g:ycm_autoclose_preview_window_after_completion=1
 
@@ -106,7 +107,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Leader
-" ---------------------------
+" ------------------------------------------
 
 let mapleader=','
 
@@ -124,13 +125,13 @@ nnoremap <leader>sf :set spelllang=fr<cr>
 nnoremap <leader>se :set spelllang=en<cr>
 
 " ALE
-" ---------------------------
+" ------------------------------------------
 
 let g:ale_linters = {
 \    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
-\    'markdown': ['alex', 'proselint', 'redpen', 'writegood'],
-\    'text': ['alex', 'proselint', 'redpen', 'writegood'],
-\    'tex': ['alex', 'writegood', 'redpen', 'lacheck'],
+\    'markdown': ['proselint'],
+\    'text': ['proselint'],
+\    'tex': ['lacheck'],
 \    'cpp': ['clang'],
 \    'bib': ['bibclean'],
 \}
@@ -156,7 +157,7 @@ let g:ale_sign_warning = '--'
 let g:ale_fix_on_save=1
 
 " Others
-" ---------------------------
+" ------------------------------------------
 
 " Enable filetype plugins
 filetype plugin on
