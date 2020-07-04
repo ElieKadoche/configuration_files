@@ -1,12 +1,4 @@
-## Commands to update the system
-
-## Lesspass
-
-Install lesspass pip package from source. Go into the lesspass repository and execute:
-
-```shell
-pip install ./cli
-```
+# configuration_files
 
 ## Firefox
 
@@ -44,8 +36,4 @@ gtp -model <neural_net_path> -config <config_path>
 
 ## Tor
 
-Run tor in terminal. In network prefecerences, create new location, advanced settings, proxies, SOCKS Proxy, localhost:9050.
-
-## Vim
-
-After installation of Vim Plug, run `:PlugInstall` and `./install.py --all` in the repo of YouCompleteMe. `:PlugClean` to clean.
+Run tor in terminal. In network preferences, create new location, advanced settings, proxies, SOCKS Proxy, localhost:9050.
