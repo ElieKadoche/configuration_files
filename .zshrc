@@ -177,7 +177,7 @@ grepp() {
 }
 
 pyclean() {
-    find . -name "*.pyc" -exec rm -f {} \;
+    find . -name "*.pyc" -ls -delete;
     find . -name "__pycache__" -ls -delete;
     find . -name ".pytest_cache" -ls -delete;
 }
@@ -239,26 +239,31 @@ renameSameExtension() {
 
 update_master() {
     # MacOS
-    brew update
-    brew upgrade
-    brew cleanup
-    brew cask upgrade --greedy
-    softwareupdate --install --all
+    brew update;
+    brew upgrade;
+    brew cleanup;
+    brew cask upgrade --greedy;
+    softwareupdate --install --all;
 
     # Termux
-    # pkg upgrade
-    # pkg update
+    # pkg upgrade;
+    # pkg update;
+
+    # Ubuntu
+    # sudo apt-get update;
+    # sudo apt-get upgrade;
+    # sudo snap refresh;
 
     # Global
-    upgrade_oh_my_zsh
-    python3 -m pip install --upgrade pip
-    pip-review --local --auto
-    python3 -m pip install ./lesspass/cli
-    python3 ~/.vim/plugged/YouCompleteMe/install.py --all
-    vim +"PlugUpgrade" +qa
-    vim +"PlugUpdate" +qa
-    vim +"PlugClean" +qa
-    vim +"PlugInstall" +qa
+    upgrade_oh_my_zsh;
+    python3 -m pip install --upgrade pip;
+    pip-review --local --auto;
+    python3 -m pip install ./git_apps/lesspass/cli;
+    python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
+    vim +"PlugUpgrade" +qa;
+    vim +"PlugUpdate" +qa;
+    vim +"PlugClean" +qa;
+    vim +"PlugInstall" +qa;
 }
 
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh

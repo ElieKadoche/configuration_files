@@ -69,7 +69,6 @@ brew install gcc
 brew install geos
 brew install ghostscript
 brew install git
-brew install gnu-go
 brew install graphviz
 brew install htop
 brew install imagemagick
