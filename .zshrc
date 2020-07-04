@@ -18,7 +18,7 @@ plugins=(
 ORIGIN="/Volumes/marvin_data"
 # ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
 # alias pbcopy="termux-clipboard-set"
-alias m=cd $ORIGIN
+alias m="cd $ORIGIN"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/eliekadoche/.oh-my-zsh"
@@ -106,9 +106,9 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR="vim"
 else
-  export EDITOR='mvim'
+  export EDITOR="mvim"
 fi
 
 # Compilation flags
@@ -144,16 +144,17 @@ alias ls="gls --all \
               -l"
 
 alias e="exit"
-alias ..='cd ../'
-alias ...='cd ../../'
+alias ..="cd ../"
+alias ...="cd ../../"
 alias du="du -shc * | sort -h"
 alias grep="grep --color=auto"
 alias rmtrash="rm -rf ~/.Trash/*"
+alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
+alias rm__="find . -name '._*' -ls -delete"
 alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
 alias mpva="mpv --shuffle --no-video music/**/*"
 alias mpvo="mpv --shuffle --no-video music/others/**/*"
 alias mpvc="mpv --shuffle --no-video music/classical/**/*"
-alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias gitp="git pull"
 alias gits="git status"
 alias gitc="git cherry -v"
