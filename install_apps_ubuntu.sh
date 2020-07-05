@@ -55,6 +55,7 @@ sudo apt-get install leela-zero
 sudo apt-get install libav
 sudo apt-get install libreoffice
 sudo apt-get install mpv
+sudo apt-get install neofetch
 sudo apt-get install nmap
 sudo apt-get install pandoc
 # sudo apt-get install prettier

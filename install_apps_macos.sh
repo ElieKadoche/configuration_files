@@ -74,6 +74,7 @@ brew install htop
 brew install imagemagick
 brew install leela-zero
 brew install libav
+brew install neofetch
 brew install nmap
 brew install osx-cpu-temp
 brew install pandoc

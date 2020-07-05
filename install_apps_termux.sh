@@ -58,6 +58,7 @@ pkg install ghostscript
 pkg install git
 pkg install htop
 pkg install mpv
+pkg install neofetch
 pkg install openssl-tool
 pkg install pwgen
 pkg install termux-api
