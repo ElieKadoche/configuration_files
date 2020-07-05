@@ -244,6 +244,8 @@ update_master() {
     brew cleanup;
     brew cask upgrade --greedy;
     softwareupdate --install --all;
+    # brew cleanup;
+    # brew doctor;
 
     # Termux
     # pkg upgrade;
@@ -253,6 +255,7 @@ update_master() {
     # sudo apt-get update;
     # sudo apt-get upgrade;
     # sudo snap refresh;
+    # sudo apt-get dist-upgrade;
 
     # Global
     upgrade_oh_my_zsh;
