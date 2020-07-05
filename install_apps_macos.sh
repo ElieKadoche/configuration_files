@@ -72,7 +72,6 @@ brew install git
 brew install graphviz
 brew install htop
 brew install imagemagick
-brew install katago
 brew install leela-zero
 brew install libav
 brew install nmap
@@ -110,7 +109,6 @@ brew cask install google-earth-pro
 brew cask install gopanda
 brew cask install intellij-idea-ce
 brew cask install libreoffice
-brew cask install lulu
 brew cask install mactex
 brew cask install macvim
 brew cask install mpv

@@ -1,11 +1,20 @@
 #!/bin/zsh
 
+# Activating repo
+# ------------------------------------------
+
+echo "Activating repo..."
+
+# All packages in /etc/apt/sources.list(d)
+sudo add-apt-repository main
+sudo add-apt-repository universe
+sudo add-apt-repository multiverse
+sudo add-apt-repository restricted
+sudo apt-get update
+
 # Installation de zsh
 # ------------------------------------------
 
-# All packages in /etc/apt/sources.list(d)
-sudo add-apt-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
-sudo apt-get update
 sudo apt-get install zsh
 chsh
 
@@ -34,16 +43,11 @@ sudo apt-get install ffmpeg
 sudo apt-get install firefox
 sudo apt-get install flashplugin-installer
 sudo apt-get install gcc
-# sudo apt-get install geos
-# sudo apt-get install ghostscript
+sudo apt-get install geos
+sudo apt-get install ghostscript
 sudo apt-get install gimp
 sudo apt-get install git
-
 sudo apt-get install googleearth-package
-make-googleearth-package --force
-sudo dpkg -i googleearth*.deb
-sudo apt-get -f install
-
 sudo apt-get install graphviz
 sudo apt-get install htop
 sudo apt-get install imagemagick
@@ -54,7 +58,7 @@ sudo apt-get install mpv
 sudo apt-get install nmap
 sudo apt-get install pandoc
 # sudo apt-get install prettier
-# sudo apt-get install proj
+sudo apt-get install proj
 sudo apt-get install pwgen
 sudo apt-get install python3
 sudo apt-get install sshfs
@@ -79,12 +83,6 @@ echo "Running snap packages..."
 sudo snap install discord
 sudo snap install intellij-idea-community --classic
 sudo snap install pycharm-community --classic
-
-# sudo apt-get install gopanda
-# sudo apt-get install lulu
-# sudo apt-get install sabaki
-# sudo apt-get install skim
-# sudo apt-get install teamviewer
 
 # Git
 # ------------------------------------------
@@ -130,3 +128,4 @@ sudo pip install -r requirements.txt
 
 # Install cgoban from https://www.gokgs.com/download.jsp
 # Install source-sans-pro in Font Manager
+# Install gopanda, sabaki and teamviewer
