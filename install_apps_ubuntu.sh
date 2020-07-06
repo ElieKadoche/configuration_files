@@ -24,6 +24,13 @@ chsh
 # You can launch the script from here
 # ------------------------------------------
 
+# Homebrew
+# ------------------------------------------
+
+echo "Installing Linuxbrew..."
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 # APT
 # ------------------------------------------
 
@@ -58,7 +65,6 @@ sudo apt-get install mpv
 sudo apt-get install neofetch
 sudo apt-get install nmap
 sudo apt-get install pandoc
-# sudo apt-get install prettier
 sudo apt-get install proj
 sudo apt-get install pwgen
 sudo apt-get install python3
@@ -84,6 +90,12 @@ echo "Running snap packages..."
 sudo snap install discord
 sudo snap install intellij-idea-community --classic
 sudo snap install pycharm-community --classic
+
+# Linuxbrew
+# ------------------------------------------
+
+echo "Installing brew..."
+brew install prettier
 
 # Git
 # ------------------------------------------
