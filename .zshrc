@@ -238,14 +238,15 @@ renameSameExtension() {
 }
 
 update_master() {
-    # MacOS
+    # Homebrew
     brew update;
     brew upgrade;
     brew cleanup;
+    # brew doctor;
+
+    # MacOS
     brew cask upgrade --greedy;
     softwareupdate --install --all;
-    # brew cleanup;
-    # brew doctor;
 
     # Termux
     # pkg upgrade;
