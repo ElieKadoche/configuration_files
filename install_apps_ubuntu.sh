@@ -36,27 +36,31 @@ echo "Installing Linuxbrew..."
 
 echo "Running apt packages..."
 
+# From main
+sudo apt-get install cmake
+sudo apt-get install coreutils
+sudo apt-get install firefox
+sudo apt-get install gcc
+sudo apt-get install ghostscript
+sudo apt-get install git
+sudo apt-get install htop
+sudo apt-get install python3
+sudo apt-get install vim
+sudo apt-get install wget
+
+# From universe
 sudo apt-get install audacity
 sudo apt-get install bibclean
 sudo apt-get install blender
 sudo apt-get install clang-format
 sudo apt-get install clinfo
 sudo apt-get install cloudcompare
-sudo apt-get install cmake
 sudo apt-get install cmatrix
-sudo apt-get install coreutils
 sudo apt-get install exfat-fuse
 sudo apt-get install ffmpeg
-sudo apt-get install firefox
-sudo apt-get install flashplugin-installer
-sudo apt-get install gcc
 sudo apt-get install geos
-sudo apt-get install ghostscript
 sudo apt-get install gimp
-sudo apt-get install git
-sudo apt-get install googleearth-package
 sudo apt-get install graphviz
-sudo apt-get install htop
 sudo apt-get install imagemagick
 sudo apt-get install leela-zero
 sudo apt-get install libav
@@ -67,7 +71,6 @@ sudo apt-get install nmap
 sudo apt-get install pandoc
 sudo apt-get install proj
 sudo apt-get install pwgen
-sudo apt-get install python3
 sudo apt-get install sshfs
 sudo apt-get install swi-prolog
 sudo apt-get isntall texlive-full
@@ -77,10 +80,11 @@ sudo apt-get install tldr
 sudo apt-get install tor
 sudo apt-get install tree
 sudo apt-get install uncrustify
-sudo apt-get install unrar
-sudo apt-get install vim
-sudo apt-get install watch
-sudo apt-get install wget
+
+# From multiverse
+sudo apt-get install flashplugin-installer  # multiverse
+sudo apt-get install googleearth-package  # multiverse
+sudo apt-get install unrar  # multiverse
 
 # Snap
 # ------------------------------------------
