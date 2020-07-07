@@ -262,7 +262,7 @@ update_master() {
     upgrade_oh_my_zsh;
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
-    python3 -m pip install ./git_apps/lesspass/cli;
+    python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
     python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
