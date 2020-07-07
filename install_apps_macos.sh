@@ -165,4 +165,4 @@ sudo pip install -r requirements.txt
 # ------------------------------------------
 
 # Install cgoban from https://www.gokgs.com/download.jsp
-# Install Audacity (no hombrew support for the moment)
+# Install Audacity (no homebrew support for the moment)
