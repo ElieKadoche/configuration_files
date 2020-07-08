@@ -301,7 +301,7 @@ master_compile() {
         cd ../Katago;
         if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
-        cmake . -DUSE_BACKEND=OPENC
+        cmake .. -DUSE_BACKEND=OPENC
         make
     fi
     cd $ORIGIN
