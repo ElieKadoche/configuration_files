@@ -299,9 +299,9 @@ master_compile() {
 
         # Katago
         cd ../Katago;
-        if [ -d "./build" ]; then rm -rf ./build; fi
+        if [ -d "./build/cpp" ]; then rm -rf ./build; fi
         mkdir build; cd build;
-        cmake .. -DUSE_BACKEND=OPENC
+        cmake .. -DUSE_BACKEND=OPENCL
         make
     fi
     cd $ORIGIN
