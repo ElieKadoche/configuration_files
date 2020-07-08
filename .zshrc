@@ -250,18 +250,81 @@ renameSameExtension() {
     ls -tr | find . -name "*.$1" | cat -n | while read n f; do mv "$f" `printf "%d_file.jpg" $n-1`; done
 }
 
-update_master() {
+# Git master
+# ------------------------------------------
+
+# Argument is the command to execute (status, pull, etc.)
+master_git() {
+    cd $ORIGIN/documents/git;
+    for i in */.git; do (
+        echo $i;
+        cd $i/..;
+        git $1;
+    );
+    done
+
+    cd $ORIGIN/documents/git_others;
+    for i in */.git; do (
+        echo $i;
+        cd $i/..;
+        git $1;
+    );
+    done
+
+    cd $ORIGIN/git_apps;
+    for i in */.git; do (
+        echo $i;
+        cd $i/..;
+        git $1;
+    );
+    done
+    cd $ORIGIN
+}
+
+# Master compile
+# ------------------------------------------
+
+master_compile() {
+    # Lesspass
+    python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
+
+    if [ "$SYSTEM" != "2" ]; then
+        # YouCompleteMe
+        python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
+
+        # Sabaki
+        cd $ORIGIN/git_apps/Sabaki;
+        npm install;
+        npm run build;
+
+        # Katago
+        cd ../Katago;
+        if [ -d "./build" ]; then rm -rf ./build; fi
+        mkdir build; cd build;
+        cmake . -DUSE_BACKEND=OPENC
+        make
+    fi
+    cd $ORIGIN
+}
+
+# Master update
+# ------------------------------------------
+
+master_update() {
     if [ "$SYSTEM" = "2" ]; then
         # Termux
         pkg upgrade;
         pkg update;
 
     else
+        # Node
+        npm install -g npm;
+
         # Homebrew
         brew update;
         brew upgrade;
         brew cleanup;
-        # brew doctor;
+        brew doctor;
 
         if [ "$SYSTEM" = "0" ]; then
             # MacOS
@@ -281,15 +344,10 @@ update_master() {
     upgrade_oh_my_zsh;
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
-    python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
     vim +"PlugClean" +qa;
     vim +"PlugInstall" +qa;
-
-    if [ "$SYSTEM" != "2" ]; then
-        python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
-    fi
 }
 
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
