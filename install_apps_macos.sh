@@ -99,6 +99,7 @@ brew install wget
 echo "Running brew cask..."
 
 brew cask install android-file-transfer
+brew cask install balenaetcher
 brew cask install blender
 brew cask install cloudcompare
 brew cask install discord
