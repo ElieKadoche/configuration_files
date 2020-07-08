@@ -68,6 +68,7 @@ sudo apt-get install libreoffice
 sudo apt-get install mpv
 sudo apt-get install neofetch
 sudo apt-get install nmap
+sudo apt-get install npm
 sudo apt-get install pandoc
 sudo apt-get install proj
 sudo apt-get install pwgen
@@ -151,4 +152,4 @@ sudo pip install -r requirements.txt
 
 # Install cgoban from https://www.gokgs.com/download.jsp
 # Install source-sans-pro in Font Manager
-# Install gopanda, sabaki and teamviewer
+# Install gopanda and teamviewer

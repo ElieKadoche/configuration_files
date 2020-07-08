@@ -76,6 +76,7 @@ brew install leela-zero
 brew install libav
 brew install neofetch
 brew install nmap
+brew install node
 brew install osx-cpu-temp
 brew install pandoc
 brew install prettier
@@ -116,7 +117,6 @@ brew cask install macvim
 brew cask install mpv
 brew cask install osxfuse
 brew cask install pycharm-ce
-brew cask install sabaki
 brew cask install shifty
 brew cask install skim
 brew cask install spectacle
