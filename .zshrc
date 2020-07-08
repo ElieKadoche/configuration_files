@@ -15,16 +15,22 @@ plugins=(
 # System specific
 # ------------------------------------------
 
-ORIGIN="/Volumes/marvin_data"
-# ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
-# alias pbcopy="termux-clipboard-set"
-alias m="cd $ORIGIN"
+# 0 for MacOS, 1 for Ubuntu, 2 for Termux
+SYSTEM="0"
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/eliekadoche/.oh-my-zsh"
-# export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
+if [ "$SYSTEM" = "0" ]; then
+    # Path to your oh-my-zsh installation.
+    export ZSH="/Users/eliekadoche/.oh-my-zsh"
+    ORIGIN="/Volumes/marvin_data"
+    alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
+    openfi() {open -a /Applications/Firefox.app/ $1}
 
-# ------------------------------------------
+elif [ "$SYSTEM" = "2" ]; then
+    # Path to your oh-my-zsh installation.
+    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
+    ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
+    alias pbcopy="termux-clipboard-set"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -131,25 +137,36 @@ PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%
 alias python="python3"
 alias pip="pip3"
 
-eval $(thefuck --alias)
-eval $(thefuck --alias damn)
+if [ "$SYSTEM" != "2" ]; then
+    eval $(thefuck --alias)
+    eval $(thefuck --alias damn)
+fi
 
-# If not on MacOS, change gls to ls
-alias ls="gls --all \
-              --author \
-              --color=auto \
-              --group-directories-first \
-              --human-readable \
-              --size \
-              -l"
+if [ "$SYSTEM" = "0" ]; then
+    alias ls="gls --all \
+                  --author \
+                  --color=auto \
+                  --group-directories-first \
+                  --human-readable \
+                  --size \
+                  -l"
+else
+    alias ls="ls --all \
+                  --author \
+                  --color=auto \
+                  --group-directories-first \
+                  --human-readable \
+                  --size \
+                  -l"
+fi
 
+alias m="cd $ORIGIN"
 alias e="exit"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias du="du -shc * | sort -h"
 alias grep="grep --color=auto"
 alias rmtrash="rm -rf ~/.Trash/*"
-alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
 alias rm__="find . -name '._*' -ls -delete"
 alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
 alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*"
@@ -180,10 +197,6 @@ pyclean() {
     find . -name "*.pyc" -ls -delete;
     find . -name "__pycache__" -ls -delete;
     find . -name ".pytest_cache" -ls -delete;
-}
-
-openfi() {
-    open -a /Applications/Firefox.app/ $1
 }
 
 # youtube-dl -F to see formats
@@ -238,36 +251,45 @@ renameSameExtension() {
 }
 
 update_master() {
-    # Homebrew
-    brew update;
-    brew upgrade;
-    brew cleanup;
-    # brew doctor;
+    if [ "$SYSTEM" = "2" ]; then
+        # Termux
+        pkg upgrade;
+        pkg update;
 
-    # MacOS
-    brew cask upgrade --greedy;
-    softwareupdate --install --all;
+    else
+        # Homebrew
+        brew update;
+        brew upgrade;
+        brew cleanup;
+        # brew doctor;
 
-    # Termux
-    # pkg upgrade;
-    # pkg update;
+        if [ "$SYSTEM" = "0" ]; then
+            # MacOS
+            brew cask upgrade --greedy;
+            softwareupdate --install --all;
 
-    # Ubuntu
-    # sudo apt-get update;
-    # sudo apt-get upgrade;
-    # sudo snap refresh;
-    # sudo apt-get dist-upgrade;
+        elif [ "$SYSTEM" = "1" ]; then
+            # Ubuntu
+            sudo apt-get update;
+            sudo apt-get upgrade;
+            sudo snap refresh;
+            sudo apt-get dist-upgrade;
+        fi
+    fi
 
     # Global
     upgrade_oh_my_zsh;
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
-    python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
     vim +"PlugClean" +qa;
     vim +"PlugInstall" +qa;
+
+    if [ "$SYSTEM" != "2" ]; then
+        python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
+    fi
 }
 
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
