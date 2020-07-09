@@ -61,6 +61,7 @@ sudo apt-get install ffmpeg
 sudo apt-get install geos
 sudo apt-get install gimp
 sudo apt-get install graphviz
+sudo apt-get install inkscape
 sudo apt-get install imagemagick
 sudo apt-get install leela-zero
 sudo apt-get install libav
