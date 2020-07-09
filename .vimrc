@@ -77,6 +77,12 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
+" LaTeX
+" ------------------------------------------
+
+" In tex files, no preview
+let g:tex_conceal = ''
+
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
 " ------------------------------------------
 
@@ -264,6 +270,3 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " Does not quit visual mode
 vmap < <gv
 vmap > >gv
-
-" In tex files, no preview
-let g:tex_conceal = ''
