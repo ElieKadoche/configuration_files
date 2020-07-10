@@ -37,6 +37,7 @@ echo "Installing Linuxbrew..."
 echo "Running apt packages..."
 
 # From main
+sudo apt-get install build-essential
 sudo apt-get install cmake
 sudo apt-get install coreutils
 sudo apt-get install firefox
