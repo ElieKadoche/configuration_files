@@ -278,7 +278,14 @@ master_git() {
         git $1;
     );
     done
+
     cd $ORIGIN
+    for i in */.git; do (
+        echo $i;
+        cd $i/..;
+        git $1;
+    );
+    done
 }
 
 # Master compile
