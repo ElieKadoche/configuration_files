@@ -16,7 +16,7 @@ plugins=(
 # ------------------------------------------
 
 # 0 for MacOS, 1 for Ubuntu, 2 for Termux
-SYSTEM="0"
+SYSTEM="1"
 
 if [ "$SYSTEM" = "0" ]; then
     # Path to your oh-my-zsh installation.
@@ -24,6 +24,13 @@ if [ "$SYSTEM" = "0" ]; then
     ORIGIN="/Volumes/marvin_data"
     alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
     openfi() {open -a /Applications/Firefox.app/ $1}
+
+elif [ "$SYSTEM" = "1" ]; then
+    export ZSH="/home/elie_kadoche/.oh-my-zsh"
+    ORIGIN="/home/elie_kadoche/data"
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    alias pbcopy="xclip -selection clipboard"
+    alias pbpaste="xclip -selection clipboard -o"
 
 elif [ "$SYSTEM" = "2" ]; then
     # Path to your oh-my-zsh installation.
