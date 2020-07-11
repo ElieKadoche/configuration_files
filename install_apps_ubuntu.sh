@@ -46,6 +46,7 @@ sudo apt-get install gcc
 sudo apt-get install ghostscript
 sudo apt-get install git
 sudo apt-get install htop
+sudo apt-get install ocl-icd-opencl-dev
 sudo apt-get install python3
 sudo apt-get install vim
 sudo apt-get install wget
@@ -61,12 +62,15 @@ sudo apt-get install cmatrix
 sudo apt-get install exfat-fuse
 sudo apt-get install ffmpeg
 sudo apt-get install gimp
+sudo apt-get install gnome-tweak-tool
 sudo apt-get install graphviz
 sudo apt-get install inkscape
 sudo apt-get install imagemagick
 sudo apt-get install leela-zero
 sudo apt-get install libgeos++-dev
+sudo apt-get install libboost-all-dev
 sudo apt-get install libreoffice
+sudo apt-get install libzip-dev
 sudo apt-get install mpv
 sudo apt-get install neofetch
 sudo apt-get install nmap
