@@ -209,7 +209,7 @@ pyclean() {
 
 # youtube-dl -F to see formats
 yyy() {
-    youtube-dl $1 -f 251 -x --audio-format "mp3" --rm-cache-dir
+    youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir
 }
 
 # Create a password of size $1
