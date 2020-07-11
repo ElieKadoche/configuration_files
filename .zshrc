@@ -312,8 +312,8 @@ master_compile() {
         npm run build;
 
         # Katago
-        cd ../Katago;
-        if [ -d "./build/cpp" ]; then rm -rf ./build; fi
+        cd $ORIGIN/git_apps/KataGo/cpp;
+        if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
         cmake .. -DUSE_BACKEND=OPENCL
         make
