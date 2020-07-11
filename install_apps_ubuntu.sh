@@ -16,10 +16,7 @@ sudo apt-get update
 # ------------------------------------------
 
 sudo apt-get install zsh
-chsh
-
-# Then, type /bin/zsh
-# See /etc/zshrc
+chsh -s $(which zsh)
 
 # You can launch the script from here
 # ------------------------------------------
@@ -29,15 +26,19 @@ chsh
 
 echo "Installing Linuxbrew..."
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # APT
 # ------------------------------------------
 
 echo "Running apt packages..."
 
+
 # From main
 sudo apt-get install build-essential
+sudo apt-get install curl
 sudo apt-get install cmake
 sudo apt-get install coreutils
 sudo apt-get install firefox
@@ -59,21 +60,22 @@ sudo apt-get install cloudcompare
 sudo apt-get install cmatrix
 sudo apt-get install exfat-fuse
 sudo apt-get install ffmpeg
-sudo apt-get install geos
 sudo apt-get install gimp
 sudo apt-get install graphviz
 sudo apt-get install inkscape
 sudo apt-get install imagemagick
 sudo apt-get install leela-zero
-sudo apt-get install libav
+sudo apt-get install libgeos++-dev
 sudo apt-get install libreoffice
 sudo apt-get install mpv
 sudo apt-get install neofetch
 sudo apt-get install nmap
 sudo apt-get install npm
 sudo apt-get install pandoc
-sudo apt-get install proj
 sudo apt-get install pwgen
+sudo apt-get install python3-pip
+sudo apt-get install python3-pygame
+sudo apt-get install python3-cartopy
 sudo apt-get install sshfs
 sudo apt-get install swi-prolog
 sudo apt-get isntall texlive-full
@@ -83,11 +85,11 @@ sudo apt-get install tldr
 sudo apt-get install tor
 sudo apt-get install tree
 sudo apt-get install uncrustify
+sudo apt-get install xclip
 
 # From multiverse
-sudo apt-get install flashplugin-installer  # multiverse
-sudo apt-get install googleearth-package  # multiverse
-sudo apt-get install unrar  # multiverse
+sudo apt-get install flashplugin-installer
+sudo apt-get install unrar
 
 # Etcher
 echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
@@ -108,6 +110,8 @@ sudo snap install pycharm-community --classic
 # ------------------------------------------
 
 echo "Installing brew..."
+
+# Carefull here, linuxbrew may install its own python3 for certain package
 brew install prettier
 
 # Git
@@ -130,6 +134,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cp .vimrc ~
 cp .zshrc ~
 
+mkdir ~/.vim
 mkdir ~/.vim/syntax
 cp cypher.vim ~/.vim/syntax
 cp sparql.vim ~/.vim/syntax
@@ -147,11 +152,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 echo "Installing python packages..."
 
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 
 # Others
 # ------------------------------------------
 
-# Install cgoban from https://www.gokgs.com/download.jsp
-# Install source-sans-pro in Font Manager
-# Install gopanda and teamviewer
+# Install cgoban, source-sans-pro and gopand (miscellaneous folder)
+# Install teamviewer and google earth
