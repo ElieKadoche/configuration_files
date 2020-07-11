@@ -101,6 +101,10 @@ sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE19
 sudo apt-get update
 sudo apt-get install balena-etcher-electron
 
+# Alacritty
+sudo add-apt-repository ppa:mmstick76/alacritty
+sudo apt-get install alacritty
+
 # Snap
 # ------------------------------------------
 
