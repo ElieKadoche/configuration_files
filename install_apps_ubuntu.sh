@@ -89,6 +89,7 @@ sudo apt-get install tldr
 sudo apt-get install tor
 sudo apt-get install tree
 sudo apt-get install uncrustify
+sudo apt-get install vim-gui-common
 sudo apt-get install xclip
 
 # From multiverse
@@ -100,10 +101,6 @@ echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.
 sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
 sudo apt-get update
 sudo apt-get install balena-etcher-electron
-
-# Alacritty
-sudo add-apt-repository ppa:mmstick76/alacritty
-sudo apt-get install alacritty
 
 # Snap
 # ------------------------------------------

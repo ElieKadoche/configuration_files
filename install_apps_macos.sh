@@ -99,7 +99,6 @@ brew install wget
 
 echo "Running brew cask..."
 
-brew cask install alacritty
 brew cask install android-file-transfer
 brew cask install balenaetcher
 brew cask install blender
