@@ -29,6 +29,7 @@ elif [ "$SYSTEM" = "1" ]; then
     export ZSH="/home/elie_kadoche/.oh-my-zsh"
     ORIGIN="/home/elie_kadoche/data"
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    export PATH="/home/elie_kadoche/.local/bin:$PATH"
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
 
