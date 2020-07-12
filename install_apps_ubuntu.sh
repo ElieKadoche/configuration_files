@@ -10,12 +10,12 @@ sudo add-apt-repository main
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 sudo add-apt-repository restricted
-sudo apt-get update
+sudo apt update
 
 # Installation de zsh
 # ------------------------------------------
 
-sudo apt-get install zsh
+sudo apt install zsh
 chsh -s $(which zsh)
 
 # You can launch the script from here
@@ -37,71 +37,71 @@ echo "Running apt packages..."
 
 
 # From main
-sudo apt-get install build-essential
-sudo apt-get install curl
-sudo apt-get install cmake
-sudo apt-get install coreutils
-sudo apt-get install firefox
-sudo apt-get install gcc
-sudo apt-get install ghostscript
-sudo apt-get install git
-sudo apt-get install htop
-sudo apt-get install ocl-icd-opencl-dev
-sudo apt-get install python3
-sudo apt-get install vim
-sudo apt-get install wget
+sudo apt install build-essential
+sudo apt install curl
+sudo apt install cmake
+sudo apt install coreutils
+sudo apt install firefox
+sudo apt install gcc
+sudo apt install ghostscript
+sudo apt install git
+sudo apt install htop
+sudo apt install ocl-icd-opencl-dev
+sudo apt install python3
+sudo apt install vim
+sudo apt install wget
 
 # From universe
-sudo apt-get install audacity
-sudo apt-get install bibclean
-sudo apt-get install blender
-sudo apt-get install clang-format
-sudo apt-get install clinfo
-sudo apt-get install cloudcompare
-sudo apt-get install cmatrix
-sudo apt-get install exfat-fuse
-sudo apt-get install ffmpeg
-sudo apt-get install gimp
-sudo apt-get install gnome-tweak-tool
-sudo apt-get install graphviz
-sudo apt-get install inkscape
-sudo apt-get install imagemagick
-sudo apt-get install leela-zero
-sudo apt-get install libgeos++-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install libreoffice
-sudo apt-get install libzip-dev
-sudo apt-get install mpv
-sudo apt-get install neofetch
-sudo apt-get install nmap
-sudo apt-get install npm
-sudo apt-get install pandoc
-sudo apt-get install pwgen
-sudo apt-get install python3-pip
-sudo apt-get install python3-pygame
-sudo apt-get install python3-cartopy
-sudo apt-get install sshfs
-sudo apt-get install swi-prolog
-sudo apt-get isntall texlive-full
-sudo apt-get install texstudio
-sudo apt-get install thefuck
-sudo apt-get install tldr
-sudo apt-get install tor
-sudo apt-get install tree
-sudo apt-get install uncrustify
-sudo apt-get install vim-gui-common
-sudo apt-get install xclip
-sudo apt-get install xtrlock
+sudo apt install audacity
+sudo apt install bibclean
+sudo apt install blender
+sudo apt install clang-format
+sudo apt install clinfo
+sudo apt install cloudcompare
+sudo apt install cmatrix
+sudo apt install exfat-fuse
+sudo apt install ffmpeg
+sudo apt install gimp
+sudo apt install gnome-tweak-tool
+sudo apt install graphviz
+sudo apt install inkscape
+sudo apt install imagemagick
+sudo apt install leela-zero
+sudo apt install libgeos++-dev
+sudo apt install libboost-all-dev
+sudo apt install libreoffice
+sudo apt install libzip-dev
+sudo apt install mpv
+sudo apt install neofetch
+sudo apt install nmap
+sudo apt install npm
+sudo apt install pandoc
+sudo apt install pwgen
+sudo apt install python3-pip
+sudo apt install python3-pygame
+sudo apt install python3-cartopy
+sudo apt install sshfs
+sudo apt install swi-prolog
+sudo apt isntall texlive-full
+sudo apt install texstudio
+sudo apt install thefuck
+sudo apt install tldr
+sudo apt install tor
+sudo apt install tree
+sudo apt install uncrustify
+sudo apt install vim-gui-common
+sudo apt install xclip
+sudo apt install xtrlock
 
 # From multiverse
-sudo apt-get install flashplugin-installer
-sudo apt-get install unrar
+sudo apt install flashplugin-installer
+sudo apt install unrar
 
 # Etcher
 echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
 sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
-sudo apt-get update
-sudo apt-get install balena-etcher-electron
+sudo apt update
+sudo apt install balena-etcher-electron
 
 # Snap
 # ------------------------------------------
