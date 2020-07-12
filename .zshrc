@@ -32,6 +32,7 @@ elif [ "$SYSTEM" = "1" ]; then
     export PATH="/home/elie_kadoche/.local/bin:$PATH"
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
+    alias xx="xtrlock"
 
 elif [ "$SYSTEM" = "2" ]; then
     # Path to your oh-my-zsh installation.

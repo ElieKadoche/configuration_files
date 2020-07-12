@@ -91,6 +91,7 @@ sudo apt-get install tree
 sudo apt-get install uncrustify
 sudo apt-get install vim-gui-common
 sudo apt-get install xclip
+sudo apt-get install xtrlock
 
 # From multiverse
 sudo apt-get install flashplugin-installer
