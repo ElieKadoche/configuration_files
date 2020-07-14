@@ -166,7 +166,7 @@ else
                   --group-directories-first \
                   --human-readable \
                   --size \
-                  -l"
+                  -lv"
 fi
 
 alias m="cd $ORIGIN"
