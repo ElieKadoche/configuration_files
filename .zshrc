@@ -205,7 +205,7 @@ grepp() {
 pyclean() {
     find . -name "*.pyc" -ls -delete;
     find . -name "__pycache__" -ls -delete;
-    find . -name ".pytest_cache" -ls -delete;
+    find . -name ".pytest_cache" -exec rm -rf "{}" \;
 }
 
 # youtube-dl -F to see formats
