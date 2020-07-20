@@ -241,7 +241,12 @@ rmtex() {
 }
 
 compiletex() {
-    pdflatex "$1.tex"; pdflatex "$1.tex"; biber "$1"; makeglossaries "$1"; pdflatex "$1.tex"
+    pdflatex "$1.tex";
+    bibtex "$1";
+    # biber "$1";  # Both are usuable, depending on how the bibliography is made
+    makeglossaries "$1";
+    pdflatex "$1.tex";
+    pdflatex "$1.tex";
 }
 
 # findPid: find out the pid of a specified process
