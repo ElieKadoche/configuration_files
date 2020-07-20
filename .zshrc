@@ -354,10 +354,10 @@ master_update() {
 
         elif [ "$SYSTEM" = "1" ]; then
             # Ubuntu
-            sudo apt-get update;
-            sudo apt-get upgrade;
+            sudo apt update;
+            sudo apt upgrade;
             sudo snap refresh;
-            sudo apt-get dist-upgrade;
+            sudo apt dist-upgrade;
         fi
     fi
 
