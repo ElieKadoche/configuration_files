@@ -62,6 +62,7 @@ sudo apt install cmatrix
 sudo apt install exfat-fuse
 sudo apt install ffmpeg
 sudo apt install gimp
+sudo apt install gnome-shell-extensions
 sudo apt install gnome-tweak-tool
 sudo apt install graphviz
 sudo apt install inkscape
