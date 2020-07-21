@@ -371,5 +371,15 @@ master_update() {
     vim +"PlugInstall" +qa;
 }
 
+# Master all
+# ------------------------------------------
+
+master_all() {
+    master_git push;
+    master_git status;
+    master_update;
+    master_compile;
+}
+
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
