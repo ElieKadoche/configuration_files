@@ -78,11 +78,13 @@ sudo apt install nmap
 sudo apt install npm
 sudo apt install pandoc
 sudo apt install pwgen
+sudo apt install python-box2d
 sudo apt install python3-pip
 sudo apt install python3-pygame
 sudo apt install python3-cartopy
 sudo apt install sshfs
 sudo apt install swi-prolog
+sudo apt install swigg
 sudo apt isntall texlive-full
 sudo apt install texstudio
 sudo apt install thefuck

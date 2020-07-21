@@ -3,6 +3,7 @@ atari-py
 autopep8
 autokeras
 bandit
+box2d.py
 cartopy
 chroma
 configparser
@@ -36,6 +37,7 @@ pygame==2.0.0.dev10
 pygments
 pyinstaller
 pytest
+ray
 recommonmark
 regex
 requests
@@ -48,6 +50,7 @@ shapely
 simplekml
 speedtest-cli
 sphinx
+tensorboard
 tensorboardX
 tensorflow
 tinydb
