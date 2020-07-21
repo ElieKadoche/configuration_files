@@ -375,7 +375,7 @@ master_update() {
 # ------------------------------------------
 
 master_all() {
-    master_git push;
+    master_git pull;
     master_git status;
     master_update;
     master_compile;
