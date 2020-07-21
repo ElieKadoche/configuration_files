@@ -46,11 +46,11 @@ sudo apt install gcc
 sudo apt install ghostscript
 sudo apt install git
 sudo apt install htop
+sudo apt install libcairo2-dev
 sudo apt install ocl-icd-opencl-dev
 sudo apt install python3
 sudo apt install vim
 sudo apt install wget
-
 # From universe
 sudo apt install audacity
 sudo apt install bibclean
@@ -69,7 +69,10 @@ sudo apt install inkscape
 sudo apt install imagemagick
 sudo apt install leela-zero
 sudo apt install libgeos++-dev
+sudo apt install libgirepository1.0-dev
 sudo apt install libboost-all-dev
+sudo apt install libcups2-dev
+sudo apt install libproj-dev
 sudo apt install libreoffice
 sudo apt install libzip-dev
 sudo apt install mpv
@@ -78,6 +81,7 @@ sudo apt install nmap
 sudo apt install npm
 sudo apt install pandoc
 sudo apt install pwgen
+sudo apt install python-dev
 sudo apt install python-box2d
 sudo apt install python3-pip
 sudo apt install python3-pygame
