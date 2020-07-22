@@ -56,6 +56,8 @@ if g:colors_name == "gruvbox"
     highlight Normal ctermbg=16 guibg=#000000 guifg=#ffffff
 endif
 
+hi SpellBad cterm=underline
+
 " Set extra options when running in GUI mode
 if has('gui_running')
     set t_Co=256
