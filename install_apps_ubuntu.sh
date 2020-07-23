@@ -175,3 +175,4 @@ pip install -r requirements.txt
 # Install cgoban, source-sans-pro and gopand (miscellaneous folder)
 # Install teamviewer and google earth
 # Install and activate extensions, themes, icons, etc.
+# gnome-shell-extension-prefs for extensions preferences
