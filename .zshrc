@@ -316,7 +316,7 @@ master_compile() {
             cd $ORIGIN/git_apps/_customization/WhiteSur-gtk-theme;
             ./install.sh;
 
-            cd $ORIGIN/git_apps/_customization/dash_to_dock;
+            cd $ORIGIN/git_apps/_customization/dash-to-dock;
             make;
             make install;
             killall -3 gnome-shell;
