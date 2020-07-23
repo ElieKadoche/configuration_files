@@ -267,39 +267,26 @@ renameSameExtension() {
 # Git master
 # ------------------------------------------
 
+_private_gitpp() {
+    cd $1;
+    for i in */.git; do (
+        echo $i;
+        echo "------------------------------------------"
+        cd $i/..;
+        git $2;
+        echo "";
+    );
+    done
+}
+
 # Argument is the command to execute (status, pull, etc.)
 master_git() {
-    cd $ORIGIN/documents/git;
-    for i in */.git; do (
-        echo $i;
-        cd $i/..;
-        git $1;
-    );
-    done
-
-    cd $ORIGIN/documents/git_others;
-    for i in */.git; do (
-        echo $i;
-        cd $i/..;
-        git $1;
-    );
-    done
-
-    cd $ORIGIN/git_apps;
-    for i in */.git; do (
-        echo $i;
-        cd $i/..;
-        git $1;
-    );
-    done
-
-    cd $ORIGIN
-    for i in */.git; do (
-        echo $i;
-        cd $i/..;
-        git $1;
-    );
-    done
+    _private_gitpp $ORIGIN/documents/git $1;
+    _private_gitpp $ORIGIN/documents/git_others $1;
+    _private_gitpp $ORIGIN/git_apps $1;
+    _private_gitpp $ORIGIN/git_apps/_customization $1;
+    _private_gitpp $ORIGIN $1;
+    cd $ORIGIN;
 }
 
 # Master compile
@@ -322,10 +309,20 @@ master_compile() {
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
-        cmake .. -DUSE_BACKEND=OPENCL
-        make
+        cmake .. -DUSE_BACKEND=OPENCL;
+        make;
+
+        if [ "$SYSTEM" = "1" ]; then
+            cd $ORIGIN/git_apps/_customization/WhiteSur-gtk-theme;
+            ./install.sh;
+
+            cd $ORIGIN/git_apps/_customization/dash_to_dock;
+            make;
+            make install;
+            killall -3 gnome-shell;
+        fi
     fi
-    cd $ORIGIN
+    cd $ORIGIN;
 }
 
 # Master update
