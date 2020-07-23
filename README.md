@@ -15,6 +15,7 @@ General configuration files for MacOS, Ubuntu and Termux.
 - LessPass.
 - Markdown Here.
 - Popup Blocker.
+- Gnome extensions.
 
 ## Sabaki
 
