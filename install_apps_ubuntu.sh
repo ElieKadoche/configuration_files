@@ -51,6 +51,7 @@ sudo apt install ocl-icd-opencl-dev
 sudo apt install python3
 sudo apt install vim
 sudo apt install wget
+
 # From universe
 sudo apt install audacity
 sudo apt install bibclean
@@ -80,6 +81,7 @@ sudo apt install neofetch
 sudo apt install nmap
 sudo apt install npm
 sudo apt install pandoc
+sudo apt install papirus-icon-theme
 sudo apt install pwgen
 sudo apt install python-dev
 sudo apt install python-box2d
@@ -172,3 +174,4 @@ pip install -r requirements.txt
 
 # Install cgoban, source-sans-pro and gopand (miscellaneous folder)
 # Install teamviewer and google earth
+# Install and activate extensions, themes, icons, etc.
