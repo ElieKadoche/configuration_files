@@ -172,6 +172,8 @@ pip install -r requirements.txt
 # Others
 # ------------------------------------------
 
+cp gtk.css ~/.config/gtk-3.0/gtk.css
+
 # Install cgoban, source-sans-pro and gopand (miscellaneous folder)
 # Install teamviewer and google earth
 # Install and activate extensions, themes, icons, etc.
