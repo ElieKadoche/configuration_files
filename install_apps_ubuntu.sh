@@ -178,4 +178,4 @@ cp gtk.css ~/.config/gtk-3.0/gtk.css
 # Install cgoban, source-sans-pro and gopand (miscellaneous folder)
 # Install teamviewer and google earth
 # Install and activate extensions, themes, icons, etc.
-# gnome-shell-extension-prefs for extensions preferences
+# Extensions: application view columns, dash to dock, night light slider, openweather, etc.
