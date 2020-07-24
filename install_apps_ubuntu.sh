@@ -49,7 +49,6 @@ sudo apt install htop
 sudo apt install libcairo2-dev
 sudo apt install ocl-icd-opencl-dev
 sudo apt install python3
-sudo apt install vim
 sudo apt install wget
 
 # From universe
@@ -78,6 +77,7 @@ sudo apt install libreoffice
 sudo apt install libzip-dev
 sudo apt install mpv
 sudo apt install neofetch
+sudo apt install neovim
 sudo apt install nmap
 sudo apt install npm
 sudo apt install pandoc
@@ -98,7 +98,6 @@ sudo apt install tldr
 sudo apt install tor
 sudo apt install tree
 sudo apt install uncrustify
-sudo apt install vim-gui-common
 sudo apt install xclip
 sudo apt install xtrlock
 
@@ -136,7 +135,7 @@ echo "Configuring git..."
 
 git config --global user.name "Elie KADOCHE"
 git config --global user.email eliekadoche78@gmail.com
-git config --global core.editor vim
+git config --global core.editor nvim
 git config --global core.filemode false
 git config --global credential.helper store
 
@@ -146,21 +145,22 @@ git config --global credential.helper store
 echo "Setting zsh and vim..."
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp .vimrc ~
-cp .zshrc ~
 
-mkdir ~/.vim
-mkdir ~/.vim/syntax
-cp cypher.vim ~/.vim/syntax
-cp sparql.vim ~/.vim/syntax
-cp log.vim ~/.vim/syntax
+mkdir ~/.config/nvim
+cp init.vim ~/.config/nvim/init.vim
+
+mkdir ~/.config/nvim/syntax
+cp cypher.vim ~/.config/nvim/syntax/cypher.vim
+cp sparql.vim ~/.config/nvim/syntax/sparql.vim
+cp log.vim ~/.config/nvim/syntax/log.vim
 
 # Vim Plug
 # ------------------------------------------
 
 echo "Installing Vim Plug..."
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Python packages
 # ------------------------------------------

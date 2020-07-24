@@ -120,11 +120,11 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR="vim"
-else
-  export EDITOR="mvim"
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR="vim"
+# else
+#   export EDITOR="mvim"
+# fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -143,6 +143,7 @@ export ARCHFLAGS="-arch x86_64"
 
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
+alias vim=nvim
 alias python="python3"
 alias pip="pip3"
 
@@ -298,7 +299,7 @@ master_compile() {
 
     if [ "$SYSTEM" != "2" ]; then
         # YouCompleteMe
-        python3 ~/.vim/plugged/YouCompleteMe/install.py --all;
+        python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
 
         # Sabaki
         cd $ORIGIN/git_apps/Sabaki;

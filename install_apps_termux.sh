@@ -8,20 +8,21 @@ pkg install git
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 termux-setup-storage
-pkg install vim
+pkg install neovim
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-cp .vimrc ~
-cp .zshrc ~
-
-mkdir ~/.vim/syntax
-cp cypher.vim ~/.vim/syntax
-cp sparql.vim ~/.vim/syntax
-cp log.vim ~/.vim/syntax
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # You can launch the script from here
 # ------------------------------------------
+
+mkdir ~/.config/nvim
+cp init.vim ~/.config/nvim/init.vim
+
+mkdir ~/.config/nvim/syntax
+cp cypher.vim ~/.config/nvim/syntax/cypher.vim
+cp sparql.vim ~/.config/nvim/syntax/sparql.vim
+cp log.vim ~/.config/nvim/syntax/log.vim
 
 # Configuration
 # ------------------------------------------
@@ -44,7 +45,7 @@ echo "Configuring git..."
 
 git config --global user.name "Elie KADOCHE"
 git config --global user.email eliekadoche78@gmail.com
-git config --global core.editor vim
+git config --global core.editor nvim
 git config --global core.filemode false
 git config --global credential.helper store
 
