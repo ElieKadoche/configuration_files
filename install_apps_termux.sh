@@ -20,9 +20,9 @@ mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 
 mkdir ~/.config/nvim/syntax
-cp cypher.vim ~/.config/nvim/syntax/cypher.vim
-cp sparql.vim ~/.config/nvim/syntax/sparql.vim
-cp log.vim ~/.config/nvim/syntax/log.vim
+cp others/cypher.vim ~/.config/nvim/syntax/cypher.vim
+cp others/sparql.vim ~/.config/nvim/syntax/sparql.vim
+cp others/log.vim ~/.config/nvim/syntax/log.vim
 
 # Configuration
 # ------------------------------------------
