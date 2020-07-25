@@ -2,7 +2,7 @@
 
 General configuration files for MacOS, Ubuntu and Termux.
 
-- `.vimrc`: vim configuration.
+- `init.vim`: vim configuration.
 - `.zshrc`: zsh configuration.
 - `install_apps_X.sh`: installation and configuration script for system X.
 - `requirements.txt`: python pip packages.
