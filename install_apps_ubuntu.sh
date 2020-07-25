@@ -173,6 +173,9 @@ pip install -r requirements.txt
 # Others
 # ------------------------------------------
 
+# Activate firewall linux
+sudo ufw enable
+
 cp others/gtk.css ~/.config/gtk-3.0/gtk.css
 
 # Install cgoban, source-sans-pro and gopand (miscellaneous folder)
