@@ -108,6 +108,7 @@ brew cask install cloudcompare
 brew cask install discord
 brew cask install firefox
 brew cask install flash-player
+brew cask install font-fira-code
 brew cask install font-source-sans-pro
 brew cask install gimp
 brew cask install google-earth-pro
@@ -169,6 +170,10 @@ sudo pip install -r requirements.txt
 
 # Others
 # ------------------------------------------
+
+# Alacritty configuration
+mkdir ~/.config/alacritty
+cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Install cgoban from https://www.gokgs.com/download.jsp
 # Install Audacity (no homebrew support for the moment)

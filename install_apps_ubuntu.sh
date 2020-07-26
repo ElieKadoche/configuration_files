@@ -62,6 +62,7 @@ sudo apt install cloudcompare
 sudo apt install cmatrix
 sudo apt install exfat-fuse
 sudo apt install ffmpeg
+sudo apt install fonts-firacode
 sudo apt install gimp
 sudo apt install gnome-shell-extensions
 sudo apt install gnome-tweak-tool
@@ -176,7 +177,12 @@ pip install -r requirements.txt
 # Activate firewall linux
 sudo ufw enable
 
+# Custom modifications
 cp others/gtk.css ~/.config/gtk-3.0/gtk.css
+
+# Alacritty configuration
+mkdir ~/.config/alacritty
+cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Install cgoban, source-sans-pro and gopand (miscellaneous folder)
 # Install teamviewer and google earth
