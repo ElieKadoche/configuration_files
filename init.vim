@@ -65,6 +65,11 @@ endif
 
 set encoding=utf8
 
+" Font
+" ------------------------------------------
+
+set guifont=Fira\ Code\ Retina:h10
+
 " identLine
 " ------------------------------------------
 
