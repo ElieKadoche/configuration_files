@@ -167,6 +167,9 @@ let g:ale_fix_on_save=1
 " Others
 " ------------------------------------------
 
+" Clipboard
+set clipboard=unnamedplus
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -262,7 +265,6 @@ autocmd VimLeave * silent !stty ixon
 set nocompatible
 set display+=lastline
 set linebreak
-set clipboard=unnamed
 
 " See invisible characters but not spaces
 " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
