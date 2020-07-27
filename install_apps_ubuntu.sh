@@ -90,6 +90,7 @@ sudo apt install python-box2d
 sudo apt install python3-pip
 sudo apt install python3-pygame
 sudo apt install python3-cartopy
+sudo apt install sassc
 sudo apt install sshfs
 sudo apt install swi-prolog
 sudo apt install swigg
