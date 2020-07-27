@@ -314,8 +314,8 @@ master_compile() {
         make;
 
         if [ "$SYSTEM" = "1" ]; then
-            cd $ORIGIN/git_apps/_customization/WhiteSur-gtk-theme;
-            ./install.sh;
+            cd $ORIGIN/git_apps/_customization/materia-theme;
+            sudo ./install.sh --color dark --size compact;
 
             cd $ORIGIN/git_apps/_customization/dash-to-dock;
             make;
