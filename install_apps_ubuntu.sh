@@ -10,6 +10,7 @@ sudo add-apt-repository main
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 sudo add-apt-repository restricted
+sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt update
 
 # Installation de zsh
@@ -26,8 +27,9 @@ chsh -s $(which zsh)
 
 echo "Installing Linuxbrew..."
 
-/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/elie_kadoche/.zprofile
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # APT
@@ -93,8 +95,8 @@ sudo apt install python3-cartopy
 sudo apt install sassc
 sudo apt install sshfs
 sudo apt install swi-prolog
-sudo apt install swigg
-sudo apt isntall texlive-full
+sudo apt install swig
+sudo apt install texlive-full
 sudo apt install texstudio
 sudo apt install thefuck
 sudo apt install tldr
@@ -107,12 +109,6 @@ sudo apt install xtrlock
 # From multiverse
 sudo apt install flashplugin-installer
 sudo apt install unrar
-
-# Etcher
-echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
-sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
-sudo apt update
-sudo apt install balena-etcher-electron
 
 # Snap
 # ------------------------------------------
@@ -185,7 +181,7 @@ cp others/gtk.css ~/.config/gtk-3.0/gtk.css
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# Install cgoban, source-sans-pro and gopand (miscellaneous folder)
+# Install cgoban, source-sans-pro, gopanda and balena-etcher (miscellaneous folder)
 # Install teamviewer and google earth
 # Install and activate extensions, themes, icons, etc.
 # Extensions: application view columns, dash to dock, night light slider, openweather, etc.
