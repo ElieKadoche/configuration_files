@@ -12,6 +12,7 @@ Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
 Plug 'https://github.com/SirVer/ultisnips.git'
 Plug 'https://github.com/honza/vim-snippets.git'
+Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
