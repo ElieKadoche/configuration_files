@@ -33,6 +33,7 @@ elif [ "$SYSTEM" = "1" ]; then
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
     alias xx="xtrlock"
+    alias open="xdg-open"
 
 elif [ "$SYSTEM" = "2" ]; then
     # Path to your oh-my-zsh installation.
