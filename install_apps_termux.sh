@@ -60,6 +60,7 @@ pkg install git
 pkg install htop
 pkg install mpv
 pkg install neofetch
+pkg install openssh
 pkg install openssl-tool
 pkg install pwgen
 pkg install termux-api

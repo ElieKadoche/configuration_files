@@ -50,6 +50,7 @@ sudo apt install git
 sudo apt install htop
 sudo apt install libcairo2-dev
 sudo apt install ocl-icd-opencl-dev
+sudo apt install openssh-server
 sudo apt install python3
 sudo apt install wget
 
