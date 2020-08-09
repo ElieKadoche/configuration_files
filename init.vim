@@ -88,6 +88,8 @@ let g:ctrlp_max_depth=40
 " LaTeX
 " ------------------------------------------
 
+let g:tex_flavor = 'latex'
+
 " In tex files, no preview
 let g:tex_conceal = ''
 
