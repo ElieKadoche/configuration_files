@@ -20,6 +20,7 @@ isort
 jupyter
 matplotlib
 neat-python
+neovim
 numpy
 opencv-python
 openpyxl
