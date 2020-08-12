@@ -32,7 +32,7 @@ gtp -model <neural_net_path> -config <config_path>
 
 ### Apps
 
-- Termux + Termux:API.
+- Termux + Termux:API + SFTP.
 - Dev: cxxdroid, quickedit pro, total commander, usb stick plugin.
 - Baduk: tsumego pro, pandanet, tygem, kgs, ElyGo pro.
 - Privacy: firefox, firefox focus, tor, lesspass.
