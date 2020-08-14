@@ -87,6 +87,7 @@ sudo apt install nmap
 sudo apt install npm
 sudo apt install pandoc
 sudo apt install papirus-icon-theme
+sudo apt install pavucontrol
 sudo apt install pwgen
 sudo apt install python-dev
 sudo apt install python-box2d
