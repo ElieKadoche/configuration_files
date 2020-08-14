@@ -54,7 +54,7 @@ noremap <C-h> <C-w>h
 colorscheme gruvbox
 set background=dark
 if g:colors_name == "gruvbox"
-    highlight Normal ctermbg=16 guibg=#000000 guifg=#ffffff
+    highlight Normal ctermbg=black ctermfg=white guibg=#000000 guifg=#ffffff
 endif
 
 hi SpellBad cterm=underline
