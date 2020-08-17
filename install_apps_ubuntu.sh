@@ -59,6 +59,7 @@ sudo apt install audacity
 sudo apt install alacritty
 sudo apt install bibclean
 sudo apt install blender
+sudo apt install calibre
 sudo apt install clang-format
 sudo apt install clinfo
 sudo apt install cloudcompare
