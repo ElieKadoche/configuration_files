@@ -186,6 +186,7 @@ alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
 alias gitp="git pull"
 alias gits="git status"
 alias gitc="git cherry -v"
+alias gitu="git config --get remote.origin.url"
 
 gitd() {
     git add -A; git commit -m "Done"; git push
