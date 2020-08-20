@@ -38,7 +38,7 @@ gtp -model <neural_net_path> -config <config_path>
 - Privacy: firefox, firefox focus, tor, lesspass.
 - Comm: discord, facebook, instagram, messenger, linkedin, whatsapp, reddit, outlook.
 - Google: gmail, drive, maps, contacts, docs, earth.
-- Moving: citymapper, Trailforks.
+- Moving: citymapper, Trailforks, Waze.
 - System: adobe acrobat reader, calculator++, clearscanner, lithium.
 - Others: Morpion Solitaire (qilin TicTacToe), Missile Command: Recharged.
 
