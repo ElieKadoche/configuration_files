@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/plugged/')
+Plug 'https://github.com/qpkorr/vim-bufkill'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
