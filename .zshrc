@@ -263,7 +263,6 @@ findSameExtension() {
 }
 
 renameSameExtension() {
-    ls -tr |
     # ls -tr: oldest modified file will have index 0
     ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done
 
