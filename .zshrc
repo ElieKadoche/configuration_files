@@ -263,8 +263,10 @@ findSameExtension() {
 }
 
 renameSameExtension() {
+    ls -tr |
     # ls -tr: oldest modified file will have index 0
-    ls -tr | find . -name "*.$1" | cat -n | while read n f; do mv "$f" `printf "%d_file.jpg" $n-1`; done
+    ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done
+
 }
 
 # Git master
