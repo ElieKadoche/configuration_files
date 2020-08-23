@@ -243,6 +243,10 @@ rmtex() {
     rm *.vrb;
 }
 
+getHistory() {
+    history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1
+}
+
 compiletex() {
     pdflatex "$1.tex";
     bibtex "$1";
