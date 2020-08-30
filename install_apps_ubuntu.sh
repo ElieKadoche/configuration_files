@@ -115,6 +115,17 @@ sudo apt install xtrlock
 sudo apt install flashplugin-installer
 sudo apt install unrar
 
+# CUDA
+# ------------------------------------------
+
+sudo apt install nvidia-cuda-toolkit
+# nvcc --version to check version
+
+# Download cuDNN 10.2 on Nvidia Developper site
+sudo cp cuda/include/* /usr/lib/cuda/include/
+sudo cp cuda/lib64/libcudnn* /usr/lib/cuda/lib64/
+sudo chmod a+r /usr/lib/cuda/include/* /usr/lib/cuda/lib64/libcudnn*
+
 # Snap
 # ------------------------------------------
 

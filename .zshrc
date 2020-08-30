@@ -34,6 +34,7 @@ elif [ "$SYSTEM" = "1" ]; then
     alias pbpaste="xclip -selection clipboard -o"
     alias xx="xtrlock"
     alias open="xdg-open"
+    export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
 
 elif [ "$SYSTEM" = "2" ]; then
     # Path to your oh-my-zsh installation.
@@ -317,7 +318,9 @@ master_compile() {
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
-        cmake .. -DUSE_BACKEND=OPENCL;
+        cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/home/elie_kadoche/data/git_apps/_miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include -DCUDNN_LIBRARY=/home/elie_kadoche/data/git_apps/_miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64
+        # When Katago will work with cuDNN 8*
+        # cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/lib/cuda/include -DCUDNN_LIBRARY=/usr/lib/cuda/lib64
         make;
 
         if [ "$SYSTEM" = "1" ]; then
