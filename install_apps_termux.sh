@@ -7,6 +7,7 @@ pkg install zsh
 pkg install git
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp .zshrc ~
 termux-setup-storage
 pkg install neovim
 

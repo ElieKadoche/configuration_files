@@ -148,6 +148,7 @@ git config --global credential.helper store
 echo "Setting zsh and vim..."
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp .zshrc ~
 
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
