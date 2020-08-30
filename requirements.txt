@@ -54,7 +54,7 @@ speedtest-cli
 sphinx
 tensorboard
 tensorboardX
-tensorflow
+tensorflow-gpu
 tinydb
 torch
 torchsummary
