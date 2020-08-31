@@ -11,7 +11,7 @@ docx-mailmerge
 easyocr
 emoji
 flake8
-glances
+glances[all]
 graphviz
 grip
 gym
