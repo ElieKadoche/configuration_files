@@ -19,6 +19,7 @@ humanize
 imgaug
 isort
 jupyter
+nevergrad
 matplotlib
 neat-python
 neovim
