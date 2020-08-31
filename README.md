@@ -19,7 +19,7 @@ General configuration files for MacOS, Ubuntu and Termux.
 
 ## Sabaki
 
-Katago: set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 8`.
+Katago: set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 20`.
 
 ```shell
 <path_to_leelaz>
