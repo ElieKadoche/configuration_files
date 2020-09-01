@@ -323,10 +323,10 @@ master_compile() {
         make;
 
         if [ "$SYSTEM" = "1" ]; then
-            cd $ORIGIN/git_apps/_customization/materia-theme;
+            cd $ORIGIN/git_apps/materia-theme;
             sudo ./install.sh --color dark --size compact;
 
-            cd $ORIGIN/git_apps/_customization/dash-to-dock;
+            cd $ORIGIN/git_apps/dash-to-dock;
             make;
             make install;
             killall -3 gnome-shell;
