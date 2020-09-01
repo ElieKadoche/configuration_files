@@ -19,6 +19,7 @@ humanize
 imgaug
 isort
 jupyter
+keras-rl2
 nevergrad
 matplotlib
 neat-python
