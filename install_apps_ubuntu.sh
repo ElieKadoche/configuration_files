@@ -84,6 +84,7 @@ sudo apt install libopencv-dev
 sudo apt install libproj-dev
 sudo apt install libreoffice
 sudo apt install libzip-dev
+sudo apt install lm-sensors
 sudo apt install mpv
 sudo apt install neofetch
 sudo apt install neovim
@@ -188,6 +189,9 @@ pip install -r requirements.txt
 
 # Others
 # ------------------------------------------
+
+# Detect sensors
+sudo sensors-detect
 
 # Activate firewall linux
 sudo ufw enable
