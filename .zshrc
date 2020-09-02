@@ -144,7 +144,7 @@ export ARCHFLAGS="-arch x86_64"
 # ------------------------------------------
 
 PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
-# PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%B%F{yellow}[MARVIN]%b%f%F{magenta}%~%f%F{green}$%f"  # Only for server
+# PROMPT="%F{red}%n%B%F{yellow}MARVIN%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"  # Only for server
 
 alias vim=nvim
 alias python="python3"
