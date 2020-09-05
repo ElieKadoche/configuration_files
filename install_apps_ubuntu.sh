@@ -11,6 +11,8 @@ sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 sudo add-apt-repository restricted
 sudo add-apt-repository ppa:mmstick76/alacritty
+sudo add-apt-repository ppa:openrazer/stable
+sudo add-apt-repository ppa:polychromatic/stable
 sudo apt update
 
 # Installation de zsh
@@ -117,6 +119,12 @@ sudo apt install xtrlock
 # From multiverse
 sudo apt install flashplugin-installer
 sudo apt install unrar
+
+# openrazer
+# ------------------------------------------
+
+sudo apt install openrazer-meta
+sudo apt install polychromatic
 
 # CUDA
 # ------------------------------------------
