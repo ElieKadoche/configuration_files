@@ -223,6 +223,10 @@ pwgenn() {
     pwgen -cny --secure $1 1 | pbcopy
 }
 
+dodo() {
+    sudo rtcwake -m mem -s $1 -v
+}
+
 rmtex() {
     rm *.aux;
     rm *.log;
