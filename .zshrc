@@ -34,6 +34,7 @@ elif [ "$SYSTEM" = "1" ]; then
     alias pbpaste="xclip -selection clipboard -o"
     alias xx="xtrlock"
     alias open="xdg-open"
+    export LD_LIBRARY_PATH="/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
     export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
 
 elif [ "$SYSTEM" = "2" ]; then
