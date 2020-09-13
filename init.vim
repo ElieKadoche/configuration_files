@@ -129,6 +129,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let mapleader=','
 
 nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>t :NERDTree<cr>
 let NERDTreeShowHidden=1
 
