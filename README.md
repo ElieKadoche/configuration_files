@@ -33,10 +33,10 @@ gtp -model <neural_net_path> -config <config_path>
 ### Apps
 
 - Termux + Termux:API + SFTP.
-- Dev: cxxdroid, quickedit pro, total commander, usb stick plugin.
+- Dev: cxxdroid, quickedit pro, File Manager+, total commander, usb stick plugin.
 - Baduk: tsumego pro, pandanet, tygem, kgs, ElyGo pro.
 - Privacy: firefox, firefox focus, tor, lesspass.
-- Comm: discord, facebook, instagram, messenger, linkedin, whatsapp, reddit, outlook.
+- Comm: discord, facebook, instagram, messenger, linkedin, whatsapp, reddit.
 - Google: gmail, drive, maps, contacts, docs, earth.
 - Moving: citymapper, Trailforks, Waze.
 - System: adobe acrobat reader, calculator++, clearscanner, lithium.
