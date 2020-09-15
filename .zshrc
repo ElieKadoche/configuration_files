@@ -279,6 +279,10 @@ renameSameExtension() {
 
 }
 
+startKataWhat() {
+    nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.txt &
+}
+
 # Git master
 # ------------------------------------------
 
