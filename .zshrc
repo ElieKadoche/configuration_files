@@ -176,6 +176,7 @@ fi
 
 alias m="cd $ORIGIN"
 alias e="exit"
+alias rmd="rm -rf"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias du="du -shc * | sort -h"
@@ -280,7 +281,9 @@ renameSameExtension() {
 }
 
 startKataWhat() {
-    nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.txt &
+    cd $ORIGIN/miscellaneous/KataWhatBot;
+    nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.properties &;
+    cd $ORIGIN;
 }
 
 # Git master
