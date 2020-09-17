@@ -280,6 +280,10 @@ renameSameExtension() {
 
 }
 
+fatalKill() {
+    ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9
+}
+
 startKataWhat() {
     cd $ORIGIN/miscellaneous/KataWhatBot;
     nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.properties &;
