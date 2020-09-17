@@ -145,6 +145,7 @@ echo "Running snap packages..."
 sudo snap install discord
 sudo snap install intellij-idea-community --classic
 sudo snap install pycharm-community --classic
+sudo snap install mathpix-snipping-tool
 
 # Linuxbrew
 # ------------------------------------------
