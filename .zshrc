@@ -176,9 +176,10 @@ fi
 
 alias m="cd $ORIGIN"
 alias e="exit"
-alias rmd="rm -rf"
+alias rmr="rm -rf"
 alias ..="cd ../"
 alias ...="cd ../../"
+alias src="source ~/.zshrc"
 alias du="du -shc * | sort -h"
 alias grep="grep --color=auto"
 alias rmtrash="rm -rf ~/.Trash/*"
@@ -278,6 +279,10 @@ renameSameExtension() {
     # ls -tr: oldest modified file will have index 0
     ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done
 
+}
+
+cpr() {
+    rsync --archive --human-readable --info=progress2 $1 $2
 }
 
 fatalKill() {
