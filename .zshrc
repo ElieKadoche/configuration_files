@@ -227,7 +227,9 @@ pwgenn() {
 }
 
 dodo() {
-    sudo rtcwake -m mem -s $1 -v
+    t=`echo "scale=0;$2*3600/1" | bc`;
+    sudo sleep $1;
+    sudo rtcwake -m mem -s $t -v;
 }
 
 rmtex() {
