@@ -16,7 +16,13 @@ plugins=(
 # ------------------------------------------
 
 # 0 for MacOS, 1 for Ubuntu, 2 for Termux
-SYSTEM="1"
+if [ "$OSTYPE" = "linux-gnu" ]; then
+    SYSTEM="1"
+elif [ "$OSTYPE" = "linux-android" ]; then
+    SYSTEM="2"
+elif [ "$OSTYPE" = "darwin" ]; then
+    SYSTEM="0"
+fi
 
 if [ "$SYSTEM" = "0" ]; then
     # Path to your oh-my-zsh installation.
@@ -24,6 +30,7 @@ if [ "$SYSTEM" = "0" ]; then
     ORIGIN="/Volumes/marvin_data"
     alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
     openfi() {open -a /Applications/Firefox.app/ $1}
+    PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 
 elif [ "$SYSTEM" = "1" ]; then
     export ZSH="/home/elie_kadoche/.oh-my-zsh"
@@ -36,12 +43,14 @@ elif [ "$SYSTEM" = "1" ]; then
     alias open="xdg-open"
     export LD_LIBRARY_PATH="/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
     export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
+    PROMPT="%F{red}%n%B%F{yellow}MARVIN%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"  # Only for server
 
 elif [ "$SYSTEM" = "2" ]; then
     # Path to your oh-my-zsh installation.
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
     ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
     alias pbcopy="termux-clipboard-set"
+    PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -144,9 +153,6 @@ export ARCHFLAGS="-arch x86_64"
 # My custom .zshrc
 # ------------------------------------------
 
-PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
-# PROMPT="%F{red}%n%B%F{yellow}MARVIN%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"  # Only for server
-
 alias vim=nvim
 alias python="python3"
 alias pip="pip3"
@@ -156,8 +162,9 @@ if [ "$SYSTEM" != "2" ]; then
     eval $(thefuck --alias damn)
 fi
 
+alias l="ls -1a"
 if [ "$SYSTEM" = "0" ]; then
-    alias ls="gls --all \
+    alias ll="gls --all \
                   --author \
                   --color=auto \
                   --group-directories-first \
@@ -165,7 +172,7 @@ if [ "$SYSTEM" = "0" ]; then
                   --size \
                   -l"
 else
-    alias ls="ls --all \
+    alias ll="ls --all \
                   --author \
                   --color=auto \
                   --group-directories-first \
@@ -260,8 +267,8 @@ getHistory() {
 
 compiletex() {
     pdflatex "$1.tex";
-    bibtex "$1";
-    # biber "$1";  # Both are usuable, depending on how the bibliography is made
+    # bibtex "$1";
+    biber "$1";  # Both are usuable, depending on how the bibliography is made
     makeglossaries "$1";
     pdflatex "$1.tex";
     pdflatex "$1.tex";
