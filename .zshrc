@@ -162,9 +162,9 @@ if [ "$SYSTEM" != "2" ]; then
     eval $(thefuck --alias damn)
 fi
 
-alias l="ls -1a"
+alias ll="ls -1 -a --group-directories-first"
 if [ "$SYSTEM" = "0" ]; then
-    alias ll="gls --all \
+    alias l="gls --all \
                   --author \
                   --color=auto \
                   --group-directories-first \
@@ -172,7 +172,7 @@ if [ "$SYSTEM" = "0" ]; then
                   --size \
                   -l"
 else
-    alias ll="ls --all \
+    alias l="ls --all \
                   --author \
                   --color=auto \
                   --group-directories-first \
