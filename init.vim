@@ -86,6 +86,11 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
+" snippets
+" ------------------------------------------
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
+
 " LaTeX
 " ------------------------------------------
 
