@@ -182,6 +182,10 @@ cp others/cypher.vim ~/.config/nvim/syntax/cypher.vim
 cp others/sparql.vim ~/.config/nvim/syntax/sparql.vim
 cp others/log.vim ~/.config/nvim/syntax/log.vim
 
+mkdir ~/.config/nvim/custom_snippets
+cp others/all.snippets ~/.config/nvim/custom_snippets/all.snippets
+cp others/python.snippets ~/.config/nvim/custom_snippets/python.snippets
+
 # Vim Plug
 # ------------------------------------------
 
