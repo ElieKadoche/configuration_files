@@ -7,6 +7,7 @@ box2d.py
 cartopy
 chroma
 configparser
+dask[complete]
 docx-mailmerge
 easyocr
 emoji
