@@ -68,6 +68,7 @@ pkg install neofetch
 pkg install openssh
 pkg install openssl-tool
 pkg install pwgen
+pkg install screen
 pkg install termux-api
 
 # 2 different options
