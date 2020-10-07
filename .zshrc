@@ -323,6 +323,16 @@ zsh_history_fix() {
 # Git master
 # ------------------------------------------
 
+_removeGithistory() {
+    URL_GIT=$(gitu)
+    rmr .git;
+    git init;
+    git add .;
+    git commit -m "Initial commit";
+    git remote add origin $URL_GIT;
+    git push --mirror --force;
+}
+
 _private_gitpp() {
     cd $1;
     for i in */.git; do (
