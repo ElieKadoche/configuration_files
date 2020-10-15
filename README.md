@@ -39,7 +39,7 @@ gtp -model <neural_net_path> -config <config_path>
 - Communication: discord, facebook, instagram, messenger, linkedin, whatsapp, reddit.
 - Google: gmail, drive, maps, contacts, docs, earth.
 - Moving: citymapper, Trailforks, Waze.
-- System: adobe acrobat reader, calculator++, clearscanner, lithium, droidcam.
+- System: adobe acrobat reader, calculator++, clearscanner, lithium, droidcam, mpv.
 - Others: Morpion Solitaire (qilin TicTacToe), Missile Command: Recharged.
 
 ## Tor
