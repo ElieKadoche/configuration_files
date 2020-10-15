@@ -95,6 +95,7 @@ sudo apt install neofetch
 sudo apt install neovim
 sudo apt install nmap
 sudo apt install npm
+sudo apt install okular
 sudo apt install pandoc
 sudo apt install papirus-icon-theme
 sudo apt install pavucontrol
