@@ -24,6 +24,9 @@ chsh -s $(which zsh)
 # You can launch the script from here
 # ------------------------------------------
 
+sudo apt install curl
+sudo apt install git
+
 # Homebrew
 # ------------------------------------------
 
@@ -42,13 +45,11 @@ echo "Running apt packages..."
 
 # From main
 sudo apt install build-essential
-sudo apt install curl
 sudo apt install cmake
 sudo apt install coreutils
 sudo apt install firefox
 sudo apt install gcc
 sudo apt install ghostscript
-sudo apt install git
 sudo apt install htop
 sudo apt install libbz2-dev
 sudo apt install libcairo2-dev
