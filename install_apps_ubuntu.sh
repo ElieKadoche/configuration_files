@@ -251,7 +251,7 @@ sudo ufw enable
 
 # Custom modifications
 cp others/gtk.css ~/.config/gtk-3.0/gtk.css
-cp _colors.scss $ORIGIN/git_apps/materia-theme/src/_colors.scss
+cp others/_colors.scss $ORIGIN/git_apps/materia-theme/src/_colors.scss
 
 # Alacritty configuration
 mkdir ~/.config/alacritty
