@@ -434,6 +434,7 @@ master_update() {
     vim +"PlugUpdate" +qa;
     vim +"PlugClean" +qa;
     vim +"PlugInstall" +qa;
+    vim +"CocUpdate" +qa;
 }
 
 # Master all

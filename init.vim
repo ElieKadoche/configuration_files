@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged/')
 Plug 'https://github.com/qpkorr/vim-bufkill'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
@@ -127,6 +128,13 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" coc.vim
+" ------------------------------------------
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
 
 " Leader
 " ------------------------------------------
