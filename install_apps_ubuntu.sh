@@ -53,6 +53,7 @@ sudo apt install ghostscript
 sudo apt install htop
 sudo apt install libbz2-dev
 sudo apt install libcairo2-dev
+sudo apt install libgpgme-dev
 sudo apt install linux-headers-$(uname -r)
 sudo apt install ocl-icd-opencl-dev
 sudo apt install openssh-server
@@ -101,6 +102,7 @@ sudo apt install pandoc
 sudo apt install papirus-icon-theme
 sudo apt install pavucontrol
 sudo apt install pwgen
+sudo apt install python-apt
 sudo apt install python-dev
 sudo apt install python-box2d
 sudo apt install python3-pip
