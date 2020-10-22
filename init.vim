@@ -147,6 +147,25 @@ set spelllang=en
 nnoremap <leader>sf :set spelllang=fr<cr>
 nnoremap <leader>se :set spelllang=en<cr>
 
+" Transparent window
+" ------------------------------------------
+
+" Can work only if terminal is already transparent
+
+let t:is_transparent = 0
+
+function! ToggleTransparentBackground()
+    if t:is_transparent == 1
+        hi Normal guibg=#111111 ctermbg=black
+        let t:is_transparent = 0
+    else
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    endif
+endfunction
+
+nnoremap <leader>; :call ToggleTransparentBackground()<cr>
+
 " ALE
 " ------------------------------------------
 
