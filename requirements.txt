@@ -4,6 +4,7 @@ autopep8
 autokeras
 bandit
 box2d.py
+bpytop
 cartopy
 chroma
 configparser
