@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged/')
-Plug 'https://github.com/qpkorr/vim-bufkill'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'tex'}
+Plug 'https://github.com/qpkorr/vim-bufkill'
 Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
@@ -128,6 +128,11 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" coc.vim is better for LaTeX than YCM
+let g:ycm_filetype_blacklist = {
+      \ 'tex': 1
+      \}
 
 " coc.vim
 " ------------------------------------------
