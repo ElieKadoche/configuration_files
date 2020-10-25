@@ -88,6 +88,7 @@ sudo apt install libgirepository1.0-dev
 sudo apt install libboost-all-dev
 sudo apt install libcups2-dev
 sudo apt install libopencv-dev
+sudo apt install librecad
 sudo apt install libproj-dev
 sudo apt install libreoffice
 sudo apt install libzip-dev
