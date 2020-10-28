@@ -118,6 +118,7 @@ sudo apt install texstudio
 sudo apt install thefuck
 sudo apt install tldr
 sudo apt install tor
+sudo apt install torbrowser-launcher
 sudo apt install tree
 sudo apt install uncrustify
 sudo apt install xclip
