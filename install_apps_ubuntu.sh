@@ -75,6 +75,7 @@ sudo apt install exfat-fuse
 sudo apt install ffmpeg
 sudo apt install fonts-firacode
 sudo apt install gimp
+sudo apt install gnome-panel
 sudo apt install gnome-shell-extensions
 sudo apt install gnome-tweak-tool
 sudo apt install graphviz
