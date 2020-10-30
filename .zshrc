@@ -416,8 +416,8 @@ master_compile() {
 master_update() {
     if [ "$SYSTEM" = "2" ]; then
         # Termux
-        pkg upgrade;
-        pkg update;
+        pkg upgrade -y;
+        pkg update -y;
 
     else
         # Node
@@ -436,8 +436,8 @@ master_update() {
 
         elif [ "$SYSTEM" = "1" ]; then
             # Ubuntu
-            sudo apt update;
-            sudo apt upgrade;
+            sudo apt -y update;
+            sudo apt -y upgrade;
             sudo snap refresh;
             sudo apt dist-upgrade;
         fi
