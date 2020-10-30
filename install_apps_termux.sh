@@ -3,13 +3,13 @@
 # Before all
 # ------------------------------------------
 
-pkg install zsh
-pkg install git
+pkg install -y zsh
+pkg install -y git
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc ~
 termux-setup-storage
-pkg install neovim
+pkg install -y neovim
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -57,35 +57,35 @@ git config --global credential.helper store
 # pkg
 # ------------------------------------------
 
-pkg install cmatrix
-pkg install ffmpeg
-pkg install imagemagick
-pkg install ghostscript
-pkg install git
-pkg install htop
-pkg install mpv
-pkg install neofetch
-pkg install openssh
-pkg install openssl-tool
-pkg install pwgen
-pkg install rsync
-pkg install screen
-pkg install termux-api
+pkg install -y cmatrix
+pkg install -y ffmpeg
+pkg install -y imagemagick
+pkg install -y ghostscript
+pkg install -y git
+pkg install -y htop
+pkg install -y mpv
+pkg install -y neofetch
+pkg install -y openssh
+pkg install -y openssl-tool
+pkg install -y pwgen
+pkg install -y rsync
+pkg install -y screen
+pkg install -y termux-api
 
 # 2 different options
-pkg install texlive-full
+pkg install -y texlive-full
 # pkg install texlive
 # tlmgr update --list
 # tlmgr install scheme-full
 
-pkg install tor
-pkg install zip
-pkg install unrar
-pkg install unzip
+pkg install -y tor
+pkg install -y zip
+pkg install -y unrar
+pkg install -y unzip
 
 # Python packages (all packages will not work, be careful)
 # ------------------------------------------
 
 echo "Installing python packages..."
 
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt

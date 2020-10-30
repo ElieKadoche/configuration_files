@@ -24,8 +24,8 @@ chsh -s $(which zsh)
 # You can launch the script from here
 # ------------------------------------------
 
-sudo apt install curl
-sudo apt install git
+sudo apt -y install curl
+sudo apt -y install git
 
 # Homebrew
 # ------------------------------------------
@@ -44,101 +44,101 @@ echo "Running apt packages..."
 
 
 # From main
-sudo apt install build-essential
-sudo apt install cmake
-sudo apt install coreutils
-sudo apt install firefox
-sudo apt install gcc
-sudo apt install ghostscript
-sudo apt install htop
-sudo apt install libbz2-dev
-sudo apt install libcairo2-dev
-sudo apt install libgpgme-dev
-sudo apt install linux-headers-$(uname -r)
-sudo apt install ocl-icd-opencl-dev
-sudo apt install openssh-server
-sudo apt install python3
-sudo apt install screen
-sudo apt install wget
+sudo apt -y install build-essential
+sudo apt -y install cmake
+sudo apt -y install coreutils
+sudo apt -y install firefox
+sudo apt -y install gcc
+sudo apt -y install ghostscript
+sudo apt -y install htop
+sudo apt -y install libbz2-dev
+sudo apt -y install libcairo2-dev
+sudo apt -y install libgpgme-dev
+sudo apt -y install linux-headers-$(uname -r)
+sudo apt -y install ocl-icd-opencl-dev
+sudo apt -y install openssh-server
+sudo apt -y install python3
+sudo apt -y install screen
+sudo apt -y install wget
 
 # From universe
-sudo apt install audacity
-sudo apt install alacritty
-sudo apt install bibclean
-sudo apt install blender
-sudo apt install calibre
-sudo apt install clang-format
-sudo apt install clinfo
-sudo apt install cloudcompare
-sudo apt install cmatrix
-sudo apt install exfat-fuse
-sudo apt install ffmpeg
-sudo apt install fonts-firacode
-sudo apt install gimp
-sudo apt install gnome-panel
-sudo apt install gnome-shell-extensions
-sudo apt install gnome-tweak-tool
-sudo apt install graphviz
-sudo apt install hardinfo
-sudo apt install inkscape
-sudo apt install imagemagick
-sudo apt install kazam
-sudo apt install leela-zero
-sudo apt install libgeos++-dev
-sudo apt install libgirepository1.0-dev
-sudo apt install libboost-all-dev
-sudo apt install libcups2-dev
-sudo apt install libopencv-dev
-sudo apt install librecad
-sudo apt install libproj-dev
-sudo apt install libreoffice
-sudo apt install libzip-dev
-sudo apt install lm-sensors
-sudo apt install mpv
-sudo apt install neofetch
-sudo apt install neovim
-sudo apt install nmap
-sudo apt install npm
-sudo apt install okular
-sudo apt install pandoc
-sudo apt install papirus-icon-theme
-sudo apt install pavucontrol
-sudo apt install pwgen
-sudo apt install python-dev
-sudo apt install python-box2d
-sudo apt install python3-distutils-extra
-sudo apt install python3-pip
-sudo apt install python3-pygame
-sudo apt install python3-cartopy
-sudo apt install sassc
-sudo apt install sshfs
-sudo apt install swi-prolog
-sudo apt install swig
-sudo apt install texlive-full
-sudo apt install texstudio
-sudo apt install thefuck
-sudo apt install tldr
-sudo apt install tor
-sudo apt install torbrowser-launcher
-sudo apt install tree
-sudo apt install uncrustify
-sudo apt install xclip
-sudo apt install xtrlock
+sudo apt -y install audacity
+sudo apt -y install alacritty
+sudo apt -y install bibclean
+sudo apt -y install blender
+sudo apt -y install calibre
+sudo apt -y install clang-format
+sudo apt -y install clinfo
+sudo apt -y install cloudcompare
+sudo apt -y install cmatrix
+sudo apt -y install exfat-fuse
+sudo apt -y install ffmpeg
+sudo apt -y install fonts-firacode
+sudo apt -y install gimp
+sudo apt -y install gnome-panel
+sudo apt -y install gnome-shell-extensions
+sudo apt -y install gnome-tweak-tool
+sudo apt -y install graphviz
+sudo apt -y install hardinfo
+sudo apt -y install inkscape
+sudo apt -y install imagemagick
+sudo apt -y install kazam
+sudo apt -y install leela-zero
+sudo apt -y install libgeos++-dev
+sudo apt -y install libgirepository1.0-dev
+sudo apt -y install libboost-all-dev
+sudo apt -y install libcups2-dev
+sudo apt -y install libopencv-dev
+sudo apt -y install librecad
+sudo apt -y install libproj-dev
+sudo apt -y install libreoffice
+sudo apt -y install libzip-dev
+sudo apt -y install lm-sensors
+sudo apt -y install mpv
+sudo apt -y install neofetch
+sudo apt -y install neovim
+sudo apt -y install nmap
+sudo apt -y install npm
+sudo apt -y install okular
+sudo apt -y install pandoc
+sudo apt -y install papirus-icon-theme
+sudo apt -y install pavucontrol
+sudo apt -y install pwgen
+sudo apt -y install python-dev
+sudo apt -y install python-box2d
+sudo apt -y install python3-distutils-extra
+sudo apt -y install python3-pip
+sudo apt -y install python3-pygame
+sudo apt -y install python3-cartopy
+sudo apt -y install sassc
+sudo apt -y install sshfs
+sudo apt -y install swi-prolog
+sudo apt -y install swig
+sudo apt -y install texlive-full
+sudo apt -y install texstudio
+sudo apt -y install thefuck
+sudo apt -y install tldr
+sudo apt -y install tor
+sudo apt -y install torbrowser-launcher
+sudo apt -y install tree
+sudo apt -y install uncrustify
+sudo apt -y install xclip
+sudo apt -y install xtrlock
 
 # From multiverse
-sudo apt install flashplugin-installer
-sudo apt install unrar
+sudo apt -y install flashplugin-installer
+sudo apt -y install unrar
 
 # openrazer
 # ------------------------------------------
 
-sudo apt install openrazer-meta
-sudo apt install polychromatic
+sudo apt -y install openrazer-meta
+sudo apt -y install polychromatic
 
 # CUDA
 # ------------------------------------------
 
-sudo apt install nvidia-cuda-toolkit
+sudo apt -y install nvidia-cuda-toolkit
 # nvcc --version to check version
 
 # Download cuDNN 10.2 on Nvidia Developper site
@@ -152,7 +152,7 @@ sudo chmod a+r /usr/lib/cuda/include/* /usr/lib/cuda/lib64/libcudnn*
 # Or simply this command: curl https://get.docker.com | sh
 
 # Packages
-sudo apt install \
+sudo apt -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -170,7 +170,7 @@ sudo add-apt-repository \
 sudo apt update
 
 # Install Docker and check installation
-sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
 
 # NVIDIA part
@@ -178,7 +178,7 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt update
-sudo apt-get install -y nvidia-docker2
+sudo apt -y install -y nvidia-docker2
 sudo systemctl restart docker
 
 # Snap
