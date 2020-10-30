@@ -2,7 +2,7 @@
 
 General configuration files for Ubuntu, Termux and MacOS.
 
-- `.zshrc`: zsh configuration.
+- `.zshrc`: zsh configuration (specific to my usage).
 - `init.vim`: neovim configuration.
 - `install_apps_X.sh`: installation and configuration script for system X.
 - `requirements.txt`: python pip packages.
@@ -43,7 +43,9 @@ ssh
 -t <user>@<ip> -p <port> <path_to_katago_executable> gtp -model <neural_net_path> -config <config_path>
 ```
 
-## ssh
+## SSH
+
+Private variables are declared in a `.zsh` file placed in `$ZSH_CUSTOM` folder.
 
 - For basic usage: `ssh <user>@<ip> -p <port>`.
 - For X11 forwarding: `ssh -X <user>@<ip> -p <port>`.
