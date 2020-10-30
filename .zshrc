@@ -444,7 +444,7 @@ master_update() {
     fi
 
     # Global
-    upgrade_oh_my_zsh;
+    omz update;
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
     vim +"PlugUpgrade" +qa;
