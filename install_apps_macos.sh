@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# CAREFUL: not actively maintained
+
 # Mac OS settings
 # ------------------------------------------
 
