@@ -330,13 +330,13 @@ zsh_history_fix() {
 alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
 alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
 alias sshL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
-alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT ssh_folder"
+alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder"
 
 # Private IP
 alias sshp0="ssh $_SSH_USER_NAME@$_SSH_PRIVATE_IP -p $_SSH_PORT"
 alias sshpX="ssh -X $_SSH_USER_NAME@$_SSH_PRIVATE_IP -p $_SSH_PORT"
 alias sshpL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PRIVATE_IP -p $_SSH_PORT"
-alias sshpF="sshfs $_SSH_USER_NAME@$_SSH_PRIVATE_IP -p $_SSH_PORT ssh_folder"
+alias sshpF="sshfs $_SSH_USER_NAME@$_SSH_PRIVATE_IP: -p $_SSH_PORT ssh_folder"
 
 # Git master
 # ------------------------------------------
