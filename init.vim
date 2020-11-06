@@ -157,6 +157,7 @@ nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
 " Change spelllang
 set spell
 set spelllang=en
+nnoremap <leader>sn :set nospell<cr>
 nnoremap <leader>sf :set spelllang=fr<cr>
 nnoremap <leader>se :set spelllang=en<cr>
 
