@@ -89,3 +89,8 @@ pkg install -y unzip
 echo "Installing python packages..."
 
 pip3 install -r requirements.txt
+
+# Compile and update everything
+# ------------------------------------------
+
+master_all
