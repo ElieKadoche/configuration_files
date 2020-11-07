@@ -128,6 +128,14 @@ sudo apt -y install xtrlock
 sudo apt -y install flashplugin-installer
 sudo apt -y install unrar
 
+# Etcher
+# ------------------------------------------
+
+echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+sudo apt-get update
+sudo apt-get install balena-etcher-electron
+
 # openrazer
 # ------------------------------------------
 
@@ -264,7 +272,10 @@ cp others/_colors.scss $ORIGIN/git_apps/materia-theme/src/_colors.scss
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# Install cgoban, source-sans-pro, gopanda and balena-etcher (miscellaneous folder)
-# Install teamviewer and google earth
-# Install and activate extensions, themes, icons, etc.
-# Extensions: application view columns, dash to dock, night light slider, openweather, etc.
+# Others: cgoban, source-sans-pro, gopanda, teamviewer, google earth
+# Extensions: Application View Columns, Applications Menu, Dash to Dock, Night Light Slider, OpenWeather, User Themes, Vitals
+
+# Compile and update everything
+# ------------------------------------------
+
+master_all
