@@ -1,57 +1,49 @@
-plugins=(
-    autopep8
-    colored-man-pages
-    colorize
-    cp
-    extract
-    pep8
-    pip
-    python
-    rand-quote
-    vi-mode
-    web-search
-)
-
 # System specific
 # ------------------------------------------
+# ------------------------------------------
 
-# 0 for MacOS, 1 for Ubuntu, 2 for Termux
-if [ "$OSTYPE" = "linux-gnu" ]; then
-    SYSTEM="1"
-elif [ "$OSTYPE" = "linux-android" ]; then
-    SYSTEM="2"
-elif [ "$OSTYPE" = "darwin" ]; then
+# MacOS
+# CAREFUL: not actively maintained
+if [ "$OSTYPE" = "darwin" ]; then
     SYSTEM="0"
-fi
-
-if [ "$SYSTEM" = "0" ]; then
-    # Path to your oh-my-zsh installation.
-    export ZSH="/Users/eliekadoche/.oh-my-zsh"
     ORIGIN="/Volumes/marvin_data"
-    alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
-    openfi() {open -a /Applications/Firefox.app/ $1}
-    PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
+    export ZSH="/Users/eliekadoche/.oh-my-zsh"
+    PROMPT="%F{red}%n%B%F{yellow}MacOS%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
 
-elif [ "$SYSTEM" = "1" ]; then
-    export ZSH="/home/elie_kadoche/.oh-my-zsh"
+    alias rmtrash="rm -rf ~/.Trash/*"
+    openfi() {open -a /Applications/Firefox.app/ $1}
+    alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Ubuntu
+elif [ "$OSTYPE" = "linux-gnu" ]; then
+    SYSTEM="1"
     ORIGIN="/home/elie_kadoche/data"
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    export PATH="/home/elie_kadoche/.local/bin:$PATH"
-    alias pbcopy="xclip -selection clipboard"
-    alias pbpaste="xclip -selection clipboard -o"
+    export ZSH="/home/elie_kadoche/.oh-my-zsh"
+    PROMPT="%F{red}%n%B%F{yellow}MARVIN%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
+
     alias xx="xtrlock"
     alias open="xdg-open"
-    export LD_LIBRARY_PATH="/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
-    export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
-    PROMPT="%F{red}%n%B%F{yellow}MARVIN%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"  # Only for server
+    alias pbcopy="xclip -selection clipboard"
+    alias pbpaste="xclip -selection clipboard -o"
+    export PATH="/home/elie_kadoche/.local/bin:$PATH"
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-elif [ "$SYSTEM" = "2" ]; then
-    # Path to your oh-my-zsh installation.
+    export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
+    export LD_LIBRARY_PATH="/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
+
+# Termux (Android)
+elif [ "$OSTYPE" = "linux-android" ]; then
+    SYSTEM="2"
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
     ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
+    PROMPT="%F{red}%n%B%F{yellow}termux%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
+
     alias pbcopy="termux-clipboard-set"
-    PROMPT="%F{red}%n%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%f%F{magenta}%~%f%F{green}$%f"
 fi
+
+# From template
+# ------------------------------------------
+# ------------------------------------------
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -110,7 +102,7 @@ HYPHEN_INSENSITIVE="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -120,12 +112,23 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git)
+plugins=(
+    autopep8
+    colored-man-pages
+    colorize
+    cp
+    extract
+    pep8
+    pip
+    python
+    rand-quote
+    vi-mode
+    web-search
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -152,152 +155,112 @@ export ARCHFLAGS="-arch x86_64"
 
 # My custom .zshrc
 # ------------------------------------------
+# ------------------------------------------
 
-alias vim=nvim
-alias python="python3"
-alias pip="pip3"
-
+# TheFuck
 if [ "$SYSTEM" != "2" ]; then
     eval $(thefuck --alias)
     eval $(thefuck --alias damn)
 fi
 
+# Small ls
 alias ll="ls -1 -a --group-directories-first"
+
+# Complete ls
 if [ "$SYSTEM" = "0" ]; then
-    alias l="gls --all \
-                  --author \
-                  --color=auto \
-                  --group-directories-first \
-                  --human-readable \
-                  --size \
-                  -l"
+    alias l="gls --all --author --color=auto --group-directories-first --human-readable --size -l"
 else
-    alias l="ls --all \
-                  --author \
-                  --color=auto \
-                  --group-directories-first \
-                  --human-readable \
-                  --size \
-                  -lv"
+    alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
 fi
 
-alias m="cd $ORIGIN"
-alias e="exit"
-alias rmr="rm -rf"
-alias ..="cd ../"
-alias ...="cd ../../"
-alias src="source ~/.zshrc"
-alias du="du -shc * | sort -h"
-alias grep="grep --color=auto"
-alias rmtrash="rm -rf ~/.Trash/*"
-alias rm__="find . -name '._*' -ls -delete"
-alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
-alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*"
-alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*"
-alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
+# Git
 alias gitp="git pull"
 alias gits="git status"
 alias gitc="git cherry -v"
 alias gitu="git config --get remote.origin.url"
+gitd() {git add -A; git commit -m "Done"; git push}
+gitpp() {for i in */.git; do ( echo $i; cd $i/..; git pull; ); done}
+gitss() {for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done}
 
-gitd() {
-    git add -A; git commit -m "Done"; git push
-}
+# Music
+alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*"
+alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*"
+alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
 
-gitpp() {
-    for i in */.git; do ( echo $i; cd $i/..; git pull; ); done
-}
+# Others
+alias e="exit"
+alias vim=nvim
+alias pip="pip3"
+alias ..="cd ../"
+alias rmr="rm -rf"
+alias m="cd $ORIGIN"
+alias ...="cd ../../"
+alias python="python3"
+alias src="source ~/.zshrc"
+alias du="du -shc * | sort -h"
+alias grep="grep --color=auto"
+alias rm__="find . -name '._*' -ls -delete"
+alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
 
-gitss() {
-    for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done
-}
-
-# Special grep for projects
-grepp() {
-    grep -R "$1" . --exclude-dir={.git,docs,ressources,data,materials}
-}
-
-pyclean() {
-    find . -name "*.pyc" -ls -delete;
-    find . -name "__pycache__" -ls -delete;
-    find . -name ".pytest_cache" -exec rm -rf "{}" \;
-}
-
-# youtube-dl -F to see formats
-yyy() {
-    youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir
-}
+# Find files of a given extension
+findSameExtension() {find . -iname \*.$1}
 
 # Create a password of size $1
-pwgenn() {
-    pwgen -cny --secure $1 1 | pbcopy
-}
+pwgenn() {pwgen -cny --secure $1 1 | pbcopy}
 
+# Copy folder with progress bar
+cpr() {rsync --archive --human-readable --info=progress2 $1 $2}
+
+# Special grep for projects
+grepp() {grep -R "$1" . --exclude-dir={.git,docs,ressources,data,materials}}
+
+# Fatal kill
+fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
+
+# Get command history
+getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1}
+
+# youtube-dl -F to see formats
+yyy() {youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
+
+# Rename all files a folder
+# ls -tr: oldest modified file will have index 0
+renameAll() {ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done}
+
+# Clean Tex files
+rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\)" -delete}
+
+# Find out the pid of a specified process
+# Note that the command name can be specified via a regex
+# E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
+# Without the 'sudo' it will only find processes of the current user
+findPID () { lsof -t -c "$@" ; }
+
+# Send computer to sleep
 dodo() {
     t=`echo "scale=0;$2*3600/1" | bc`;
     sudo sleep $1;
     sudo rtcwake -m mem -s $t -v;
 }
 
-rmtex() {
-    rm *.aux;
-    rm *.log;
-    rm *.out;
-    rm *.toc;
-    rm *.bbl;
-    rm *.blg;
-    rm *.synctex.gz;
-    rm *.acn;
-    rm *.acr;
-    rm *.alg;
-    rm *.bcf;
-    rm *.glg;
-    rm *.glo;
-    rm *.gls;
-    rm *.ist;
-    rm *.run.xml;
-    rm *.nav;
-    rm *.snm;
-    rm *.vrb;
+# Clean Python files
+pyclean() {
+    find . -name "*.pyc" -ls -delete;
+    find . -name "__pycache__" -ls -delete;
+    find . -name ".pytest_cache" -exec rm -rf "{}" \;
 }
 
-getHistory() {
-    history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1
-}
-
+# Master command to compile latex projects
 compiletex() {
     pdflatex "$1.tex";
     # bibtex "$1";
-    biber "$1";  # Both are usuable, depending on how the bibliography is made
+    biber "$1";  # Both can be used, depending on how the bibliography is made
     makeglossaries "$1";
     pdflatex "$1.tex";
     pdflatex "$1.tex";
 }
 
-# findPid: find out the pid of a specified process
-# Note that the command name can be specified via a regex
-# E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
-# Without the 'sudo' it will only find processes of the current user
-findPID () { lsof -t -c "$@" ; }
-
-findSameExtension() {
-    find . -iname \*.$1
-}
-
-renameSameExtension() {
-    # ls -tr: oldest modified file will have index 0
-    ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done
-
-}
-
-cpr() {
-    rsync --archive --human-readable --info=progress2 $1 $2
-}
-
-fatalKill() {
-    ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9
-}
-
+# Kill Ray processes
 fatalKillRay() {
     fatalKill ray::ReplayBuffer;
     fatalKill ray::SharedStorage;
@@ -307,12 +270,7 @@ fatalKillRay() {
     fatalKill ray::SelfPlay;
 }
 
-startKataWhat() {
-    cd $ORIGIN/miscellaneous/KataWhatBot;
-    nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.properties &;
-    cd $ORIGIN;
-}
-
+# Fix zsh_history file
 zsh_history_fix() {
     cd ~
     mv .zsh_history .zsh_history_bad
@@ -321,10 +279,18 @@ zsh_history_fix() {
     rm .zsh_history_bad
 }
 
+# Start KataGo on KGS
+startKataWhat() {
+    cd $ORIGIN/miscellaneous/KataWhatBot;
+    nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.properties &;
+    cd $ORIGIN;
+}
+
 # SSH aliases
 # ------------------------------------------
+# ------------------------------------------
 
-# Private SSH variables are in a file located in .zsh file located in $ZSH_CUSTOM
+# Private SSH variables are in a .zsh file located in $ZSH_CUSTOM
 
 # Public IP
 alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
@@ -338,9 +304,11 @@ alias sshpX="ssh -X $_SSH_USER_NAME@$_SSH_PRIVATE_IP -p $_SSH_PORT"
 alias sshpL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PRIVATE_IP -p $_SSH_PORT"
 alias sshpF="sshfs $_SSH_USER_NAME@$_SSH_PRIVATE_IP: -p $_SSH_PORT ssh_folder"
 
-# Git master
+# Master git
+# ------------------------------------------
 # ------------------------------------------
 
+# Clear all Git history
 _removeGithistory() {
     URL_GIT=$(gitu)
     rmr .git;
@@ -351,6 +319,7 @@ _removeGithistory() {
     git push --mirror --force;
 }
 
+# Execute git pull on folders
 _private_gitpp() {
     cd $1;
     for i in */.git; do (
@@ -373,6 +342,7 @@ master_git() {
 }
 
 # Master compile
+# ------------------------------------------
 # ------------------------------------------
 
 master_compile() {
@@ -411,6 +381,7 @@ master_compile() {
 }
 
 # Master update
+# ------------------------------------------
 # ------------------------------------------
 
 master_update() {
@@ -455,6 +426,7 @@ master_update() {
 }
 
 # Master all
+# ------------------------------------------
 # ------------------------------------------
 
 master_all() {
