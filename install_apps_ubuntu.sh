@@ -273,7 +273,20 @@ mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Others: cgoban, source-sans-pro, gopanda, teamviewer, google earth
-# Extensions: Application View Columns, Applications Menu, Dash to Dock, Night Light Slider, OpenWeather, User Themes, Vitals
+
+# Extensions
+# ------------------------------------------
+
+# Application View Columns
+# Applications Menu
+# Dash to Dock
+# Night Light Slider
+# OpenWeather
+# Removable Drive Menu
+# Sound Input & Output Device Chooser
+# User Themes
+# Vitals
+# windowNavigator
 
 # Compile and update everything
 # ------------------------------------------
