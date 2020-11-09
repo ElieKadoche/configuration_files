@@ -389,6 +389,8 @@ master_update() {
         # Termux
         pkg upgrade -y;
         pkg update -y;
+        pkg autoclean;
+        pkg clean;
 
     else
         # Node
@@ -411,8 +413,6 @@ master_update() {
             sudo apt -y upgrade;
             sudo snap refresh;
             sudo apt dist-upgrade;
-
-            # Clean system
             sudo apt -y autoclean;
             sudo apt -y clean;
             sudo apt -y autoremove;
