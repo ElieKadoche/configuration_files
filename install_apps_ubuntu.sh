@@ -61,8 +61,8 @@ sudo apt -y install screen
 sudo apt -y install wget
 
 # From universe
-sudo apt -y install audacity
 sudo apt -y install alacritty
+sudo apt -y install audacity
 sudo apt -y install bibclean
 sudo apt -y install blender
 sudo apt -y install calibre
@@ -79,17 +79,17 @@ sudo apt -y install gnome-shell-extensions
 sudo apt -y install gnome-tweak-tool
 sudo apt -y install graphviz
 sudo apt -y install hardinfo
-sudo apt -y install inkscape
 sudo apt -y install imagemagick
+sudo apt -y install inkscape
 sudo apt -y install kazam
 sudo apt -y install leela-zero
-sudo apt -y install libgeos++-dev
-sudo apt -y install libgirepository1.0-dev
 sudo apt -y install libboost-all-dev
 sudo apt -y install libcups2-dev
+sudo apt -y install libgeos++-dev
+sudo apt -y install libgirepository1.0-dev
 sudo apt -y install libopencv-dev
-sudo apt -y install librecad
 sudo apt -y install libproj-dev
+sudo apt -y install librecad
 sudo apt -y install libreoffice
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
@@ -103,12 +103,12 @@ sudo apt -y install pandoc
 sudo apt -y install papirus-icon-theme
 sudo apt -y install pavucontrol
 sudo apt -y install pwgen
-sudo apt -y install python-dev
 sudo apt -y install python-box2d
+sudo apt -y install python-dev
+sudo apt -y install python3-cartopy
 sudo apt -y install python3-distutils-extra
 sudo apt -y install python3-pip
 sudo apt -y install python3-pygame
-sudo apt -y install python3-cartopy
 sudo apt -y install sassc
 sudo apt -y install scrcpy
 sudo apt -y install sshfs
@@ -196,8 +196,8 @@ echo "Running snap packages..."
 
 sudo snap install discord
 sudo snap install intellij-idea-community --classic
-sudo snap install pycharm-community --classic
 sudo snap install mathpix-snipping-tool
+sudo snap install pycharm-community --classic
 
 # Linuxbrew
 # ------------------------------------------
