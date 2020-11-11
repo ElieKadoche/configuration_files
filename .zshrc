@@ -228,7 +228,7 @@ yyy() {youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --r
 renameAll() {ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done}
 
 # Clean Tex files
-rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\)" -delete}
+rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete}
 
 # Find out the pid of a specified process
 # Note that the command name can be specified via a regex
