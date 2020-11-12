@@ -250,6 +250,11 @@ pyclean() {
     find . -name ".pytest_cache" -exec rm -rf "{}" \;
 }
 
+# Clear string: replace space by _ and remove capital letters
+clearString() {
+    echo $1 | sed 's/ /_/g' | sed -e 's/\(.*\)/\L\1/'
+}
+
 # Master command to compile latex projects
 compiletex() {
     pdflatex "$1.tex";
