@@ -10,9 +10,6 @@ sudo add-apt-repository main
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 sudo add-apt-repository restricted
-sudo add-apt-repository ppa:mmstick76/alacritty
-sudo add-apt-repository ppa:openrazer/stable
-sudo add-apt-repository ppa:polychromatic/stable
 sudo apt update
 
 # Installation de zsh
@@ -61,7 +58,6 @@ sudo apt -y install screen
 sudo apt -y install wget
 
 # From universe
-sudo apt -y install alacritty
 sudo apt -y install audacity
 sudo apt -y install bibclean
 sudo apt -y install blender
@@ -81,7 +77,6 @@ sudo apt -y install graphviz
 sudo apt -y install hardinfo
 sudo apt -y install imagemagick
 sudo apt -y install inkscape
-sudo apt -y install kazam
 sudo apt -y install leela-zero
 sudo apt -y install libboost-all-dev
 sudo apt -y install libcups2-dev
@@ -129,6 +124,20 @@ sudo apt -y install xtrlock
 sudo apt -y install flashplugin-installer
 sudo apt -y install unrar
 
+# Peek
+# ------------------------------------------
+
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt -y install peek
+
+# Alacritty
+# ------------------------------------------
+
+sudo add-apt-repository ppa:mmstick76/alacritty
+sud apt update
+sudo apt -y install alacritty
+
 # Etcher
 # ------------------------------------------
 
@@ -140,6 +149,9 @@ sudo apt-get install balena-etcher-electron
 # openrazer
 # ------------------------------------------
 
+sudo add-apt-repository ppa:openrazer/stable
+sudo add-apt-repository ppa:polychromatic/stable
+sudo apt-get update
 sudo apt -y install openrazer-meta
 sudo apt -y install polychromatic
 
