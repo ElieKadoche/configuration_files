@@ -307,3 +307,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " Does not quit visual mode
 vmap < <gv
 vmap > >gv
+
+" Indent comments starting with #
+set cindent cinkeys-=0#
