@@ -340,8 +340,8 @@ _private_gitpp() {
 # Argument is the command to execute (status, pull, etc.)
 master_git() {
     _private_gitpp $ORIGIN/git_apps $1;
-    _private_gitpp $ORIGIN/git_apps/0_personnal_projects $1;
-    _private_gitpp $ORIGIN/git_apps/1_git_others $1;
+    _private_gitpp $ORIGIN/git_apps/0_public $1;
+    _private_gitpp $ORIGIN/git_apps/1_others $1;
     _private_gitpp $ORIGIN $1;
     cd $ORIGIN;
 }
