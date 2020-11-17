@@ -252,7 +252,7 @@ pyclean() {
 
 # Clear string: replace [spaces / tabs / new lines] by _ and remove capital letters
 clearString() {
-    echo $1 | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/'
+    echo $1 | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
 }
 
 # Master command to compile latex projects
