@@ -58,7 +58,7 @@ sudo apt -y install screen
 sudo apt -y install wget
 
 # From universe
-sudo apt -y install audacity
+sudo apt -y install audacitysudo snap install pick-colour-picker
 sudo apt -y install bibclean
 sudo apt -y install blender
 sudo apt -y install calibre
@@ -209,6 +209,7 @@ echo "Running snap packages..."
 sudo snap install discord
 sudo snap install intellij-idea-community --classic
 sudo snap install mathpix-snipping-tool
+sudo snap install pick-colour-picker
 sudo snap install pycharm-community --classic
 
 # Linuxbrew
