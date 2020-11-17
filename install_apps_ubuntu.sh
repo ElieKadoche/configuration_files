@@ -41,6 +41,7 @@ echo "Running apt packages..."
 
 # From main
 sudo apt -y install build-essential
+sudo apt -y install cheese
 sudo apt -y install cmake
 sudo apt -y install coreutils
 sudo apt -y install firefox
