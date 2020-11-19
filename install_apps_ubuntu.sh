@@ -297,6 +297,7 @@ cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 # Dash to Dock
 # Emoji selector
 # Freon
+# NetSpeed
 # Night Light Slider
 # OpenWeather
 # Removable Drive Menu
