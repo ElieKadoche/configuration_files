@@ -98,6 +98,7 @@ sudo apt -y install okular
 sudo apt -y install pandoc
 sudo apt -y install papirus-icon-theme
 sudo apt -y install pavucontrol
+sudo apt -y install pulseeffects
 sudo apt -y install pwgen
 sudo apt -y install python-box2d
 sudo apt -y install python-dev
