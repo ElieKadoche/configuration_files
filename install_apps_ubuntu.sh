@@ -295,6 +295,8 @@ cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 # Application View Columns
 # Applications Menu
 # Dash to Dock
+# Emoji selector
+# Freon
 # Night Light Slider
 # OpenWeather
 # Removable Drive Menu
