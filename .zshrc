@@ -346,6 +346,49 @@ master_git() {
     cd $ORIGIN;
 }
 
+# Master update
+# ------------------------------------------
+# ------------------------------------------
+
+master_update() {
+    if [ "$SYSTEM" = "2" ]; then
+        # Termux
+        pkg upgrade -y;
+        pkg update -y;
+
+    else
+        # Node
+        npm install -g npm;
+
+        # Homebrew
+        brew update;
+        brew upgrade;
+        brew doctor;
+
+        if [ "$SYSTEM" = "0" ]; then
+            # MacOS
+            brew cask upgrade --greedy;
+            softwareupdate --install --all;
+
+        elif [ "$SYSTEM" = "1" ]; then
+            # Ubuntu
+            sudo apt -y update;
+            sudo apt -y upgrade;
+            sudo snap refresh;
+            sudo apt dist-upgrade;
+        fi
+    fi
+
+    # Global
+    omz update;
+    python3 -m pip install --upgrade pip;
+    pip-review --local --auto;
+    vim +"PlugUpgrade" +qa;
+    vim +"PlugUpdate" +qa;
+    vim +"PlugInstall" +qa;
+    vim +"CocUpdate" +qa;
+}
+
 # Master compile
 # ------------------------------------------
 # ------------------------------------------
@@ -385,54 +428,44 @@ master_compile() {
     cd $ORIGIN;
 }
 
-# Master update
+# Master clean
 # ------------------------------------------
 # ------------------------------------------
 
-master_update() {
+master_clean() {
     if [ "$SYSTEM" = "2" ]; then
         # Termux
-        pkg upgrade -y;
-        pkg update -y;
         pkg autoclean;
         pkg clean;
 
     else
         # Node
-        npm install -g npm;
+        npm cache clean;
 
         # Homebrew
-        brew update;
-        brew upgrade;
         brew cleanup;
-        brew doctor;
 
-        if [ "$SYSTEM" = "0" ]; then
-            # MacOS
-            brew cask upgrade --greedy;
-            softwareupdate --install --all;
+        # Logs
+        journalctl --disk-usage
+        sudo journalctl --vacuum-time=1d
 
-        elif [ "$SYSTEM" = "1" ]; then
+        if [ "$SYSTEM" = "1" ]; then
             # Ubuntu
-            sudo apt -y update;
-            sudo apt -y upgrade;
-            sudo snap refresh;
-            sudo apt dist-upgrade;
             sudo apt -y autoclean;
             sudo apt -y clean;
             sudo apt -y autoremove;
+
+            # Snaps
+            LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+            while read snapname revision; do
+                sudo snap remove "$snapname" --revision="$revision";
+            done
         fi
     fi
 
     # Global
-    omz update;
-    python3 -m pip install --upgrade pip;
-    pip-review --local --auto;
-    vim +"PlugUpgrade" +qa;
-    vim +"PlugUpdate" +qa;
+    pip cache purge
     vim +"PlugClean" +qa;
-    vim +"PlugInstall" +qa;
-    vim +"CocUpdate" +qa;
 }
 
 # Master all
@@ -444,6 +477,7 @@ master_all() {
     master_git status;
     master_update;
     master_compile;
+    master_clean;
 }
 
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
