@@ -225,7 +225,7 @@ yyy() {youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --r
 
 # Rename all files a folder
 # ls -tr: oldest modified file will have index 0
-renameAll() {ls -tr | find . -regex "...*" | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done}
+renameAll() {find . -regex "...*" | ls -tr | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done}
 
 # Clean Tex files
 rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete}
