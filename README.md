@@ -50,8 +50,8 @@ Private variables are declared in a `.zsh` file placed in `$ZSH_CUSTOM` folder.
 - For basic usage: `ssh <user>@<ip> -p <port>`.
 - For X11 forwarding: `ssh -X <user>@<ip> -p <port>`.
 - To redirect a port (for example, Tensorboard): `ssh -L 16006:127.0.0.1:6006 <user>@<ip> -p <port>`.
-- To share files with `sshfs`: `sshfs <user>@<ip>: -p <port> <folder_in_which_to_mount>`.
-- To share files with `scp`: `scp -P <port> <user>@<port>:<file_to_share>`.
+- To share files with `sshfs`: `sshfs <user>@<ip>: -p <port> <folder_path_in_which_to_mount>`.
+- To share files with `scp`: `scp -P <port> <user>@<ip>:<file_path_to_share> <path_location>`.
 
 ## Android
 
