@@ -90,6 +90,7 @@ sudo apt -y install libreoffice
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
 sudo apt -y install mpv
+sudo apt -y install ncdu
 sudo apt -y install neofetch
 sudo apt -y install neovim
 sudo apt -y install nmap
