@@ -188,19 +188,19 @@ alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*"
 alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
 
 # Others
-alias e="exit"
-alias vim=nvim
-alias pip="pip3"
-alias ..="cd ../"
-alias rmr="rm -rf"
-alias m="cd $ORIGIN"
 alias ...="cd ../../"
-alias python="python3"
-alias src="source ~/.zshrc"
-alias du="du -shc * | sort -h"
+alias ..="cd ../"
+alias du="du -ah --max-depth=1 . | sort -hr"
+alias e="exit"
 alias grep="grep --color=auto"
-alias rm__="find . -name '._*' -ls -delete"
 alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
+alias m="cd $ORIGIN"
+alias pip="pip3"
+alias python="python3"
+alias rm__="find . -name '._*' -ls -delete"
+alias rmr="rm -rf"
+alias src="source ~/.zshrc"
+alias vim=nvim
 
 # Find files of a given extension
 findSameExtension() {find . -iname \*.$1}
