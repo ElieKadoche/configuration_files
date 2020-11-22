@@ -59,7 +59,7 @@ sudo apt -y install screen
 sudo apt -y install wget
 
 # From universe
-sudo apt -y install audacitysudo snap install pick-colour-picker
+sudo apt -y install audacity
 sudo apt -y install bibclean
 sudo apt -y install blender
 sudo apt -y install calibre
