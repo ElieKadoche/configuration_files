@@ -216,6 +216,7 @@ sudo snap install intellij-idea-community --classic
 sudo snap install mathpix-snipping-tool
 sudo snap install pick-colour-picker
 sudo snap install pycharm-community --classic
+sudo snap install rpi-imager
 
 # Linuxbrew
 # ------------------------------------------
