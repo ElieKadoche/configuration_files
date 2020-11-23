@@ -44,6 +44,7 @@ sudo apt -y install build-essential
 sudo apt -y install cheese
 sudo apt -y install cmake
 sudo apt -y install coreutils
+sudo apt -y install cryptsetup
 sudo apt -y install firefox
 sudo apt -y install gcc
 sudo apt -y install ghostscript
