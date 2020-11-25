@@ -370,6 +370,7 @@ master_update() {
             sudo apt -y upgrade;
             sudo snap refresh;
             sudo apt dist-upgrade;
+            # sudo update-grub;  # Only if necessary
         fi
     fi
 
