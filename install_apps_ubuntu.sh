@@ -293,7 +293,7 @@ cp others/_colors.scss $ORIGIN/git_apps/materia-theme/src/_colors.scss
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# Others: cgoban, source-sans-pro, gopanda, teamviewer, google earth
+# Others: CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
 
 # Extensions
 # ------------------------------------------
