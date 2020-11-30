@@ -58,7 +58,7 @@ set termguicolors
 colorscheme dracula
 set background=dark
 if g:colors_name == "dracula"
-    highlight Normal ctermbg=none ctermfg=white guibg=#000000 guifg=#ffffff
+    highlight Normal ctermbg=none ctermfg=white guibg=none guifg=#ffffff
 endif
 
 hi SpellBad cterm=underline
