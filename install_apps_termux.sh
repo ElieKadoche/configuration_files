@@ -59,10 +59,11 @@ git config --global credential.helper store
 
 pkg install -y cmatrix
 pkg install -y ffmpeg
-pkg install -y imagemagick
+pkg install -y fzf
 pkg install -y ghostscript
 pkg install -y git
 pkg install -y htop
+pkg install -y imagemagick
 pkg install -y mpv
 pkg install -y neofetch
 pkg install -y openssh
