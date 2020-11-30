@@ -401,6 +401,10 @@ master_compile() {
         npm install;
         npm run build;
 
+        # fzf
+        cd $ORIGIN/git_apps/fzf;
+        ./install --all --no-bash --no-zsh;
+
         # Katago
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [ -d "./build" ]; then rm -rf ./build; fi
@@ -475,5 +479,6 @@ master_all() {
     master_clean;
 }
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
