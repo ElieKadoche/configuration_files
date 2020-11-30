@@ -7,12 +7,12 @@ Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'https://github.com/dracula/vim.git'
 Plug 'https://github.com/honza/vim-snippets.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/qpkorr/vim-bufkill'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
@@ -53,9 +53,10 @@ noremap <C-h> <C-w>h
 " Colors
 " ------------------------------------------
 
-colorscheme gruvbox
+set termguicolors
+colorscheme dracula
 set background=dark
-if g:colors_name == "gruvbox"
+if g:colors_name == "dracula"
     highlight Normal ctermbg=none ctermfg=white guibg=#000000 guifg=#ffffff
 endif
 
@@ -155,11 +156,10 @@ let NERDTreeShowHidden=1
 nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
 
 " Change spelllang
-set spell
-set spelllang=en
+set nospell
 nnoremap <leader>sn :set nospell<cr>
-nnoremap <leader>sf :set spelllang=fr<cr>
-nnoremap <leader>se :set spelllang=en<cr>
+nnoremap <leader>sf :set spelllang=fr<cr> :set spell<cr>
+nnoremap <leader>se :set spelllang=en<cr> :set spell<cr>
 
 " A silly one that I love: sort selected lines by length
 " We use xnoremap because we call this function in visual mode
