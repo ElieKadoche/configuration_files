@@ -239,6 +239,17 @@ rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.
 # Without the 'sudo' it will only find processes of the current user
 findPID () { lsof -t -c "$@" ; }
 
+# fkill - kill process
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+
 # Send computer to sleep
 dodo() {
     t=`echo "scale=0;$2*3600/1" | bc`;
