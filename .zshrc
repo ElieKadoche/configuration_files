@@ -262,6 +262,18 @@ fshow() {
 FZF-EOF"
 }
 
+# Open firefox favorites with fzf
+ff() {
+  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && firefox "${files[@]}"
+}
+
+# Open firefox favorites with fzf (private window)
+ffp() {
+  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && firefox --private-window "${files[@]}"
+}
+
 # Send computer to sleep
 dodo() {
     t=`echo "scale=0;$2*3600/1" | bc`;
