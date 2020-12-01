@@ -157,6 +157,9 @@ export ARCHFLAGS="-arch x86_64"
 # ------------------------------------------
 # ------------------------------------------
 
+# Vim bindkeys
+bindkey -v
+
 # TheFuck
 if [ "$SYSTEM" != "2" ]; then
     eval $(thefuck --alias)
