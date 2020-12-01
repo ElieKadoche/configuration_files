@@ -239,7 +239,7 @@ rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.
 # Without the 'sudo' it will only find processes of the current user
 findPID () { lsof -t -c "$@" ; }
 
-# fkill - kill process
+# fkill - kill process (from fzf)
 fkill() {
   local pid
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
@@ -248,6 +248,18 @@ fkill() {
   then
     echo $pid | xargs kill -${1:-9}
   fi
+}
+
+# fshow - git commit browser (from fzf)
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
 }
 
 # Send computer to sleep
