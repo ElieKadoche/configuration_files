@@ -239,41 +239,6 @@ rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.
 # Without the 'sudo' it will only find processes of the current user
 findPID () { lsof -t -c "$@" ; }
 
-# fkill - kill process (from fzf)
-fkill() {
-  local pid
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-  if [ "x$pid" != "x" ]
-  then
-    echo $pid | xargs kill -${1:-9}
-  fi
-}
-
-# fshow - git commit browser (from fzf)
-fshow() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind "ctrl-m:execute:
-                (grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-                {}
-FZF-EOF"
-}
-
-# Open firefox favorites with fzf
-ff() {
-  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && firefox "${files[@]}"
-}
-
-# Open firefox favorites with fzf (private window)
-ffp() {
-  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && firefox --private-window "${files[@]}"
-}
-
 # Send computer to sleep
 dodo() {
     t=`echo "scale=0;$2*3600/1" | bc`;
@@ -327,6 +292,51 @@ startKataWhat() {
     cd $ORIGIN/miscellaneous/KataWhatBot;
     nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.properties &;
     cd $ORIGIN;
+}
+
+# fzf
+# ------------------------------------------
+# ------------------------------------------
+
+# Open files with nvim
+vv() {
+  IFS=$'\n' files=($(find $ORIGIN/ -type f | fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && vim "${files[@]}"
+}
+
+# fkill - kill process (from fzf)
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+
+# fshow - git commit browser (from fzf)
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# Open firefox favorites with fzf
+ff() {
+  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && firefox "${files[@]}"
+}
+
+# Open firefox favorites with fzf (private window)
+ffp() {
+  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && firefox --private-window "${files[@]}"
 }
 
 # SSH aliases
