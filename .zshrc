@@ -312,6 +312,12 @@ vv() {
   [[ -n "$files" ]] && vim "${files[@]}"
 }
 
+# Find directory
+cdd() {
+  IFS=$'\n' directories=($(find $ORIGIN/ -type d | fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$directories" ]] && cd "${directories[@]}"
+}
+
 # fkill - kill process (from fzf)
 fkill() {
   local pid
