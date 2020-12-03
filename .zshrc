@@ -437,7 +437,6 @@ master_update() {
     fi
 
     # Global
-    omz update;
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
     vim +"PlugUpgrade" +qa;
@@ -539,6 +538,7 @@ master_all() {
     master_update;
     master_compile;
     master_clean;
+    omz update;
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
