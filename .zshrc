@@ -226,10 +226,6 @@ getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $
 # youtube-dl -F to see formats
 yyy() {youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
 
-# Rename all files a folder
-# ls -tr: oldest modified file will have index 0
-renameAll() {find . -regex "...*" | ls -tr | cat -n | while read n f; do mv "$f" `printf "%d_$1.${f##*.}" $n-1`; done}
-
 # Clean Tex files
 rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete}
 
@@ -251,6 +247,18 @@ pyclean() {
     find . -name "*.pyc" -ls -delete;
     find . -name "__pycache__" -ls -delete;
     find . -name ".pytest_cache" -exec rm -rf "{}" \;
+}
+
+# Rename all files in a folder
+# ls -tr: oldest modified file will have index 0
+renameAll() {
+    IDX=0;
+    find . -type f | ls -tr | while read FILE; do
+        # EXTENSION=`echo $FILE | sed -n -e 's/^.*\.//p'`;  # But without the point
+        EXTENSION=$(python -c 'import os, sys; _, ext = os.path.splitext(sys.argv[1]); print(ext)' $FILE);
+        mv $FILE ${IDX}_$1${EXTENSION};
+        IDX=$((IDX+1));
+    done;
 }
 
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
