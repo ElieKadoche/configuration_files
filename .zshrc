@@ -26,7 +26,6 @@ elif [ "$OSTYPE" = "linux-gnu" ]; then
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
     export PATH="/home/elie_kadoche/.local/bin:$PATH"
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
     export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
     export LD_LIBRARY_PATH="/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
@@ -414,15 +413,13 @@ master_update() {
 
     else
         # Node
-        npm install -g npm;
-
-        # Homebrew
-        brew update;
-        brew upgrade;
-        brew doctor;
+        sudo npm install -g npm;
 
         if [ "$SYSTEM" = "0" ]; then
-            # MacOS
+            # Homebrew (MacOS)
+            brew update;
+            brew upgrade;
+            brew doctor;
             brew cask upgrade --greedy;
             softwareupdate --install --all;
 
@@ -442,6 +439,8 @@ master_update() {
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
     vim +"PlugInstall" +qa;
+
+    # If Coc is activated only for tex files, Coc commands must be run from a tex file
     vim +"CocUpdate" +qa;
 }
 
@@ -459,8 +458,8 @@ master_compile() {
 
         # Sabaki
         cd $ORIGIN/git_apps/Sabaki;
-        npm install;
-        npm run build;
+        sudo npm install;
+        sudo npm run build;
 
         # fzf
         cd $ORIGIN/git_apps/fzf;
@@ -502,14 +501,16 @@ master_clean() {
         # Node
         npm cache clean;
 
-        # Homebrew
-        brew cleanup;
-
         # Logs
         journalctl --disk-usage
         sudo journalctl --vacuum-time=1d
 
-        if [ "$SYSTEM" = "1" ]; then
+
+        if [ "$SYSTEM" = "0" ]; then
+            # Homebrew (MacOS)
+            brew cleanup;
+
+        elif [ "$SYSTEM" = "1" ]; then
             # Ubuntu
             sudo apt -y autoclean;
             sudo apt -y clean;

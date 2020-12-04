@@ -15,7 +15,7 @@ sudo apt update
 # Installation de zsh
 # ------------------------------------------
 
-sudo apt install zsh
+sudo apt -y install zsh
 chsh -s $(which zsh)
 
 # You can launch the script from here
@@ -23,16 +23,6 @@ chsh -s $(which zsh)
 
 sudo apt -y install curl
 sudo apt -y install git
-
-# Homebrew
-# ------------------------------------------
-
-echo "Installing Linuxbrew..."
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/elie_kadoche/.zprofile
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # APT
 # ------------------------------------------
@@ -110,6 +100,8 @@ sudo apt -y install python3-distutils-extra
 sudo apt -y install python3-pip
 sudo apt -y install python3-pygame
 sudo apt -y install rawtherapee
+sudo apt -y install sassc
+sudo apt -y install scrcpy
 sudo apt -y install sshfs
 sudo apt -y install swi-prolog
 sudo apt -y install swig
@@ -147,15 +139,15 @@ sudo apt -y install alacritty
 
 echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
 sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
-sudo apt-get update
-sudo apt-get install balena-etcher-electron
+sudo apt update
+sudo apt -y install balena-etcher-electron
 
 # openrazer
 # ------------------------------------------
 
 sudo add-apt-repository ppa:openrazer/stable
 sudo add-apt-repository ppa:polychromatic/stable
-sudo apt-get update
+sudo apt update
 sudo apt -y install openrazer-meta
 sudo apt -y install polychromatic
 
@@ -217,14 +209,6 @@ sudo snap install pick-colour-picker
 sudo snap install pycharm-community --classic
 sudo snap install rpi-imager
 
-# Linuxbrew
-# ------------------------------------------
-
-echo "Installing brew..."
-
-# Carefull here, linuxbrew may install its own python3 for certain package
-brew install prettier
-
 # Git
 # ------------------------------------------
 
@@ -283,6 +267,12 @@ sudo sensors-detect
 # Activate firewall linux
 sudo ufw enable
 
+# Prettier
+npm install --save-dev --save-exact prettier
+
+# Remove kdeconnect
+sudo apt remove kdeconnect
+
 # Custom modifications
 cp others/gtk.css ~/.config/gtk-3.0/gtk.css
 cp others/_colors.scss $ORIGIN/git_apps/materia-theme/src/_colors.scss
@@ -292,6 +282,7 @@ mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Others: CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
+# Install fzf from the source directory
 
 # Extensions
 # ------------------------------------------
