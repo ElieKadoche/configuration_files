@@ -440,8 +440,8 @@ master_update() {
     vim +"PlugUpdate" +qa;
     vim +"PlugInstall" +qa;
 
-    # If Coc is activated only for tex files, Coc commands must be run from a tex file
-    vim +"CocUpdate" +qa;
+    # Because coc is activated only for tex files
+    vim tmp.tex +"CocUpdate" +qa;
 }
 
 # Master compile
