@@ -45,7 +45,7 @@ ssh
 
 ## SSH
 
-Private variables are declared in a `.zsh` file placed in `$ZSH_CUSTOM` folder.
+Private variables and commands are declared in a `.zsh` file placed in `$ZSH_CUSTOM` folder.
 
 - For basic usage: `ssh <user>@<ip> -p <port>`.
 - For X11 forwarding: `ssh -X <user>@<ip> -p <port>`.
@@ -58,7 +58,7 @@ Private variables are declared in a `.zsh` file placed in `$ZSH_CUSTOM` folder.
 - Privacy: Firefox, Firefox Focus, Orbot, LessPass.
 - Google: Gmail, drive, Maps, Contacts, Docs, Earth.
 - Files: File Manager+, Total Commander + USB-Stick Plugin
-- Dev: Termux + Termux:API + SFTP, Cxxdroid, QuickEdit+, DroiDcam.
+- Dev: Termux + Termux:API + SFTP, Cxxdroid, QuickEdit+, DroidCam.
 - Baduk: Tsumego Pro, Pandanet(Go), TygemBadukLite, KGS, ElyGo pro.
 - Games: Morpion Solitaire (qilin TicTacToe), Missile Command: Recharged, DroidFish.
 - Communication: Discord, Facebook, Instagram, Messenger, LinkedIn, WhatsApp, Reddit.
