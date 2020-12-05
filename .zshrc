@@ -8,7 +8,6 @@ if [ "$OSTYPE" = "darwin" ]; then
     SYSTEM="0"
     ORIGIN="/Volumes/marvin_data"
     export ZSH="/Users/eliekadoche/.oh-my-zsh"
-    PROMPT="%F{red}%n%B%F{yellow}MacOS%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
 
     alias rmtrash="rm -rf ~/.Trash/*"
     openfi() {open -a /Applications/Firefox.app/ $1}
@@ -19,7 +18,6 @@ elif [ "$OSTYPE" = "linux-gnu" ]; then
     SYSTEM="1"
     ORIGIN="/home/elie_kadoche/data"
     export ZSH="/home/elie_kadoche/.oh-my-zsh"
-    PROMPT="%F{red}%n%B%F{yellow}MARVIN%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
 
     alias xx="xtrlock"
     alias open="xdg-open"
@@ -35,7 +33,6 @@ elif [ "$OSTYPE" = "linux-android" ]; then
     SYSTEM="2"
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
     ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
-    PROMPT="%F{red}%n%B%F{yellow}termux%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
 
     alias pbcopy="termux-clipboard-set"
 fi
@@ -155,6 +152,9 @@ export ARCHFLAGS="-arch x86_64"
 # My custom .zshrc
 # ------------------------------------------
 # ------------------------------------------
+
+# Custom prompt
+PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
 
 # Vim bindkeys
 bindkey -v
