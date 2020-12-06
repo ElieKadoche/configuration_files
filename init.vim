@@ -174,8 +174,6 @@ xnoremap <leader>l :'<,'> ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -
 
 let g:ale_linters = {
 \    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
-\    'markdown': ['proselint'],
-\    'text': ['proselint'],
 \    'tex': ['lacheck'],
 \    'cpp': ['clang'],
 \    'bib': ['bibclean'],

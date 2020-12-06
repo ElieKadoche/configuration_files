@@ -35,7 +35,6 @@ opencv-python
 openpyxl
 pandas
 pip-review
-proselint
 ptpython
 pybind11
 pycodestyle
