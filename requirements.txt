@@ -10,6 +10,7 @@ box2d.py
 bpytop
 cartopy
 chroma
+ciphey
 configparser
 dask[complete]
 docx-mailmerge
