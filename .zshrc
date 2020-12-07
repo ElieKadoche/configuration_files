@@ -37,6 +37,23 @@ elif [ "$OSTYPE" = "linux-android" ]; then
     alias pbcopy="termux-clipboard-set"
 fi
 
+# Colors
+# ------------------------------------------
+# ------------------------------------------
+
+# Reset
+Color_Off='\033[0m'   # Text Reset
+
+# Bold
+BBlack='\033[1;30m'   # Black
+BRed='\033[1;31m'     # Red
+BGreen='\033[1;32m'   # Green
+BYellow='\033[1;33m'  # Yellow
+BBlue='\033[1;34m'    # Blue
+BPurple='\033[1;35m'  # Purple
+BCyan='\033[1;36m'    # Cyan
+BWhite='\033[1;37m'   # White
+
 # From template
 # ------------------------------------------
 # ------------------------------------------
@@ -380,11 +397,10 @@ _removeGithistory() {
 }
 
 # Execute git pull on folders
-_private_gitpp() {
+_private_git_command() {
     cd $1;
     for i in */.git; do (
-        echo $i;
-        echo "------------------------------------------"
+        printf "${BBlue}$i${Color_Off}\n";
         cd $i/..;
         git $2;
         echo "";
@@ -394,10 +410,15 @@ _private_gitpp() {
 
 # Argument is the command to execute (status, pull, etc.)
 master_git() {
-    _private_gitpp $ORIGIN/git_apps $1;
-    _private_gitpp $ORIGIN/git_apps/0_public $1;
-    _private_gitpp $ORIGIN/git_apps/1_others $1;
-    _private_gitpp $ORIGIN $1;
+    printf "${BPurple}------------------------------------------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MASTER GIT ---------------------${Color_Off}\n";
+    printf "${BPurple}------------------------------------------------------${Color_Off}\n\n";
+
+    _private_git_command $ORIGIN/git_apps $1;
+    _private_git_command $ORIGIN/git_apps/0_public $1;
+    _private_git_command $ORIGIN/git_apps/1_others $1;
+    _private_git_command $ORIGIN $1;
+
     cd $ORIGIN;
 }
 
@@ -406,17 +427,24 @@ master_git() {
 # ------------------------------------------
 
 master_update() {
+    printf "${BPurple}---------------------------------------------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MASTER UPDATE ---------------------${Color_Off}\n";
+    printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
+
     if [ "$SYSTEM" = "2" ]; then
         # Termux
+        printf "${BBlue}PKG${Color_Off}\n\n";
         pkg upgrade -y;
         pkg update -y;
 
     else
         # Node
+        printf "${BBlue}NPM${Color_Off}\n\n";
         sudo npm install -g npm;
 
         if [ "$SYSTEM" = "0" ]; then
             # Homebrew (MacOS)
+            printf "${BBlue}\nBREW${Color_Off}\n\n";
             brew update;
             brew upgrade;
             brew doctor;
@@ -425,17 +453,23 @@ master_update() {
 
         elif [ "$SYSTEM" = "1" ]; then
             # Ubuntu
+            printf "${BBlue}\nAPT${Color_Off}\n\n";
             sudo apt -y update;
             sudo apt -y upgrade;
-            sudo snap refresh;
             sudo apt dist-upgrade;
             # sudo update-grub;  # Only if necessary
+
+            printf "${BBlue}\nSNAP${Color_Off}\n\n";
+            sudo snap refresh;
         fi
     fi
 
     # Global
+    printf "${BBlue}\nPIP${Color_Off}\n\n";
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
+
+    printf "${BBlue}\nNVIM${Color_Off}\n\n";
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
     vim +"PlugInstall" +qa;
@@ -449,23 +483,32 @@ master_update() {
 # ------------------------------------------
 
 master_compile() {
+    printf "${BPurple}----------------------------------------------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MASTER COMPILE ---------------------${Color_Off}\n";
+    printf "${BPurple}----------------------------------------------------------${Color_Off}\n\n";
+
     # Lesspass
+    printf "${BBlue}lesspass${Color_Off}\n\n";
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
     if [ "$SYSTEM" != "2" ]; then
         # YouCompleteMe
+        printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
         python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
 
         # Sabaki
+        printf "${BBlue}\nSabaki${Color_Off}\n\n";
         cd $ORIGIN/git_apps/Sabaki;
         sudo npm install;
         sudo npm run build;
 
         # fzf
+        printf "${BBlue}\nfzf${Color_Off}\n\n";
         cd $ORIGIN/git_apps/fzf;
         ./install --all --no-bash --no-zsh;
 
         # Katago
+        printf "${BBlue}\nKatago${Color_Off}\n\n";
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
@@ -475,9 +518,11 @@ master_compile() {
         make;
 
         if [ "$SYSTEM" = "1" ]; then
+            printf "${BBlue}\nmateria-theme${Color_Off}\n\n";
             cd $ORIGIN/git_apps/materia-theme;
             sudo ./install.sh --color dark --size compact;
 
+            printf "${BBlue}\ndash-to-dock${Color_Off}\n\n";
             cd $ORIGIN/git_apps/dash-to-dock;
             make;
             make install;
@@ -492,31 +537,42 @@ master_compile() {
 # ------------------------------------------
 
 master_clean() {
+    printf "${BPurple}--------------------------------------------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MASTER CLEAN ---------------------${Color_Off}\n";
+    printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
+
     if [ "$SYSTEM" = "2" ]; then
         # Termux
+        printf "${BBlue}PKG${Color_Off}\n\n";
         pkg autoclean;
         pkg clean;
 
     else
         # Node
+        printf "${BBlue}NPM${Color_Off}\n\n";
+        npm cache verify;
         npm cache clean;
 
         # Logs
+        printf "${BBlue}\nLOGS${Color_Off}\n\n";
         journalctl --disk-usage
         sudo journalctl --vacuum-time=1d
 
 
         if [ "$SYSTEM" = "0" ]; then
             # Homebrew (MacOS)
+            printf "${BBlue}\nBREW${Color_Off}\n\n";
             brew cleanup;
 
         elif [ "$SYSTEM" = "1" ]; then
             # Ubuntu
+            printf "${BBlue}\nAPT${Color_Off}\n\n";
             sudo apt -y autoclean;
             sudo apt -y clean;
             sudo apt -y autoremove;
 
             # Snaps
+            printf "${BBlue}\nSNAP${Color_Off}\n\n";
             LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
             while read snapname revision; do
                 sudo snap remove "$snapname" --revision="$revision";
@@ -525,7 +581,10 @@ master_clean() {
     fi
 
     # Global
+    printf "${BBlue}\nPIP${Color_Off}\n\n";
     pip cache purge
+
+    printf "${BBlue}\nNVIM${Color_Off}\n\n";
     vim +"PlugClean" +qa;
 }
 
