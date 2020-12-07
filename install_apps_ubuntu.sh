@@ -268,7 +268,8 @@ sudo sensors-detect
 # Activate firewall linux
 sudo ufw enable
 
-# Prettier
+# Neovim and Prettier
+sudo npm install -g neovim
 npm install --save-dev --save-exact prettier
 
 # Remove kdeconnect
