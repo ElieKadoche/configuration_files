@@ -42,6 +42,7 @@ sudo apt -y install htop
 sudo apt -y install libbz2-dev
 sudo apt -y install libcairo2-dev
 sudo apt -y install libgpgme-dev
+sudo apt -y install libtool-bin
 sudo apt -y install linux-headers-$(uname -r)
 sudo apt -y install network-manager
 sudo apt -y install ocl-icd-opencl-dev
