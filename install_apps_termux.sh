@@ -41,6 +41,9 @@ cfg = "extra-keys = [ \
 
 echo "$cfg$" > ~/.termux/termux.properties
 
+# Fira Code font
+wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Retina.ttf -O ~/.termux/font.ttf
+
 termux-reload-settings
 
 # Git
@@ -72,6 +75,8 @@ pkg install -y pwgen
 pkg install -y rsync
 pkg install -y screen
 pkg install -y termux-api
+pkg install -y tree
+pkg install -y wget
 
 # 2 different options
 pkg install -y texlive-full
