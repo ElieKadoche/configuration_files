@@ -14,7 +14,7 @@ Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
-Plug 'https://github.com/qpkorr/vim-bufkill'
+Plug 'https://github.com/qpkorr/vim-bufkill.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/tomtom/tcomment_vim.git'
 Plug 'https://github.com/w0rp/ale.git'
@@ -34,25 +34,6 @@ au BufRead,BufNewFile *.log set filetype=log
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 autocmd FileType python set colorcolumn=79
-
-" Buffers
-" ------------------------------------------
-
-set hidden
-let no_buffers_menu=1
-
-" Next buffer
-noremap <C-Tab> :bn<CR>
-" Previous buffer
-noremap <C-S-Tab> :bp<CR>
-" Close buffer
-noremap <C-q> :bd<CR>
-
-" Move into the different windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
 
 " Colors
 " ------------------------------------------
@@ -81,14 +62,14 @@ set guifont=Fira\ Code\ Retina:h10
 " identLine
 " ------------------------------------------
 
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list=['|', '¦', '┆', '┊']
 
 " ctrlp
 " ------------------------------------------
 
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_match_window='bottom,order:ttb'
+let g:ctrlp_switch_buffer=0
+let g:ctrlp_show_hidden=1
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
@@ -100,10 +81,10 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
 " LaTeX
 " ------------------------------------------
 
-let g:tex_flavor = 'latex'
+let g:tex_flavor='latex'
 
 " In tex files, no preview
-let g:tex_conceal = ''
+let g:tex_conceal=''
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
 " ------------------------------------------
@@ -117,7 +98,7 @@ endtry
 " Rainbow
 " ------------------------------------------
 
-let g:rainbow_active = 1 " Set to 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active=1 " Set to 0 if you want to enable it later via :RainbowToggle
 
 " YCM and UltiSnips
 " ------------------------------------------
@@ -125,17 +106,17 @@ let g:rainbow_active = 1 " Set to 0 if you want to enable it later via :RainbowT
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType='<C-n>'
 
 " Better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " coc.vim is better for LaTeX than YCM
-let g:ycm_filetype_blacklist = {
+let g:ycm_filetype_blacklist={
       \ 'tex': 1
       \}
 
@@ -169,6 +150,23 @@ nnoremap <leader>se :set spelllang=en<cr> :set spell<cr>
 " We use xnoremap because we call this function in visual mode
 xnoremap <leader>l :'<,'> ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
+" Buffers
+" ------------------------------------------
+
+set hidden
+let no_buffers_menu=1
+
+" Move around buffers
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>x :BD<CR>
+
+" Move around split with control + direction
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+
 " ALE
 " ------------------------------------------
 
@@ -194,8 +192,8 @@ let g:ale_completion_enabled=0
 let g:airline#extensions#ale#enabled=1
 let g:ale_c_parse_compile_commands=1
 
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+let g:ale_sign_error='>>'
+let g:ale_sign_warning='--'
 
 let g:ale_fix_on_save=1
 
@@ -204,6 +202,9 @@ let g:ale_fix_on_save=1
 
 " Clipboard
 set clipboard=unnamedplus
+
+" Highlight current line
+set cursorline
 
 " Enable filetype plugins
 filetype plugin on
@@ -217,6 +218,9 @@ set wildmenu
 
 " Always show current position
 set ruler
+
+" Highlith all matches for search pattern as we type
+set is
 
 " Height of the command bar
 set cmdheight=2
@@ -278,6 +282,7 @@ set shiftwidth=4
 " Always show the status line
 set laststatus=2
 
+" Display relative number
 set relativenumber
 
 " Always show line numbers
@@ -289,6 +294,7 @@ set showmatch
 " Use many much levels of undo
 set undolevels=1000
 
+" Prevents the ability of copying and pasting out of vim with readable characters
 set mouse=a
 
 " Allow us to use Ctrl-s and Ctrl-q as keybinds
