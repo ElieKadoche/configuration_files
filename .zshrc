@@ -240,7 +240,7 @@ fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
 getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1}
 
 # youtube-dl -F to see formats
-yyy() {youtube-dl --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
+yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
 
 # Clean Tex files
 rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete}
