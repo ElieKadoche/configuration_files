@@ -6,10 +6,10 @@
 echo "Activating repo..."
 
 # All packages in /etc/apt/sources.list(d)
-sudo add-apt-repository main
-sudo add-apt-repository universe
-sudo add-apt-repository multiverse
-sudo add-apt-repository restricted
+sudo add-apt-repository -y main
+sudo add-apt-repository -y universe
+sudo add-apt-repository -y multiverse
+sudo add-apt-repository -y restricted
 sudo apt update
 
 # Installation de zsh
@@ -124,15 +124,15 @@ sudo apt -y install unrar
 # Peek
 # ------------------------------------------
 
-sudo add-apt-repository ppa:peek-developers/stable
+sudo add-apt-repository -y ppa:peek-developers/stable
 sudo apt update
 sudo apt -y install peek
 
 # Alacritty
 # ------------------------------------------
 
-sudo add-apt-repository ppa:mmstick76/alacritty
-sud apt update
+sudo add-apt-repository -y ppa:mmstick76/alacritty
+sudo apt update
 sudo apt -y install alacritty
 
 # Etcher
@@ -146,8 +146,8 @@ sudo apt -y install balena-etcher-electron
 # openrazer
 # ------------------------------------------
 
-sudo add-apt-repository ppa:openrazer/stable
-sudo add-apt-repository ppa:polychromatic/stable
+sudo add-apt-repository -y ppa:openrazer/stable
+sudo add-apt-repository -y ppa:polychromatic/stable
 sudo apt update
 sudo apt -y install openrazer-meta
 sudo apt -y install polychromatic
@@ -180,7 +180,7 @@ sudo apt -y install \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Add stable repository
-sudo add-apt-repository \
+sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
