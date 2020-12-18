@@ -131,6 +131,7 @@ plugins=(
     colorize
     cp
     extract
+    genpass
     pep8
     pip
     python
