@@ -2,20 +2,8 @@
 # ------------------------------------------
 # ------------------------------------------
 
-# MacOS
-# CAREFUL: not actively maintained
-if [ "$OSTYPE" = "darwin" ]; then
-    SYSTEM="0"
-    ORIGIN="/Volumes/marvin_data"
-    export ZSH="/Users/eliekadoche/.oh-my-zsh"
-
-    alias rmtrash="rm -rf ~/.Trash/*"
-    openfi() {open -a /Applications/Firefox.app/ $1}
-    alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
-
 # Ubuntu
-elif [ "$OSTYPE" = "linux-gnu" ]; then
-    SYSTEM="1"
+if [ "$OSTYPE" = "linux-gnu" ]; then
     ORIGIN="/home/elie_kadoche/data"
     export ZSH="/home/elie_kadoche/.oh-my-zsh"
 
@@ -30,9 +18,8 @@ elif [ "$OSTYPE" = "linux-gnu" ]; then
 
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
-    SYSTEM="2"
-    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
     ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
+    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
 
     alias pbcopy="termux-clipboard-set"
 fi
@@ -178,7 +165,7 @@ PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan
 bindkey -v
 
 # TheFuck
-if [ "$SYSTEM" != "2" ]; then
+if [ "$OSTYPE" = "linux-gnu" ]; then
     eval $(thefuck --alias)
     eval $(thefuck --alias damn)
 fi
@@ -187,11 +174,7 @@ fi
 alias ll="ls -1 -a --group-directories-first"
 
 # Complete ls
-if [ "$SYSTEM" = "0" ]; then
-    alias l="gls --all --author --color=auto --group-directories-first --human-readable --size -l"
-else
-    alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
-fi
+alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
 
 # Git
 alias gitp="git pull"
@@ -432,44 +415,35 @@ master_update() {
     printf "${BPurple}--------------------- MASTER UPDATE ---------------------${Color_Off}\n";
     printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
 
-    if [ "$SYSTEM" = "2" ]; then
-        # Termux
+    if [ "$OSTYPE" = "linux-android" ]; then
+        # Termux (pkg)
         printf "${BBlue}PKG${Color_Off}\n\n";
         pkg upgrade -y;
         pkg update -y;
 
-    else
+    elif [ "$OSTYPE" = "linux-gnu" ]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
         sudo npm install -g npm;
 
-        if [ "$SYSTEM" = "0" ]; then
-            # Homebrew (MacOS)
-            printf "${BBlue}\nBREW${Color_Off}\n\n";
-            brew update;
-            brew upgrade;
-            brew doctor;
-            brew cask upgrade --greedy;
-            softwareupdate --install --all;
+        # APT
+        printf "${BBlue}\nAPT${Color_Off}\n\n";
+        sudo apt -y update;
+        sudo apt -y upgrade;
+        sudo apt dist-upgrade;
+        # sudo update-grub;  # Only if necessary
 
-        elif [ "$SYSTEM" = "1" ]; then
-            # Ubuntu
-            printf "${BBlue}\nAPT${Color_Off}\n\n";
-            sudo apt -y update;
-            sudo apt -y upgrade;
-            sudo apt dist-upgrade;
-            # sudo update-grub;  # Only if necessary
-
-            printf "${BBlue}\nSNAP${Color_Off}\n\n";
-            sudo snap refresh;
-        fi
+        # Snap
+        printf "${BBlue}\nSNAP${Color_Off}\n\n";
+        sudo snap refresh;
     fi
 
-    # Global
+    # PIP
     printf "${BBlue}\nPIP${Color_Off}\n\n";
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
 
+    # Vim
     printf "${BBlue}\nNVIM${Color_Off}\n\n";
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
@@ -492,7 +466,7 @@ master_compile() {
     printf "${BBlue}lesspass${Color_Off}\n\n";
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
-    if [ "$SYSTEM" != "2" ]; then
+    if [ "$OSTYPE" = "linux-gnu" ]; then
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
         python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
@@ -518,18 +492,19 @@ master_compile() {
         # cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/lib/cuda/include -DCUDNN_LIBRARY=/usr/lib/cuda/lib64/libcudnn.so
         make;
 
-        if [ "$SYSTEM" = "1" ]; then
-            printf "${BBlue}\nmateria-theme${Color_Off}\n\n";
-            cd $ORIGIN/git_apps/materia-theme;
-            sudo ./install.sh --color dark --size compact;
+        # Materia-theme
+        printf "${BBlue}\nmateria-theme${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/materia-theme;
+        sudo ./install.sh --color dark --size compact;
 
-            printf "${BBlue}\ndash-to-dock${Color_Off}\n\n";
-            cd $ORIGIN/git_apps/dash-to-dock;
-            make;
-            make install;
-            killall -3 gnome-shell;
-        fi
+        # Dash-to-dock
+        printf "${BBlue}\ndash-to-dock${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/dash-to-dock;
+        make;
+        make install;
+        killall -3 gnome-shell;
     fi
+
     cd $ORIGIN;
 }
 
@@ -542,13 +517,13 @@ master_clean() {
     printf "${BPurple}--------------------- MASTER CLEAN ---------------------${Color_Off}\n";
     printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
 
-    if [ "$SYSTEM" = "2" ]; then
-        # Termux
+    if [ "$OSTYPE" = "linux-android" ]; then
+        # Termux (pkg)
         printf "${BBlue}PKG${Color_Off}\n\n";
         pkg autoclean;
         pkg clean;
 
-    else
+    elif [ "$OSTYPE" = "linux-gnu" ]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
         npm cache verify;
@@ -559,32 +534,25 @@ master_clean() {
         journalctl --disk-usage
         sudo journalctl --vacuum-time=1d
 
+        # APT
+        printf "${BBlue}\nAPT${Color_Off}\n\n";
+        sudo apt -y autoclean;
+        sudo apt -y clean;
+        sudo apt -y autoremove;
 
-        if [ "$SYSTEM" = "0" ]; then
-            # Homebrew (MacOS)
-            printf "${BBlue}\nBREW${Color_Off}\n\n";
-            brew cleanup;
-
-        elif [ "$SYSTEM" = "1" ]; then
-            # Ubuntu
-            printf "${BBlue}\nAPT${Color_Off}\n\n";
-            sudo apt -y autoclean;
-            sudo apt -y clean;
-            sudo apt -y autoremove;
-
-            # Snaps
-            printf "${BBlue}\nSNAP${Color_Off}\n\n";
-            LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
-            while read snapname revision; do
-                sudo snap remove "$snapname" --revision="$revision";
-            done
-        fi
+        # Snaps
+        printf "${BBlue}\nSNAP${Color_Off}\n\n";
+        LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+        while read snapname revision; do
+            sudo snap remove "$snapname" --revision="$revision";
+        done
     fi
 
-    # Global
+    # PIP
     printf "${BBlue}\nPIP${Color_Off}\n\n";
     pip cache purge
 
+    # Vim
     printf "${BBlue}\nNVIM${Color_Off}\n\n";
     vim +"PlugClean" +qa;
 }
