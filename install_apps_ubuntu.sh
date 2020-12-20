@@ -39,10 +39,15 @@ sudo apt -y install firefox
 sudo apt -y install gcc
 sudo apt -y install ghostscript
 sudo apt -y install htop
+sudo apt -y install libappindicator3-dev
+sudo apt -y install libasound2-dev
 sudo apt -y install libbz2-dev
 sudo apt -y install libcairo2-dev
 sudo apt -y install libgpgme-dev
+sudo apt -y install libplist-dev
+sudo apt -y install libspeex-dev
 sudo apt -y install libtool-bin
+sudo apt -y install libusbmuxd-dev
 sudo apt -y install linux-headers-$(uname -r)
 sudo apt -y install network-manager
 sudo apt -y install ocl-icd-opencl-dev
@@ -285,6 +290,7 @@ mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Others: CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
+# Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install fzf from the source directory
 
 # Extensions
