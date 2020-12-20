@@ -497,6 +497,15 @@ master_compile() {
         cd $ORIGIN/git_apps/materia-theme;
         sudo ./install.sh --color dark --size compact;
 
+        # Droidcam
+        printf "${BBlue}\ndroidcam${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/droidcam/linux;
+        make clean;
+        make;
+        sudo ./install-client;
+        sudo ./install-video;
+        sudo ./install-sound;
+
         # Dash-to-dock
         printf "${BBlue}\ndash-to-dock${Color_Off}\n\n";
         cd $ORIGIN/git_apps/dash-to-dock;
