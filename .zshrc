@@ -487,9 +487,7 @@ master_compile() {
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
-        cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include -DCUDNN_LIBRARY=/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64/libcudnn.so
-        # When Katago will work with cuDNN 8*
-        # cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/lib/cuda/include -DCUDNN_LIBRARY=/usr/lib/cuda/lib64/libcudnn.so
+        cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/lib/cuda/include -DCUDNN_LIBRARY=/usr/lib/cuda/lib64/libcudnn.so
         make;
 
         # Materia-theme
