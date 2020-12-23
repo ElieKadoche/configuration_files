@@ -62,4 +62,4 @@ Private variables and commands are declared in a `.zsh` file placed in `$ZSH_CUS
 - Baduk: Tsumego Pro, Pandanet(Go), TygemBadukLite, KGS, ElyGo pro.
 - Games: Morpion Solitaire (qilin TicTacToe), Missile Command: Recharged, DroidFish.
 - Communication: Discord, Facebook, Instagram, Messenger, LinkedIn, WhatsApp, Reddit.
-- Others: Citymapper, Trailforks, Waze, Adobe Acrobat, Calculator++, ClearScanner, Lithium, mpv, Wikipedia.
+- Others: Citymapper, Trailforks, Waze, Adobe Acrobat, Calculator++, SVG Viewer, SVG Viewer, SVG Viewer, ClearScanner, Lithium, mpv, Wikipedia.
