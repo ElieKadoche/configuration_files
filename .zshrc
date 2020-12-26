@@ -264,9 +264,9 @@ renameAll() {
 # Backup command
 bbb() {
     if [ "$1" = "dry" ]; then
-        rsync -vrulpEh --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
+        rsync -vrulpEh --ignore-existing --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
     elif [ "$1" = "run" ]; then
-        rsync -vrulpEh --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
+        rsync -vrulpEh --ignore-existing --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
     fi
 }
 
