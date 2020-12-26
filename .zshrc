@@ -580,3 +580,8 @@ master_all() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Most used commands are kept in a custom history
+# When a session is closed, history is reset to default
+# zsh_history_clear is declared in a .zsh file located in $ZSH_CUSTOM
+trap "zsh_history_clear" 0
