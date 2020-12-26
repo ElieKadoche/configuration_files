@@ -261,6 +261,15 @@ renameAll() {
     done;
 }
 
+# Backup command
+bbb() {
+    if [ "$1" = "dry" ]; then
+        rsync -vrulpEh --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/elie_kadoche/marvin_backup/data/;
+    elif [ "$1" = "run" ]; then
+        rsync -vrulpEh --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/elie_kadoche/marvin_backup/data/;
+    fi
+}
+
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
 clearString() {
     echo $1 | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
