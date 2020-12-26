@@ -4,17 +4,17 @@
 
 # Ubuntu
 if [ "$OSTYPE" = "linux-gnu" ]; then
-    ORIGIN="/home/elie_kadoche/data"
-    export ZSH="/home/elie_kadoche/.oh-my-zsh"
+    ORIGIN="/home/$USERNAME/data"
+    export ZSH="/home/$USERNAME/.oh-my-zsh"
 
     alias xx="xtrlock"
     alias open="xdg-open"
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
-    export PATH="/home/elie_kadoche/.local/bin:$PATH"
+    export PATH="/home/$USERNAME/.local/bin:$PATH"
 
     export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
-    export LD_LIBRARY_PATH="/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/elie_kadoche/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
+    export LD_LIBRARY_PATH="/home/$USERNAME/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/$USERNAME/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
 
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
@@ -264,9 +264,9 @@ renameAll() {
 # Backup command
 bbb() {
     if [ "$1" = "dry" ]; then
-        rsync -vrulpEh --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/elie_kadoche/marvin_backup/data/;
+        rsync -vrulpEh --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
     elif [ "$1" = "run" ]; then
-        rsync -vrulpEh --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/elie_kadoche/marvin_backup/data/;
+        rsync -vrulpEh --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
     fi
 }
 
@@ -307,7 +307,7 @@ zsh_history_fix() {
 # Start KataGo on KGS
 startKataWhat() {
     cd $ORIGIN/miscellaneous/KataWhatBot;
-    nohup java -jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/elie_kadoche/data/miscellaneous/KataWhatBot/config.properties &;
+    nohup java -jar /home/$USERNAME/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/$USERNAME/data/miscellaneous/KataWhatBot/config.properties &;
     cd $ORIGIN;
 }
 
