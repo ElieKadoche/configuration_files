@@ -238,11 +238,17 @@ rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.
 # Without the 'sudo' it will only find processes of the current user
 findPID () { lsof -t -c "$@" ; }
 
-# Send computer to sleep
+# Allows dodo without sudo
+_dodo() {
+    sudo chmod ogu+r /dev/rtc0  # crw------
+    sudo chmod ogu+w /sys/power/state  # -rw-r--r--
+}
+
+# Wait $1 seconds and go to sleep for $2 hours
 dodo() {
     t=`echo "scale=0;$2*3600/1" | bc`;
-    sudo sleep $1;
-    sudo rtcwake -m mem -s $t -v;
+    sleep $1;
+    rtcwake -m mem -s $t -v;
 }
 
 # Clean Python files
