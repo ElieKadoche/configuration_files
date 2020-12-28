@@ -251,7 +251,7 @@ dodo() {
     printf "${BPurple}------------------------------------------${Color_Off}\n";
     echo "wake_time: $wake_time";
     printf "${BPurple}------------------------------------------${Color_Off}\n";
-    # rtcwake -m mem -s $sleep_duration -v;
+    rtcwake -m mem -s $sleep_duration -v;
 }
 
 # Clean Python files
