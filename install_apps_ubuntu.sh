@@ -292,6 +292,7 @@ cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 # Others: CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install fzf from the source directory
+# Remove plymouth: [sudo vim /etc/default/grub] and remove splash
 
 # Extensions
 # ------------------------------------------
