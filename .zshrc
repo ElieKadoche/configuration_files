@@ -244,11 +244,14 @@ _dodo() {
     sudo chmod ogu+w /sys/power/state  # -rw-r--r--
 }
 
-# Wait $1 seconds and go to sleep for $2 hours
+# Go to sleep for $1 hours
 dodo() {
-    t=`echo "scale=0;$2*3600/1" | bc`;
-    sleep $1;
-    rtcwake -m mem -s $t -v;
+    sleep_duration=`echo "scale=0;$1*3600/1" | bc`;
+    wake_time=$(date -d "+$sleep_duration seconds");
+    printf "${BPurple}------------------------------------------${Color_Off}\n";
+    echo "wake_time: $wake_time";
+    printf "${BPurple}------------------------------------------${Color_Off}\n";
+    # rtcwake -m mem -s $sleep_duration -v;
 }
 
 # Clean Python files
