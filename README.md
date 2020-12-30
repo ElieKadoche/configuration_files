@@ -55,6 +55,9 @@ Private variables and commands are declared in a `.zsh` file placed in `$ZSH_CUS
 
 ## Android
 
+Google Play builds are no longer updated for Termux (https://github.com/termux/termux-app/issues/1072).
+So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk).
+
 - Privacy: Firefox, Firefox Focus, Orbot, LessPass.
 - Google: Gmail, drive, Maps, Contacts, Docs, Earth.
 - Files: File Manager+, Total Commander + USB-Stick Plugin
