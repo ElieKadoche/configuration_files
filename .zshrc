@@ -196,6 +196,7 @@ alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
 # Others
 alias ...="cd ../../"
 alias ..="cd ../"
+alias :q="exit"
 alias du="du -ah --max-depth=1 . | sort -hr"
 alias e="exit"
 alias grep="grep --color=auto"
