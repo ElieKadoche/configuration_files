@@ -233,6 +233,9 @@ yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format
 # Clean Tex files
 rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete}
 
+# Find $1 largest files
+duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1 }
+
 # Find out the pid of a specified process
 # Note that the command name can be specified via a regex
 # E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
