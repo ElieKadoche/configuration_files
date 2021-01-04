@@ -177,7 +177,7 @@ alias ll="ls -1 -a --group-directories-first"
 alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
 
 # Open Firefox with default websites
-alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,google/calendar.html,google/contacts.html,google/scholar.html,lemonde.html} > /dev/null 2>&1 &; disown"
+alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown"
 
 # Git
 alias gitp="git pull"
