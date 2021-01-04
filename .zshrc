@@ -7,12 +7,12 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     ORIGIN="/home/$USERNAME/data"
     export ZSH="/home/$USERNAME/.oh-my-zsh"
 
-    alias xx="xtrlock"
     alias open="xdg-open"
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
-    export PATH="/home/$USERNAME/.local/bin:$PATH"
+    alias xx="xtrlock"
 
+    export PATH="/home/$USERNAME/.local/bin:$PATH"
     export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
     export LD_LIBRARY_PATH="/home/$USERNAME/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/$USERNAME/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
 
@@ -21,6 +21,7 @@ elif [ "$OSTYPE" = "linux-android" ]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
 
+    alias open="termux-open"
     alias pbcopy="termux-clipboard-set"
 fi
 
