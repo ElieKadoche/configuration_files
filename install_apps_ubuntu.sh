@@ -123,7 +123,6 @@ sudo apt -y install xclip
 sudo apt -y install xtrlock
 
 # From multiverse
-sudo apt -y install flashplugin-installer
 sudo apt -y install unrar
 
 # Peek
