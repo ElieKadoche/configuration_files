@@ -219,6 +219,9 @@ pwgenn() {pwgen -cny --secure $1 1 | pbcopy}
 # Copy folder with progress bar
 cpr() {rsync --archive --human-readable --info=progress2 $1 $2}
 
+# Remove prefix from files
+removePrefix() { for file in $1*; do mv "$file" "${file#$1}"; done}
+
 # Special grep for projects
 grepp() {grep -R "$1" . --exclude-dir={.git,docs,ressources,data,materials}}
 
