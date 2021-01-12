@@ -204,7 +204,7 @@ let g:ale_fix_on_save=1
 set clipboard=unnamedplus
 
 " Highlight current line
-set cursorline
+" set cursorline
 
 " Enable filetype plugins
 filetype plugin on
