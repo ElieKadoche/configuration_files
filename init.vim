@@ -200,6 +200,9 @@ let g:ale_fix_on_save=1
 " Others
 " ------------------------------------------
 
+" Open NERDTree if vim executed without arguments
+autocmd VimEnter * if !argc() | NERDTree | endif
+
 " Clipboard
 set clipboard=unnamedplus
 
