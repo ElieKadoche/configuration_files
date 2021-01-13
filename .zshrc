@@ -526,7 +526,7 @@ master_compile() {
 
         # Droidcam
         printf "${BBlue}\ndroidcam${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/droidcam/linux;
+        cd $ORIGIN/git_apps/droidcam;
         make clean;
         make;
         sudo ./install-client;
