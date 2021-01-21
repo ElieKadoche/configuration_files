@@ -13,8 +13,8 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     alias xx="xtrlock"
 
     export PATH="/home/$USERNAME/.local/bin:$PATH"
-    export LD_LIBRARY_PATH="/usr/lib/cuda/lib64:/usr/lib/cuda/include:$LD_LIBRARY_PATH"
-    export LD_LIBRARY_PATH="/home/$USERNAME/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/lib64:/home/$USERNAME/data/miscellaneous/cudnn-10.2-linux-x64-v7.6.5.32/cuda/include:$LD_LIBRARY_PATH"
+    export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
@@ -516,7 +516,7 @@ master_compile() {
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [ -d "./build" ]; then rm -rf ./build; fi
         mkdir build; cd build;
-        cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/lib/cuda/include -DCUDNN_LIBRARY=/usr/lib/cuda/lib64/libcudnn.so
+        cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/local/cuda-11.1/include -DCUDNN_LIBRARY=/usr/local/cuda-11.1/lib64/libcudnn.so
         make;
 
         # Materia-theme
@@ -538,7 +538,6 @@ master_compile() {
         cd $ORIGIN/git_apps/dash-to-dock;
         make;
         make install;
-        killall -3 gnome-shell;
     fi
 
     cd $ORIGIN;
@@ -604,6 +603,7 @@ master_all() {
     master_compile;
     master_clean;
     omz update;
+    sudo killall -3 gnome-shell
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

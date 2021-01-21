@@ -159,13 +159,24 @@ sudo apt -y install polychromatic
 # CUDA
 # ------------------------------------------
 
-sudo apt -y install nvidia-cuda-toolkit
-# nvcc --version to check version
+# nvcc --version and nvidia-smi to check CUDA version
 
-# Download cuDNN 10.2 on Nvidia Developper site
-sudo cp cuda/include/* /usr/lib/cuda/include/
-sudo cp cuda/lib64/libcudnn* /usr/lib/cuda/lib64/
-sudo chmod a+r /usr/lib/cuda/include/* /usr/lib/cuda/lib64/libcudnn*
+# Download CUDA from https://developer.nvidia.com/cuda-downloads (follow instructions)
+# Choose carefully the version, it musts be adapted to your applications and libraries
+
+# For CUDA 11.1
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+
+# Download the appropriate cuDNN version from https://developer.nvidia.com/CUDNN
+sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 
 # Docker
 # ------------------------------------------
@@ -218,6 +229,9 @@ sudo snap install rpi-imager
 # ------------------------------------------
 
 echo "Configuring git..."
+
+# Setup ssh for GitHub
+ssh -T git@github.com
 
 git config --global user.name "Elie KADOCHE"
 git config --global user.email eliekadoche78@gmail.com
@@ -291,14 +305,13 @@ cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 # Others: CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install fzf from the source directory
-# Remove plymouth: [sudo vim /etc/default/grub] and remove splash
+# Remove plymouth: [sudo vim /etc/default/grub] remove splash and update grub
 
 # Extensions
 # ------------------------------------------
 
 # Application View Columns
 # Applications Menu
-# Dash to Dock
 # Emoji selector
 # Freon
 # NetSpeed
