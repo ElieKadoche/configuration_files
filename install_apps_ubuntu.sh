@@ -169,15 +169,6 @@ sudo apt -y install polychromatic
 wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
 sudo sh cuda_11.1.0_455.23.05_linux.run
 
-# Whith these commands you install everything
-# wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
-# sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
-# wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
-# sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
-# sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
-# sudo apt-get update
-# sudo apt-get -y install cuda
-
 # Download the appropriate cuDNN version from https://developer.nvidia.com/CUDNN
 sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
