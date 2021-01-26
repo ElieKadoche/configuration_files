@@ -2,3 +2,7 @@ snippet debug "debugger_set_trace" b
 import ipdb
 ipdb.set_trace(context=$1)
 endsnippet
+
+snippet main "script_main" b
+if __name__ == "__main__":
+endsnippet
