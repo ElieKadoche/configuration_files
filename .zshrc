@@ -210,6 +210,9 @@ alias rmr="rm -rf"
 alias src="source ~/.zshrc"
 alias vim=nvim
 
+# Find function, case insensitive
+findd() { find . -iname "*$1*" }
+
 # Find files of a given extension
 findSameExtension() {find . -iname \*.$1}
 
