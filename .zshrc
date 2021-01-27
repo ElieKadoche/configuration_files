@@ -200,7 +200,6 @@ alias ..="cd ../"
 alias :q="exit"
 alias duu="du -ah --max-depth=1 . | sort -hr"
 alias e="exit"
-alias grep="grep --color=auto"
 alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
 alias m="cd $ORIGIN"
 alias pip="pip3"
@@ -210,11 +209,11 @@ alias rmr="rm -rf"
 alias src="source ~/.zshrc"
 alias vim=nvim
 
-# Find function, case insensitive
-findd() { find . -iname "*$1*" }
-
 # Find files of a given extension
 findSameExtension() {find . -iname \*.$1}
+
+# Find function, case insensitive
+findd() { find . -iname "*$1*" 2>/dev/null }
 
 # Create a password of size $1
 pwgenn() {pwgen -cny --secure $1 1 | pbcopy}
