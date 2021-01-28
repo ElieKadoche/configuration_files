@@ -75,6 +75,7 @@ pkg install -y pwgen
 pkg install -y rsync
 pkg install -y screen
 pkg install -y termux-api
+pkg install -y tmux
 pkg install -y tree
 pkg install -y wget
 

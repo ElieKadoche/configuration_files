@@ -115,6 +115,7 @@ sudo apt -y install texlive-full
 sudo apt -y install texstudio
 sudo apt -y install thefuck
 sudo apt -y install tldr
+sudo apt -y install tmux
 sudo apt -y install tor
 sudo apt -y install torbrowser-launcher
 sudo apt -y install tree
