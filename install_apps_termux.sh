@@ -17,6 +17,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # You can launch the script from here
 # ------------------------------------------
 
+cp others/.tmux.conf ~
+
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 
