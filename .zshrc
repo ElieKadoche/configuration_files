@@ -293,10 +293,10 @@ bbb() {
         rsync -vrulpEh --ignore-existing --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
 
     elif [ "$1" = "run" ]; then
-        printf "${BBlue}rsync${Color_Off}\n\n";
+        printf "${BBlue}rsync${Color_Off}\n";
         rsync -vrulpEh --ignore-existing --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
 
-        printf "${BBlue}git${Color_Off}\n\n";
+        printf "${BBlue}git${Color_Off}\n";
         rm -rf /media/$USERNAME/$2/data/{general_files,git_apps};
         cpr $ORIGIN/general_files /media/$USERNAME/$2/data;
         cpr $ORIGIN/git_apps /media/$USERNAME/$2/data;
