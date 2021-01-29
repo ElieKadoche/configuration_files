@@ -36,6 +36,7 @@ opencv-python
 openpyxl
 pandas
 pip-review
+powerline-status
 ptpython
 pybind11
 pycodestyle
