@@ -286,12 +286,20 @@ renameAll() {
     done;
 }
 
-# Backup command
+# Backup command. The name of the external hard drive is $2
 bbb() {
     if [ "$1" = "dry" ]; then
-        rsync -vrulpEh --ignore-existing --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
+        # The dry command is mainly for security, if one is afraid of doing some unfortunate mistake
+        rsync -vrulpEh --ignore-existing --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/$ORIGIN/;
+
     elif [ "$1" = "run" ]; then
-        rsync -vrulpEh --ignore-existing --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/marvin_backup/data/;
+        printf "${BBlue}rsync${Color_Off}\n\n";
+        rsync -vrulpEh --ignore-existing --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/$ORIGIN/;
+
+        printf "${BBlue}git${Color_Off}\n\n";
+        rm -rf /media/$USERNAME/$2/$ORIGIN/{general_files,git_apps};
+        cpr $ORIGIN/general_files /media/$USERNAME/$2/$ORIGIN;
+        cpr $ORIGIN/git_apps /media/$USERNAME/$2/$ORIGIN;
     fi
 }
 
