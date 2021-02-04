@@ -3,7 +3,7 @@
 https://developers.google.com/calendar/quickstart/python
 https://developers.google.com/calendar/create-events
 
-Move credentials.json in ~/.
+Move credentials.json in ~/ssh_notifier/.
 """
 
 from __future__ import print_function
