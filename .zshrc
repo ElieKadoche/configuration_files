@@ -619,7 +619,10 @@ master_all() {
     master_compile;
     master_clean;
     omz update;
-    sudo killall -3 gnome-shell
+
+    if [ "$OSTYPE" = "linux-gnu" ]; then
+        sudo killall -3 gnome-shell;
+    fi
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
