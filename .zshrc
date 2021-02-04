@@ -259,11 +259,14 @@ _dodo() {
 
 # Go to sleep for $1 hours
 dodo() {
+    # Compute times
     sleep_duration=`echo "scale=0;$1*3600/1" | bc`;
     wake_time=$(date -d "+$sleep_duration seconds");
-    printf "${BPurple}------------------------------------------${Color_Off}\n";
-    echo "wake_time: $wake_time";
-    printf "${BPurple}------------------------------------------${Color_Off}\n";
+
+    # Create calendar event
+    python ~/ssh_notifier/ssh_notifier.py --hours $1;
+
+    # Go to sleep
     rtcwake -m mem -s $sleep_duration -v;
 }
 
