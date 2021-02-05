@@ -35,6 +35,7 @@ neat-python
 neovim
 nevergrad
 numpy
+open_spiel
 opencv-python
 openpyxl
 pandas
