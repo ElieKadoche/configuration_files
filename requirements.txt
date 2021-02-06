@@ -13,6 +13,7 @@ chroma
 ciphey
 configparser
 dask[complete]
+dm-acme[reverb,tf,jax,envs]
 docx-mailmerge
 easyocr
 emoji
