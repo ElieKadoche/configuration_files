@@ -67,6 +67,7 @@ sphinx
 tensorboard
 tensorboardX
 tensorflow-gpu
+tensorflow-probability
 tinydb
 torch
 torchsummary
