@@ -519,8 +519,8 @@ master_compile() {
         # Sabaki
         printf "${BBlue}\nSabaki${Color_Off}\n\n";
         cd $ORIGIN/git_apps/Sabaki;
-        sudo npm install;
-        sudo npm run build;
+        npm install;
+        npm run build;
 
         # fzf
         printf "${BBlue}\nfzf${Color_Off}\n\n";
