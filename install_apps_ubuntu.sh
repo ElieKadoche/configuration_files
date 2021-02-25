@@ -110,6 +110,7 @@ sudo apt -y install rawtherapee
 sudo apt -y install sassc
 sudo apt -y install scrcpy
 sudo apt -y install sshfs
+sudo apt -y install sumo
 sudo apt -y install swi-prolog
 sudo apt -y install swig
 sudo apt -y install texlive-full
