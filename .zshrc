@@ -18,7 +18,7 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
 
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
-    ORIGIN="/data/data/com.termux/files/home/storage/shared/marvin_data"
+    ORIGIN="/data/data/com.termux/files/home/storage/shared/data"
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
 
     alias open="termux-open"
