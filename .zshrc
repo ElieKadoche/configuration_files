@@ -548,12 +548,6 @@ master_compile() {
         sudo ./install-client;
         sudo ./install-video;
         sudo ./install-sound;
-
-        # Dash-to-dock
-        printf "${BBlue}\ndash-to-dock${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/dash-to-dock;
-        make;
-        make install;
     fi
 
     cd $ORIGIN;
