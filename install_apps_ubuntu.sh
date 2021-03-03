@@ -322,6 +322,7 @@ cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install fzf from the source directory
 # Remove plymouth: [sudo vim /etc/default/grub] nomodeset
+# Add alacritty in startup applications
 
 # Extensions
 # ------------------------------------------
