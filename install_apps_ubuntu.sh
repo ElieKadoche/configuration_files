@@ -307,6 +307,8 @@ sudo apt remove kdeconnect
 cp others/.tmux.conf ~
 
 # SSH notifier script
+# Enable Google Calendar API on server
+# Generate credentials.json and put it in ~/ssh_notifier
 mkdir ~/ssh_notifier
 cp others/ssh_notifier.py ~/ssh_notifier
 
