@@ -171,6 +171,9 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     eval $(thefuck --alias damn)
 fi
 
+# Display markdown files in terminal
+alias mdd="python -m rich.markdown"
+
 # Small ls
 alias ll="ls -1 -a --group-directories-first"
 
