@@ -200,6 +200,10 @@ let g:ale_fix_on_save=1
 " Others
 " ------------------------------------------
 
+" Exit insert mode with a quick jk
+cnoremap jk <C-C>
+inoremap jk <esc>
+
 " Open NERDTree if vim executed without arguments
 autocmd VimEnter * if !argc() | NERDTree | endif
 
