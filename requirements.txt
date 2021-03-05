@@ -40,6 +40,7 @@ open_spiel
 opencv-python
 openpyxl
 pandas
+pettingzoo[all]
 pip-review
 powerline-status
 ptpython
@@ -64,6 +65,7 @@ shapely
 simplekml
 speedtest-cli
 sphinx
+supersuit
 tensorboard
 tensorboardX
 tensorflow-gpu
