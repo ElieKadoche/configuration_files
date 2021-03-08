@@ -314,6 +314,11 @@ clearString() {
     echo $1 | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
 }
 
+# Clear string of all files present in current path
+clearStringAll() {
+    for file_path in *; do (clearString $file_path; mv $file_path $(pbpaste)); done
+}
+
 # Master command to compile latex projects
 compiletex() {
     pdflatex "$1.tex";
