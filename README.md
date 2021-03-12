@@ -65,5 +65,5 @@ So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk).
 - Development: DroidCam, Cxxdroid, QuickEdit+, Termux, Termux:API + SFTP.
 - Baduk: ElyGo pro, Go Clock, KGS, Pandanet(Go), Tsumego Pro, TygemBadukLite.
 - Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
-- Communication: Discord, Facebook, Instagram, LinkedIn, Messenger, Reddit, Twitch, Twitter, WhatsApp.
+- Communication: Discord, Facebook, Instagram, LinkedIn, Messenger, Teams, Reddit, Twitch, Twitter, WhatsApp.
 - Others: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, QR Droid, SVG viewer, TeamViewer, Wikipedia.
