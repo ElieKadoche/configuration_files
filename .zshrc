@@ -228,7 +228,7 @@ cpr() {rsync --archive --human-readable --info=progress2 $1 $2}
 removePrefix() { for file in $1*; do mv "$file" "${file#$1}"; done}
 
 # Special grep for projects
-grepp() {grep -R "$1" . --exclude-dir={.git,docs,ressources,data,materials}}
+grepp() {grep -R "$1" . --exclude-dir={.git,.venv,data,docs,materials,ressources}}
 
 # Fatal kill
 fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
