@@ -7,6 +7,9 @@
 
 @import 'color-palette';
 
+$dark-theme: false !default;
+$light-topbar: false !default;
+
 @function gtkalpha($color, $alpha) {
   @return unquote("alpha(#{$color}, #{$alpha})");
 }
@@ -50,59 +53,56 @@ $on-dark: #fff;
   } @else if lightness($color) >= 40% {
     @return rgba(white, .2);
   } @else {
-    @return rgba(white, .1);
+    @return rgba(white, .05);
   }
 }
 
 // Make translucent color opaque by blending with the background color.
-@function opacify($color, $bg) {
-  @return mix(change-color($color, $alpha: 1), $bg, alpha($color) * 100%);
+@function opacify($color, $on) {
+  @return mix(change-color($color, $alpha: 1), $on, alpha($color) * 100%);
 }
 
-// Set the accessible opacity for the overlay depending on the given color.
-@function overlay($state, $color, $background: transparent, $opacity-modifier: 0) {
-  @if saturation($color) > 50% or saturation($background) > 50% {
+$state-overlay-opacities: (
+  "hover": .08,
+  "hover-alt": .04,
+  "focus": .08,
+  "pressed": .12,
+  "dragged": .08,
+  "activated": .12,
+  "selected": .24,
+);
+
+// Determine the overlay color depending on the given state and color.
+@function overlay($state, $color, $on: transparent, $opacity-modifier: 0) {
+  @if not map-has-key($state-overlay-opacities, $state) {
+    @error "Invalid state: '#{$state}'. Choose one of: #{map-keys($state-overlay-opacities)}";
+  }
+
+  @if saturation($color) > 50% or saturation($on) > 50% {
     $opacity-modifier: .04;
   }
 
-  $opacity: ();
+  $opacity: map-get($state-overlay-opacities, $state) + $opacity-modifier;
 
-  @if $state == "hover" {
-    $opacity: .08 + $opacity-modifier;
-  } @else if $state == "hover-alt" {
-    $opacity: .04 + $opacity-modifier;
-  } @else if $state == "focus" {
-    $opacity: .08 + $opacity-modifier;
-  } @else if $state == "pressed" {
-    $opacity: .12 + $opacity-modifier;
-  } @else if $state == "activated" {
-    $opacity: .12 + $opacity-modifier;
-  } @else if $state == "selected" {
-    @return rgba($color, .24);
-  } @else {
-    @error "Invalid type: '#{$state}'";
-  }
-
-  @return mix(rgba($color, 1), $background, $opacity * 100%);
+  @return mix(rgba($color, 1), $on, $opacity * 100%);
 }
 
 // Private variables for dark background colors
-$-dark-background: #000000;
-$-dark-surface-1dp: mix(white, $-dark-background, 5%);
-$-dark-surface-4dp: mix(white, $-dark-background, 7%);
-$-dark-surface-8dp: mix(white, $-dark-background, 9%);
-$-dark-surface-switch: mix(white, $-dark-background, 14%);
+$-dark-surface-z0: #000000;
+$-dark-surface-z1: mix(white, $-dark-surface-z0, 5%);
+$-dark-surface-z4: mix(white, $-dark-surface-z0, 9%);
+$-dark-surface-z8: mix(white, $-dark-surface-z0, 12%);
+$-dark-surface-switch-thumb: mix(white, $-dark-surface-z0, 14%);
 
 //
 // Main colors
 //
 
-$background: #000000;
-$base: #fff; // for views
-$base-alt: #ffffff;
-$surface: #fff;
-$switch-surface: #fff; // Special case for switches
-$on-surface: on($surface);
+$surface-z0: #000000;
+$surface-z1: #fff;
+$surface-z8: #fff;
+$surface-switch-thumb: #fff;
+$on-surface: on($surface-z0);
 
 $primary-on-light: #0066C2;
 $primary-on-dark: #0066C2;
@@ -114,8 +114,8 @@ $error-on-dark: #ff0000;
 $error: $error-on-light;
 $on-error: on($error);
 
-$warning-on-light: #9000AD;
-$warning-on-dark: #9000AD;
+$warning-on-light: #9900AD;
+$warning-on-dark: #9900AD;
 $warning: $warning-on-light;
 $on-warning: on($warning);
 
@@ -124,12 +124,12 @@ $success-on-dark: #00ff00;
 $success: $success-on-light;
 $on-success: on($success);
 
-$visited-on-light: $purple-500;
-$visited-on-dark: $purple-200;
+$visited-on-light: #4400ff;
+$visited-on-dark: #4400ff;
 $visited: $visited-on-light;
 $on-visited: on($visited);
 
-$os-background: $-dark-background;
+$os-background: $-dark-surface-z0;
 $on-os-background: on($os-background);
 
 $tooltip: rgba(#000000, .9);
@@ -154,13 +154,12 @@ $on-titlebar: on($titlebar);
 
 $titlebar-indicator: currentcolor;
 
-@if $variant == "dark" {
-  $background: $-dark-background;
-  $base: $-dark-surface-1dp;
-  $base-alt: $-dark-surface-1dp;
-  $surface: $-dark-surface-8dp;
-  $switch-surface: $-dark-surface-switch;
-  $on-surface: on($surface);
+@if $dark-theme {
+  $surface-z0: $-dark-surface-z0;
+  $surface-z1: $-dark-surface-z1;
+  $surface-z8: $-dark-surface-z8;
+  $surface-switch-thumb: $-dark-surface-switch-thumb;
+  $on-surface: on($surface-z0);
 
   $primary: $primary-on-dark;
   $on-primary: on($primary);
@@ -177,12 +176,12 @@ $titlebar-indicator: currentcolor;
   $visited: $visited-on-dark;
   $on-visited: on($visited);
 
-  $titlebar: $-dark-surface-4dp;
-  $titlebar-backdrop: $-dark-surface-1dp;
+  $titlebar: $-dark-surface-z4;
+  $titlebar-backdrop: $-dark-surface-z1;
   $on-titlebar: on($titlebar);
 }
 
-@if $topbar == "light" {
+@if $light-topbar {
   $panel: $scrim;
   $on-panel: on($panel);
 
@@ -244,4 +243,18 @@ $overlay-selected: rgba($primary, .24);
 
 @function entry-fill($color) {
   @return rgba($color, if(has-alpha($color), .04, .04));
+}
+
+@function scrollbar-thumb($color, $state: null) {
+  @if $state == null {
+    @return rgba($color, if(has-alpha($color), .38, .5));
+  } @else if $state == "hover" {
+    @return rgba($color, if(has-alpha($color), .48, .6));
+  } @else if $state == "pressed" {
+    @return rgba($color, if(has-alpha($color), .6, .7));
+  } @else if $state == "disabled" {
+    @return rgba($color, if(has-alpha($color), .26, .3));
+  } @else {
+    @error "Invalid type: '#{$state}'";
+  }
 }
