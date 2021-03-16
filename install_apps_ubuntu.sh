@@ -143,6 +143,14 @@ sudo add-apt-repository -y ppa:mmstick76/alacritty
 sudo apt update
 sudo apt -y install alacritty
 
+# Other Python versions
+# ------------------------------------------
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.6
+sudo apt install python3.6-venv
+
 # Etcher
 # ------------------------------------------
 
