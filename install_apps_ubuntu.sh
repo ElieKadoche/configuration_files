@@ -168,6 +168,13 @@ sudo apt update
 sudo apt -y install openrazer-meta
 sudo apt -y install polychromatic
 
+# Nvidia drivers
+# ------------------------------------------
+
+# Option 1: use default driver in "Additional drivers"
+# Option 2: download appropriate drivers from https://www.nvidia.com/Download/index.aspx
+# Option 2 may be better (activate automatic updated)
+
 # CUDA
 # ------------------------------------------
 
