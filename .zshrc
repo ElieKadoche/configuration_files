@@ -175,7 +175,7 @@ fi
 alias mdd="python -m rich.markdown"
 
 # Small ls
-alias ll="ls -1 -a --group-directories-first"
+alias ll="ls -1 -a -v --group-directories-first"
 
 # Complete ls
 alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
