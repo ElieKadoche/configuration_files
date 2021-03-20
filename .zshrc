@@ -215,7 +215,7 @@ alias vim=nvim
 # Find files of a given extension
 findSameExtension() {find . -iname \*.$1}
 
-# Find function, case insensitive
+# Find files and folders, case insensitive
 findd() { find . -iname "*$1*" 2>/dev/null }
 
 # Create a password of size $1
@@ -283,12 +283,15 @@ pyclean() {
 # Rename all files in a folder
 # ls -tr: oldest modified file will have index 0
 renameAll() {
-    IDX=0;
-    find . -type f | ls -tr | while read FILE; do
-        # EXTENSION=`echo $FILE | sed -n -e 's/^.*\.//p'`;  # But without the point
-        EXTENSION=$(python -c 'import os, sys; _, ext = os.path.splitext(sys.argv[1]); print(ext)' $FILE);
-        mv $FILE ${IDX}_$1${EXTENSION};
-        IDX=$((IDX+1));
+    idx=0;
+    nb_files=$(($(ls -1 | wc -l) - 1));  # Because it begins with 0
+    nb_padding=$(echo "${#nb_files}");  # Number of 0 padding
+    find . -maxdepth 1 -type f | xargs -r ls -tr | while read file; do
+        # extension=`echo $file | sed -n -e 's/^.*\.//p'`;  # But without the point
+        extension=$(python -c 'import os, sys; _, ext = os.path.splitext(sys.argv[1]); print(ext)' $file);
+        idx_name=$(printf "%0${nb_padding}d\n" $idx);  # Write index with padding
+        mv $file ${idx_name}_$1${extension};
+        idx=$((idx+1));
     done;
 }
 
