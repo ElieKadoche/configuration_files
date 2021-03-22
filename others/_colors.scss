@@ -129,8 +129,8 @@ $visited-on-dark: #4400ff;
 $visited: $visited-on-light;
 $on-visited: on($visited);
 
-$os-background: $-dark-surface-z0;
-$on-os-background: on($os-background);
+$system: #000000;
+$on-system: on($system);
 
 $tooltip: rgba(#000000, .9);
 $on-tooltip: on($tooltip);
