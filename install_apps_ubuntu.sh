@@ -68,6 +68,7 @@ sudo apt -y install cloudcompare
 sudo apt -y install cmatrix
 sudo apt -y install exfat-fuse
 sudo apt -y install ffmpeg
+sudo apt -y install ffmpegthumbnailer
 sudo apt -y install fonts-firacode
 sudo apt -y install gimp
 sudo apt -y install gnome-panel
