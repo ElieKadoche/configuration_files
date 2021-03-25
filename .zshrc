@@ -242,9 +242,6 @@ alc() { sed -i "/background_opacity/c\background_opacity: $1" ~/.config/alacritt
 # youtube-dl -F to see formats
 yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
 
-# Clean Tex files
-rmtex() {find . -maxdepth 1 -regex ".*\.\(aux\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete}
-
 # Find $1 largest files
 duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1 }
 
@@ -312,6 +309,12 @@ bbb() {
     fi
 }
 
+# Clean Tex files
+rmtex() {
+    find . -maxdepth 1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
+    find . -maxdepth 1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete;
+}
+
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
 clearString() {
     echo $1 | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
@@ -322,7 +325,7 @@ clearStringAll() {
     for file_path in *; do (clearString $file_path; mv $file_path $(pbpaste)); done
 }
 
-# Master command to compile latex projects
+# Master command to compile latex projects (or use latexmk)
 compiletex() {
     pdflatex "$1.tex";
     # bibtex "$1";
