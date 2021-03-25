@@ -107,6 +107,7 @@ sudo apt -y install python3-cartopy
 sudo apt -y install python3-distutils-extra
 sudo apt -y install python3-pip
 sudo apt -y install python3-pygame
+sudo apt -y install python3-tk
 sudo apt -y install python3-venv
 sudo apt -y install rawtherapee
 sudo apt -y install sassc
