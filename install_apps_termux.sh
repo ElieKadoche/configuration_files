@@ -63,6 +63,7 @@ git config --global credential.helper store
 # ------------------------------------------
 
 pkg install -y cmatrix
+pkg install -y e2fsprogs
 pkg install -y ffmpeg
 pkg install -y fzf
 pkg install -y ghostscript
