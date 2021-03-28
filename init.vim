@@ -42,10 +42,7 @@ autocmd FileType python set colorcolumn=79
 set termguicolors
 colorscheme dracula
 set background=dark
-if g:colors_name == "dracula"
-    highlight Normal ctermbg=none ctermfg=white guibg=none guifg=#ffffff
-endif
-
+highlight Normal ctermbg=none ctermfg=white guibg=none guifg=#ffffff
 hi SpellBad cterm=underline
 
 " Set extra options when running in GUI mode
@@ -85,7 +82,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
 let g:tex_flavor='latex'
 
 " In tex files, no preview
-let g:tex_conceal=''
+let g:vimtex_syntax_conceal_default=0
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
 " ------------------------------------------
