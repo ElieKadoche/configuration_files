@@ -552,7 +552,8 @@ master_compile() {
         # Materia-theme
         printf "${BBlue}\nmateria-theme${Color_Off}\n\n";
         cd $ORIGIN/git_apps/materia-theme;
-        sudo ./install.sh --color dark --size compact;
+        meson _build -Dcolors=dark -Dsizes=compact --reconfigure;
+        meson install -C _build;
 
         # Droidcam
         printf "${BBlue}\ndroidcam${Color_Off}\n\n";
