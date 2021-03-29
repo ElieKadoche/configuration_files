@@ -30,6 +30,7 @@ sudo apt -y install git
 echo "Running apt packages..."
 
 # From main
+sudo apt -y install acl
 sudo apt -y install build-essential
 sudo apt -y install cheese
 sudo apt -y install cmake
@@ -324,6 +325,9 @@ sudo apt remove kdeconnect
 
 # tmux configuration
 cp others/.tmux.conf ~
+
+# Set default permissions
+setfacl -R -d -m u::rwx,g::-,o::- $ORIGIN
 
 # SSH notifier script
 # Enable Google Calendar API on server
