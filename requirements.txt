@@ -18,6 +18,7 @@ docx-mailmerge
 easyocr
 emoji
 flake8
+floris
 glances[all]
 google-api-python-client
 google-auth-httplib2
