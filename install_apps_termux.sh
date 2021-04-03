@@ -70,6 +70,7 @@ pkg install -y ghostscript
 pkg install -y git
 pkg install -y htop
 pkg install -y imagemagick
+pkg install -y libzmq
 pkg install -y mpv
 pkg install -y neofetch
 pkg install -y openssh
