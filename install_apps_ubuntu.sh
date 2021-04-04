@@ -31,6 +31,7 @@ echo "Running apt packages..."
 
 # From main
 sudo apt -y install acl
+sudo apt -y install apache2
 sudo apt -y install build-essential
 sudo apt -y install cheese
 sudo apt -y install cmake
