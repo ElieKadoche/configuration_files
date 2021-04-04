@@ -317,7 +317,7 @@ rmtex() {
 
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
 clearString() {
-    echo $1 | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
+    echo $1 | sed -E -e 's/ - /_/g' | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
 }
 
 # Clear string of all files present in current path
