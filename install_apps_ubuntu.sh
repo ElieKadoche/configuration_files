@@ -338,7 +338,7 @@ cp others/ssh_notifier.py ~/ssh_notifier
 
 # Custom modifications
 cp others/gtk.css ~/.config/gtk-3.0/gtk.css
-cp others/_colors.scss $ORIGIN/git_apps/materia-theme/src/_colors.scss
+cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
 
 # Alacritty configuration
 mkdir ~/.config/alacritty
