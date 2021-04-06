@@ -5,6 +5,7 @@
 
 pkg install -y zsh
 pkg install -y git
+pkg install -y wget
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc ~
@@ -19,6 +20,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 cp others/.tmux.conf ~
 
+mkdir ~/.config
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 
@@ -36,12 +38,9 @@ cp others/python.snippets ~/.config/nvim/custom_snippets/python.snippets
 
 echo "Configuring Termux..."
 
-cfg = "extra-keys = [ \
-    ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
-    ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
-]"
-
-echo "$cfg$" > ~/.termux/termux.properties
+# Keyboard
+cfg="extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]"
+echo "$cfg" > ~/.termux/termux.properties
 
 # Fira Code font
 wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Retina.ttf -O ~/.termux/font.ttf
@@ -68,6 +67,8 @@ pkg install -y ffmpeg
 pkg install -y fzf
 pkg install -y ghostscript
 pkg install -y git
+pkg install -y libxml2
+pkg install -y libxslt
 pkg install -y htop
 pkg install -y imagemagick
 pkg install -y libzmq
@@ -76,12 +77,12 @@ pkg install -y neofetch
 pkg install -y openssh
 pkg install -y openssl-tool
 pkg install -y pwgen
+pkg install -y python
 pkg install -y rsync
 pkg install -y screen
 pkg install -y termux-api
 pkg install -y tmux
 pkg install -y tree
-pkg install -y wget
 
 # 2 different options
 pkg install -y texlive-full
