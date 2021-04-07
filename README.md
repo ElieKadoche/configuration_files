@@ -66,4 +66,4 @@ So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk).
 - Google: Chrome, Clock, Contacts, Docs, Earth, Drive, Gmail, News, Maps, Translate.
 - Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
 - Communication: Discord, Facebook, Instagram, LinkedIn, Messenger, Signal, Teams, Reddit, Twitch, Twitter, WhatsApp.
-- Others: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, Netflix, QR Droid, SVG viewer, TeamViewer, Wikipedia.
+- Others: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, Netflix, SVG viewer, TeamViewer, Wikipedia.
