@@ -309,10 +309,10 @@ bbb() {
     fi
 }
 
-# Clean Tex files
+# Clean Tex files. Argument for maxdepth
 rmtex() {
-    find . -maxdepth 1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
-    find . -maxdepth 1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete;
+    find . -maxdepth $1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
+    find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete;
 }
 
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
