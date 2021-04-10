@@ -67,13 +67,14 @@ pkg install -y ffmpeg
 pkg install -y fzf
 pkg install -y ghostscript
 pkg install -y git
-pkg install -y libxml2
-pkg install -y libxslt
 pkg install -y htop
 pkg install -y imagemagick
+pkg install -y libxml2
+pkg install -y libxslt
 pkg install -y libzmq
 pkg install -y mpv
 pkg install -y neofetch
+pkg install -y nodejs
 pkg install -y openssh
 pkg install -y openssl-tool
 pkg install -y pwgen
@@ -104,5 +105,12 @@ pip3 install -r requirements.txt
 
 # Compile and update everything
 # ------------------------------------------
+
+# Change custom init.vim
+# Comment the YouCompleteMe Plug line
+# Plug 'neoclide/coc.nvim', {'branch': 'release'}
+nvim +"PlugInstall" +qa;
+nvim tmp +"CocInstall coc-texlab" +qa;
+nvim tmp +"CocInstall coc-pyright" +qa;
 
 master_all
