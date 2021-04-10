@@ -53,16 +53,18 @@ Private variables and commands are declared in a `.zsh` file placed in `$ZSH_CUS
 - To share files with `sshfs`: `sshfs <user>@<ip>: -p <port> <folder_path_in_which_to_mount>`.
 - To share files with `scp`: `scp -P <port> <user>@<ip>:<file_path_to_share> <path_location>`.
 
+To share files or a website with the world (with or without password) --> Apache2.
+
 ## Android
 
 Google Play builds are no longer updated for Termux (https://github.com/termux/termux-app/issues/1072).
-So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk).
+So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk), along with Termux:API.
 
 - Maps: Citymapper, Trailforks, Waze.
-- Files: File Manager+, Total Commander.
+- Files: File Manager+, Total Commander + SFTP.
+- Development: Detexify, DroidCam, Cxxdroid, QuickEdit+, Termux, Termux:API.
 - Privacy: Authy, BNP, Firefox, Firefox Focus, LessPass, Orbot, Tor Browser.
 - Baduk: ElyGo pro, Go Clock, KGS, Pandanet(Go), Tsumego Pro, TygemBadukLite.
-- Development: Detexify, DroidCam, Cxxdroid, QuickEdit+, Termux, Termux:API + SFTP.
 - Google: Chrome, Clock, Contacts, Docs, Earth, Drive, Gmail, News, Maps, Translate.
 - Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
 - Communication: Discord, Facebook, Instagram, LinkedIn, Messenger, Signal, Teams, Reddit, Twitch, Twitter, WhatsApp.
