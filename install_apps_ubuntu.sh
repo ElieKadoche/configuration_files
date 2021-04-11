@@ -309,27 +309,11 @@ echo "Installing python packages..."
 # Packages can be used globally, in a virtual environment, in a Docker container, etc.
 pip install -r requirements.txt
 
-# Others
+# Configuration files
 # ------------------------------------------
-
-# Detect sensors
-sudo sensors-detect
-
-# Activate firewall linux
-sudo ufw enable
-
-# Neovim and Prettier
-sudo npm install -g neovim
-npm install --save-dev --save-exact prettier
-
-# Remove kdeconnect
-sudo apt remove kdeconnect
 
 # tmux configuration
 cp others/.tmux.conf ~
-
-# Set default permissions
-setfacl -R -d -m u::rwx,g::-,o::- $ORIGIN
 
 # SSH notifier script
 # Enable Google Calendar API on server
@@ -345,10 +329,32 @@ cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# Others: CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
+# Others (configure SSH and Apache2)
+# ------------------------------------------
+
+# Activate firewall linux
+sudo ufw enable
+
+# Detect sensors
+sudo sensors-detect
+
+# Remove kdeconnect
+sudo apt remove kdeconnect
+
+# Disable Apache2 at startup
+sudo systemctl disable apache2
+
+# Set default permissions
+setfacl -R -d -m u::rwx,g::-,o::- $ORIGIN
+
+# Neovim and Prettier
+sudo npm install -g neovim
+npm install --save-dev --save-exact prettier
+
+# Install CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
-# Install fzf from the source directory
 # Remove plymouth: [sudo vim /etc/default/grub] nomodeset
+# Install fzf from the source directory
 
 # Extensions
 # ------------------------------------------
