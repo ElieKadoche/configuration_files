@@ -296,11 +296,11 @@ renameAll() {
 bbb() {
     if [ "$1" = "dry" ]; then
         # The dry command is mainly for security, if one is afraid of doing some unfortunate mistake
-        rsync -vrulpEh --ignore-existing --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+        rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
 
     elif [ "$1" = "run" ]; then
         printf "${BBlue}rsync${Color_Off}\n";
-        rsync -vrulpEh --ignore-existing --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+        rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
 
         printf "${BBlue}git${Color_Off}\n";
         rm -rf /media/$USERNAME/$2/data/{general_files,git_apps};
