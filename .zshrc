@@ -292,23 +292,6 @@ renameAll() {
     done;
 }
 
-# Backup command. The name of the external hard drive is $2
-bbb() {
-    if [ "$1" = "dry" ]; then
-        # The dry command is mainly for security, if one is afraid of doing some unfortunate mistake
-        rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
-
-    elif [ "$1" = "run" ]; then
-        printf "${BBlue}rsync${Color_Off}\n";
-        rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
-
-        printf "${BBlue}git${Color_Off}\n";
-        rm -rf /media/$USERNAME/$2/data/{general_files,git_apps};
-        cpr $ORIGIN/general_files /media/$USERNAME/$2/data;
-        cpr $ORIGIN/git_apps /media/$USERNAME/$2/data;
-    fi
-}
-
 # Clean Tex files. Argument for maxdepth
 rmtex() {
     find . -maxdepth $1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
@@ -359,6 +342,35 @@ startKataWhat() {
     cd $ORIGIN/miscellaneous/KataWhatBot;
     nohup java -jar /home/$USERNAME/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/$USERNAME/data/miscellaneous/KataWhatBot/config.properties &;
     cd $ORIGIN;
+}
+
+# Backup command, for Android and for Ubuntu
+# The name of the external hard drive is $2 (mandatory for linux-gnu)
+bbb() {
+    # The dry command is mainly for security, if one is afraid of doing some unfortunate mistake
+    if [ "$1" = "dry" ]; then
+        if [ "$OSTYPE" = "linux-android" ]; then
+            rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+
+        elif [ "$OSTYPE" = "linux-gnu" ]; then
+            rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+        fi
+
+    elif [ "$1" = "run" ]; then
+        if [ "$OSTYPE" = "linux-android" ]; then
+            rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+
+        elif [ "$OSTYPE" = "linux-gnu" ]; then
+            printf "${BBlue}rsync${Color_Off}\n";
+            rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+
+            # We do not use rsync on git folders
+            printf "${BBlue}git${Color_Off}\n";
+            rm -rf /media/$USERNAME/$2/data/{general_files,git_apps};
+            cpr $ORIGIN/general_files /media/$USERNAME/$2/data;
+            cpr $ORIGIN/git_apps /media/$USERNAME/$2/data;
+        fi
+    fi
 }
 
 # fzf
