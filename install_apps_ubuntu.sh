@@ -120,6 +120,7 @@ sudo apt -y install sshfs
 sudo apt -y install sumo
 sudo apt -y install swi-prolog
 sudo apt -y install swig
+sudo apt -y install tesseract-ocr
 sudo apt -y install texlive-full
 sudo apt -y install texstudio
 sudo apt -y install thefuck
