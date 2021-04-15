@@ -77,5 +77,6 @@ torchsummary
 torchvision
 tqdm
 virtualenv
+windrose
 xlrd
 youtube-dl
