@@ -169,31 +169,30 @@ nnoremap <C-l> <C-W>l
 " ------------------------------------------
 
 let g:ale_linters = {
+\    'bib': ['bibclean'],
+\    'cpp': ['clang'],
 \    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
 \    'tex': ['lacheck'],
-\    'cpp': ['clang'],
-\    'bib': ['bibclean'],
 \}
 
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
-\    'python': ['isort', 'autopep8'],
-\    'markdown': ['prettier'],
-\    'tex': ['latexindent'],
-\    'cpp': ['uncrustify', 'clang-format'],
 \    'bib': ['bibclean'],
+\    'cpp': ['uncrustify', 'clang-format'],
+\    'markdown': ['prettier'],
+\    'python': ['isort', 'autopep8'],
+\    'tex': ['latexindent'],
 \}
 
-let g:ale_lint_on_save=1
-let g:ale_lint_on_enter=0
-let g:ale_completion_enabled=0
 let g:airline#extensions#ale#enabled=1
 let g:ale_c_parse_compile_commands=1
+let g:ale_completion_enabled=0
+let g:ale_fix_on_save=1
+let g:ale_lint_on_enter=0
+let g:ale_lint_on_save=1
 
 let g:ale_sign_error='>>'
 let g:ale_sign_warning='--'
-
-let g:ale_fix_on_save=1
 
 " Others
 " ------------------------------------------
