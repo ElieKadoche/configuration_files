@@ -147,9 +147,12 @@ sudo apt -y install peek
 # Alacritty
 # ------------------------------------------
 
-sudo add-apt-repository -y ppa:mmstick76/alacritty
-sudo apt update
-sudo apt -y install alacritty
+# Install cargo
+curl https://sh.rustup.rs -sSf | sh
+
+# Install alacritty
+sudo apt -y install pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev
+cargo install alacritty
 
 # Other Python versions
 # ------------------------------------------

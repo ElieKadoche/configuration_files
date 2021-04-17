@@ -538,6 +538,10 @@ master_compile() {
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
     if [ "$OSTYPE" = "linux-gnu" ]; then
+        # Alacritty
+        cargo install alacritty
+        # cargo install --force alacritty
+
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
         python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
