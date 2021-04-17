@@ -539,6 +539,7 @@ master_compile() {
 
     if [ "$OSTYPE" = "linux-gnu" ]; then
         # Alacritty
+        printf "${BBlue}\nCargo${Color_Off}\n\n";
         cargo install alacritty
         # cargo install --force alacritty
 
