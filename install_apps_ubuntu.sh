@@ -56,6 +56,7 @@ sudo apt -y install ocl-icd-opencl-dev
 sudo apt -y install openssh-server
 sudo apt -y install python3
 sudo apt -y install screen
+sudo apt -y install software-properties-gtk
 sudo apt -y install wget
 
 # From universe
