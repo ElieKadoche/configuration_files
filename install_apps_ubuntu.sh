@@ -90,6 +90,7 @@ sudo apt -y install libopencv-dev
 sudo apt -y install libproj-dev
 sudo apt -y install librecad
 sudo apt -y install libreoffice
+sudo apt -y install libswscale-dev
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
 sudo apt -y install lynx
