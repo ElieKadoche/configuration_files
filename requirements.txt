@@ -43,6 +43,7 @@ openpyxl
 pandas
 pettingzoo[all]
 pip-review
+plotly
 powerline-status
 ptpython
 pybind11
