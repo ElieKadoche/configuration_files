@@ -309,10 +309,11 @@ clearStringAll() {
 }
 
 # Master command to compile latex projects (or use latexmk)
+# bibtex / biber: both can be used, depending on how the bibliography is made
 compiletex() {
     pdflatex "$1.tex";
-    # bibtex "$1";
-    biber "$1";  # Both can be used, depending on how the bibliography is made
+    bibtex "$1";
+    # biber "$1";
     makeglossaries "$1";
     pdflatex "$1.tex";
     pdflatex "$1.tex";
