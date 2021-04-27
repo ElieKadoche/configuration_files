@@ -144,6 +144,9 @@ nnoremap <leader>sn :set nospell<cr>
 nnoremap <leader>sf :set spelllang=fr<cr> :set spell<cr>
 nnoremap <leader>se :set spelllang=en<cr> :set spell<cr>
 
+" 1 sentence by line
+nnoremap <leader>p :s/. /.\r/g <CR> :noh <CR>
+
 " A silly one that I love: sort selected lines by length
 " We use xnoremap because we call this function in visual mode
 xnoremap <leader>l :'<,'> ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
