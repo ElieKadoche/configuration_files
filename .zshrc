@@ -237,7 +237,7 @@ fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
 getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1}
 
 # Change Alacritty opacity to $1 value. Double quotes are mandatory for sed to interpret variables
-alc() { sed -i "/background_opacity/c\background_opacity: $1" ~/.config/alacritty/alacritty.yml }
+alc() { sed -i "s/background_opacity.*/background_opacity: $1/g" ~/.config/alacritty/alacritty.yml }
 
 # youtube-dl -F to see formats
 yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
