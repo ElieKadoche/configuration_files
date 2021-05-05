@@ -57,7 +57,7 @@ pkg install -y texlive-full
 # tlmgr update --list
 # tlmgr install scheme-full
 
-# Configuration
+# Termux configuration
 # ------------------------------------------
 
 echo "Configuring Termux..."
