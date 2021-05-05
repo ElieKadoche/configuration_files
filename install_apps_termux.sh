@@ -110,8 +110,9 @@ pip3 install -r requirements.txt
 
 # Change custom init.vim
 # Comment the YouCompleteMe Plug line
-# Plug 'neoclide/coc.nvim', {'branch': 'release'}
+# Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
 nvim +"PlugInstall" +qa;
+nvim +"TSInstall python" +qa;
 nvim tmp +"CocInstall coc-texlab" +qa;
 nvim tmp +"CocInstall coc-pyright" +qa;
 

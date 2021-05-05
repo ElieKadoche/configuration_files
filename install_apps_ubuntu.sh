@@ -304,8 +304,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 nvim +"PlugInstall" +qa;
-# Because coc is activated only for tex files
-nvim tmp.tex +"CocInstall coc-texlab" +qa;
+nvim +"TSInstall python" +qa;
+nvim tmp.tex +"CocInstall coc-texlab" +qa;  # Because coc is activated only for tex files
 
 # Python packages
 # ------------------------------------------

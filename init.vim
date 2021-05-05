@@ -1,6 +1,8 @@
 call plug#begin('~/.config/nvim/plugged/')
-Plug 'https://github.com/ycm-core/YouCompleteMe.git'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'tex'}
+Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release', 'for': 'tex'}
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter.git', {'do': ':TSUpdate'}
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'  " Not for Termux
+
 Plug 'https://github.com/SirVer/ultisnips.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/ap/vim-buftabline.git'
@@ -196,6 +198,50 @@ let g:ale_lint_on_save=1
 
 let g:ale_sign_error='>>'
 let g:ale_sign_warning='--'
+
+" nvim-treesitter
+" ------------------------------------------
+
+" Consistent syntax highlighting
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+  },
+}
+EOF
+
+" Incremental selection based on the named nodes from the grammar
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+}
+EOF
+
+" Tree-sitter based indentation
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  indent = {
+    enable = true
+  }
+}
+EOF
+
+" Tree-sitter based folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " Others
 " ------------------------------------------
