@@ -1,65 +1,25 @@
 #!/bin/zsh
 
-# Before all
-# ------------------------------------------
-
+# zsh installation
 pkg install -y zsh
+
+# Others
 pkg install -y git
 pkg install -y wget
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp .zshrc ~
-termux-setup-storage
 pkg install -y neovim
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# Activate storage
+termux-setup-storage
+
+# Launch common script
+./install_apps_common.sh
 
 # You can launch the script from here
-# ------------------------------------------
-
-cp others/.tmux.conf ~
-
-mkdir ~/.config
-mkdir ~/.config/nvim
-cp init.vim ~/.config/nvim/init.vim
-
-mkdir ~/.config/nvim/syntax
-cp others/cypher.vim ~/.config/nvim/syntax/cypher.vim
-cp others/sparql.vim ~/.config/nvim/syntax/sparql.vim
-cp others/log.vim ~/.config/nvim/syntax/log.vim
-
-mkdir ~/.config/nvim/custom_snippets
-cp others/all.snippets ~/.config/nvim/custom_snippets/all.snippets
-cp others/python.snippets ~/.config/nvim/custom_snippets/python.snippets
-
-# Configuration
-# ------------------------------------------
-
-echo "Configuring Termux..."
-
-# Keyboard
-cfg="extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]"
-echo "$cfg" > ~/.termux/termux.properties
-
-# Fira Code font
-wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Retina.ttf -O ~/.termux/font.ttf
-
-termux-reload-settings
-
-# Git
-# ------------------------------------------
-
-echo "Configuring git..."
-
-git config --global user.name "Elie KADOCHE"
-git config --global user.email eliekadoche78@gmail.com
-git config --global core.editor nvim
-git config --global core.filemode false
-git config --global credential.helper store
 
 # pkg
 # ------------------------------------------
+
+echo "Running pkg packages..."
 
 pkg install -y cmatrix
 pkg install -y e2fsprogs
@@ -85,18 +45,17 @@ pkg install -y screen
 pkg install -y termux-api
 pkg install -y tesseract
 pkg install -y tmux
+pkg install -y tor
 pkg install -y tree
+pkg install -y unrar
+pkg install -y unzip
+pkg install -y zip
 
 # 2 different options
 pkg install -y texlive-full
 # pkg install texlive
 # tlmgr update --list
 # tlmgr install scheme-full
-
-pkg install -y tor
-pkg install -y zip
-pkg install -y unrar
-pkg install -y unzip
 
 # Python packages (all packages will not work, be careful)
 # ------------------------------------------
@@ -105,24 +64,21 @@ echo "Installing python packages..."
 
 pip3 install -r requirements.txt
 
-# Compile and update everything
+# Configuration
 # ------------------------------------------
 
-# Change custom init.vim
-# Comment the YouCompleteMe Plug line
-# Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
-nvim +"PlugInstall" +qa;
-nvim tmp +"CocInstall coc-texlab" +qa;
-nvim tmp +"CocInstall coc-pyright" +qa;
+echo "Configuring Termux..."
 
-# nvim-treesitter languages
-nvim +"TSInstall bash" +qa;
-nvim +"TSInstall bibtex" +qa;
-nvim +"TSInstall cpp" +qa;
-nvim +"TSInstall html" +qa;
-nvim +"TSInstall json" +qa;
-nvim +"TSInstall latex" +qa;
-nvim +"TSInstall python" +qa;
-nvim +"TSInstall yaml" +qa;
+# Keyboard
+cfg="extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]"
+echo "$cfg" > ~/.termux/termux.properties
+
+# Fira Code font
+wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Retina.ttf -O ~/.termux/font.ttf
+
+termux-reload-settings
+
+# Compile and update everything
+# ------------------------------------------
 
 master_all

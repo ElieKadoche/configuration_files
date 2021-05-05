@@ -1,9 +1,23 @@
 #!/bin/zsh
 
-# Activating repo
+# zsh installation
+sudo apt -y install zsh
+chsh -s $(which zsh)
+
+# Others
+sudo apt -y install git
+sudo apt -y install curl
+sudo apt -y install neovim
+
+# Launch common script
+./install_apps_common.sh
+
+# You can launch the script from here
+
+# APT
 # ------------------------------------------
 
-echo "Activating repo..."
+echo "Running apt packages..."
 
 # All packages in /etc/apt/sources.list(d)
 sudo add-apt-repository -y main
@@ -11,23 +25,6 @@ sudo add-apt-repository -y universe
 sudo add-apt-repository -y multiverse
 sudo add-apt-repository -y restricted
 sudo apt update
-
-# zsh installation
-# ------------------------------------------
-
-sudo apt -y install zsh
-chsh -s $(which zsh)
-
-# You can launch the script from here
-# ------------------------------------------
-
-sudo apt -y install curl
-sudo apt -y install git
-
-# APT
-# ------------------------------------------
-
-echo "Running apt packages..."
 
 # From main
 sudo apt -y install acl
@@ -98,7 +95,6 @@ sudo apt -y install meson
 sudo apt -y install mpv
 sudo apt -y install ncdu
 sudo apt -y install neofetch
-sudo apt -y install neovim
 sudo apt -y install nmap
 sudo apt -y install npm
 sudo apt -y install okular
@@ -139,57 +135,53 @@ sudo apt -y install xtrlock
 # From multiverse
 sudo apt -y install unrar
 
-# Peek
+# Others
 # ------------------------------------------
 
-sudo add-apt-repository -y ppa:peek-developers/stable
-sudo apt update
-sudo apt -y install peek
+echo "Other packages..."
 
 # Alacritty
-# ------------------------------------------
-
-# Install cargo
-curl https://sh.rustup.rs -sSf | sh
-
-# Install alacritty
+curl https://sh.rustup.rs -sSf | sh  # Install cargo
 sudo apt -y install pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev
-cargo install alacritty
-
-# Other Python versions
-# ------------------------------------------
-
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.6
-sudo apt install python3.6-venv
+cargo install alacritty  # Install Alacritty
 
 # Etcher
-# ------------------------------------------
-
 echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
 sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
 sudo apt update
 sudo apt -y install balena-etcher-electron
 
-# openrazer
-# ------------------------------------------
+# Microsoft Teams
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list'
+sudo apt update
+sudo apt -y install teams
 
+# openrazer
 sudo add-apt-repository -y ppa:openrazer/stable
 sudo add-apt-repository -y ppa:polychromatic/stable
 sudo apt update
 sudo apt -y install openrazer-meta
 sudo apt -y install polychromatic
 
-# Nvidia drivers
-# ------------------------------------------
+# Other Python versions
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.6
+sudo apt install python3.6-venv
 
-# Option 1: use default driver in "Additional drivers"
-# Option 2: download appropriate drivers from https://www.nvidia.com/Download/index.aspx
-# Option 2 may be better (activate automatic updated)
+# Peek
+sudo add-apt-repository -y ppa:peek-developers/stable
+sudo apt update
+sudo apt -y install peek
 
 # CUDA
 # ------------------------------------------
+
+# Nvidia drivers
+# Option 1: use default driver in "Additional drivers"
+# Option 2: download appropriate drivers from https://www.nvidia.com/Download/index.aspx
+# Option 2 may be better (activate automatic updated)
 
 # nvcc --version and nvidia-smi to check CUDA version
 
@@ -205,14 +197,6 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
-
-# Microsoft Teams
-# ------------------------------------------
-
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list'
-sudo apt update
-sudo apt -y install teams
 
 # Docker
 # ------------------------------------------
@@ -261,61 +245,6 @@ sudo snap install pick-colour-picker
 sudo snap install pycharm-community --classic
 sudo snap install rpi-imager
 
-# Git
-# ------------------------------------------
-
-echo "Configuring git..."
-
-# Setup ssh for GitHub
-ssh -T git@github.com
-
-git config --global user.name "Elie KADOCHE"
-git config --global user.email eliekadoche78@gmail.com
-git config --global core.editor nvim
-git config --global core.filemode false
-git config --global credential.helper store
-
-# zsh and vim
-# ------------------------------------------
-
-echo "Setting zsh and vim..."
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp .zshrc ~
-
-mkdir ~/.config/nvim
-cp init.vim ~/.config/nvim/init.vim
-
-mkdir ~/.config/nvim/syntax
-cp others/cypher.vim ~/.config/nvim/syntax/cypher.vim
-cp others/sparql.vim ~/.config/nvim/syntax/sparql.vim
-cp others/log.vim ~/.config/nvim/syntax/log.vim
-
-mkdir ~/.config/nvim/custom_snippets
-cp others/all.snippets ~/.config/nvim/custom_snippets/all.snippets
-cp others/python.snippets ~/.config/nvim/custom_snippets/python.snippets
-
-# Vim Plug
-# ------------------------------------------
-
-echo "Installing Vim Plug..."
-
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-nvim +"PlugInstall" +qa;
-nvim tmp.tex +"CocInstall coc-texlab" +qa;  # Because coc is activated only for tex files
-
-# nvim-treesitter languages
-nvim +"TSInstall bash" +qa;
-nvim +"TSInstall bibtex" +qa;
-nvim +"TSInstall cpp" +qa;
-nvim +"TSInstall html" +qa;
-nvim +"TSInstall json" +qa;
-nvim +"TSInstall latex" +qa;
-nvim +"TSInstall python" +qa;
-nvim +"TSInstall yaml" +qa;
-
 # Python packages
 # ------------------------------------------
 
@@ -325,28 +254,10 @@ echo "Installing python packages..."
 # Packages can be used globally, in a virtual environment, in a Docker container, etc.
 pip install -r requirements.txt
 
-# Configuration files
+# Others
 # ------------------------------------------
 
-# tmux configuration
-cp others/.tmux.conf ~
-
-# SSH notifier script
-# Enable Google Calendar API on server
-# Generate credentials.json and put it in ~/ssh_notifier
-mkdir ~/ssh_notifier
-cp others/ssh_notifier.py ~/ssh_notifier
-
-# Custom modifications
-cp others/gtk.css ~/.config/gtk-3.0/gtk.css
-cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
-
-# Alacritty configuration
-mkdir ~/.config/alacritty
-cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
-
-# Others (configure SSH and Apache2)
-# ------------------------------------------
+# Configure SSH and Apache2
 
 # Activate firewall linux
 sudo ufw enable
@@ -366,6 +277,20 @@ setfacl -R -d -m u::rwx,g::-,o::- $ORIGIN
 # Neovim and Prettier
 sudo npm install -g neovim
 npm install --save-dev --save-exact prettier
+
+# SSH notifier script
+# Enable Google Calendar API on server
+# Generate credentials.json and put it in ~/ssh_notifier
+mkdir ~/ssh_notifier
+cp others/ssh_notifier.py ~/ssh_notifier
+
+# Custom modifications
+cp others/gtk.css ~/.config/gtk-3.0/gtk.css
+cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
+
+# Alacritty configuration
+mkdir ~/.config/alacritty
+cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Install CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
