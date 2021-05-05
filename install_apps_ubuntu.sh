@@ -12,7 +12,7 @@ sudo add-apt-repository -y multiverse
 sudo add-apt-repository -y restricted
 sudo apt update
 
-# Installation de zsh
+# zsh installation
 # ------------------------------------------
 
 sudo apt -y install zsh
@@ -304,8 +304,17 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 nvim +"PlugInstall" +qa;
-nvim +"TSInstall python" +qa;
 nvim tmp.tex +"CocInstall coc-texlab" +qa;  # Because coc is activated only for tex files
+
+# nvim-treesitter languages
+nvim +"TSInstall bash" +qa;
+nvim +"TSInstall bibtex" +qa;
+nvim +"TSInstall cpp" +qa;
+nvim +"TSInstall html" +qa;
+nvim +"TSInstall json" +qa;
+nvim +"TSInstall latex" +qa;
+nvim +"TSInstall python" +qa;
+nvim +"TSInstall yaml" +qa;
 
 # Python packages
 # ------------------------------------------
