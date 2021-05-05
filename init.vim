@@ -240,6 +240,7 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 " Tree-sitter based folding
+set foldlevel=99
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
