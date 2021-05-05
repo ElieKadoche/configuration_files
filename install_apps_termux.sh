@@ -57,13 +57,6 @@ pkg install -y texlive-full
 # tlmgr update --list
 # tlmgr install scheme-full
 
-# Python packages (all packages will not work, be careful)
-# ------------------------------------------
-
-echo "Installing python packages..."
-
-pip3 install -r requirements.txt
-
 # Configuration
 # ------------------------------------------
 

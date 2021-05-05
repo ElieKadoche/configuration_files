@@ -71,3 +71,13 @@ nvim tmp +"TSInstall json" +qa;
 nvim tmp +"TSInstall latex" +qa;
 nvim tmp +"TSInstall python" +qa;
 nvim tmp +"TSInstall yaml" +qa;
+
+# Python packages
+# ------------------------------------------
+
+echo "Installing python packages..."
+
+# All packages will not work on Termux, be careful
+# Choose carefully which packages to install globally
+# Packages can be used globally, in a virtual environment, in a Docker container, etc.
+pip install -r requirements.txt

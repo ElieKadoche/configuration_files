@@ -245,15 +245,6 @@ sudo snap install pick-colour-picker
 sudo snap install pycharm-community --classic
 sudo snap install rpi-imager
 
-# Python packages
-# ------------------------------------------
-
-echo "Installing python packages..."
-
-# Choose carefully which packages to install globally
-# Packages can be used globally, in a virtual environment, in a Docker container, etc.
-pip install -r requirements.txt
-
 # Others
 # ------------------------------------------
 
