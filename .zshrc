@@ -562,8 +562,8 @@ master_compile() {
         # Katago
         printf "${BBlue}\nKatago${Color_Off}\n\n";
         cd $ORIGIN/git_apps/KataGo/cpp;
-        if [ -d "./build" ]; then rm -rf ./build; fi
-        mkdir build; cd build;
+        if [ ! -d "./build" ]; then mkdir build; fi
+        cd build;
         cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/local/cuda-11.1/include -DCUDNN_LIBRARY=/usr/local/cuda-11.1/lib64/libcudnn.so
         make;
 
