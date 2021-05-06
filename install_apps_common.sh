@@ -63,14 +63,7 @@ nvim tmp.tex +"CocInstall coc-texlab" +qa;
 nvim tmp +"CocInstall coc-pyright" +qa;
 
 # nvim-treesitter languages
-nvim tmp +"TSInstall bash" +qa;
-nvim tmp +"TSInstall bibtex" +qa;
-nvim tmp +"TSInstall cpp" +qa;
-nvim tmp +"TSInstall html" +qa;
-nvim tmp +"TSInstall json" +qa;
-nvim tmp +"TSInstall latex" +qa;
-nvim tmp +"TSInstall python" +qa;
-nvim tmp +"TSInstall yaml" +qa;
+nvim tmp +"TSInstall bash bibtex cpp html json latex python yaml" +qa;
 
 # Python packages
 # ------------------------------------------
