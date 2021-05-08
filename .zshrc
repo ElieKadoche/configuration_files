@@ -274,7 +274,7 @@ dodo() {
 pyclean() {
     find . -name "*.pyc" -ls -delete;
     find . -name "__pycache__" -ls -delete;
-    find . -name ".pytest_cache" -exec rm -rf "{}" \;
+    find . -name ".pytest_cache" -ls -exec rm -rf "{}" \;
 }
 
 # Rename all files in a folder
