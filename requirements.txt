@@ -53,6 +53,7 @@ pygame
 pygments
 pyinstaller
 pytest
+pytorch_forecasting
 ray[all]
 recommonmark
 regex
