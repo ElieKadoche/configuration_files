@@ -282,9 +282,7 @@ ek() {
     if [ "$1" = 0 ]; then
         cfg="extra-keys = [[]]";
     elif [ "$1" = 1 ]; then
-        cfg="extra-keys = [['F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12'],
-                           ['ESC','ALT','FN','/','PGUP','KEYBOARD','UP','DRAWER'],
-                           ['TAB','CTRL','HOME','|','PGDN','LEFT','DOWN','RIGHT']]";
+        cfg="extra-keys = [['F1','F2','F3','F4','F5','F6','F9','F12'], ['ESC','ALT','FN','/','PGUP','KEYBOARD','UP','DRAWER'], ['TAB','CTRL','HOME','|','PGDN','LEFT','DOWN','RIGHT']]";
     fi
     echo "$cfg" > ~/.termux/termux.properties;
     termux-reload-settings;
