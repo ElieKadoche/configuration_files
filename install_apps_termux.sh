@@ -63,8 +63,7 @@ pkg install -y texlive-full
 echo "Configuring Termux..."
 
 # Keyboard
-cfg="extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]"
-echo "$cfg" > ~/.termux/termux.properties
+# Enable / disable extra keys (see ek custom function)
 
 # Fira Code font
 wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Retina.ttf -O ~/.termux/font.ttf
