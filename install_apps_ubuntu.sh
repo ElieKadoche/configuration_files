@@ -151,12 +151,6 @@ sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE19
 sudo apt update
 sudo apt -y install balena-etcher-electron
 
-# Microsoft Teams
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list'
-sudo apt update
-sudo apt -y install teams
-
 # openrazer
 sudo add-apt-repository -y ppa:openrazer/stable
 sudo add-apt-repository -y ppa:polychromatic/stable
@@ -283,7 +277,7 @@ cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# Install CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
+# Install CGoban, Source-Sans-Pro, GoPanda, Teams, TeamViewer, Google Earth, Google Chrome
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Remove plymouth: [sudo vim /etc/default/grub] nomodeset
 # Install fzf from the source directory
