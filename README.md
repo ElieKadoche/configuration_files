@@ -10,6 +10,7 @@ General configuration files for Ubuntu and Termux (Android).
 ## Firefox extensions
 
 - Dark Reader.
+- Firefox Color.
 - GNOME Shell integration.
 - HTTPS Everywhere.
 - LessPass.
