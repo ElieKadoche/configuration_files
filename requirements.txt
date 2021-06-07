@@ -31,6 +31,7 @@ imgaug
 ipdb
 isort
 jupyter
+kaleido
 keras-rl2
 matplotlib
 neat-python
