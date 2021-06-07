@@ -7,6 +7,7 @@ Plug 'https://github.com/SirVer/ultisnips.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/ap/vim-css-color.git'
+Plug 'https://github.com/camspiers/lens.vim.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
 Plug 'https://github.com/dracula/vim.git'
 Plug 'https://github.com/ervandew/supertab.git'
@@ -126,6 +127,12 @@ let g:ycm_filetype_blacklist={
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience
 set updatetime=300
+
+" lens.vim
+" ------------------------------------------
+
+" Disable animations
+let g:lens#animate = 0
 
 " Leader
 " ------------------------------------------
