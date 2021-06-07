@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged/')
-Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release', 'for': 'tex'}
+" Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}  " For Termux
+Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release', 'for': 'tex'}  " Otherwise
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter.git', {'do': ':TSUpdate'}
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'  " Not for Termux
 

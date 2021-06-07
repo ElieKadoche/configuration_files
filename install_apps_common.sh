@@ -34,7 +34,6 @@ echo "Configuring neovim..."
 # For Termux only
 # Change custom init.vim
 # Comment the YouCompleteMe Plug line
-# Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 
