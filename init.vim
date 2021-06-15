@@ -95,11 +95,6 @@ let g:ale_sign_warning='--'
 set hidden
 let no_buffers_menu=1
 
-" Move around buffers
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>l :bn<CR>
-nnoremap <leader>x :BD<CR>
-
 " Move around split with control + direction
 nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
@@ -193,6 +188,11 @@ nnoremap <leader>p :s/\. /.\r/g <CR> :noh <CR>
 " A silly one that I love: sort selected lines by length
 " We use xnoremap because we call this function in visual mode
 xnoremap <leader>l :'<,'> ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+
+" Move around buffers
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>x :BD<CR>
 
 " lens.vim
 " ------------------------------------------
