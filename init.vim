@@ -56,6 +56,30 @@ endif
 
 set encoding=utf8
 
+" lightline
+" ------------------------------------------
+
+let g:lightline = {
+      \ 'colorscheme': 'powerlineish',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified'] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename'
+      \ }
+      \ }
+
+function! LightlineFilename()
+  return expand('%')
+endfunction
+
 " Font
 " ------------------------------------------
 
@@ -78,7 +102,7 @@ let g:ctrlp_max_depth=40
 " snippets
 " ------------------------------------------
 
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'custom_snippets']
 
 " LaTeX
 " ------------------------------------------
@@ -113,9 +137,9 @@ let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType='<C-n>'
 
 " Better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 " coc.vim is better for LaTeX than YCM
 let g:ycm_filetype_blacklist={
@@ -217,7 +241,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     custom_captures = {
       -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
+      ['foo.bar'] = 'Identifier',
     },
   },
 }
@@ -229,10 +253,10 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
+      init_selection = 'gnn',
+      node_incremental = 'grn',
+      scope_incremental = 'grc',
+      node_decremental = 'grm',
     },
   },
 }
@@ -252,15 +276,21 @@ set foldlevel=99
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
+" NERDTree
+" ------------------------------------------
+
+" No statusline
+let g:NERDTreeStatusline = '%#NonText#'
+
+" Open NERDTree if vim executed without arguments
+autocmd VimEnter * if !argc() | NERDTree | endif
+
 " Others
 " ------------------------------------------
 
 " Exit insert mode with a quick jk
 cnoremap jk <C-C>
 inoremap jk <esc>
-
-" Open NERDTree if vim executed without arguments
-autocmd VimEnter * if !argc() | NERDTree | endif
 
 " Clipboard
 set clipboard=unnamedplus
