@@ -27,6 +27,7 @@ call plug#end()
 
 " Syntax
 " ------------------------------------------
+" ------------------------------------------
 
 syntax on
 syntax enable
@@ -42,6 +43,7 @@ autocmd FileType python set colorcolumn=79
 
 " Colors
 " ------------------------------------------
+" ------------------------------------------
 
 set termguicolors
 colorscheme dracula
@@ -56,153 +58,8 @@ endif
 
 set encoding=utf8
 
-" lightline
-" ------------------------------------------
-
-let g:lightline = {
-      \ 'colorscheme': 'powerlineish',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-      \ },
-      \ 'component': {
-      \   'charvaluehex': '0x%B'
-      \ },
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename'
-      \ }
-      \ }
-
-function! LightlineFilename()
-  return expand('%')
-endfunction
-
-" Font
-" ------------------------------------------
-
-set guifont=Fira\ Code\ Retina:h10
-
-" identLine
-" ------------------------------------------
-
-let g:indentLine_char_list=['|', '¦', '┆', '┊']
-
-" ctrlp
-" ------------------------------------------
-
-let g:ctrlp_match_window='bottom,order:ttb'
-let g:ctrlp_switch_buffer=0
-let g:ctrlp_show_hidden=1
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-
-" snippets
-" ------------------------------------------
-
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'custom_snippets']
-
-" LaTeX
-" ------------------------------------------
-
-let g:tex_flavor='latex'
-
-" In tex files, no preview
-let g:vimtex_syntax_conceal_default=0
-
-" Turn persistent undo on means that you can undo even when you close a buffer/VIM
-" ------------------------------------------
-
-try
-    set undodir=~/.vim_runtime/temp_dirs/undodir
-    set undofile
-catch
-endtry
-
-" Rainbow
-" ------------------------------------------
-
-let g:rainbow_active=1 " Set to 0 if you want to enable it later via :RainbowToggle
-
-" YCM and UltiSnips
-" ------------------------------------------
-
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" Make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType='<C-n>'
-
-" Better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-
-" coc.vim is better for LaTeX than YCM
-let g:ycm_filetype_blacklist={
-      \ 'tex': 1
-      \}
-
-" coc.vim
-" ------------------------------------------
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience
-set updatetime=300
-
-" lens.vim
-" ------------------------------------------
-
-" Disable animations
-let g:lens#animate = 0
-
-" Leader
-" ------------------------------------------
-
-let mapleader=','
-
-nnoremap <silent> <leader><space> :noh<cr>
-nnoremap <leader>v :vsplit<cr>
-nnoremap <leader>t :NERDTree<cr>
-let NERDTreeShowHidden=1
-
-" Command to change variable whenever I want
-nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
-
-" Change spelllang
-set nospell
-nnoremap <leader>sn :set nospell<cr>
-nnoremap <leader>sf :set spelllang=fr<cr> :set spell<cr>
-nnoremap <leader>se :set spelllang=en<cr> :set spell<cr>
-
-" 1 sentence by line
-nnoremap <leader>p :s/\. /.\r/g <CR> :noh <CR>
-
-" A silly one that I love: sort selected lines by length
-" We use xnoremap because we call this function in visual mode
-xnoremap <leader>l :'<,'> ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
-
-" Buffers
-" ------------------------------------------
-
-set hidden
-let no_buffers_menu=1
-
-" Move around buffers
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>l :bn<CR>
-nnoremap <leader>x :BD<CR>
-
-" Move around split with control + direction
-nnoremap <C-h> <C-W>h
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-l> <C-W>l
-
 " ALE
+" ------------------------------------------
 " ------------------------------------------
 
 let g:ale_linters = {
@@ -231,7 +88,131 @@ let g:ale_lint_on_save=1
 let g:ale_sign_error='>>'
 let g:ale_sign_warning='--'
 
+" Buffers
+" ------------------------------------------
+" ------------------------------------------
+
+set hidden
+let no_buffers_menu=1
+
+" Move around buffers
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>x :BD<CR>
+
+" Move around split with control + direction
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+
+" coc.vim
+" ------------------------------------------
+" ------------------------------------------
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
+
+" ctrlp
+" ------------------------------------------
+" ------------------------------------------
+
+let g:ctrlp_match_window='bottom,order:ttb'
+let g:ctrlp_switch_buffer=0
+let g:ctrlp_show_hidden=1
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+
+" Font
+" ------------------------------------------
+" ------------------------------------------
+
+set guifont=Fira\ Code\ Retina:h10
+
+" indentLine
+" ------------------------------------------
+" ------------------------------------------
+
+let g:indentLine_char_list=['|', '¦', '┆', '┊']
+
+" lightline
+" ------------------------------------------
+" ------------------------------------------
+
+let g:lightline = {
+      \ 'colorscheme': 'powerlineish',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified'] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename'
+      \ }
+      \ }
+
+function! LightlineFilename()
+  return expand('%')
+endfunction
+
+" LaTeX
+" ------------------------------------------
+" ------------------------------------------
+
+let g:tex_flavor='latex'
+
+" Leader
+" ------------------------------------------
+" ------------------------------------------
+
+let mapleader=','
+
+nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <leader>v :vsplit<cr>
+nnoremap <leader>t :NERDTree<cr>
+let NERDTreeShowHidden=1
+
+" Command to change variable whenever I want
+nnoremap <leader>k :let g:ale_fix_on_save=(1 - g:ale_fix_on_save)<cr>
+
+" Change spelllang
+set nospell
+nnoremap <leader>sn :set nospell<cr>
+nnoremap <leader>sf :set spelllang=fr<cr> :set spell<cr>
+nnoremap <leader>se :set spelllang=en<cr> :set spell<cr>
+
+" 1 sentence by line
+nnoremap <leader>p :s/\. /.\r/g <CR> :noh <CR>
+
+" A silly one that I love: sort selected lines by length
+" We use xnoremap because we call this function in visual mode
+xnoremap <leader>l :'<,'> ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+
+" lens.vim
+" ------------------------------------------
+" ------------------------------------------
+
+" Disable animations
+let g:lens#animate = 0
+
+" NERDTree
+" ------------------------------------------
+" ------------------------------------------
+
+" No statusline
+let g:NERDTreeStatusline = '%#NonText#'
+
+" Open NERDTree if vim executed without arguments
+autocmd VimEnter * if !argc() | NERDTree | endif
+
 " nvim-treesitter
+" ------------------------------------------
 " ------------------------------------------
 
 " Consistent syntax highlighting
@@ -276,14 +257,52 @@ set foldlevel=99
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
-" NERDTree
+" Rainbow
+" ------------------------------------------
 " ------------------------------------------
 
-" No statusline
-let g:NERDTreeStatusline = '%#NonText#'
+let g:rainbow_active=1 " Set to 0 if you want to enable it later via :RainbowToggle
 
-" Open NERDTree if vim executed without arguments
-autocmd VimEnter * if !argc() | NERDTree | endif
+" Undo
+" ------------------------------------------
+" ------------------------------------------
+
+" Turn persistent undo on means that you can undo even when you close a buffer/VIM
+try
+    set undodir=~/.vim_runtime/temp_dirs/undodir
+    set undofile
+catch
+endtry
+
+" vim-snippets
+" ------------------------------------------
+" ------------------------------------------
+
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'custom_snippets']
+
+" In tex files, no preview
+let g:vimtex_syntax_conceal_default=0
+
+" YCM and UltiSnips
+" ------------------------------------------
+" ------------------------------------------
+
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" Make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType='<C-n>'
+
+" Better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+
+" coc.vim is better for LaTeX than YCM
+let g:ycm_filetype_blacklist={
+      \ 'tex': 1
+      \}
 
 " Others
 " ------------------------------------------
