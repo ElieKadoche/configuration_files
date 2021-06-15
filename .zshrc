@@ -23,7 +23,30 @@ elif [ "$OSTYPE" = "linux-android" ]; then
 
     alias open="termux-open"
     alias pbcopy="termux-clipboard-set"
+
+    # For Termux only, display (or not) extra keys
+    ek() {
+        if [ "$1" = 0 ]; then
+            cfg="extra-keys = [[]]";
+        elif [ "$1" = 1 ]; then
+            cfg="extra-keys = [['F1','F2','F3','F4','F5','F6','F9','F12'], ['ESC','ALT','FN','/','PGUP','KEYBOARD','UP','DRAWER'], ['TAB','CTRL','HOME','|','PGDN','LEFT','DOWN','RIGHT']]";
+        fi
+        echo "$cfg" > ~/.termux/termux.properties;
+        termux-reload-settings;
+    }
 fi
+
+# Custom prompt
+PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
+
+# TheFuck
+if [ "$OSTYPE" = "linux-gnu" ]; then
+    eval $(thefuck --alias)
+    eval $(thefuck --alias damn)
+fi
+
+# Vim bindkeys
+bindkey -v
 
 # Colors
 # ------------------------------------------
@@ -155,47 +178,26 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# My custom .zshrc
+# Aliases
 # ------------------------------------------
 # ------------------------------------------
-
-# Custom prompt
-PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
-
-# Vim bindkeys
-bindkey -v
-
-# TheFuck
-if [ "$OSTYPE" = "linux-gnu" ]; then
-    eval $(thefuck --alias)
-    eval $(thefuck --alias damn)
-fi
-
-# Display markdown files in terminal
-alias mdd="python -m rich.markdown"
-
-# Small ls
-alias ll="ls -1 -a -v --group-directories-first"
-
-# Complete ls
-alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
 
 # Open Firefox with default websites
 alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown"
 
-# Git
-alias gitp="git pull"
-alias gits="git status"
-alias gitc="git cherry -v"
-alias gitu="git config --get remote.origin.url"
-gitd() {git add -A; git commit -m "Done"; git push}
-gitpp() {for i in */.git; do ( echo $i; cd $i/..; git pull; ); done}
-gitss() {for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done}
+# Complete ls
+alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
+
+# Small ls
+alias ll="ls -1 -a -v --group-directories-first"
+
+# Display markdown files in terminal
+alias mdd="python -m rich.markdown"
 
 # Music
 alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*"
-alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*"
 alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
+alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*"
 
 # Others
 alias ...="cd ../../"
@@ -212,149 +214,9 @@ alias rmr="rm -rf"
 alias src="source ~/.zshrc"
 alias vim=nvim
 
-# Find files of a given extension
-findSameExtension() {find . -iname \*.$1}
-
-# Find files and folders, case insensitive
-findd() { find . -iname "*$1*" 2>/dev/null }
-
-# Create a password of size $1
-pwgenn() {pwgen -cny --secure $1 1 | pbcopy}
-
-# Copy folder with progress bar
-cpr() {rsync --archive --human-readable --info=progress2 $1 $2}
-
-# Remove prefix from files
-removePrefix() { for file in $1*; do mv "$file" "${file#$1}"; done}
-
-# Special grep for projects
-grepp() {grep -R "$1" . --ignore-case --exclude-dir={.git,.venv,data,docs,materials,resources}}
-
-# Fatal kill
-fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
-
-# Get command history
-getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1}
-
-# Change Alacritty opacity to $1 value. Double quotes are mandatory for sed to interpret variables
-alc() { sed -i "s/background_opacity.*/background_opacity: $1/g" ~/.config/alacritty/alacritty.yml }
-
-# youtube-dl -F to see formats
-yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
-
-# Find $1 largest files
-duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1 }
-
-# Find out the pid of a specified process
-# Note that the command name can be specified via a regex
-# E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
-# Without the 'sudo' it will only find processes of the current user
-findPID () { lsof -t -c "$@" ; }
-
-# Allows dodo without sudo
-_dodo() {
-    sudo chmod ogu+r /dev/rtc0  # crw------
-    sudo chmod ogu+w /sys/power/state  # -rw-r--r--
-}
-
-# Go to sleep for $1 hours
-dodo() {
-    # Compute times
-    sleep_duration=`echo "scale=0;$1*3600/1" | bc`;
-    wake_time=$(date -d "+$sleep_duration seconds");
-
-    # Create calendar event
-    python ~/ssh_notifier/ssh_notifier.py --hours $1;
-
-    # Go to sleep
-    rtcwake -m mem -s $sleep_duration -v;
-}
-
-# Clean Python files
-pyclean() {
-    find . -name "*.pyc" -ls -delete;
-    find . -name "__pycache__" -ls -delete;
-    find . -name ".pytest_cache" -ls -exec rm -rf "{}" \;
-}
-
-# For Termux only, display (or not) extra keys
-ek() {
-    if [ "$1" = 0 ]; then
-        cfg="extra-keys = [[]]";
-    elif [ "$1" = 1 ]; then
-        cfg="extra-keys = [['F1','F2','F3','F4','F5','F6','F9','F12'], ['ESC','ALT','FN','/','PGUP','KEYBOARD','UP','DRAWER'], ['TAB','CTRL','HOME','|','PGDN','LEFT','DOWN','RIGHT']]";
-    fi
-    echo "$cfg" > ~/.termux/termux.properties;
-    termux-reload-settings;
-}
-
-# Rename all files in a folder
-# ls -tr: oldest modified file will have index 0
-renameAll() {
-    idx=0;
-    nb_files=$(($(ls -1 | wc -l) - 1));  # Because it begins with 0
-    nb_padding=$(echo "${#nb_files}");  # Number of 0 padding
-    find . -maxdepth 1 -type f | xargs -r ls -tr | while read file; do
-        # extension=`echo $file | sed -n -e 's/^.*\.//p'`;  # But without the point
-        extension=$(python -c 'import os, sys; _, ext = os.path.splitext(sys.argv[1]); print(ext)' $file);
-        idx_name=$(printf "%0${nb_padding}d\n" $idx);  # Write index with padding
-        mv $file ${idx_name}_$1${extension};
-        idx=$((idx+1));
-    done;
-}
-
-# Clean Tex files. Argument for maxdepth
-rmtex() {
-    find . -maxdepth $1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
-    find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete;
-}
-
-# Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
-clearString() {
-    echo $1 | sed -E -e 's/ - /_/g' | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
-}
-
-# Clear string of all files present in current path
-clearStringAll() {
-    for file_path in *; do (clearString $file_path; mv $file_path $(pbpaste)); done
-}
-
-# Master command to compile latex projects (or use latexmk)
-# bibtex / biber: both can be used, depending on how the bibliography is made
-compiletex() {
-    pdflatex "$1.tex";
-    bibtex "$1";
-    # biber "$1";
-    makeglossaries "$1";
-    pdflatex "$1.tex";
-    pdflatex "$1.tex";
-}
-
-# Kill Ray processes
-fatalKillRay() {
-    fatalKill ray::ReplayBuffer;
-    fatalKill ray::SharedStorage;
-    fatalKill ray::IDLE;
-    fatalKill ray::Trainer;
-    fatalKill ray::Reanalyse;
-    fatalKill ray::SelfPlay;
-}
-
-# Fix zsh_history file
-zsh_history_fix() {
-    cd ~
-    mv .zsh_history .zsh_history_bad
-    strings .zsh_history_bad > .zsh_history
-    fc -R .zsh_history
-    rm .zsh_history_bad
-}
-
-# Start KataGo on KGS
-startKataWhat() {
-    cd $ORIGIN/miscellaneous/KataWhatBot;
-    nohup java -jar /home/$USERNAME/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/$USERNAME/data/miscellaneous/KataWhatBot/config.properties &;
-    cd $ORIGIN;
-}
+# Backup
+# ------------------------------------------
+# ------------------------------------------
 
 # Backup command, for Android and for Ubuntu
 # The name of the external hard drive is $2 (mandatory for linux-gnu)
@@ -385,20 +247,144 @@ bbb() {
     fi
 }
 
-# fzf
+# Functions
 # ------------------------------------------
 # ------------------------------------------
 
-# Open files with nvim
-vv() {
-  IFS=$'\n' files=($(find $ORIGIN/ -type f | fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && vim "${files[@]}"
+# Change Alacritty opacity to $1 value. Double quotes are mandatory for sed to interpret variables
+alc() { sed -i "s/background_opacity.*/background_opacity: $1/g" ~/.config/alacritty/alacritty.yml }
+
+# Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
+clearString() {
+    echo $1 | sed -E -e 's/ - /_/g' | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
 }
+
+# Clear string of all files present in current path
+clearStringAll() {
+    for file_path in *; do (clearString $file_path; mv $file_path $(pbpaste)); done
+}
+
+# Master command to compile latex projects (or use latexmk)
+# bibtex / biber: both can be used, depending on how the bibliography is made
+compiletex() {
+    pdflatex "$1.tex";
+    bibtex "$1";
+    # biber "$1";
+    makeglossaries "$1";
+    pdflatex "$1.tex";
+    pdflatex "$1.tex";
+}
+
+# Copy folder with progress bar
+cpr() {rsync --archive --human-readable --info=progress2 $1 $2}
+
+# Find $1 largest files
+duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1 }
+
+# Fatal kill
+fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
+
+# Kill Ray processes
+fatalKillRay() {
+    fatalKill ray::ReplayBuffer;
+    fatalKill ray::SharedStorage;
+    fatalKill ray::IDLE;
+    fatalKill ray::Trainer;
+    fatalKill ray::Reanalyse;
+    fatalKill ray::SelfPlay;
+}
+
+# Find files and folders, case insensitive
+findd() { find . -iname "*$1*" 2>/dev/null }
+
+# Find out the pid of a specified process
+# Note that the command name can be specified via a regex
+# E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
+# Without the 'sudo' it will only find processes of the current user
+findPID () { lsof -t -c "$@" ; }
+
+# Find files of a given extension
+findSameExtension() {find . -iname \*.$1}
+
+# Get command history
+getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1}
+
+# Special grep for projects
+grepp() {grep -R "$1" . --ignore-case --exclude-dir={.git,.venv,data,docs,materials,resources}}
+
+# Create a password of size $1
+pwgenn() {pwgen -cny --secure $1 1 | pbcopy}
+
+# Clean Python files
+pyclean() {
+    find . -name "*.pyc" -ls -delete;
+    find . -name "__pycache__" -ls -delete;
+    find . -name ".pytest_cache" -ls -exec rm -rf "{}" \;
+}
+
+# Remove prefix from files
+removePrefix() { for file in $1*; do mv "$file" "${file#$1}"; done}
+
+# Rename all files in a folder
+# ls -tr: oldest modified file will have index 0
+renameAll() {
+    idx=0;
+    nb_files=$(($(ls -1 | wc -l) - 1));  # Because it begins with 0
+    nb_padding=$(echo "${#nb_files}");  # Number of 0 padding
+    find . -maxdepth 1 -type f | xargs -r ls -tr | while read file; do
+        # extension=`echo $file | sed -n -e 's/^.*\.//p'`;  # But without the point
+        extension=$(python -c 'import os, sys; _, ext = os.path.splitext(sys.argv[1]); print(ext)' $file);
+        idx_name=$(printf "%0${nb_padding}d\n" $idx);  # Write index with padding
+        mv $file ${idx_name}_$1${extension};
+        idx=$((idx+1));
+    done;
+}
+
+# Clean Tex files. Argument for maxdepth
+rmtex() {
+    find . -maxdepth $1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
+    find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete;
+}
+
+# Start KataGo on KGS
+startKataWhat() {
+    cd $ORIGIN/miscellaneous/KataWhatBot;
+    nohup java -jar /home/$USERNAME/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/$USERNAME/data/miscellaneous/KataWhatBot/config.properties &;
+    cd $ORIGIN;
+}
+
+# youtube-dl -F to see formats
+yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
+
+# Fix zsh_history file
+zsh_history_fix() {
+    cd ~
+    mv .zsh_history .zsh_history_bad
+    strings .zsh_history_bad > .zsh_history
+    fc -R .zsh_history
+    rm .zsh_history_bad
+}
+
+# fzf
+# ------------------------------------------
+# ------------------------------------------
 
 # Find directory
 cdd() {
   IFS=$'\n' directories=($(find $ORIGIN/ -type d | fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$directories" ]] && cd "${directories[@]}"
+}
+
+# Open firefox favorites with fzf
+ff() {
+  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && firefox "${files[@]}"
+}
+
+# Open firefox favorites with fzf (private window)
+ffp() {
+  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && firefox --private-window "${files[@]}"
 }
 
 # fkill - kill process (from fzf)
@@ -424,44 +410,55 @@ fshow() {
 FZF-EOF"
 }
 
-# Open firefox favorites with fzf
-ff() {
-  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && firefox "${files[@]}"
+# Open files with nvim
+vv() {
+  IFS=$'\n' files=($(find $ORIGIN/ -type f | fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && vim "${files[@]}"
 }
 
-# Open firefox favorites with fzf (private window)
-ffp() {
-  IFS=$'\n' files=($(find $ORIGIN/internet  -name "*.html"| fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && firefox --private-window "${files[@]}"
+# SSH
+# ------------------------------------------
+# ------------------------------------------
+
+# Allows dodo without sudo
+_dodo() {
+    sudo chmod ogu+r /dev/rtc0  # crw------
+    sudo chmod ogu+w /sys/power/state  # -rw-r--r--
 }
 
-# SSH aliases
-# ------------------------------------------
-# ------------------------------------------
+# Go to sleep for $1 hours
+dodo() {
+    # Compute times
+    sleep_duration=`echo "scale=0;$1*3600/1" | bc`;
+    wake_time=$(date -d "+$sleep_duration seconds");
+
+    # Create calendar event
+    python ~/ssh_notifier/ssh_notifier.py --hours $1;
+
+    # Go to sleep
+    rtcwake -m mem -s $sleep_duration -v;
+}
 
 # Private SSH variables are in a .zsh file located in $ZSH_CUSTOM
-
-# Public IP
 alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
-alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
-alias sshL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
 alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder"
+alias sshL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
+alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
 
 # Master git
 # ------------------------------------------
 # ------------------------------------------
 
-# Clear all Git history
-_removeGithistory() {
-    URL_GIT=$(gitu)
-    rmr .git;
-    git init;
-    git add .;
-    git commit -m "Initial commit";
-    git remote add origin $URL_GIT;
-    git push --mirror --force;
-}
+# Aliases
+alias gitc="git cherry -v"
+alias gitp="git pull"
+alias gits="git status"
+alias gitu="git config --get remote.origin.url"
+
+# Simple functions
+gitd() {git add -A; git commit -m "Done"; git push}
+gitpp() {for i in */.git; do ( echo $i; cd $i/..; git pull; ); done}
+gitss() {for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done}
 
 # Execute git pull on folders
 _private_git_command() {
@@ -473,6 +470,17 @@ _private_git_command() {
         echo "";
     );
     done
+}
+
+# Clear all Git history
+_removeGithistory() {
+    URL_GIT=$(gitu)
+    rmr .git;
+    git init;
+    git add .;
+    git commit -m "Initial commit";
+    git remote add origin $URL_GIT;
+    git push --mirror --force;
 }
 
 # Argument is the command to execute (status, pull, etc.)
