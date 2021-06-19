@@ -61,12 +61,13 @@ To share files or a website with the world (with or without password) --> Apache
 Google Play builds are no longer updated for Termux (https://github.com/termux/termux-app/issues/1072).
 So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk), along with Termux:API.
 
-- Maps: Citymapper, Trailforks, Waze.
-- Files: File Manager+, Total Commander + SFTP.
-- Development: Detexify, DroidCam, Cxxdroid, QuickEdit+, Termux, Termux:API.
-- Privacy: Authy, BNP, Firefox, Firefox Focus, LessPass, Orbot, Tor Browser.
 - Baduk: ElyGo pro, Go Clock, KGS, Pandanet(Go), Tsumego Pro, TygemBadukLite.
-- Google: Chrome, Clock, Contacts, Docs, Earth, Drive, Gmail, News, Maps, Translate.
-- Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
 - Communication: Discord, Facebook, Instagram, LinkedIn, Messenger, Signal, Slack, Teams, Reddit, Twitch, Twitter, WhatsApp.
-- Others: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, Netflix, SVG viewer, TeamViewer, Wikipedia.
+- Development: Detexify, DroidCam, Cxxdroid, QuickEdit+, Termux, Termux:API.
+- Files: File Manager+, Total Commander + SFTP.
+- Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
+- Google: Chrome, Clock, Contacts, Docs, Earth, Drive, Gmail, News, Maps, Translate.
+- Maps: Citymapper, Trailforks, Waze.
+- Others: Disney+, Netflix, Uber Eats, Wikipedia.
+- Privacy: Authy, BNP, Firefox, Firefox Focus, LessPass, Orbot, Tor Browser.
+- Utils: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, PowerPoint, SVG viewer, TeamViewer.
