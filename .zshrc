@@ -515,7 +515,7 @@ master_update() {
     elif [ "$OSTYPE" = "linux-gnu" ]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
-        sudo npm install -g npm;
+        sudo n latest;
 
         # APT
         printf "${BBlue}\nAPT${Color_Off}\n\n";

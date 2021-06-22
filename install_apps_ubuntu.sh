@@ -257,6 +257,10 @@ sudo systemctl disable apache2
 # Set default permissions
 setfacl -R -d -m u::rwx,g::-,o::- $ORIGIN
 
+# node.js latest version
+sudo npm install -g n
+sudo n latest
+
 # Neovim and Prettier
 sudo npm install -g neovim
 npm install --save-dev --save-exact prettier
