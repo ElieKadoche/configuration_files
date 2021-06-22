@@ -77,7 +77,6 @@ sudo apt -y install gnome-tweak-tool
 sudo apt -y install graphviz
 sudo apt -y install hardinfo
 sudo apt -y install imagemagick
-sudo apt -y install inkscape
 sudo apt -y install leela-zero
 sudo apt -y install libboost-all-dev
 sudo apt -y install libcups2-dev
@@ -145,11 +144,10 @@ curl https://sh.rustup.rs -sSf | sh  # Install cargo
 sudo apt -y install pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev
 cargo install alacritty  # Install Alacritty
 
-# Etcher
-echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
-sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+# Inkscape
+sudo add-apt-repository ppa:inkscape.dev/stable
 sudo apt update
-sudo apt -y install balena-etcher-electron
+sudo apt -y install inkscape
 
 # openrazer
 sudo add-apt-repository -y ppa:openrazer/stable
@@ -277,8 +275,10 @@ cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# Install CGoban, Source-Sans-Pro, GoPanda, Teams, TeamViewer, Google Earth, Google Chrome
+# Install https://www.balena.io/etcher
+# Install https://gitlab.com/CalcProgrammer1/OpenRGB/-/releases
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
+# Install CGoban, Source-Sans-Pro, GoPanda, Teams, TeamViewer, Google Earth, Google Chrome
 # Remove plymouth: [sudo vim /etc/default/grub] nomodeset
 # Install fzf from the source directory
 
