@@ -170,22 +170,20 @@ sudo apt -y install peek
 # CUDA
 # ------------------------------------------
 
+# nvcc --version and nvidia-smi to check CUDA version
+
 # Nvidia drivers
 # Option 1: use default driver in "Additional drivers"
-# Option 2: download appropriate drivers from https://www.nvidia.com/Download/index.aspx
-# Option 2 may be better (activate automatic updated)
-
-# nvcc --version and nvidia-smi to check CUDA version
+# Option 2 (better): download appropriate drivers from https://www.nvidia.com/Download/index.aspx
 
 # Download CUDA from https://developer.nvidia.com/cuda-toolkit-archive
 # Choose carefully the version, it musts be adapted to your applications and libraries
-
-# A conflict can appear between Ubuntu NVIDIA drivers and the installer
-# Use these commands to install CUDA Toolkit and CUDA Samples and not the NVIDIA Drivers
+# A conflict can appear between Ubuntu NVIDIA drivers and the installer --> install CUDA Toolkit and CUDA Samples only
 wget https://developer.download.nvidia.com/compute/cuda/X.X.X/local_installers/cuda_X.X.X_X.X.X_linux.run
 sudo sh cuda_X.X.X_X.X.X_linux.run
 
-# Download the appropriate cuDNN version from https://developer.nvidia.com/CUDNN
+# Download cuDNN from https://developer.nvidia.com/rdp/cudnn-archive
+# Choose carefully the version, it musts be adapted to your CUDA version, applications and libraries
 sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*

@@ -13,8 +13,8 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     alias xx="xtrlock"
 
     export PATH="/home/$USERNAME/.local/bin:$PATH"
-    export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
