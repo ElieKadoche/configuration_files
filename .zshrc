@@ -527,6 +527,12 @@ master_update() {
         # Snap
         printf "${BBlue}\nSNAP${Color_Off}\n\n";
         sudo snap refresh;
+
+        # neovim
+        printf "${BBlue}\nneovim${Color_Off}\n\n";
+        sudo rm /usr/bin/nvim
+        sudo curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /usr/bin/nvim
+        sudo chmod 755 /usr/bin/nvim
     fi
 
     # PIP

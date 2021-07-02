@@ -7,7 +7,6 @@ chsh -s $(which zsh)
 # Others
 sudo apt -y install git
 sudo apt -y install curl
-sudo apt -y install neovim
 
 # Launch common script
 ./install_apps_common.sh
