@@ -4,25 +4,25 @@
 
 # Ubuntu
 if [ "$OSTYPE" = "linux-gnu" ]; then
-    ORIGIN="/home/$USERNAME/data"
-    export ZSH="/home/$USERNAME/.oh-my-zsh"
+    ORIGIN="/home/$USERNAME/data";
+    export ZSH="/home/$USERNAME/.oh-my-zsh";
 
-    alias open="xdg-open"
-    alias pbcopy="xclip -selection clipboard"
-    alias pbpaste="xclip -selection clipboard -o"
-    alias xx="xtrlock"
+    alias open="xdg-open";
+    alias pbcopy="xclip -selection clipboard";
+    alias pbpaste="xclip -selection clipboard -o";
+    alias xx="xtrlock";
 
-    export PATH="/home/$USERNAME/.local/bin:$PATH"
-    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export PATH="/home/$USERNAME/.local/bin:$PATH";
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}};
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}};
 
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
-    ORIGIN="/data/data/com.termux/files/home/storage/shared/data"
-    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh"
+    ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
+    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh";
 
-    alias open="termux-open"
-    alias pbcopy="termux-clipboard-set"
+    alias open="termux-open";
+    alias pbcopy="termux-clipboard-set";
 
     # For Termux only, display (or not) extra keys
     ek() {
@@ -37,33 +37,33 @@ elif [ "$OSTYPE" = "linux-android" ]; then
 fi
 
 # Custom prompt
-PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f"
+PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f";
 
 # TheFuck
 if [ "$OSTYPE" = "linux-gnu" ]; then
-    eval $(thefuck --alias)
-    eval $(thefuck --alias damn)
+    eval $(thefuck --alias);
+    eval $(thefuck --alias damn);
 fi
 
 # Vim bindkeys
-bindkey -v
+bindkey -v;
 
 # Colors
 # ------------------------------------------
 # ------------------------------------------
 
 # Reset
-Color_Off='\033[0m'   # Text Reset
+Color_Off='\033[0m';   # Text Reset
 
 # Bold
-BBlack='\033[1;30m'   # Black
-BRed='\033[1;31m'     # Red
-BGreen='\033[1;32m'   # Green
-BYellow='\033[1;33m'  # Yellow
-BBlue='\033[1;34m'    # Blue
-BPurple='\033[1;35m'  # Purple
-BCyan='\033[1;36m'    # Cyan
-BWhite='\033[1;37m'   # White
+BBlack='\033[1;30m';   # Black
+BRed='\033[1;31m';     # Red
+BGreen='\033[1;32m';   # Green
+BYellow='\033[1;33m';  # Yellow
+BBlue='\033[1;34m';    # Blue
+BPurple='\033[1;35m';  # Purple
+BCyan='\033[1;36m';    # Cyan
+BWhite='\033[1;37m';   # White
 
 # From template
 # ------------------------------------------
@@ -89,7 +89,7 @@ BWhite='\033[1;37m'   # White
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true";
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -126,7 +126,7 @@ HYPHEN_INSENSITIVE="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd/mm/yyyy";
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -151,13 +151,13 @@ plugins=(
     web-search
 )
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh;
 
 # User configuration
-export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH";
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8;
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -167,7 +167,7 @@ export LANG=en_US.UTF-8
 # fi
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64";
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -183,36 +183,36 @@ export ARCHFLAGS="-arch x86_64"
 # ------------------------------------------
 
 # Open Firefox with default websites
-alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown"
+alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown";
 
 # Complete ls
-alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv"
+alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv";
 
 # Small ls
-alias ll="ls -1 -a -v --group-directories-first"
+alias ll="ls -1 -a -v --group-directories-first";
 
 # Display markdown files in terminal
-alias mdd="python -m rich.markdown"
+alias mdd="python -m rich.markdown";
 
 # Music
-alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*"
-alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*"
-alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*"
+alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*";
+alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*";
+alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*";
 
 # Others
-alias ...="cd ../../"
-alias ..="cd ../"
-alias :q="exit"
-alias duu="du -ah --max-depth=1 . | sort -hr"
-alias e="exit"
-alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py"
-alias m="cd $ORIGIN"
-alias pip="pip3"
-alias python="python3"
-alias rm__="find . -name '._*' -ls -delete"
-alias rmr="rm -rf"
-alias src="source ~/.zshrc"
-alias vim=nvim
+alias ...="cd ../../";
+alias ..="cd ../";
+alias :q="exit";
+alias duu="du -ah --max-depth=1 . | sort -hr";
+alias e="exit";
+alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py";
+alias m="cd $ORIGIN";
+alias pip="pip3";
+alias python="python3";
+alias rm__="find . -name '._*' -ls -delete";
+alias rmr="rm -rf";
+alias src="source ~/.zshrc";
+alias vim=nvim;
 
 # Backup
 # ------------------------------------------
@@ -252,11 +252,11 @@ bbb() {
 # ------------------------------------------
 
 # Change Alacritty opacity to $1 value. Double quotes are mandatory for sed to interpret variables
-alc() { sed -i "s/background_opacity.*/background_opacity: $1/g" ~/.config/alacritty/alacritty.yml }
+alc() { sed -i "s/background_opacity.*/background_opacity: $1/g" ~/.config/alacritty/alacritty.yml; }
 
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
 clearString() {
-    echo $1 | sed -E -e 's/ - /_/g' | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy
+    echo $1 | sed -E -e 's/ - /_/g' | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy;
 }
 
 # Clear string of all files present in current path
@@ -276,13 +276,13 @@ compiletex() {
 }
 
 # Copy folder with progress bar
-cpr() {rsync --archive --human-readable --info=progress2 $1 $2}
+cpr() { rsync --archive --human-readable --info=progress2 $1 $2; }
 
 # Find $1 largest files
-duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1 }
+duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1; }
 
 # Fatal kill
-fatalKill() {ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9}
+fatalKill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9; }
 
 # Kill Ray processes
 fatalKillRay() {
@@ -295,25 +295,25 @@ fatalKillRay() {
 }
 
 # Find files and folders, case insensitive
-findd() { find . -iname "*$1*" 2>/dev/null }
+findd() { find . -iname "*$1*" 2>/dev/null; }
 
 # Find out the pid of a specified process
 # Note that the command name can be specified via a regex
 # E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
 # Without the 'sudo' it will only find processes of the current user
-findPID () { lsof -t -c "$@" ; }
+findPID () { lsof -t -c "$@"; }
 
 # Find files of a given extension
-findSameExtension() {find . -iname \*.$1}
+findSameExtension() { find . -iname \*.$1; }
 
 # Get command history
-getHistory() {history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1}
+getHistory() { history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1; }
 
 # Special grep for projects
-grepp() {grep -R "$1" . --ignore-case --exclude-dir={.git,.venv,data,docs,materials,resources}}
+grepp() { grep -R "$1" . --ignore-case --exclude-dir={.git,.venv,data,docs,materials,resources}; }
 
 # Create a password of size $1
-pwgenn() {pwgen -cny --secure $1 1 | pbcopy}
+pwgenn() { pwgen -cny --secure $1 1 | pbcopy; }
 
 # Clean Python files
 pyclean() {
@@ -323,7 +323,7 @@ pyclean() {
 }
 
 # Remove prefix from files
-removePrefix() { for file in $1*; do mv "$file" "${file#$1}"; done}
+removePrefix() { for file in $1*; do mv "$file" "${file#$1}"; done; }
 
 # Rename all files in a folder
 # ls -tr: oldest modified file will have index 0
@@ -354,15 +354,15 @@ startKataWhat() {
 }
 
 # youtube-dl -F to see formats
-yyy() {youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir}
+yyy() { youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir; }
 
 # Fix zsh_history file
 zsh_history_fix() {
-    cd ~
-    mv .zsh_history .zsh_history_bad
-    strings .zsh_history_bad > .zsh_history
-    fc -R .zsh_history
-    rm .zsh_history_bad
+    cd ~;
+    mv .zsh_history .zsh_history_bad;
+    strings .zsh_history_bad > .zsh_history;
+    fc -R .zsh_history;
+    rm .zsh_history_bad;
 }
 
 # fzf
@@ -422,8 +422,8 @@ vv() {
 
 # Allows dodo without sudo
 _dodo() {
-    sudo chmod ogu+r /dev/rtc0  # crw------
-    sudo chmod ogu+w /sys/power/state  # -rw-r--r--
+    sudo chmod ogu+r /dev/rtc0;  # crw------
+    sudo chmod ogu+w /sys/power/state;  # -rw-r--r--
 }
 
 # Go to sleep for $1 hours
@@ -440,25 +440,25 @@ dodo() {
 }
 
 # Private SSH variables are in a .zsh file located in $ZSH_CUSTOM
-alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
-alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder"
-alias sshL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
-alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT"
+alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
+alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder";
+alias sshL="ssh -L 16006:127.0.0.1:6006 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
+alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
 
 # Master git
 # ------------------------------------------
 # ------------------------------------------
 
 # Aliases
-alias gitc="git cherry -v"
-alias gitp="git pull"
-alias gits="git status"
-alias gitu="git config --get remote.origin.url"
+alias gitc="git cherry -v";
+alias gitp="git pull";
+alias gits="git status";
+alias gitu="git config --get remote.origin.url";
 
 # Simple functions
-gitd() {git add -A; git commit -m "Done"; git push}
-gitpp() {for i in */.git; do ( echo $i; cd $i/..; git pull; ); done}
-gitss() {for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done}
+gitd() { git add -A; git commit -m "Done"; git push; }
+gitpp() { for i in */.git; do ( echo $i; cd $i/..; git pull; ); done; }
+gitss() { for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done; }
 
 # Execute git pull on folders
 _private_git_command() {
@@ -527,12 +527,6 @@ master_update() {
         # Snap
         printf "${BBlue}\nSNAP${Color_Off}\n\n";
         sudo snap refresh;
-
-        # neovim
-        printf "${BBlue}\nneovim${Color_Off}\n\n";
-        sudo rm /usr/bin/nvim
-        sudo curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /usr/bin/nvim
-        sudo chmod 755 /usr/bin/nvim
     fi
 
     # PIP
@@ -540,8 +534,8 @@ master_update() {
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
 
-    # Vim
-    printf "${BBlue}\nNVIM${Color_Off}\n\n";
+    # neovim
+    printf "${BBlue}\nneovim${Color_Off}\n\n";
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
     vim +"PlugInstall" +qa;
@@ -566,8 +560,14 @@ master_compile() {
     if [ "$OSTYPE" = "linux-gnu" ]; then
         # Alacritty
         printf "${BBlue}\nCargo${Color_Off}\n\n";
-        cargo install alacritty
+        cargo install alacritty;
         # cargo install --force alacritty
+
+        # neovim
+        printf "${BBlue}\nneovim${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/neovim;
+        sudo make CMAKE_BUILD_TYPE=Release;
+        sudo make install;
 
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
@@ -634,8 +634,8 @@ master_clean() {
 
         # Logs
         printf "${BBlue}\nLOGS${Color_Off}\n\n";
-        journalctl --disk-usage
-        sudo journalctl --vacuum-time=1d
+        journalctl --disk-usage;
+        sudo journalctl --vacuum-time=1d;
 
         # APT
         printf "${BBlue}\nAPT${Color_Off}\n\n";
@@ -653,10 +653,10 @@ master_clean() {
 
     # PIP
     printf "${BBlue}\nPIP${Color_Off}\n\n";
-    pip cache purge
+    pip cache purge;
 
-    # Vim
-    printf "${BBlue}\nNVIM${Color_Off}\n\n";
+    # neovim
+    printf "${BBlue}\nneovim${Color_Off}\n\n";
     vim +"PlugClean" +qa;
 }
 
@@ -677,11 +677,11 @@ master_all() {
     fi
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh;
+source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh;
+source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 
 # Most used commands are kept in a custom history
 # When a session is closed, history is reset to default
 # zsh_history_clear is declared in a .zsh file located in $ZSH_CUSTOM
-trap "zsh_history_clear" 0
+trap "zsh_history_clear" 0;
