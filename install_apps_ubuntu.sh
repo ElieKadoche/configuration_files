@@ -276,14 +276,12 @@ cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
 mkdir ~/.config/alacritty
 cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-
 # Install https://github.com/balena-io/etcher/releases
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install https://github.com/textext/textext/releases, then python setup.py
 # Install https://gitlab.com/CalcProgrammer1/OpenRGB/-/releases
 # Install CGoban, Source-Sans-Pro, GoPanda, Teams, TeamViewer, Google Earth, Google Chrome
 # Remove plymouth: [sudo vim /etc/default/grub] nomodeset
-# Install fzf from the source directory
 
 # Extensions
 # ------------------------------------------
