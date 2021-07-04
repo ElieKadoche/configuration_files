@@ -286,12 +286,13 @@ fatalKill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9
 
 # Kill Ray processes
 fatalKillRay() {
-    fatalKill ray::ReplayBuffer;
-    fatalKill ray::SharedStorage;
     fatalKill ray::IDLE;
-    fatalKill ray::Trainer;
     fatalKill ray::Reanalyse;
+    fatalKill ray::ReplayBuffer;
+    fatalKill ray::RolloutWorker;
     fatalKill ray::SelfPlay;
+    fatalKill ray::SharedStorage;
+    fatalKill ray::Trainer;
 }
 
 # Find files and folders, case insensitive
