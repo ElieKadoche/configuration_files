@@ -287,17 +287,14 @@ cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 # ------------------------------------------
 
 # Application View Columns
-# Applications Menu
+# Desktop Icons
 # Emoji selector
-# Freon
 # NetSpeed
 # Night Light Slider
 # OpenWeather
 # Removable Drive Menu
 # Sound Input & Output Device Chooser
 # User Themes
-# Vitals
-# windowNavigator
 
 # Compile and update everything
 # ------------------------------------------
