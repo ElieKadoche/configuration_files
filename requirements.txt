@@ -1,6 +1,3 @@
-Pillow
-PuLP
-PyAutoGUI
 ascii-graph
 atari-py
 autokeras
@@ -43,10 +40,13 @@ opencv-python
 openpyxl
 pandas
 pettingzoo[all]
+Pillow
 pip-review
 plotly
 powerline-status
 ptpython
+PuLP
+PyAutoGUI
 pybind11
 pycodestyle
 pydocstyle
@@ -55,6 +55,7 @@ pygments
 pyinstaller
 pytest
 pytorch_forecasting
+PyYAML
 ray[all]
 recommonmark
 regex
