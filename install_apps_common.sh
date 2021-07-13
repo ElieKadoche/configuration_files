@@ -55,8 +55,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # Install plugins
 nvim +"PlugInstall" +qa;
 
-# On Ubuntu, I use coc.nvim only for tex files
+# On Ubuntu, I use coc.nvim only for tex and yml files
 nvim tmp.tex +"CocInstall coc-texlab" +qa;
+nvim tmp.yml +"CocInstall coc-yaml" +qa;
 
 # For Termux only
 nvim tmp +"CocInstall coc-pyright" +qa;

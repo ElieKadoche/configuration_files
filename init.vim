@@ -2,7 +2,7 @@ call plug#begin('~/.config/nvim/plugged/')
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter.git', {'do': ':TSUpdate'}
 
 " Ubuntu only
-Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release', 'for': 'tex'}
+Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release', 'for': ['tex', 'yaml']}
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 
 " Termux only
@@ -303,9 +303,10 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-" coc.vim is better for LaTeX than YCM
+" Use coc.vim for latex and yaml
 let g:ycm_filetype_blacklist={
-      \ 'tex': 1
+      \ 'tex': 1,
+      \ 'yaml': 1
       \}
 
 " Others
