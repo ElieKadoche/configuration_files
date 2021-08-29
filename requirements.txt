@@ -56,7 +56,7 @@ pyinstaller
 pytest
 pytorch_forecasting
 PyYAML
-ray[all]
+ray[default]
 recommonmark
 regex
 requests
