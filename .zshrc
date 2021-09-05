@@ -224,19 +224,19 @@ bbb() {
     # The dry command is mainly for security, if one is afraid of doing some unfortunate mistake
     if [ "$1" = "dry" ]; then
         if [ "$OSTYPE" = "linux-android" ]; then
-            rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+            rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
 
         elif [ "$OSTYPE" = "linux-gnu" ]; then
-            rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+            rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
         fi
 
     elif [ "$1" = "run" ]; then
         if [ "$OSTYPE" = "linux-android" ]; then
-            rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+            rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
 
         elif [ "$OSTYPE" = "linux-gnu" ]; then
             printf "${BBlue}rsync${Color_Off}\n";
-            rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+            rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
 
             # We do not use rsync on git folders
             printf "${BBlue}git${Color_Off}\n";
