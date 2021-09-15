@@ -68,6 +68,6 @@ So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk), a
 - Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
 - Google: Chrome, Clock, Contacts, Docs, Earth, Drive, Gmail, News, Maps, Translate.
 - Maps: Citymapper, Trailforks, Waze.
-- Others: Disney+, Hue BT, Netflix, Uber Eats, Wikipedia.
+- Others: Hue BT, Uber Eats, Wikipedia.
 - Privacy: Authy, BNP, Firefox, Firefox Focus, LessPass, Orbot, Tor Browser.
 - Utils: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, PowerPoint, SVG viewer, TeamViewer.
