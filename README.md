@@ -12,6 +12,7 @@ General configuration files for Ubuntu and Termux (Android).
 - Dark Reader.
 - Firefox Color.
 - GNOME Shell integration.
+- Google Scholar Button.
 - HTTPS Everywhere.
 - LessPass.
 - Markdown Here.
