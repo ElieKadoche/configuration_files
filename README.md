@@ -61,14 +61,3 @@ To share files or a website with the world (with or without password) --> Apache
 
 Google Play builds are no longer updated for Termux (https://github.com/termux/termux-app/issues/1072).
 So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk), along with Termux:API.
-
-- Baduk: ElyGo pro, Go Clock, KGS, Pandanet(Go), Tsumego Pro, TygemBadukLite.
-- Communication: Discord, Facebook, Instagram, LinkedIn, Messenger, Signal, Slack, Teams, Reddit, Twitch, Twitter, WhatsApp.
-- Development: Detexify, DroidCam, Cxxdroid, QuickEdit+, Termux, Termux:API.
-- Files: File Manager+, Total Commander + SFTP.
-- Games: Chess, DroidFish, Morpion Solitaire (qilin TicTacToe), Sudoku (the clean one).
-- Google: Chrome, Clock, Contacts, Docs, Earth, Drive, Gmail, News, Maps, Translate.
-- Maps: Citymapper, Trailforks, Waze.
-- Others: Hue BT, Uber Eats, Wikipedia.
-- Privacy: Authy, BNP, Firefox, Firefox Focus, LessPass, Orbot, Tor Browser.
-- Utils: Adobe Acrobat, Adobe Scan, Calculator++, Collabora Office, Lithium, mpv, PowerPoint, SVG viewer, TeamViewer.
