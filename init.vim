@@ -284,9 +284,6 @@ endtry
 
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'custom_snippets']
 
-" In tex files, no preview
-let g:vimtex_syntax_conceal_default=0
-
 " YCM and UltiSnips
 " ------------------------------------------
 " ------------------------------------------
