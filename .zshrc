@@ -353,13 +353,6 @@ rmtex() {
     find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\)" -delete;
 }
 
-# Start KataGo on KGS
-startKataWhat() {
-    cd $ORIGIN/miscellaneous/KataWhatBot;
-    nohup java -jar /home/$USERNAME/data/miscellaneous/KataWhatBot/kgsGtp.jar /home/$USERNAME/data/miscellaneous/KataWhatBot/config.properties &;
-    cd $ORIGIN;
-}
-
 # youtube-dl -F to see formats
 yyy() { youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir; }
 
