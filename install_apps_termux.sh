@@ -34,6 +34,7 @@ pkg install -y libxslt
 pkg install -y libzmq
 pkg install -y mpv
 pkg install -y neofetch
+pkg install -y netcat-openbsd
 pkg install -y nmap
 pkg install -y nodejs
 pkg install -y openssh
