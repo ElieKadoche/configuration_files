@@ -5,7 +5,7 @@ General configuration files for Ubuntu and Termux (Android).
 - `init.vim`: neovim configuration.
 - `requirements.txt`: python pip packages.
 - `.zshrc`: zsh configuration (specific to my usage).
-- `install_apps_X.sh`: installation and configuration script for system X.
+- `install_apps_X.*`: installation and configuration script for system X.
 
 Firefox extensions
 ------------------------------------------
