@@ -539,6 +539,7 @@ master_update() {
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
     vim +"PlugInstall" +qa;
+    vim +"TSUpdate" +qa;
 
     # Because coc is activated only for tex files
     vim tmp.tex +"CocUpdate" +qa;
