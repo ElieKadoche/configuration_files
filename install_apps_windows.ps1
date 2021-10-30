@@ -14,7 +14,7 @@ choco install alacritty
 choco install audacity
 choco install blender
 choco install cinebench
-choco install cmake
+choco install cmake --installargs 'ADD_CMAKE_TO_PATH=User'
 choco install discord
 choco install epicgameslauncher
 choco install firacode
@@ -63,6 +63,7 @@ choco upgrade all -y
 https://github.com/textext/textext/releases
 https://rog.asus.com/fr/motherboards/rog-strix/rog-strix-x570-e-gaming-model/helpdesk_download/
 https://rog.asus.com/us/innovation/armoury_crate/
+https://visualstudio.microsoft.com/vs/community/
 https://www.blizzard.com/fr-fr/apps/battle.net/desktop
 https://www.foxwq.com/soft/foreign.html
 https://www.intel.fr/content/www/fr/fr/support/detect.html
