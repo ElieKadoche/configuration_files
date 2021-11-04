@@ -166,6 +166,14 @@ sudo add-apt-repository -y ppa:peek-developers/stable
 sudo apt update
 sudo apt -y install peek
 
+# Transmission
+sudo add-apt-repository ppa:transmissionbt/ppa
+sudo apt update
+sudo apt -y install transmission
+sudo apt -y install transmission-cli
+sudo apt -y install transmission-common
+sudo apt -y install transmission-daemon
+
 # CUDA
 # ------------------------------------------
 
