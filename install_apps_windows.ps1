@@ -39,6 +39,7 @@ choco install openssl
 choco install pandoc
 choco install pycharm-community
 choco install python
+choco install python --version=3.8.0
 choco install rawtherapee
 choco install roccatswarm
 choco install scrcpy
