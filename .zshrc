@@ -251,9 +251,6 @@ bbb() {
 # ------------------------------------------
 # ------------------------------------------
 
-# Change Alacritty opacity to $1 value. Double quotes are mandatory for sed to interpret variables
-alc() { sed -i "s/background_opacity.*/background_opacity: $1/g" ~/.config/alacritty/alacritty.yml; }
-
 # Clear string: replace [spaces / tabs / new lines], special characters, etc., by _, and remove capital letters
 clearString() {
     echo $1 | sed -E -e 's/ - /_/g' | sed -E -e 's/\: |\-|\, |\; |\. /_/g' | sed -E -e 's/[[:blank:]]+/_/g' | sed -e 's/\(.*\)/\L\1/' | pbcopy;
@@ -559,11 +556,6 @@ master_compile() {
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
     if [ "$OSTYPE" = "linux-gnu" ]; then
-        # Alacritty
-        printf "${BBlue}\nCargo${Color_Off}\n\n";
-        cargo install alacritty;
-        # cargo install --force alacritty
-
         # neovim
         printf "${BBlue}\nneovim${Color_Off}\n\n";
         cd $ORIGIN/git_apps/neovim;
