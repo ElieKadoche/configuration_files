@@ -138,11 +138,6 @@ sudo apt -y install unrar
 
 echo "Other packages..."
 
-# Alacritty
-curl https://sh.rustup.rs -sSf | sh  # Install cargo
-sudo apt -y install pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev
-cargo install alacritty  # Install Alacritty
-
 # Inkscape
 sudo add-apt-repository ppa:inkscape.dev/stable
 sudo apt update
@@ -279,10 +274,6 @@ cp others/ssh_notifier.py ~/ssh_notifier
 # Custom modifications
 cp others/gtk.css ~/.config/gtk-3.0/gtk.css
 cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
-
-# Alacritty configuration
-mkdir ~/.config/alacritty
-cp others/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Install https://github.com/balena-io/etcher/releases
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/

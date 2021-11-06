@@ -10,7 +10,6 @@ Write-Output "Installing pacakges."
 
 choco install 7zip
 choco install adobereader
-choco install alacritty
 choco install audacity
 choco install blender
 choco install cinebench
