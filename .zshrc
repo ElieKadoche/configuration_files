@@ -261,6 +261,12 @@ clearStringAll() {
     for file_path in *; do (clearString $file_path; mv $file_path $(pbpaste)); done
 }
 
+# Clear thumbnails folders
+clearThumbnails() {
+    find . -name ".thumbnails" -ls -exec rm -rf "{}" \;
+    find . -name ".Thumbnails" -ls -exec rm -rf "{}" \;
+}
+
 # Master command to compile latex projects (or use latexmk)
 # bibtex / biber: both can be used, depending on how the bibliography is made
 compiletex() {
