@@ -195,9 +195,10 @@ alias ll="ls -1 -a -v --group-directories-first";
 alias mdd="python -m rich.markdown";
 
 # Music
-alias mpva="mpv --shuffle --no-video $ORIGIN/music/**/*";
-alias mpvc="mpv --shuffle --no-video $ORIGIN/music/classical/**/*";
-alias mpvo="mpv --shuffle --no-video $ORIGIN/music/others/**/*";
+alias mpva="mpv --shuffle --no-video --loop $ORIGIN/music/**/*";
+alias mpvc="mpv --shuffle --no-video --loop $ORIGIN/music/classical/**/*";
+alias mpvo="mpv --shuffle --no-video --loop $ORIGIN/music/others/**/*";
+mpvs() {find $ORIGIN/music -type f -ipath "*$1*" -exec mpv --shuffle --no-video --loop {} +}
 
 # Others
 alias ...="cd ../../";
