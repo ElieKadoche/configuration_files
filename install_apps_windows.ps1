@@ -41,7 +41,6 @@ choco install pycharm-community
 choco install python
 choco install python --version=3.8.0 --side-by-side
 choco install rawtherapee
-choco install roccatswarm
 choco install scrcpy
 choco install sshfs
 choco install steam
