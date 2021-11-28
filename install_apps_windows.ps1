@@ -59,6 +59,9 @@ choco upgrade all -y
 # Others
 # ------------------------------------------
 
+# Disable fast startup
+powercfg -h off
+
 <#
 https://github.com/textext/textext/releases
 https://rog.asus.com/fr/motherboards/rog-strix/rog-strix-x570-e-gaming-model/helpdesk_download/
