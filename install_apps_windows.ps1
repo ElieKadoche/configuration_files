@@ -28,6 +28,7 @@ choco install hwinfo
 choco install hwmonitor
 choco install inkscape
 choco install intellijidea-community
+choco install libreoffice-fresh
 choco install miktex
 choco install mingw
 choco install mpv
