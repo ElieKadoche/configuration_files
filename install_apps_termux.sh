@@ -26,7 +26,6 @@ pkg install -y e2fsprogs
 pkg install -y ffmpeg
 pkg install -y fzf
 pkg install -y ghostscript
-pkg install -y git
 pkg install -y htop
 pkg install -y imagemagick
 pkg install -y libxml2
@@ -66,8 +65,8 @@ echo "Configuring Termux..."
 # Keyboard
 # Enable / disable extra keys (see ek custom function)
 
-# Fira Code font
-wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Retina.ttf -O ~/.termux/font.ttf
+# Download fira code font ttf file
+mv fira_code.ttf ~/.termux/font.ttf
 
 termux-reload-settings
 
