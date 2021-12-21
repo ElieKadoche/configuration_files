@@ -287,12 +287,9 @@ cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
 # ------------------------------------------
 
 # Application View Columns
-# Desktop Icons
 # Emoji selector
 # NetSpeed
 # Night Light Slider
-# OpenWeather
-# Removable Drive Menu
 # Sound Input & Output Device Chooser
 # User Themes
 
