@@ -69,6 +69,7 @@ https://rog.asus.com/fr/motherboards/rog-strix/rog-strix-x570-e-gaming-model/hel
 https://rog.asus.com/us/innovation/armoury_crate/
 https://visualstudio.microsoft.com/vs/community/
 https://www.blizzard.com/fr-fr/apps/battle.net/desktop
+https://www.ea.com/fr-fr/ea-app-beta
 https://www.foxwq.com/soft/foreign.html
 https://www.intel.fr/content/www/fr/fr/support/detect.html
 https://www.nvidia.com/Download/index.aspx
