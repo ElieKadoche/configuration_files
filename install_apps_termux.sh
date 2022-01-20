@@ -28,6 +28,7 @@ pkg install -y fzf
 pkg install -y ghostscript
 pkg install -y htop
 pkg install -y imagemagick
+pkg install -y iproute2
 pkg install -y libxml2
 pkg install -y libxslt
 pkg install -y libzmq
