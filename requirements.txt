@@ -86,3 +86,4 @@ virtualenv
 windrose
 xlrd
 youtube-dl
+yt-dlp
