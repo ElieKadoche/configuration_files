@@ -72,6 +72,7 @@ https://www.blizzard.com/fr-fr/apps/battle.net/desktop
 https://www.ea.com/fr-fr/ea-app-beta
 https://www.foxwq.com/soft/foreign.html
 https://www.intel.fr/content/www/fr/fr/support/detect.html
+https://www.logitechg.com/en-us/innovation/g-hub.html
 https://www.nvidia.com/Download/index.aspx
 https://www.razer.com/fr-fr/synapse-3
 #>
