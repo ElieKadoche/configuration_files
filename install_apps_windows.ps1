@@ -18,6 +18,7 @@ choco install discord
 choco install epicgameslauncher
 choco install firacode
 choco install firefox
+choco install geekbench5
 choco install geforce-experience
 choco install gimp
 choco install git
