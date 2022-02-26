@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# ZSH configuration
-cp .zshrc ~
-
 # Create folder if it does not exist
 mkdir ~/.config
 
@@ -11,6 +8,9 @@ cp others/.tmux.conf ~
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# ZSH configuration
+cp .zshrc ~
 
 # Git
 # ------------------------------------------
