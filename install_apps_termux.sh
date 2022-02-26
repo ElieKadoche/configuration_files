@@ -53,10 +53,8 @@ pkg install -y unzip
 pkg install -y zip
 
 # 2 different options
-pkg install -y texlive-full
-# pkg install texlive
-# tlmgr update --list
-# tlmgr install scheme-full
+pkg install -y texlive-installer
+termux-install-tl
 
 # Termux configuration
 # ------------------------------------------
