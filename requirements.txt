@@ -9,6 +9,7 @@ cartopy
 chroma
 ciphey
 configparser
+cupy-cuda114
 dash
 dask[complete]
 dm-acme[reverb,tf,jax,envs]
