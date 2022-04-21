@@ -59,6 +59,7 @@ py_wake
 pyinstaller
 pytest
 pytorch_forecasting
+pytorchcv
 ray[default,rllib,tune]
 recommonmark
 regex
