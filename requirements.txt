@@ -82,6 +82,7 @@ tensorflow
 tensorflow-probability
 tinydb
 torch
+torchattacks
 torchsummary
 torchvision
 tqdm
