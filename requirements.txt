@@ -5,6 +5,7 @@ autopep8
 bandit
 box2d.py
 bpytop
+build
 cartopy
 chroma
 ciphey
@@ -86,6 +87,7 @@ torchattacks
 torchsummary
 torchvision
 tqdm
+twine
 virtualenv
 windrose
 xlrd
