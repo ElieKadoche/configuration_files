@@ -458,10 +458,11 @@ sshL() { ssh -L 16006:127.0.0.1:$1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT
 alias gitc="git cherry -v";
 alias gitp="git pull";
 alias gits="git status";
+alias gitsi="git status --ignored";
 alias gitu="git config --get remote.origin.url";
 
 # Simple functions
-gitd() { git add -A; git commit -m "Done"; git push; }
+gitd_() { git add -A; git commit -m "Done"; git push; }
 gitpp() { for i in */.git; do ( echo $i; cd $i/..; git pull; ); done; }
 gitss() { for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); done; }
 
