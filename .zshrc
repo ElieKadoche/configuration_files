@@ -183,7 +183,7 @@ export ARCHFLAGS="-arch x86_64";
 # ------------------------------------------
 
 # Open Firefox with default websites
-alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown";
+alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,phd/telecomparis/zimbra.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown";
 
 # Complete ls
 alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv";
