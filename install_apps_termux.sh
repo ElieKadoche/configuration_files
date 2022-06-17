@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# Update
+pkg upgrade
+pkg update
+
 # zsh installation
 pkg install -y zsh
 
@@ -52,7 +56,7 @@ pkg install -y unrar
 pkg install -y unzip
 pkg install -y zip
 
-# 2 different options
+# LaTeX
 pkg install -y texlive-installer
 termux-install-tl
 
