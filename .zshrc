@@ -586,6 +586,11 @@ master_compile() {
         cd $ORIGIN/git_apps/fzf;
         ./install --all --no-bash --no-zsh;
 
+        # scrcpy
+        printf "${BBlue}\nscrcpy${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/scrcpy;
+        ./install_release.sh;
+
         # Katago
         printf "${BBlue}\nKatago${Color_Off}\n\n";
         cd $ORIGIN/git_apps/KataGo/cpp;

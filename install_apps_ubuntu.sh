@@ -78,6 +78,8 @@ sudo apt -y install graphviz
 sudo apt -y install hardinfo
 sudo apt -y install imagemagick
 sudo apt -y install leela-zero
+sudo apt -y install libavdevice-dev
+sudo apt -y install libavformat-dev
 sudo apt -y install libboost-all-dev
 sudo apt -y install libcups2-dev
 sudo apt -y install libgeos++-dev
@@ -86,7 +88,9 @@ sudo apt -y install libopencv-dev
 sudo apt -y install libproj-dev
 sudo apt -y install librecad
 sudo apt -y install libreoffice
+sudo apt -y install libsdl2-dev
 sudo apt -y install libswscale-dev
+sudo apt -y install libusb-1.0-0-dev
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
 sudo apt -y install lynx
@@ -112,7 +116,6 @@ sudo apt -y install python3-tk
 sudo apt -y install python3-venv
 sudo apt -y install rawtherapee
 sudo apt -y install sassc
-sudo apt -y install scrcpy
 sudo apt -y install sshfs
 sudo apt -y install sumo
 sudo apt -y install swi-prolog
