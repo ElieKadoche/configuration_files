@@ -15,6 +15,7 @@ dash
 dask[complete]
 dm-acme[reverb,tf,jax,envs]
 docx-mailmerge
+django
 easyocr
 emoji
 flake8
