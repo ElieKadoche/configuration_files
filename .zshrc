@@ -16,6 +16,9 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     export PATH=/usr/local/cuda/bin${PATH:+:${PATH}};
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}};
 
+    export GEM_HOME="$HOME/gems"
+    export PATH="$HOME/gems/bin:$PATH"
+
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
@@ -533,6 +536,9 @@ master_update() {
         # Snap
         printf "${BBlue}\nSNAP${Color_Off}\n\n";
         sudo snap refresh;
+
+        # gems
+        bundle-update;
     fi
 
     # PIP

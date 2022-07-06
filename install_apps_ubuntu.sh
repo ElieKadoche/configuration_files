@@ -116,6 +116,7 @@ sudo apt -y install python3-pygame
 sudo apt -y install python3-tk
 sudo apt -y install python3-venv
 sudo apt -y install rawtherapee
+sudo apt -y install ruby-full
 sudo apt -y install sassc
 sudo apt -y install sshfs
 sudo apt -y install sumo
@@ -173,6 +174,9 @@ sudo apt -y install transmission
 sudo apt -y install transmission-cli
 sudo apt -y install transmission-common
 sudo apt -y install transmission-daemon
+
+# jekyll
+gem install jekyll bundler
 
 # CUDA
 # ------------------------------------------
