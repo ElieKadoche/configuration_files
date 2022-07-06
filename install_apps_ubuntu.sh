@@ -93,6 +93,7 @@ sudo apt -y install libswscale-dev
 sudo apt -y install libusb-1.0-0-dev
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
+sudo apt -y install lmms
 sudo apt -y install lynx
 sudo apt -y install meson
 sudo apt -y install mpv

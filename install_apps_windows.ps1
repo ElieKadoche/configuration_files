@@ -66,6 +66,7 @@ powercfg -h off
 
 <#
 https://github.com/textext/textext/releases
+https://lmms.io/
 https://rog.asus.com/fr/motherboards/rog-strix/rog-strix-x570-e-gaming-model/helpdesk_download/
 https://rog.asus.com/us/innovation/armoury_crate/
 https://visualstudio.microsoft.com/vs/community/
