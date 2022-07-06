@@ -16,9 +16,6 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     export PATH=/usr/local/cuda/bin${PATH:+:${PATH}};
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}};
 
-    export GEM_HOME="$HOME/gems"
-    export PATH="$HOME/gems/bin:$PATH"
-
 # Termux (Android)
 elif [ "$OSTYPE" = "linux-android" ]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
@@ -47,6 +44,10 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     eval $(thefuck --alias);
     eval $(thefuck --alias damn);
 fi
+
+# gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
 
 # Vim bindkeys
 bindkey -v;
@@ -536,9 +537,6 @@ master_update() {
         # Snap
         printf "${BBlue}\nSNAP${Color_Off}\n\n";
         sudo snap refresh;
-
-        # gems
-        bundle-update;
     fi
 
     # PIP
@@ -552,6 +550,9 @@ master_update() {
     vim +"PlugUpdate" +qa;
     vim +"PlugInstall" +qa;
     vim +"TSUpdate" +qa;
+
+    # gems
+    bundle-update;
 
     # Because coc is activated only for tex files
     vim tmp.tex +"CocUpdate" +qa;

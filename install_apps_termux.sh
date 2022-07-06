@@ -46,6 +46,7 @@ pkg install -y openssl-tool
 pkg install -y pwgen
 pkg install -y python
 pkg install -y rsync
+pkg install -y ruby
 pkg install -y screen
 pkg install -y termux-api
 pkg install -y tesseract
@@ -59,6 +60,9 @@ pkg install -y zip
 # LaTeX
 pkg install -y texlive-installer
 termux-install-tl
+
+# jekyll
+gem install jekyll bundler
 
 # Termux configuration
 # ------------------------------------------
