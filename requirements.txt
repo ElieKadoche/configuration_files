@@ -28,6 +28,7 @@ graphviz
 grip
 gym
 humanize
+hyperopt
 imgaug
 ipdb
 isort
@@ -42,6 +43,7 @@ numpy
 open_spiel
 opencv-python
 openpyxl
+optuna
 pandas
 pettingzoo[all]
 Pillow
