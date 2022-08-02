@@ -11,6 +11,7 @@ chroma
 ciphey
 configparser
 cupy-cuda114
+Cython
 dash
 dask[complete]
 dm-acme[reverb,tf,jax,envs]
