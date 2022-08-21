@@ -71,6 +71,7 @@ sudo apt -y install ffmpeg
 sudo apt -y install ffmpegthumbnailer
 sudo apt -y install fonts-firacode
 sudo apt -y install gimp
+sudo apt -y install gmsh
 sudo apt -y install gnome-panel
 sudo apt -y install gnome-shell-extensions
 sudo apt -y install gnome-tweak-tool
