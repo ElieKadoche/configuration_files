@@ -14,7 +14,6 @@ Plug 'https://github.com/ap/vim-buftabline.git'
 Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'https://github.com/camspiers/lens.vim.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
-Plug 'https://github.com/dracula/vim.git'
 Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/honza/vim-snippets.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
@@ -50,7 +49,6 @@ autocmd FileType python set colorcolumn=79
 " ------------------------------------------
 
 set termguicolors
-colorscheme dracula
 set background=dark
 highlight Normal ctermbg=none ctermfg=white guibg=none guifg=#ffffff
 hi SpellBad cterm=underline
