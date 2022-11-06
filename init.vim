@@ -67,7 +67,7 @@ hi MatchParen guifg=NONE guibg=NONE gui=reverse ctermfg=NONE ctermbg=NONE cterm=
 hi ModeMsg guifg=#90fff0 guibg=NONE gui=NONE cterm=NONE
 hi MoreMsg guifg=#006400 guibg=NONE gui=NONE cterm=NONE
 hi NonText guifg=#0030ff guibg=NONE gui=NONE cterm=NONE
-hi Pmenu guifg=#000000 guibg=#0069c8 gui=NONE cterm=NONE
+hi Pmenu guifg=#ffffff guibg=#191919 gui=NONE cterm=NONE
 hi PmenuSbar guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi PmenuSel guifg=#0030ff guibg=#ff0000 gui=NONE cterm=NONE
 hi PmenuThumb guifg=NONE guibg=#f0000f gui=NONE cterm=NONE
