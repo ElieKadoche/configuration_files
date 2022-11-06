@@ -48,17 +48,73 @@ autocmd FileType python set colorcolumn=79
 " ------------------------------------------
 " ------------------------------------------
 
+" General parameters
 set termguicolors
 set background=dark
-highlight Normal ctermbg=none ctermfg=white guibg=none guifg=#ffffff
-hi SpellBad cterm=underline
+set encoding=utf8
+
+" Custom colorsheme
+hi Normal guifg=#ffffff guibg=#000000 gui=NONE cterm=NONE
+hi Conceal guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi ColorColumn guifg=#ffffff guibg=#191919 gui=NONE cterm=NONE
+hi QuickFixLine guifg=NONE guibg=NONE gui=bold cterm=bold
+hi Error guifg=NONE guibg=NONE gui=NONE cterm=NONE
+hi FoldColumn guifg=#808080 guibg=NONE gui=bold cterm=NONE
+hi Folded guifg=#808080 guibg=NONE gui=bold cterm=NONE
+hi IncSearch guifg=#ff0000 guibg=#0030ff gui=reverse cterm=reverse
+hi LineNr guifg=#ff0000 guibg=NONE gui=NONE cterm=NONE
+hi MatchParen guifg=NONE guibg=NONE gui=reverse ctermfg=NONE ctermbg=NONE cterm=reverse
+hi ModeMsg guifg=#90fff0 guibg=NONE gui=NONE cterm=NONE
+hi MoreMsg guifg=#006400 guibg=NONE gui=NONE cterm=NONE
+hi NonText guifg=#0030ff guibg=NONE gui=NONE cterm=NONE
+hi Pmenu guifg=#000000 guibg=#0069c8 gui=NONE cterm=NONE
+hi PmenuSbar guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi PmenuSel guifg=#0030ff guibg=#ff0000 gui=NONE cterm=NONE
+hi PmenuThumb guifg=NONE guibg=#f0000f gui=NONE cterm=NONE
+hi Question guifg=#90f020 guibg=NONE gui=NONE cterm=NONE
+hi SignColumn guifg=#000000 guibg=NONE gui=NONE cterm=NONE
+hi SpecialKey guifg=#008b8b guibg=NONE gui=NONE cterm=NONE
+hi SpellBad guifg=NONE guibg=NONE guisp=NONE gui=undercurl cterm=underline
+hi SpellCap guifg=#90f020 guibg=NONE guisp=#90f020 gui=undercurl cterm=underline
+hi SpellLocal guifg=#90fff0 guibg=NONE guisp=#90fff0 gui=undercurl cterm=underline
+hi SpellRare guifg=#ff00ff guibg=NONE guisp=#ff00ff gui=undercurl cterm=underline
+hi StatusLine guifg=#000040 guibg=#c0c0c0 gui=NONE cterm=NONE
+hi StatusLineNC guifg=#000000 guibg=#808080 gui=NONE cterm=NONE
+hi TabLine guifg=#000000 guibg=#808080 gui=NONE cterm=NONE
+hi ToolbarButton guifg=#000000 guibg=#0030ff gui=NONE cterm=NONE
+hi ToolbarLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi VertSplit guifg=#000000 guibg=#808080 gui=NONE cterm=NONE
+hi Visual guifg=#00ff00 guibg=#000000 gui=reverse cterm=reverse
+hi VisualNOS guifg=#8080ff guibg=#c0c0c0 gui=reverse,underline cterm=reverse,underline
+hi WarningMsg guifg=#ff0000 guibg=NONE gui=NONE cterm=NONE
+hi WildMenu guifg=#ffff60 guibg=#000000 gui=NONE cterm=NONE
+hi debugBreakpoint guifg=#90f020 guibg=#00008b gui=reverse cterm=reverse
+hi debugPC guifg=#90fff0 guibg=#00008b gui=reverse cterm=reverse
+hi Directory guifg=#008b8b guibg=NONE gui=NONE cterm=NONE
+hi Title guifg=#ff0000 guibg=NONE gui=NONE cterm=NONE
+hi Comment guifg=#808080 guibg=NONE gui=NONE cterm=NONE
+hi Constant guifg=#00ff00 guibg=NONE gui=NONE cterm=NONE
+hi Identifier guifg=#00ffff guibg=NONE gui=NONE cterm=NONE
+hi Ignore guifg=#000040 guibg=#c0c0c0 gui=NONE cterm=NONE
+hi PreProc guifg=#ff00ff guibg=NONE gui=NONE cterm=NONE
+hi Special guifg=#ffa500 guibg=NONE gui=NONE cterm=NONE
+hi Statement guifg=#ffff00 guibg=NONE gui=NONE cterm=NONE
+hi Todo guifg=NONE guibg=NONE gui=reverse ctermfg=NONE ctermbg=NONE cterm=reverse
+hi Type guifg=#0069c8 guibg=NONE gui=NONE cterm=NONE
+hi Underlined guifg=#80a0ff guibg=NONE gui=underline cterm=underline
+hi TabLineSel guifg=#000000 guibg=#ff0000 gui=NONE cterm=NONE
+hi CursorLine guifg=NONE guibg=#00ffff gui=NONE cterm=NONE
+hi CursorLineNr guifg=NONE guibg=#808080 gui=NONE cterm=NONE
+hi Search guifg=#000000 guibg=#ff00ff gui=NONE cterm=NONE
+hi DiffAdd guifg=#000000 guibg=#00ff00 gui=NONE cterm=NONE
+hi DiffChange guifg=#ffffff guibg=#5f87af gui=NONE cterm=NONE
+hi DiffText guifg=#000000 guibg=#808080 gui=NONE cterm=NONE
+hi DiffDelete guifg=#000000 guibg=#ff0000 gui=NONE cterm=NONE
 
 " Set extra options when running in GUI mode
 if has('gui_running')
     set t_Co=256
 endif
-
-set encoding=utf8
 
 " ALE
 " ------------------------------------------
