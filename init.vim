@@ -351,8 +351,7 @@ let g:SuperTabDefaultCompletionType='<C-n>'
 
 " Better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsListSnippets='<c-tab>'
 
 " Use coc.vim for latex and yaml
 let g:ycm_filetype_blacklist={
@@ -381,8 +380,9 @@ filetype indent on
 set autoread
 au CursorHold * checktime
 
-" Turn on the Wild menu
-set wildmenu
+" Turn of the wild menu
+" set wildmenu  " To enable
+let g:wildmenu=0
 
 " Always show current position
 set ruler
