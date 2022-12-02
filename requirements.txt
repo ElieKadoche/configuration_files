@@ -43,6 +43,7 @@ nevergrad
 numpy
 open_spiel
 opencv-python
+openmdao
 openpyxl
 optuna
 pandas
