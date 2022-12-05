@@ -27,7 +27,7 @@ google-auth-httplib2
 google-auth-oauthlib
 graphviz
 grip
-gym
+gym[all]
 humanize
 hyperopt
 imgaug
