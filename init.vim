@@ -167,6 +167,13 @@ nnoremap <C-l> <C-W>l
 " delays and poor user experience
 set updatetime=300
 
+" csv.vim
+" ------------------------------------------
+" ------------------------------------------
+
+" Highlight column
+let g:csv_highlight_column='y'
+
 " ctrlp
 " ------------------------------------------
 " ------------------------------------------
