@@ -286,6 +286,9 @@ compiletex() {
 # Copy folder with progress bar
 cpr() { rsync --archive --human-readable --info=progress2 $1 $2; }
 
+# Display CSV files
+csvv() { column -s, -t < $1 | less -#2 -N -S; }
+
 # Find $1 largest files
 duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1; }
 
