@@ -583,7 +583,7 @@ master_compile() {
         # neovim
         printf "${BBlue}\nneovim${Color_Off}\n\n";
         cd $ORIGIN/git_apps/neovim;
-        sudo make CMAKE_BUILD_TYPE=Release;
+        sudo make CMAKE_BUILD_TYPE=RelWithDebInfo;
         sudo make install;
 
         # YouCompleteMe
