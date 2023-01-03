@@ -18,6 +18,9 @@ termux-setup-storage
 # Launch common script
 ./install_apps_common.sh
 
+# For Numpy, use
+MATHLIB="m" pip3 install numpy
+
 # You can launch the script from here
 
 # pkg
