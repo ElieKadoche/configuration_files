@@ -28,6 +28,7 @@ google-auth-oauthlib
 graphviz
 grip
 gym[all]
+gymnasium[all]
 humanize
 hyperopt
 imgaug
