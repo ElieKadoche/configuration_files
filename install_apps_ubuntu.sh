@@ -65,6 +65,7 @@ sudo apt -y install clang-format
 sudo apt -y install clinfo
 sudo apt -y install cloudcompare
 sudo apt -y install cmatrix
+sudo apt -y install djvulibre-bin
 sudo apt -y install dos2unix
 sudo apt -y install exfat-fuse
 sudo apt -y install ffmpeg
@@ -91,6 +92,7 @@ sudo apt -y install librecad
 sudo apt -y install libreoffice
 sudo apt -y install libsdl2-dev
 sudo apt -y install libswscale-dev
+sudo apt -y install libtiff-tools
 sudo apt -y install libusb-1.0-0-dev
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
