@@ -2,7 +2,7 @@
 # ------------------------------------------
 # ------------------------------------------
 
-# Ubuntu
+# Linux
 if [ "$OSTYPE" = "linux-gnu" ]; then
     ORIGIN="/home/$USERNAME/data";
     export ZSH="/home/$USERNAME/.oh-my-zsh";
@@ -38,12 +38,6 @@ fi
 
 # Custom prompt
 PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f";
-
-# TheFuck
-if [ "$OSTYPE" = "linux-gnu" ]; then
-    eval $(thefuck --alias);
-    eval $(thefuck --alias damn);
-fi
 
 # gems
 export GEM_HOME="$HOME/gems"
@@ -223,32 +217,19 @@ alias vim=nvim;
 # ------------------------------------------
 # ------------------------------------------
 
-# Backup command, for Android and for Ubuntu
-# The name of the external hard drive is $2 (mandatory for linux-gnu)
+# Custom backup commands
+# We do not use rsync on git folders --> gitpp command
+# The name of the external hard drive is $1 (mandatory for linux-gnu)
 bbb() {
-    # The dry command is mainly for security, if one is afraid of doing some unfortunate mistake
-    if [ "$1" = "dry" ]; then
-        if [ "$OSTYPE" = "linux-android" ]; then
-            rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+    # On Android
+    if [ "$OSTYPE" = "linux-android" ]; then
+        rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+        # rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
 
-        elif [ "$OSTYPE" = "linux-gnu" ]; then
-            rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
-        fi
-
-    elif [ "$1" = "run" ]; then
-        if [ "$OSTYPE" = "linux-android" ]; then
-            rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
-
-        elif [ "$OSTYPE" = "linux-gnu" ]; then
-            printf "${BBlue}rsync${Color_Off}\n";
-            rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
-
-            # We do not use rsync on git folders
-            printf "${BBlue}git${Color_Off}\n";
-            rm -rf /media/$USERNAME/$2/data/{general_files,git_apps};
-            cpr $ORIGIN/general_files /media/$USERNAME/$2/data;
-            cpr $ORIGIN/git_apps /media/$USERNAME/$2/data;
-        fi
+    # On Linux
+    elif [ "$OSTYPE" = "linux-gnu" ]; then
+        rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$1/data/;
+        # rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
     fi
 }
 
@@ -364,18 +345,17 @@ rmtex() {
     find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\|brf\|loc\|soc\)" -delete;
 }
 
+# Private SSH variables are in a .zsh file located in $ZSH_CUSTOM
+alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
+alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder";
+alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
+sshL() { ssh -L 16006:127.0.0.1:$1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT; }
+scpp() { scp -r -P $_SSH_PORT $1 $_SSH_USER_NAME@[$_SSH_PUBLIC_IP]:~/Downloads; }
+
 # Functions to download videos: youtube-dl and yt-dl (much better)
 _yyy() { youtube-dl --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir; }
 yyy() { yt-dlp --verbose --output "%(title)s.mp3" $1 -f 251 -x --audio-format "mp3" --rm-cache-dir; }
 
-# Fix zsh_history file
-zsh_history_fix() {
-    cd ~;
-    mv .zsh_history .zsh_history_bad;
-    strings .zsh_history_bad > .zsh_history;
-    fc -R .zsh_history;
-    rm .zsh_history_bad;
-}
 
 # fzf
 # ------------------------------------------
@@ -426,40 +406,6 @@ FZF-EOF"
 vv() {
   IFS=$'\n' files=($(find $ORIGIN/ -type f | fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && vim "${files[@]}"
-}
-
-# SSH
-# ------------------------------------------
-# ------------------------------------------
-
-# Allows dodo without sudo
-_dodo() {
-    sudo chmod ogu+r /dev/rtc0;  # crw------
-    sudo chmod ogu+w /sys/power/state;  # -rw-r--r--
-}
-
-# Go to sleep for $1 hours
-dodo() {
-    # Compute times
-    sleep_duration=`echo "scale=0;$1*3600/1" | bc`;
-    wake_time=$(date -d "+$sleep_duration seconds");
-
-    # Create calendar event
-    python ~/ssh_notifier/ssh_notifier.py --hours $1;
-
-    # Go to sleep
-    rtcwake -m mem -s $sleep_duration -v;
-}
-
-# Private SSH variables are in a .zsh file located in $ZSH_CUSTOM
-alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
-alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder";
-alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
-sshL() { ssh -L 16006:127.0.0.1:$1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT; }
-
-# Move files
-scpp() {
-    scp -r -P $_SSH_PORT $1 $_SSH_USER_NAME@[$_SSH_PUBLIC_IP]:~/Downloads;
 }
 
 # Master git
