@@ -129,7 +129,6 @@ sudo apt -y install tesseract-ocr
 sudo apt -y install tesseract-ocr-fra
 sudo apt -y install texlive-full
 sudo apt -y install texstudio
-sudo apt -y install thefuck
 sudo apt -y install tldr
 sudo apt -y install tmux
 sudo apt -y install tor
