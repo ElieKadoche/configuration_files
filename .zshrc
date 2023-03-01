@@ -34,6 +34,11 @@ elif [ "$OSTYPE" = "linux-android" ]; then
         echo "$cfg" > ~/.termux/termux.properties;
         termux-reload-settings;
     }
+
+# MacOS (M chips)
+elif [ "$OSTYPE" = "darwin" ]; then
+    export ZSH="/Users/elie_kadoche/.oh-my-zsh";
+    alias rmtrash="rm -rf ~/.Trash/*";
 fi
 
 # Custom prompt
@@ -217,20 +222,21 @@ alias vim=nvim;
 # ------------------------------------------
 # ------------------------------------------
 
-# Custom backup commands
-# We do not use rsync on git folders --> gitpp command
-# The name of the external hard drive is $1 (mandatory for linux-gnu)
+# !!!!! WARNING !!!!!
+# !!! DANGER ZONE !!!
+# The rsync command is powerful but dangerous if misused
+# Always use --dry-run if you are unsure of your actions
+# - Do not use rsync on git folders, use gitpp command instead
+# - This command only only works for Android out of the box with SSH
+# - For other systems, launch the command directly by modifying parameters if needed
 bbb() {
-    # On Android
-    if [ "$OSTYPE" = "linux-android" ]; then
-        rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
-        # rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+    # Only for Android
+    rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+    # rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
 
-    # On Linux
-    elif [ "$OSTYPE" = "linux-gnu" ]; then
-        rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$1/data/;
-        # rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
-    fi
+    # For Linux systems, add l and p parameters for links and permissions
+    # rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$1/data/;
+    # rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
 }
 
 # Functions
@@ -491,6 +497,21 @@ master_update() {
         # Snap
         printf "${BBlue}\nSNAP${Color_Off}\n\n";
         sudo snap refresh;
+
+
+    elif [ "$OSTYPE" = "darwin" ]; then
+        printf "${BBlue}MacOS${Color_Off}\n\n";
+        softwareupdate --install --all;
+
+        printf "${BBlue}Homebrew${Color_Off}\n\n";
+        brew update;
+        brew outdated;
+        brew upgrade;
+        brew upgrade --cask --greedy;
+
+        printf "${BBlue}Node.js${Color_Off}\n\n";
+        npm install -g npm;
+
     fi
 
     # PIP
@@ -498,7 +519,7 @@ master_update() {
     python3 -m pip install --upgrade pip;
     pip-review --local --auto;
 
-    # neovim
+    # Neovim
     printf "${BBlue}\nneovim${Color_Off}\n\n";
     vim +"PlugUpgrade" +qa;
     vim +"PlugUpdate" +qa;
@@ -525,27 +546,29 @@ master_compile() {
     printf "${BBlue}lesspass${Color_Off}\n\n";
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
+    if [ "$OSTYPE" = "linux-gnu" ] || ["$OSTYPE" = "darwin"]; then
+        # YouCompleteMe
+        printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
+        python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
+
+        # fzf
+        printf "${BBlue}\nfzf${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/fzf;
+        ./install --all --no-bash --no-zsh;
+    fi
+
     if [ "$OSTYPE" = "linux-gnu" ]; then
-        # neovim
+        # Neovim
         printf "${BBlue}\nneovim${Color_Off}\n\n";
         cd $ORIGIN/git_apps/neovim;
         sudo make CMAKE_BUILD_TYPE=RelWithDebInfo;
         sudo make install;
-
-        # YouCompleteMe
-        printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
-        python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
 
         # Sabaki
         printf "${BBlue}\nSabaki${Color_Off}\n\n";
         cd $ORIGIN/git_apps/Sabaki;
         npm install;
         npm run build;
-
-        # fzf
-        printf "${BBlue}\nfzf${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/fzf;
-        ./install --all --no-bash --no-zsh;
 
         # scrcpy
         printf "${BBlue}\nscrcpy${Color_Off}\n\n";
@@ -617,6 +640,11 @@ master_clean() {
         while read snapname revision; do
             sudo snap remove "$snapname" --revision="$revision";
         done
+
+    elif [ "$OSTYPE" = "darwin" ]; then
+        printf "${BBlue}\nHomebrew${Color_Off}\n\n";
+        brew doctor;
+        brew cleanup;
     fi
 
     # PIP
