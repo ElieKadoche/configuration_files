@@ -21,6 +21,7 @@ elif [ "$OSTYPE" = "linux-android" ]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh";
 
+    alias mm="cd $ORIGIN/../Download";
     alias open="termux-open";
     alias pbcopy="termux-clipboard-set";
 
