@@ -547,7 +547,7 @@ master_compile() {
     printf "${BBlue}lesspass${Color_Off}\n\n";
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
-    if [ "$OSTYPE" = "linux-gnu" ] || ["$OSTYPE" = "darwin"]; then
+    if [ "$OSTYPE" = "linux-gnu" ] || [ "$OSTYPE" = "darwin" ]; then
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
         python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
