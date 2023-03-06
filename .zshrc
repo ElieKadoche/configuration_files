@@ -1,9 +1,18 @@
+# Get system
+if [[ $(uname -o) = "GNU/Linux" ]]; then
+    _SYSTEM="linux";
+elif [[ $(uname -o) = "Android" ]]; then
+    _SYSTEM="android";
+elif [[ $(uname -o) = "arm64" ]]; then
+    _SYSTEM="darwin";
+fi
+
 # System specific
 # ------------------------------------------
 # ------------------------------------------
 
 # Linux
-if [ "$OSTYPE" = "linux-gnu" ]; then
+if [ $_SYSTEM = "linux" ]; then
     ORIGIN="/home/$USERNAME/data";
     export ZSH="/home/$USERNAME/.oh-my-zsh";
 
@@ -17,7 +26,7 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}};
 
 # Termux (Android)
-elif [ "$OSTYPE" = "linux-android" ]; then
+elif [ $_SYSTEM = "android" ]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
     export ZSH="/data/data/com.termux/files/home/.oh-my-zsh";
 
@@ -36,8 +45,8 @@ elif [ "$OSTYPE" = "linux-android" ]; then
         termux-reload-settings;
     }
 
-# MacOS (M chips)
-elif [ "$OSTYPE" = "darwin" ]; then
+# MacOS darwin (M chips)
+elif [ $_SYSTEM = "darwin" ]; then
     export ZSH="/Users/elie_kadoche/.oh-my-zsh";
     alias rmtrash="rm -rf ~/.Trash/*";
 fi
@@ -477,13 +486,13 @@ master_update() {
     printf "${BPurple}--------------------- MASTER UPDATE ---------------------${Color_Off}\n";
     printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
 
-    if [ "$OSTYPE" = "linux-android" ]; then
+    if [ $_SYSTEM = "android" ]; then
         # Termux (pkg)
         printf "${BBlue}PKG${Color_Off}\n\n";
         pkg upgrade -y;
         pkg update -y;
 
-    elif [ "$OSTYPE" = "linux-gnu" ]; then
+    elif [ $_SYSTEM = "linux" ]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
         sudo n latest;
@@ -500,8 +509,8 @@ master_update() {
         sudo snap refresh;
 
 
-    elif [ "$OSTYPE" = "darwin" ]; then
-        printf "${BBlue}MacOS${Color_Off}\n\n";
+    elif [ $_SYSTEM = "darwin" ]; then
+        printf "${BBlue}darwin${Color_Off}\n\n";
         softwareupdate --install --all;
 
         printf "${BBlue}Homebrew${Color_Off}\n\n";
@@ -547,7 +556,7 @@ master_compile() {
     printf "${BBlue}lesspass${Color_Off}\n\n";
     python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
 
-    if [ "$OSTYPE" = "linux-gnu" ] || [ "$OSTYPE" = "darwin" ]; then
+    if [ $_SYSTEM = "linux" ] || [ $_SYSTEM = "darwin" ]; then
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
         python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
@@ -558,7 +567,7 @@ master_compile() {
         ./install --all --no-bash --no-zsh;
     fi
 
-    if [ "$OSTYPE" = "linux-gnu" ]; then
+    if [ $_SYSTEM = "linux" ]; then
         # Neovim
         printf "${BBlue}\nneovim${Color_Off}\n\n";
         cd $ORIGIN/git_apps/neovim;
@@ -612,13 +621,13 @@ master_clean() {
     printf "${BPurple}--------------------- MASTER CLEAN ---------------------${Color_Off}\n";
     printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
 
-    if [ "$OSTYPE" = "linux-android" ]; then
+    if [ $_SYSTEM = "android" ]; then
         # Termux (pkg)
         printf "${BBlue}PKG${Color_Off}\n\n";
         pkg autoclean;
         pkg clean;
 
-    elif [ "$OSTYPE" = "linux-gnu" ]; then
+    elif [ $_SYSTEM = "linux" ]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
         npm cache verify;
@@ -642,7 +651,7 @@ master_clean() {
             sudo snap remove "$snapname" --revision="$revision";
         done
 
-    elif [ "$OSTYPE" = "darwin" ]; then
+    elif [ $_SYSTEM = "darwin" ]; then
         printf "${BBlue}\nHomebrew${Color_Off}\n\n";
         brew doctor;
         brew cleanup;
@@ -669,7 +678,7 @@ master_all() {
     master_clean;
     omz update;
 
-    if [ "$OSTYPE" = "linux-gnu" ]; then
+    if [ $_SYSTEM = "linux" ]; then
         sudo killall -3 gnome-shell;
     fi
 }
