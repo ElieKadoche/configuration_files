@@ -55,7 +55,6 @@ brew install screen
 brew install swi-prolog
 brew install swig
 brew install tesseract
-brew install texlive
 brew install tldr
 brew install tmux
 brew install tor
@@ -66,6 +65,7 @@ brew install wget
 brew install xclip
 
 # Install Brew cask packages
+brew install --cask adobe-acrobat-reader
 brew install --cask android-file-transfer
 brew install --cask audacity
 brew install --cask balenaetcher
@@ -85,6 +85,7 @@ brew install --cask librecad
 brew install --cask libreoffice
 brew install --cask lmms
 brew install --cask mathpix-snipping-tool
+brew install --cask microsoft-office-businesspro
 brew install --cask mpv
 brew install --cask pycharm-ce
 brew install --cask raspberry-pi-imager
@@ -100,8 +101,15 @@ brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 brew install --cask font-source-sans-pro
 
+# LaTeX
+# brew install texlive
+brew install --cask mactex
+
 # Install Jekyll
 gem install bundler jekyll
+
+# Apple toolbox for machine learning
+pip install coremltools
 
 # Others
 # Install https://github.com/textext/textext/releases, then python setup.py
