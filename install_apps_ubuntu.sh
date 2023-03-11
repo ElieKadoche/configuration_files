@@ -65,6 +65,7 @@ sudo apt -y install clang-format
 sudo apt -y install clinfo
 sudo apt -y install cloudcompare
 sudo apt -y install cmatrix
+sudo apt -y install dconf-editor
 sudo apt -y install djvulibre-bin
 sudo apt -y install dos2unix
 sudo apt -y install exfat-fuse
