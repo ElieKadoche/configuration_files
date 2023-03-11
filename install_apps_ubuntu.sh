@@ -283,10 +283,6 @@ npm install --save-dev --save-exact prettier
 mkdir ~/ssh_notifier
 cp others/ssh_notifier.py ~/ssh_notifier
 
-# Custom modifications
-cp others/gtk.css ~/.config/gtk-3.0/gtk.css
-cp others/_theme-color.scss $ORIGIN/git_apps/materia-theme/src/_theme-color.scss
-
 # Install https://github.com/balena-io/etcher/releases
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install https://github.com/textext/textext/releases, then python setup.py

@@ -593,12 +593,6 @@ master_compile() {
         cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/local/cuda/include -DCUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so
         make;
 
-        # Materia-theme
-        printf "${BBlue}\nmateria-theme${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/materia-theme;
-        meson _build -Dcolors=dark -Dsizes=compact --reconfigure;
-        meson install -C _build;
-
         # Droidcam
         printf "${BBlue}\ndroidcam${Color_Off}\n\n";
         cd $ORIGIN/git_apps/droidcam;
