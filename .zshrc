@@ -560,11 +560,6 @@ master_compile() {
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
         python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
-
-        # fzf
-        printf "${BBlue}\nfzf${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/fzf;
-        ./install --all --no-bash --no-zsh;
     fi
 
     if [ $_SYSTEM = "linux" ]; then
@@ -601,6 +596,11 @@ master_compile() {
         sudo ./install-client;
         sudo ./install-video;
         sudo ./install-sound;
+
+        # fzf
+        printf "${BBlue}\nfzf${Color_Off}\n\n";
+        cd $ORIGIN/git_apps/fzf;
+        ./install --all --no-bash --no-zsh;
     fi
 
     cd $ORIGIN;
