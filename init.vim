@@ -1,11 +1,11 @@
 call plug#begin('~/.config/nvim/plugged/')
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter.git', {'do': ':TSUpdate'}
 
-" Ubuntu only
+" Linux and Darwin only
 Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release', 'for': ['tex', 'yaml']}
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 
-" Termux only
+" Android only
 " Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
 
 Plug 'https://github.com/SirVer/ultisnips.git'

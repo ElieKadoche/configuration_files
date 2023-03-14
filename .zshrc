@@ -3,7 +3,7 @@ if [[ $(uname -o) = "GNU/Linux" ]]; then
     _SYSTEM="linux";
 elif [[ $(uname -o) = "Android" ]]; then
     _SYSTEM="android";
-elif [[ $(uname -o) = "arm64" ]]; then
+elif [[ $(uname -o) = "Darwin" ]]; then
     _SYSTEM="darwin";
 fi
 
@@ -12,33 +12,38 @@ fi
 # ------------------------------------------
 
 # Linux
-if [ $_SYSTEM = "linux" ]; then
+if [[ $_SYSTEM = "linux" ]]; then
     ORIGIN="/home/$USERNAME/data";
-    export ZSH="/home/$USERNAME/.oh-my-zsh";
 
+    alias python="python3";
+    alias pip="pip3";
     alias open="xdg-open";
     alias pbcopy="xclip -selection clipboard";
     alias pbpaste="xclip -selection clipboard -o";
     alias xx="xtrlock";
 
+    export ZSH="/home/$USERNAME/.oh-my-zsh";
     export PATH="/home/$USERNAME/.local/bin:$PATH";
     export PATH=/usr/local/cuda/bin${PATH:+:${PATH}};
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}};
 
 # Termux (Android)
-elif [ $_SYSTEM = "android" ]; then
+elif [[ $_SYSTEM = "android" ]]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
-    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh";
 
+    alias python="python3";
+    alias pip="pip3";
     alias mm="cd $ORIGIN/../Download";
     alias open="termux-open";
     alias pbcopy="termux-clipboard-set";
 
+    export ZSH="/data/data/com.termux/files/home/.oh-my-zsh";
+
     # For Termux only, display (or not) extra keys
     ek() {
-        if [ "$1" = 0 ]; then
+        if [[ "$1" = 0 ]]; then
             cfg="extra-keys = [[]]\nfullscreen = true";
-        elif [ "$1" = 1 ]; then
+        elif [[ "$1" = 1 ]]; then
             cfg="extra-keys = [['F1','F2','F3','F4','F5','F6','F9','F12'], ['ESC','ALT','FN','/','PGUP','KEYBOARD','UP','DRAWER'], ['TAB','CTRL','HOME','|','PGDN','LEFT','DOWN','RIGHT']]\nfullscreen = true";
         fi
         echo "$cfg" > ~/.termux/termux.properties;
@@ -46,9 +51,18 @@ elif [ $_SYSTEM = "android" ]; then
     }
 
 # MacOS darwin (M chips)
-elif [ $_SYSTEM = "darwin" ]; then
-    export ZSH="/Users/elie_kadoche/.oh-my-zsh";
+elif [[ $_SYSTEM = "darwin" ]]; then
+    ORIGIN="/Users/$USER/data"
+    set termguicolors
+
     alias rmtrash="rm -rf ~/.Trash/*";
+    alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
+    alias python="python3.10";
+    alias pip="pip3.10";
+
+    export ZSH="/Users/elie_kadoche/.oh-my-zsh";
+    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH";
+    export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
 # Custom prompt
@@ -195,14 +209,12 @@ export ARCHFLAGS="-arch x86_64";
 # ------------------------------------------
 # ------------------------------------------
 
+# Complete and small ls
+alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv";
+alias ll="ls -1 -a -v --group-directories-first";
+
 # Open Firefox with default websites
 alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,phd/telecomparis/zimbra.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown";
-
-# Complete ls
-alias l="ls --all --author --color=auto --group-directories-first --human-readable --size -lv";
-
-# Small ls
-alias ll="ls -1 -a -v --group-directories-first";
 
 # Display markdown files in terminal
 alias mdd="python -m rich.markdown";
@@ -221,8 +233,6 @@ alias duu="du -ah --max-depth=1 . | sort -hr";
 alias e="exit";
 alias lpl="python $ORIGIN/git_apps/lesspass/cli/lesspass/core.py";
 alias m="cd $ORIGIN";
-alias pip="pip3";
-alias python="python3";
 alias rm__="find . -name '._*' -ls -delete";
 alias rmr="rm -rf";
 alias src="source ~/.zshrc";
@@ -400,7 +410,7 @@ fkill() {
   local pid
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
-  if [ "x$pid" != "x" ]
+  if [[ "x$pid" != "x" ]]
   then
     echo $pid | xargs kill -${1:-9}
   fi
@@ -486,13 +496,13 @@ master_update() {
     printf "${BPurple}--------------------- MASTER UPDATE ---------------------${Color_Off}\n";
     printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
 
-    if [ $_SYSTEM = "android" ]; then
+    if [[ $_SYSTEM = "android" ]]; then
         # Termux (pkg)
         printf "${BBlue}PKG${Color_Off}\n\n";
         pkg upgrade -y;
         pkg update -y;
 
-    elif [ $_SYSTEM = "linux" ]; then
+    elif [[ $_SYSTEM = "linux" ]]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
         sudo n latest;
@@ -509,7 +519,7 @@ master_update() {
         sudo snap refresh;
 
 
-    elif [ $_SYSTEM = "darwin" ]; then
+    elif [[ $_SYSTEM = "darwin" ]]; then
         printf "${BBlue}darwin${Color_Off}\n\n";
         softwareupdate --install --all;
 
@@ -526,7 +536,7 @@ master_update() {
 
     # PIP
     printf "${BBlue}\nPIP${Color_Off}\n\n";
-    python3 -m pip install --upgrade pip;
+    python -m pip install --upgrade pip;
     pip-review --local --auto;
 
     # Neovim
@@ -554,15 +564,13 @@ master_compile() {
 
     # Lesspass
     printf "${BBlue}lesspass${Color_Off}\n\n";
-    python3 -m pip install $ORIGIN/git_apps/lesspass/cli;
+    python -m pip install $ORIGIN/git_apps/lesspass/cli;
 
-    if [ $_SYSTEM = "linux" ] || [ $_SYSTEM = "darwin" ]; then
+    if [[ $_SYSTEM = "linux" ]]; then
         # YouCompleteMe
         printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
-        python3 ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
-    fi
+        python ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
 
-    if [ $_SYSTEM = "linux" ]; then
         # Neovim
         printf "${BBlue}\nneovim${Color_Off}\n\n";
         cd $ORIGIN/git_apps/neovim;
@@ -583,7 +591,7 @@ master_compile() {
         # Katago
         printf "${BBlue}\nKatago${Color_Off}\n\n";
         cd $ORIGIN/git_apps/KataGo/cpp;
-        if [ ! -d "./build" ]; then mkdir build; fi
+        if [[ ! -d "./build" ]]; then mkdir build; fi
         cd build;
         cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/local/cuda/include -DCUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so
         make;
@@ -615,13 +623,13 @@ master_clean() {
     printf "${BPurple}--------------------- MASTER CLEAN ---------------------${Color_Off}\n";
     printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
 
-    if [ $_SYSTEM = "android" ]; then
+    if [[ $_SYSTEM = "android" ]]; then
         # Termux (pkg)
         printf "${BBlue}PKG${Color_Off}\n\n";
         pkg autoclean;
         pkg clean;
 
-    elif [ $_SYSTEM = "linux" ]; then
+    elif [[ $_SYSTEM = "linux" ]]; then
         # Node
         printf "${BBlue}NPM${Color_Off}\n\n";
         npm cache verify;
@@ -645,7 +653,7 @@ master_clean() {
             sudo snap remove "$snapname" --revision="$revision";
         done
 
-    elif [ $_SYSTEM = "darwin" ]; then
+    elif [[ $_SYSTEM = "darwin" ]]; then
         printf "${BBlue}\nHomebrew${Color_Off}\n\n";
         brew doctor;
         brew cleanup;
@@ -672,7 +680,7 @@ master_all() {
     master_clean;
     omz update;
 
-    if [ $_SYSTEM = "linux" ]; then
+    if [[ $_SYSTEM = "linux" ]]; then
         sudo killall -3 gnome-shell;
     fi
 }

@@ -3,6 +3,9 @@
 # Command line tools
 xcode-select --install
 
+# Rosetta 2
+sudo softwareupdate --install-rosetta
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -30,20 +33,22 @@ brew install gcc
 brew install ghostscript
 brew install git
 brew install gmsh
+brew install go
 brew install graphviz
 brew install htop
 brew install imagemagick
 brew install jpeg-turbo
 brew install katago
 brew install leela-zero
+brew install lua
 brew install lynx
 brew install meson
-brew install mpv
 brew install ncdu
 brew install neofetch
 brew install neovim
 brew install nmap
 brew install node
+brew install openjdk
 brew install openssh
 brew install pandoc
 brew install prettier
@@ -67,6 +72,7 @@ brew install xclip
 # Install Brew cask packages
 brew install --cask adobe-acrobat-reader
 brew install --cask android-file-transfer
+brew install --cask alacritty
 brew install --cask audacity
 brew install --cask balenaetcher
 brew install --cask blender
@@ -108,8 +114,14 @@ brew install --cask mactex
 # Install Jekyll
 gem install bundler jekyll
 
+# Install neovim node package
+npm install -g neovim
+
 # Apple toolbox for machine learning
-pip install coremltools
+pip3.10 install coremltools
+
+# For greenlet
+ARCHFLAGS="-arch arm64" pip3.10 install greenlet --compile --no-cache-dir
 
 # Others
 # Install https://github.com/textext/textext/releases, then python setup.py
