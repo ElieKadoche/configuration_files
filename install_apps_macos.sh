@@ -101,6 +101,7 @@ brew install --cask teamviewer
 brew install --cask texstudio
 brew install --cask tor-browser
 brew install --cask transmission
+brew install --cask whatsapp
 
 # Install fonts
 brew tap homebrew/cask-fonts
