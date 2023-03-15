@@ -246,17 +246,20 @@ alias vim=nvim;
 # !!! DANGER ZONE !!!
 # The rsync command is powerful but dangerous if misused
 # Always use --dry-run if you are unsure of your actions
-# - Do not use rsync on git folders, use gitpp command instead
-# - This command only only works for Android out of the box with SSH
-# - For other systems, launch the command directly by modifying parameters if needed
+# Do not use rsync on git folders, use gitpp command instead
+# This command is not meant to be used, it is only given for information
 bbb() {
-    # Only for Android
-    rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
-    # rsync -vruEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+    # On disk
+    # rsync -vruh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
 
-    # For Linux systems, add l and p parameters for links and permissions
-    # rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$1/data/;
-    # rsync -vrulpEh --delete --dry-run --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /media/$USERNAME/$2/data/;
+    # On disk, with same file system (add links, permissions and executability options)
+    # rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
+
+    # From Android to Darwin
+    # rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/
+
+    # With IPv6
+    # rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
 }
 
 # Functions
