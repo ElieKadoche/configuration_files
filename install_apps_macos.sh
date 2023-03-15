@@ -73,7 +73,6 @@ brew install xclip
 # Install Brew cask packages
 brew install --cask adobe-acrobat-reader
 brew install --cask alacritty
-brew install --cask android-file-transfer
 brew install --cask audacity
 brew install --cask balenaetcher
 brew install --cask blender
@@ -91,6 +90,7 @@ brew install --cask intellij-idea-ce
 brew install --cask librecad
 brew install --cask libreoffice
 brew install --cask lmms
+brew install --cask macdroid
 brew install --cask mathpix-snipping-tool
 brew install --cask microsoft-office-businesspro
 brew install --cask mpv
