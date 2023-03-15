@@ -53,6 +53,7 @@ brew install openssh
 brew install pandoc
 brew install prettier
 brew install pwgen
+brew install rsync
 brew install ruby
 brew install sassc
 brew install scrcpy
