@@ -7,8 +7,7 @@ General configuration files for Ubuntu and Termux (Android).
 - `.zshrc`: zsh configuration (specific to my usage).
 - `install_apps_X.*`: installation and configuration script for system X.
 
-Firefox extensions
-------------------------------------------
+## Firefox extensions
 
 - Dark Reader.
 - Firefox Color.
@@ -20,15 +19,14 @@ Firefox extensions
 - Popup Blocker (strict).
 - uBlock Origin.
 
-KataGo
-------------------------------------------
+## KataGo
 
 Set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 20`.
 
-Sabaki
-------------------------------------------
+## Sabaki
 
 Engines configuration (local).
+Use absolute paths for executables.
 
 ```shell
 <path_to_leelazero_executable>
@@ -48,8 +46,7 @@ ssh
 -t <user>@<ip> -p <port> <path_to_katago_executable> gtp -model <neural_net_path> -config <config_path>
 ```
 
-SSH
-------------------------------------------
+## SSH
 
 Private variables and commands are declared in a `.zsh` file placed in `$ZSH_CUSTOM` folder.
 
@@ -61,8 +58,7 @@ Private variables and commands are declared in a `.zsh` file placed in `$ZSH_CUS
 
 To share files or a website with the world (with or without password) --> Apache2.
 
-Android
-------------------------------------------
+## Android
 
 Google Play builds are no longer updated for Termux (https://github.com/termux/termux-app/issues/1072).
 So Termux needs to be installed from F-Droid (https://f-droid.org/FDroid.apk), along with Termux:API.
