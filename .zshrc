@@ -365,10 +365,14 @@ renameAll() {
     done;
 }
 
-# Clean Tex files. Argument for maxdepth
+# Clean Tex files, argument for maxdepth
 rmtex() {
     find . -maxdepth $1 -name "main-blx.bib" -delete;  # Auxiliary file used by biblatex
-    find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\|brf\|loc\|soc\)" -delete;
+    if [[ $_SYSTEM = "darwin" ]]; then
+        find -E . -maxdepth $1 -regex ".*\.(ux|dvi|log|out|toc|bbl|blg|synctex.gz|acn|acr|alg|bcf|glg|glo|gls|ist|run.xml|nav|snm|vrb|fls|fdb_latexmk|brf|loc|soc)" -delete;
+    else
+        find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\|brf\|loc\|soc\)" -delete;
+    fi
 }
 
 # Private SSH variables are in a .zsh file located in $ZSH_CUSTOM
