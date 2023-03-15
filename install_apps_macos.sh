@@ -125,5 +125,13 @@ pip3.10 install coremltools
 # For greenlet
 ARCHFLAGS="-arch arm64" pip3.10 install greenlet --compile --no-cache-dir
 
+# Change default parameters
+defaults write com.apple.finder QuitMenuItem -bool YES
+defaults write com.apple.screencapture location ~/Downloads
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.dock launchanim -bool false
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g QLPanelAnimationDuration -float 0
+
 # Others
 # Install https://github.com/textext/textext/releases, then python setup.py
