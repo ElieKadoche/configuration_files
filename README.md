@@ -1,6 +1,6 @@
 # configuration_files
 
-General configuration files for Ubuntu and Termux (Android).
+General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Termux).
 
 - `init.vim`: neovim configuration.
 - `requirements.txt`: python pip packages.
@@ -21,7 +21,7 @@ General configuration files for Ubuntu and Termux (Android).
 
 ## KataGo
 
-Set `playoutDoublingAdvantage = 3.0` and `numSearchThreads = 20`.
+Run the benchmark function to get the best parameters.
 
 ## Sabaki
 
