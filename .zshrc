@@ -678,6 +678,7 @@ master_clean() {
         printf "${BBlue}\nHomebrew${Color_Off}\n\n";
         brew doctor;
         brew cleanup;
+        brew autoremove;
     fi
 
     # PIP
