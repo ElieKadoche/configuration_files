@@ -127,11 +127,11 @@ let g:ale_linters = {
 \    'tex': ['lacheck'],
 \}
 
+" Eventually 'markdown': ['prettier']
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'bib': ['bibclean'],
 \    'cpp': ['uncrustify', 'clang-format'],
-\    'markdown': ['prettier'],
 \    'python': ['isort', 'autopep8'],
 \    'tex': ['latexindent'],
 \}
