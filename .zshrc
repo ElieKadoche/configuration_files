@@ -243,23 +243,37 @@ alias vim=nvim;
 # ------------------------------------------
 
 # !!!!! WARNING !!!!!
-# !!! DANGER ZONE !!!
 # The rsync command is powerful but dangerous if misused
 # Always use --dry-run if you are unsure of your actions
 # Do not use rsync on git folders, use gitpp command instead
-# This command is not meant to be used, it is only given for information
+# Arguments --> $1 disk name and $2 dry (eventually)
+#
+# On disk
+# rsync -vruh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
+#
+# On disk, with same file system (add links, permissions and executability options)
+# rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
+#
+# From Android to Darwin
+# rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/
+#
+# With IPv6
+# rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
 bbb() {
-    # On disk
-    # rsync -vruh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
+    if [[ "$2" = "dry" ]]; then
+        if [[ $_SYSTEM = "android" ]]; then
+            rsync -vruh --dry-run --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+        else
+            rsync -vrulpEh --dry-run --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/$1/data/;
+        fi
 
-    # On disk, with same file system (add links, permissions and executability options)
-    # rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
-
-    # From Android to Darwin
-    # rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/
-
-    # With IPv6
-    # rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+    else
+        if [[ $_SYSTEM = "android" ]]; then
+            rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+        else
+            rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/$1/data/;
+        fi
+    fi
 }
 
 # Functions
