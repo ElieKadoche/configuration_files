@@ -51,6 +51,7 @@ pandas
 pettingzoo[all]
 Pillow
 pip-review
+pipdeptree
 plotly
 powerline-status
 ptpython
