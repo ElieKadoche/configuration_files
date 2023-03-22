@@ -69,6 +69,7 @@ brew install tor
 brew install transmission-cli
 brew install tree
 brew install uncrustify
+brew install watch
 brew install wget
 brew install xclip
 
