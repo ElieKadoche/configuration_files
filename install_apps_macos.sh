@@ -52,6 +52,7 @@ brew install node
 brew install openjdk
 brew install openssh
 brew install pandoc
+brew install pastel
 brew install prettier
 brew install pwgen
 brew install rsync

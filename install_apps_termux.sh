@@ -48,6 +48,7 @@ pkg install -y nodejs
 pkg install -y opencv-python
 pkg install -y openssh
 pkg install -y openssl-tool
+pkg install -y pastel
 pkg install -y pwgen
 pkg install -y python
 pkg install -y python-numpy
