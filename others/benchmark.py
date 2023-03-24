@@ -5,7 +5,7 @@ import time
 import ray
 
 # Maximum number of workers to test
-NUM_WORKERS = range(1, 30, 5)
+NUM_WORKERS = range(25)
 
 
 @ray.remote
