@@ -455,6 +455,12 @@ vv() {
   [[ -n "$files" ]] && vim "${files[@]}"
 }
 
+# Open files (general)
+oo() {
+  IFS=$'\n' files=($(find . -type f | fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && open "${files[@]}"
+}
+
 # Master git
 # ------------------------------------------
 # ------------------------------------------
