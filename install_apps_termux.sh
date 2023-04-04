@@ -53,6 +53,7 @@ pkg install -y pastel
 pkg install -y pwgen
 pkg install -y python
 pkg install -y python-numpy
+pkg install -y python-pip
 pkg install -y rsync
 pkg install -y ruby
 pkg install -y screen
