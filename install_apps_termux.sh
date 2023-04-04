@@ -28,6 +28,7 @@ MATHLIB="m" pip3 install numpy
 
 echo "Running pkg packages..."
 
+pkg install -y clang
 pkg install -y cmatrix
 pkg install -y e2fsprogs
 pkg install -y ffmpeg
