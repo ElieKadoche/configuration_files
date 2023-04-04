@@ -55,6 +55,7 @@ elif [[ $_SYSTEM = "darwin" ]]; then
     ORIGIN="/Users/$USER/data"
     set termguicolors
 
+    alias sed="gsed";
     alias rmtrash="rm -rf ~/.Trash/*";
     alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
     alias python="python3.10";
