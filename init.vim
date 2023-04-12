@@ -56,7 +56,7 @@ set encoding=utf8
 " Custom colorsheme
 hi Normal guifg=#ffffff guibg=#000000 gui=NONE cterm=NONE
 hi Conceal guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-hi ColorColumn guifg=#ffffff guibg=#191919 gui=NONE cterm=NONE
+hi ColorColumn guifg=#ffffff guibg=#808080 gui=NONE cterm=NONE
 hi QuickFixLine guifg=NONE guibg=NONE gui=bold cterm=bold
 hi Error guifg=NONE guibg=NONE gui=NONE cterm=NONE
 hi FoldColumn guifg=#808080 guibg=NONE gui=bold cterm=NONE
