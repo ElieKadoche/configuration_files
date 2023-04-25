@@ -40,6 +40,7 @@ keras-rl2
 matplotlib
 neat-python
 neovim
+networkx
 nevergrad
 numpy
 open_spiel
