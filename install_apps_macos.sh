@@ -104,6 +104,7 @@ brew install --cask raspberry-pi-imager
 brew install --cask rawtherapee
 brew install --cask rectangle
 brew install --cask sabaki
+brew install --cask skim
 brew install --cask teamviewer
 brew install --cask texstudio
 brew install --cask tor-browser
