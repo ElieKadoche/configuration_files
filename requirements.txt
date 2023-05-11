@@ -84,6 +84,7 @@ shapely
 simplekml
 speedtest-cli
 sphinx
+stable-baselines3
 supersuit
 tensorboard
 tensorboardX
