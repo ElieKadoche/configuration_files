@@ -18,6 +18,7 @@ brew install python@3.10
 
 # Install Brew packages
 brew install bibclean
+brew install box2d
 brew install cgoban
 brew install clang-format
 brew install cmake
@@ -63,6 +64,7 @@ brew install sassc
 brew install scrcpy
 brew install screen
 brew install swi-prolog
+brew install swig
 brew install swig
 brew install tesseract
 brew install tldr
@@ -131,6 +133,8 @@ npm install -g neovim
 pip3.10 install coremltools
 
 # For greenlet
+ARCHFLAGS="-arch arm64" pip3.10 install box2d --compile --no-cache-dir
+ARCHFLAGS="-arch arm64" pip3.10 install box2d-py --compile --no-cache-dir
 ARCHFLAGS="-arch arm64" pip3.10 install greenlet --compile --no-cache-dir
 
 # Change default parameters
