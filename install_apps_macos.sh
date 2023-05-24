@@ -136,6 +136,7 @@ pip3.10 install coremltools
 ARCHFLAGS="-arch arm64" pip3.10 install box2d --compile --no-cache-dir
 ARCHFLAGS="-arch arm64" pip3.10 install box2d-py --compile --no-cache-dir
 ARCHFLAGS="-arch arm64" pip3.10 install greenlet --compile --no-cache-dir
+ARCHFLAGS="-arch arm64" pip3.10 install grpcio --compile --no-cache-dir
 
 # Change default parameters
 defaults write com.apple.finder QuitMenuItem -bool YES
