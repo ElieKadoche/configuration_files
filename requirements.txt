@@ -74,6 +74,7 @@ recommonmark
 regex
 requests
 rich
+ruff
 scikit-image
 scikit-learn
 scikit-optimize
