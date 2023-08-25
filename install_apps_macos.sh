@@ -97,7 +97,10 @@ brew install --cask librecad
 brew install --cask libreoffice
 brew install --cask lmms
 brew install --cask mathpix-snipping-tool
-brew install --cask microsoft-office-businesspro
+brew install --cask microsoft-excel
+brew install --cask microsoft-powerpoint
+brew install --cask microsoft-teams
+brew install --cask microsoft-word
 brew install --cask mpv
 brew install --cask nomachine-enterprise-client
 brew install --cask openmtp
