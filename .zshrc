@@ -299,13 +299,14 @@ clearThumbnails() {
 
 # Master command to compile latex projects (or use latexmk)
 # bibtex / biber: both can be used, depending on how the bibliography is made
+# A different compilator can be used, as pdflatex for example
 compiletex() {
-    pdflatex "$1.tex";
+    lualatex "$1.tex";
     bibtex "$1";
     # biber "$1";
     makeglossaries "$1";
-    pdflatex "$1.tex";
-    pdflatex "$1.tex";
+    lualatex "$1.tex";
+    lualatex "$1.tex";
 }
 
 # Copy folder with progress bar
