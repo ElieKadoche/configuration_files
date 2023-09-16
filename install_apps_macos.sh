@@ -93,6 +93,7 @@ brew install --cask google-earth-pro
 brew install --cask gopanda
 brew install --cask inkscape
 brew install --cask intellij-idea-ce
+brew install --cask keepassxc
 brew install --cask librecad
 brew install --cask libreoffice
 brew install --cask lmms
