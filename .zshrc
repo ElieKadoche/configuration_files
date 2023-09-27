@@ -512,7 +512,6 @@ master_git() {
     _private_git_command $ORIGIN/git_apps $1;
     _private_git_command $ORIGIN/git_apps/0_public $1;
     _private_git_command $ORIGIN/git_apps/1_others $1;
-    _private_git_command $ORIGIN $1;
 
     cd $ORIGIN;
 }
