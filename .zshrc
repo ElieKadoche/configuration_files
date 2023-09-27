@@ -250,29 +250,29 @@ alias vim=nvim;
 # Arguments --> $1 disk name and $2 dry (eventually)
 #
 # On disk
-# rsync -vruh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
+# rsync -vruh --delete --exclude={"git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
 #
 # On disk, with same file system (add links, permissions and executability options)
-# rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
+# rsync -vrulpEh --delete --exclude={"git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/random_backup/data/;
 #
 # From Android to Darwin
-# rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/
+# rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"git_apps/*","life_s_backup/*","miscellaneous_/*"} $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/
 #
 # With IPv6
-# rsync -vruEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
+# rsync -vruEh --delete --exclude={"git_apps/*","life_s_backup/completed/*","life_s_backup/buffering/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" "$_SSH_USER_NAME@[$_SSH_PUBLIC_IP]":~/data/ $ORIGIN/;
 bbb() {
     if [[ "$2" = "dry" ]]; then
         if [[ $_SYSTEM = "android" ]]; then
-            rsync -vruh --dry-run --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+            rsync -vruh --dry-run --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"git_apps/*","life_s_backup/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
         else
-            rsync -vrulpEh --dry-run --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/$1/data/;
+            rsync -vrulpEh --dry-run --delete --exclude={"git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/$1/data/;
         fi
 
     else
         if [[ $_SYSTEM = "android" ]]; then
-            rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"general_files/*","git_apps/*","life_s_backup/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
+            rsync -vruh --delete --iconv=utf-8,utf-8-mac --rsync-path=/opt/homebrew/bin/rsync --exclude={"git_apps/*","life_s_backup/*","miscellaneous_/*"} -e "ssh -p $_SSH_PORT" $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/data/ $ORIGIN/;
         else
-            rsync -vrulpEh --delete --exclude={"general_files/*","git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/$1/data/;
+            rsync -vrulpEh --delete --exclude={"git_apps/*","life_s_backup/completed/*"} $ORIGIN/ /Volumes/$1/data/;
         fi
     fi
 }
@@ -316,7 +316,8 @@ cpr() { rsync --archive --human-readable --info=progress2 $1 $2; }
 csvv() { column -s, -t < $1 | less -#2 -N -S; }
 
 # Find $1 largest files
-duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1; }
+# duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1; }
+duuu() { find . -type f -exec du -h {} + | sort -rh | head -n $1; }
 
 # Fatal kill
 fatalKill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9; }
@@ -606,17 +607,6 @@ master_compile() {
         sudo make CMAKE_BUILD_TYPE=RelWithDebInfo;
         sudo make install;
 
-        # Sabaki
-        printf "${BBlue}\nSabaki${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/Sabaki;
-        npm install;
-        npm run build;
-
-        # scrcpy
-        printf "${BBlue}\nscrcpy${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/scrcpy;
-        ./install_release.sh;
-
         # Katago
         printf "${BBlue}\nKatago${Color_Off}\n\n";
         cd $ORIGIN/git_apps/KataGo/cpp;
@@ -624,15 +614,6 @@ master_compile() {
         cd build;
         cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/local/cuda/include -DCUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so
         make;
-
-        # Droidcam
-        printf "${BBlue}\ndroidcam${Color_Off}\n\n";
-        cd $ORIGIN/git_apps/droidcam;
-        make clean;
-        make droidcam-cli;
-        sudo ./install-client;
-        sudo ./install-video;
-        sudo ./install-sound;
 
         # fzf
         printf "${BBlue}\nfzf${Color_Off}\n\n";
