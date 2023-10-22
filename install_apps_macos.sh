@@ -84,7 +84,6 @@ brew install --cask balenaetcher
 brew install --cask blender
 brew install --cask calibre
 brew install --cask cloudcompare
-brew install --cask cyberduck
 brew install --cask discord
 brew install --cask firefox
 brew install --cask gimp
