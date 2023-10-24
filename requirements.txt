@@ -37,6 +37,7 @@ isort
 jupyter
 kaleido
 keras-rl2
+manim
 matplotlib
 neat-python
 neovim
