@@ -11,7 +11,6 @@ General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Term
 
 - Dark Reader.
 - Firefox Color.
-- GNOME Shell integration.
 - Google Scholar Button.
 - HTTPS Everywhere.
 - LessPass.
