@@ -215,7 +215,7 @@ alias l="ls --all --author --color=auto --group-directories-first --human-readab
 alias ll="ls -1 -a -v --group-directories-first";
 
 # Open Firefox with default websites
-alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,phd/telecomparis/zimbra.html,google/calendar.html,google/contacts.html,google/scholar.html,news/lemonde.html} > /dev/null 2>&1 &; disown";
+alias fff="nohup firefox $ORIGIN/internet/{google/mail.html,administrative/phd/telecomparis/zimbra.html,google/calendar.html,google/contacts.html,google/scholar.html,resources/news/lemonde.html} > /dev/null 2>&1 &; disown";
 
 # Display markdown files in terminal
 alias mdd="python -m rich.markdown";
