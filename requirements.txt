@@ -64,7 +64,6 @@ pycodestyle
 pydocstyle
 pygame
 pygments
-pyomo
 PyYAML
 py_wake
 pyinstaller
