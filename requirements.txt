@@ -95,6 +95,7 @@ tensorflow-probability
 tinydb
 topfarm
 torch
+torch_geometric
 torchattacks
 torchsummary
 torchvision
