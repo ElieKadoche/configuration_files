@@ -30,7 +30,6 @@ call plug#end()
 
 " Syntax
 " ------------------------------------------
-" ------------------------------------------
 
 syntax on
 syntax enable
@@ -45,7 +44,6 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 autocmd FileType python set colorcolumn=79
 
 " Colors
-" ------------------------------------------
 " ------------------------------------------
 
 " General parameters
@@ -118,7 +116,6 @@ endif
 
 " ALE
 " ------------------------------------------
-" ------------------------------------------
 
 let g:ale_linters = {
 \    'bib': ['bibclean'],
@@ -148,7 +145,6 @@ let g:ale_sign_warning='--'
 
 " Buffers
 " ------------------------------------------
-" ------------------------------------------
 
 set hidden
 let no_buffers_menu=1
@@ -161,7 +157,6 @@ nnoremap <C-l> <C-W>l
 
 " coc.vim
 " ------------------------------------------
-" ------------------------------------------
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience
@@ -169,13 +164,11 @@ set updatetime=300
 
 " csv.vim
 " ------------------------------------------
-" ------------------------------------------
 
 " Highlight column
 let g:csv_highlight_column='y'
 
 " ctrlp
-" ------------------------------------------
 " ------------------------------------------
 
 let g:ctrlp_match_window='bottom,order:ttb'
@@ -186,18 +179,15 @@ let g:ctrlp_max_depth=40
 
 " Font
 " ------------------------------------------
-" ------------------------------------------
 
 set guifont=Fira\ Code\ Retina:h10
 
 " indentLine
 " ------------------------------------------
-" ------------------------------------------
 
 let g:indentLine_char_list=['|', '¦', '┆', '┊']
 
 " lightline
-" ------------------------------------------
 " ------------------------------------------
 
 let g:lightline = {
@@ -223,13 +213,11 @@ endfunction
 
 " LaTeX
 " ------------------------------------------
-" ------------------------------------------
 
 let g:tex_flavor='latex'
 let g:vimtex_view_method = 'skim'
 
 " Leader
-" ------------------------------------------
 " ------------------------------------------
 
 let mapleader=','
@@ -262,13 +250,11 @@ nnoremap <leader>x :BD<CR>
 
 " lens.vim
 " ------------------------------------------
-" ------------------------------------------
 
 " Disable animations
 let g:lens#animate = 0
 
 " NERDTree
-" ------------------------------------------
 " ------------------------------------------
 
 " No statusline
@@ -278,7 +264,6 @@ let g:NERDTreeStatusline = '%#NonText#'
 autocmd VimEnter * if !argc() | NERDTree | endif
 
 " nvim-treesitter
-" ------------------------------------------
 " ------------------------------------------
 
 " Consistent syntax highlighting
@@ -325,12 +310,10 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " Rainbow
 " ------------------------------------------
-" ------------------------------------------
 
 let g:rainbow_active=1 " Set to 0 if you want to enable it later via :RainbowToggle
 
 " Undo
-" ------------------------------------------
 " ------------------------------------------
 
 " Turn persistent undo on means that you can undo even when you close a buffer/VIM
@@ -342,12 +325,10 @@ endtry
 
 " vim-snippets
 " ------------------------------------------
-" ------------------------------------------
 
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'custom_snippets']
 
 " YCM and UltiSnips
-" ------------------------------------------
 " ------------------------------------------
 
 let g:ycm_autoclose_preview_window_after_completion=1
