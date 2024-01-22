@@ -101,6 +101,7 @@ brew install --cask microsoft-word
 brew install --cask mpv
 brew install --cask nomachine-enterprise-client
 brew install --cask openmtp
+brew install --cask paraview
 brew install --cask pycharm-ce
 brew install --cask rawtherapee
 brew install --cask rectangle
