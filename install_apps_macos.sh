@@ -80,10 +80,8 @@ brew install xclip
 # Install Brew cask packages
 brew install --cask adobe-acrobat-reader
 brew install --cask audacity
-brew install --cask balenaetcher
 brew install --cask blender
 brew install --cask calibre
-brew install --cask cloudcompare
 brew install --cask discord
 brew install --cask firefox
 brew install --cask gimp
@@ -93,15 +91,11 @@ brew install --cask gopanda
 brew install --cask inkscape
 brew install --cask keepassxc
 brew install --cask libreoffice
-brew install --cask lmms
 brew install --cask microsoft-excel
 brew install --cask microsoft-powerpoint
 brew install --cask microsoft-teams
 brew install --cask microsoft-word
 brew install --cask mpv
-brew install --cask nomachine-enterprise-client
-brew install --cask openmtp
-brew install --cask paraview
 brew install --cask pycharm-ce
 brew install --cask rawtherapee
 brew install --cask rectangle

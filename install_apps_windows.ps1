@@ -12,7 +12,6 @@ choco install 7zip
 choco install adobereader
 choco install audacity
 choco install blender
-choco install cinebench
 choco install cmake --installargs 'ADD_CMAKE_TO_PATH=User'
 choco install discord
 choco install epicgameslauncher
@@ -28,7 +27,6 @@ choco install googleearthpro
 choco install hwinfo
 choco install hwmonitor
 choco install inkscape
-choco install intellijidea-community
 choco install libreoffice-fresh
 choco install miktex
 choco install mingw
@@ -43,7 +41,6 @@ choco install pycharm-community
 choco install python
 choco install python --version=3.8.0 --side-by-side
 choco install rawtherapee
-choco install scrcpy
 choco install sshfs
 choco install steam
 choco install strawberryperl

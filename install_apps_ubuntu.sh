@@ -63,7 +63,6 @@ sudo apt -y install calibre
 sudo apt -y install clang
 sudo apt -y install clang-format
 sudo apt -y install clinfo
-sudo apt -y install cloudcompare
 sudo apt -y install cmatrix
 sudo apt -y install dconf-editor
 sudo apt -y install djvulibre-bin
@@ -97,7 +96,6 @@ sudo apt -y install libtiff-tools
 sudo apt -y install libusb-1.0-0-dev
 sudo apt -y install libzip-dev
 sudo apt -y install lm-sensors
-sudo apt -y install lmms
 sudo apt -y install lynx
 sudo apt -y install meson
 sudo apt -y install mpv
@@ -124,7 +122,6 @@ sudo apt -y install ruby-full
 sudo apt -y install sassc
 sudo apt -y install sshfs
 sudo apt -y install sumo
-sudo apt -y install swi-prolog
 sudo apt -y install swig
 sudo apt -y install tesseract-ocr
 sudo apt -y install tesseract-ocr-fra
@@ -151,13 +148,6 @@ echo "Other packages..."
 sudo add-apt-repository ppa:inkscape.dev/stable
 sudo apt update
 sudo apt -y install inkscape
-
-# openrazer
-sudo add-apt-repository -y ppa:openrazer/stable
-sudo add-apt-repository -y ppa:polychromatic/stable
-sudo apt update
-sudo apt -y install openrazer-meta
-sudo apt -y install polychromatic
 
 # Other Python versions
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -243,11 +233,8 @@ sudo systemctl restart docker
 echo "Running snap packages..."
 
 sudo snap install discord
-sudo snap install intellij-idea-community --classic
-sudo snap install mathpix-snipping-tool
 sudo snap install pick-colour-picker
 sudo snap install pycharm-community --classic
-sudo snap install rpi-imager
 
 # Others
 # ------------------------------------------
