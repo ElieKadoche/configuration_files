@@ -59,7 +59,8 @@ hi QuickFixLine guifg=NONE guibg=NONE gui=bold cterm=bold
 hi Error guifg=NONE guibg=NONE gui=NONE cterm=NONE
 hi FoldColumn guifg=#808080 guibg=NONE gui=bold cterm=NONE
 hi Folded guifg=#808080 guibg=NONE gui=bold cterm=NONE
-hi IncSearch guifg=#ff0000 guibg=#0030ff gui=reverse cterm=reverse
+hi IncSearch guifg=#ff00ff guibg=#ffffff gui=reverse cterm=reverse
+hi CurSearch guifg=#ff00ff guibg=#ffffff gui=reverse cterm=reverse
 hi LineNr guifg=#ff0000 guibg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=NONE guibg=NONE gui=reverse ctermfg=NONE ctermbg=NONE cterm=reverse
 hi ModeMsg guifg=#90fff0 guibg=NONE gui=NONE cterm=NONE
