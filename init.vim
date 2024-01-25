@@ -62,6 +62,7 @@ hi Identifier guifg=#00ffff guibg=NONE gui=NONE cterm=NONE
 hi IncSearch guifg=#ff00ff guibg=#ffffff gui=reverse cterm=reverse
 hi LineNr guifg=#00ff00 guibg=NONE gui=NONE cterm=NONE
 hi Normal guifg=#ffffff guibg=#000000 gui=NONE cterm=NONE
+hi Pmenu guifg=#ffffff guibg=#191919 gui=NONE cterm=NONE
 hi Search guifg=#000000 guibg=#ff00ff gui=NONE cterm=NONE
 hi SignColumn guifg=#000000 guibg=NONE gui=NONE cterm=NONE
 hi Statement guifg=#ffff00 guibg=NONE gui=NONE cterm=NONE
