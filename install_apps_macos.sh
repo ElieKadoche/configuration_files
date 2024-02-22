@@ -28,7 +28,6 @@ brew install curl
 brew install docker
 brew install dos2unix
 brew install ffmpeg
-brew install ffmpegthumbnailer
 brew install fzf
 brew install gcc
 brew install ghostscript
