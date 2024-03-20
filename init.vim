@@ -83,16 +83,17 @@ let g:ale_linters = {
 \    'bib': ['bibclean'],
 \    'cpp': ['clang'],
 \    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
-\    'tex': ['lacheck'],
+\    'tex': ['lacheck', 'texlab'],
 \}
 
 " Eventually 'markdown': ['prettier']
+" Eventually 'tex': ['latexindent']
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'bib': ['bibclean'],
 \    'cpp': ['uncrustify', 'clang-format'],
 \    'python': ['isort', 'autopep8'],
-\    'tex': ['latexindent'],
+\    'tex': ['textlint'],
 \}
 
 let g:airline#extensions#ale#enabled=1
