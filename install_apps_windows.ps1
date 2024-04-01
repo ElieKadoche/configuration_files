@@ -44,7 +44,6 @@ choco install rawtherapee
 choco install sshfs
 choco install steam
 choco install strawberryperl
-choco install teamviewer
 choco install tor-browser
 choco install transmission
 choco install youtube-dl

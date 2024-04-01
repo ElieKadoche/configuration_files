@@ -274,7 +274,7 @@ cp others/ssh_notifier.py ~/ssh_notifier
 # Install https://github.com/libjpeg-turbo/libjpeg-turbo/releases/
 # Install https://github.com/textext/textext/releases, then python setup.py
 # Install https://gitlab.com/CalcProgrammer1/OpenRGB/-/releases
-# Install CGoban, Source-Sans-Pro, GoPanda, TeamViewer, Google Earth, Google Chrome
+# Install CGoban, Source-Sans-Pro, GoPanda, Google Earth, Google Chrome
 # Remove plymouth: [sudo vim /etc/default/grub] nomodeset
 
 # Extensions
