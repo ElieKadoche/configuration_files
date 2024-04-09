@@ -21,6 +21,7 @@ easyocr
 emoji
 flake8
 floris
+geopandas
 glances[all]
 google-api-python-client
 google-auth-httplib2
