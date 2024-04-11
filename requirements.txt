@@ -89,6 +89,7 @@ speedtest-cli
 sphinx
 spotdl
 stable-baselines3
+statsmodels
 supersuit
 tensorboard
 tensorboardX
