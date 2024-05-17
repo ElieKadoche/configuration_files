@@ -8,6 +8,7 @@ Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 " Android only
 " Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
 
+Plug 'https://github.com/Mofiqul/dracula.nvim.git'
 Plug 'https://github.com/SirVer/ultisnips.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/ap/vim-buftabline.git'
@@ -52,24 +53,8 @@ set background=dark
 set encoding=utf8
 
 " Custom colorsheme
-hi Comment guifg=#808080 guibg=NONE gui=NONE cterm=NONE
-hi Constant guifg=#00ff00 guibg=NONE gui=NONE cterm=NONE
-hi CurSearch guifg=#ff00ff guibg=#ffffff gui=reverse cterm=reverse
-hi DiffAdd guifg=#000000 guibg=#00ff00 gui=NONE cterm=NONE
-hi DiffDelete guifg=#000000 guibg=#ff0000 gui=NONE cterm=NONE
-hi Error guifg=NONE guibg=NONE gui=NONE cterm=NONE
-hi Identifier guifg=#00ffff guibg=NONE gui=NONE cterm=NONE
-hi IncSearch guifg=#ff00ff guibg=#ffffff gui=reverse cterm=reverse
-hi LineNr guifg=#00ff00 guibg=NONE gui=NONE cterm=NONE
-hi Normal guifg=#ffffff guibg=#000000 gui=NONE cterm=NONE
-hi Pmenu guifg=#ffffff guibg=#191919 gui=NONE cterm=NONE
-hi Search guifg=#000000 guibg=#ff00ff gui=NONE cterm=NONE
-hi SignColumn guifg=#000000 guibg=NONE gui=NONE cterm=NONE
-hi Statement guifg=#ffff00 guibg=NONE gui=NONE cterm=NONE
-hi Title guifg=#ff0000 guibg=NONE gui=NONE cterm=NONE
-hi Underlined guifg=#80a0ff guibg=NONE gui=underline cterm=underline
-hi Visual guifg=#00ff00 guibg=#000000 gui=reverse cterm=reverse
-hi WarningMsg guifg=#ff0000 guibg=NONE gui=NONE cterm=NONE
+colorscheme dracula
+highlight Normal ctermbg=none ctermfg=white guibg=none guifg=#ffffff
 
 " Set extra options when running in GUI mode
 if has('gui_running')
