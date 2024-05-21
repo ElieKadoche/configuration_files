@@ -49,6 +49,7 @@ open_spiel
 opencv-python
 openmdao
 openpyxl
+openturns
 optuna
 pandas
 pettingzoo[all]
