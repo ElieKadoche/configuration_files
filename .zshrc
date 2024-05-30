@@ -67,7 +67,7 @@ elif [[ $_SYSTEM = "darwin" ]]; then
 fi
 
 # Custom prompt
-PROMPT="%F{red}%n%B%F{yellow}%m%b%f%f%F{green}[%f%F{cyan}%D%f%F{blue}--%f%F{cyan}%T%f%F{green}]%F{magenta}%~%f%F{green}$%f";
+PROMPT="%B%K{236}%F{magenta}%n%f%k%b%K{236}@%k%B%K{236}%F{magenta}%m%f%k%b%K{236}[%k%K{236}%F{magenta}%D%f%k%K{236}%F{magenta}-%f%k%K{236}%F{magenta}%D{%I:%M%p}%f%k%K{236}]%k%F{blue}%~%B%F{green}$%f%b"
 
 # gems
 export GEM_HOME="$HOME/gems"
