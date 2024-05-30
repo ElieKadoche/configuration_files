@@ -102,6 +102,13 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
+" Automatically resize splits
+augroup AutoResizeSplits
+  autocmd!
+  autocmd BufWinEnter,WinEnter,WinNew,VimResized  * if &filetype !=# 'nerdtree' | set winwidth=87 | endif
+  autocmd BufWinEnter,WinEnter,WinNew,VimResized * if &filetype !=# 'nerdtree' | wincmd = | endif
+augroup END
+
 " coc.vim
 " ------------------------------------------
 
