@@ -314,11 +314,11 @@ compiletex() {
 countdown() {
     countdown=$1;
     while [ $countdown -gt 0 ]; do
-        echo -ne "\r$countdown";
+        echo -ne "\r--> $countdown <-- ";
         countdown=$((countdown - 1));
         sleep 1;
     done
-    echo -ne "\r0\n";
+    echo -ne "\r--> 0 <-- \n";
 }
 
 # Copy folder with progress bar
