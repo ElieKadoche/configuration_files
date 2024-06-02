@@ -310,6 +310,17 @@ compiletex() {
     lualatex "$1.tex";
 }
 
+# Countdown function, argument is in seconds
+countdown() {
+    countdown=$1;
+    while [ $countdown -gt 0 ]; do
+        echo -ne "\r$countdown";
+        countdown=$((countdown - 1));
+        sleep 1;
+    done
+    echo -ne "\r0\n";
+}
+
 # Copy folder with progress bar
 cpr() { rsync --archive --human-readable --info=progress2 $1 $2; }
 
