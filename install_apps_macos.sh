@@ -81,6 +81,7 @@ brew install --cask adobe-acrobat-reader
 brew install --cask audacity
 brew install --cask blender
 brew install --cask calibre
+brew install --cask chatgpt
 brew install --cask discord
 brew install --cask firefox
 brew install --cask gimp
