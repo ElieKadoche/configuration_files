@@ -72,7 +72,7 @@ pyinstaller
 pytest
 pytorch_forecasting
 pytorchcv
-ray[default,rllib,tune]
+ray[all]
 recommonmark
 regex
 requests
