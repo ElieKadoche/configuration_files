@@ -69,6 +69,7 @@ let g:ale_linters = {
 \    'cpp': ['clang'],
 \    'python': ['bandit', 'pycodestyle', 'pydocstyle', 'flake8'],
 \    'tex': ['lacheck', 'texlab'],
+\    'text': ['languagetool'],
 \}
 
 " Eventually 'markdown': ['prettier']
@@ -78,6 +79,11 @@ let g:ale_fixers = {
 \    'cpp': ['uncrustify', 'clang-format'],
 \    'python': ['isort', 'autopep8'],
 \    'tex': ['textlint', 'latexindent'],
+\}
+
+" Ignore languagetool
+let g:ale_linters_ignore = {
+\   'markdown': ['languagetool'],
 \}
 
 let g:airline#extensions#ale#enabled=1
