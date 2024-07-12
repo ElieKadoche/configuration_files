@@ -40,6 +40,7 @@ brew install htop
 brew install imagemagick
 brew install jpeg-turbo
 brew install katago
+brew install languagetool
 brew install latexindent
 brew install leela-zero
 brew install lua
