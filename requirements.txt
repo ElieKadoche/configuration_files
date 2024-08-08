@@ -105,6 +105,7 @@ torchsummary
 torchvision
 tqdm
 twine
+ultralytics
 virtualenv
 windrose
 xlrd
