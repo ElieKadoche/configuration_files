@@ -412,7 +412,7 @@ alias ssh0="ssh $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
 alias sshF="sshfs $_SSH_USER_NAME@$_SSH_PUBLIC_IP: -p $_SSH_PORT ssh_folder";
 alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
 sshL() { ssh -L 16006:127.0.0.1:$1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT; }
-scpp() { scp -r -P $_SSH_PORT $1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/Downloads; }
+scpp() { scp -r -p -P $_SSH_PORT $1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/Downloads; }
 
 # Functions to download videos (format index, link): youtube-dl and yt-dl (much better)
 _yyy() { youtube-dl --verbose --output "%(title)s.mp3" $2 -f $1 -x --audio-format "mp3" --rm-cache-dir; }
