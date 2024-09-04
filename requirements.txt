@@ -28,8 +28,8 @@ google-auth-httplib2
 google-auth-oauthlib
 graphviz
 grip
-gym[all]
-gymnasium[all]
+gym
+gymnasium
 humanize
 hyperopt
 imgaug
@@ -52,7 +52,7 @@ openpyxl
 openturns
 optuna
 pandas
-pettingzoo[all]
+pettingzoo
 Pillow
 pip-review
 pipdeptree
