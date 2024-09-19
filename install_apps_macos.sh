@@ -98,7 +98,6 @@ brew install --cask microsoft-word
 brew install --cask mpv
 brew install --cask pycharm-ce
 brew install --cask rawtherapee
-brew install --cask rectangle
 brew install --cask sabaki
 brew install --cask skim
 brew install --cask texstudio
