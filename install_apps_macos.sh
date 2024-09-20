@@ -88,10 +88,8 @@ brew install --cask gopanda
 brew install --cask inkscape
 brew install --cask keepassxc
 brew install --cask libreoffice
-brew install --cask microsoft-excel
 brew install --cask microsoft-powerpoint
 brew install --cask microsoft-teams
-brew install --cask microsoft-word
 brew install --cask mpv
 brew install --cask rawtherapee
 brew install --cask sabaki
