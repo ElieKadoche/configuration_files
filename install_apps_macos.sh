@@ -47,7 +47,6 @@ brew install lua
 brew install lynx
 brew install meson
 brew install ncdu
-brew install neofetch
 brew install neovim
 brew install nmap
 brew install node
