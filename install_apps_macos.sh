@@ -78,6 +78,7 @@ brew install xclip
 
 # Install Brew cask packages
 brew install --cask adobe-acrobat-reader
+brew install --cask audacity
 brew install --cask calibre
 brew install --cask discord
 brew install --cask firefox
