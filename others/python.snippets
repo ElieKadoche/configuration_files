@@ -3,6 +3,12 @@ import ipdb
 ipdb.set_trace(context=$1)
 endsnippet
 
+snippet log "log_options" b
+rich.traceback.install(show_locals=False, word_wrap=True)
+np.set_printoptions(precision=3, linewidth=200, suppress=True)
+torch.set_printoptions(precision=3, linewidth=200)
+endsnippet
+
 snippet main "script_main" b
 if __name__ == "__main__":
 endsnippet
