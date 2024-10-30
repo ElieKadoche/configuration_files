@@ -4,7 +4,8 @@ ipdb.set_trace(context=$1)
 endsnippet
 
 snippet log "log_options" b
-rich.traceback.install(show_locals=False, word_wrap=True)
+from rich.traceback import install
+install(show_locals=False, word_wrap=True)
 np.set_printoptions(precision=3, linewidth=200, suppress=True)
 torch.set_printoptions(precision=3, linewidth=200)
 endsnippet
