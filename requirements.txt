@@ -101,7 +101,7 @@ topfarm
 torch
 torch_geometric
 torchattacks
-torchsummary
+torchinfo
 torchvision
 tqdm
 twine
