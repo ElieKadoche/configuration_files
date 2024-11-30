@@ -14,8 +14,6 @@ General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Term
 - Google Scholar Button.
 - HTTPS Everywhere.
 - LessPass.
-- Markdown Here.
-- Popup Blocker (strict).
 - uBlock Origin.
 
 ## KataGo
