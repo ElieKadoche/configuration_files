@@ -104,6 +104,10 @@ brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 brew install --cask font-source-sans-pro
 
+# Install filebrowser
+brew tap filebrowser/tap
+brew install filebrowser
+
 # LaTeX
 # brew install texlive
 brew install --cask mactex
