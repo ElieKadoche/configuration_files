@@ -132,4 +132,5 @@ defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g QLPanelAnimationDuration -float 0
 
 # Others
-# Install https://github.com/textext/textext/releases, then python setup.py
+# Install https://github.com/textext/textext/releases
+# python setup.py --pdflatex-executable=$(which pdflatex) --skip-requirements-check
