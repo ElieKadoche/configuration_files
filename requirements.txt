@@ -42,9 +42,12 @@ manim
 matplotlib
 neat-python
 neovim
+Pillow
 networkx
 nevergrad
 numpy
+onnx
+onnxscript
 open_spiel
 opencv-python
 openmdao
@@ -53,7 +56,6 @@ openturns
 optuna
 pandas
 pettingzoo
-Pillow
 pip-review
 pipdeptree
 plotly
