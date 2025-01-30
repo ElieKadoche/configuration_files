@@ -10,6 +10,10 @@ np.set_printoptions(precision=3, linewidth=200, suppress=True)
 torch.set_printoptions(precision=3, linewidth=200)
 endsnippet
 
+snippet main "main" b
+if __name__ == "__main__":
+endsnippet
+
 snippet plot "plot" b
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,6 +25,13 @@ plt.legend()
 plt.show()
 endsnippet
 
-snippet main "main" b
-if __name__ == "__main__":
+snippet wind "wind" b
+import numpy as np
+import pandas as pd
+nd = 360
+wd = np.linspace(0.0, 360.0, nd, endpoint=False, dtype=np.float32)
+ws = np.full((nd+1,), 8.0, dtype=np.float32)
+wd = np.insert(wd, -1, wd[-1])
+df_wd = pd.DataFrame(dict(wd=wd, ws=ws, wt=np.full((nd+1,), 0.06)))
+df_wd.to_csv("./wind_data.csv", sep=",", index=False)
 endsnippet
