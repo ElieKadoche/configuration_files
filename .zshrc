@@ -369,6 +369,11 @@ meteo() {
     curl v2.wttr.in/paris;
 }
 
+# Convert PDF file to EPS file
+pdf2eps() {
+    gs -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=eps2write -sOutputFile=$1.eps $1.pdf;
+}
+
 # Create a password of size $1
 pwgenn() { pwgen -cny --secure $1 1 | pbcopy; }
 
