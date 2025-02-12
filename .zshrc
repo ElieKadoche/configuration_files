@@ -297,7 +297,7 @@ clearThumbnails() {
     find . -name ".Thumbnails" -ls -exec rm -rf "{}" \;
 }
 
-# Master command to compile latex projects (or use latexmk)
+# Main command to compile latex projects (or use latexmk)
 # bibtex / biber: both can be used, depending on how the bibliography is made
 # A different compilator can be used, as pdflatex for example
 compiletex() {
@@ -481,7 +481,7 @@ oo() {
   [[ -n "$files" ]] && open "${files[@]}"
 }
 
-# Master git
+# Main git
 # ------------------------------------------
 # ------------------------------------------
 
@@ -521,9 +521,9 @@ _removeGithistory() {
 }
 
 # Argument is the command to execute (status, pull, etc.)
-master_git() {
+main_git() {
     printf "\n${BPurple}------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MASTER GIT ---------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MAIN GIT ---------------------${Color_Off}\n";
     printf "${BPurple}------------------------------------------------------${Color_Off}\n\n";
 
     _private_git_command $ORIGIN/git_apps $1;
@@ -533,13 +533,13 @@ master_git() {
     cd $ORIGIN;
 }
 
-# Master update
+# Main update
 # ------------------------------------------
 # ------------------------------------------
 
-master_update() {
+main_update() {
     printf "\n${BPurple}---------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MASTER UPDATE ---------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MAIN UPDATE ---------------------${Color_Off}\n";
     printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
@@ -599,13 +599,13 @@ master_update() {
     vim tmp.tex +"CocUpdate" +qa;
 }
 
-# Master compile
+# Main compile
 # ------------------------------------------
 # ------------------------------------------
 
-master_compile() {
+main_compile() {
     printf "\n${BPurple}----------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MASTER COMPILE ---------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MAIN COMPILE ---------------------${Color_Off}\n";
     printf "${BPurple}----------------------------------------------------------${Color_Off}\n\n";
 
     # Lesspass
@@ -640,13 +640,13 @@ master_compile() {
     cd $ORIGIN;
 }
 
-# Master clean
+# Main clean
 # ------------------------------------------
 # ------------------------------------------
 
-master_clean() {
+main_clean() {
     printf "\n${BPurple}--------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MASTER CLEAN ---------------------${Color_Off}\n";
+    printf "${BPurple}--------------------- MAIN CLEAN ---------------------${Color_Off}\n";
     printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
@@ -695,16 +695,16 @@ master_clean() {
     vim +"PlugClean" +qa;
 }
 
-# Master all
+# Main all
 # ------------------------------------------
 # ------------------------------------------
 
-master_all() {
-    master_git pull;
-    master_git status;
-    master_update;
-    master_compile;
-    master_clean;
+main_all() {
+    main_git pull;
+    main_git status;
+    main_update;
+    main_compile;
+    main_clean;
     omz update;
 
     if [[ $_SYSTEM = "linux" ]]; then
