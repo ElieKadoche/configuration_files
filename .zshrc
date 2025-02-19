@@ -523,7 +523,7 @@ _removeGithistory() {
 # Argument is the command to execute (status, pull, etc.)
 main_git() {
     printf "\n${BPurple}------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MAIN GIT ---------------------${Color_Off}\n";
+    printf "${BPurple}---------------------- MAIN GIT ----------------------${Color_Off}\n";
     printf "${BPurple}------------------------------------------------------${Color_Off}\n\n";
 
     _private_git_command $ORIGIN/git_apps $1;
@@ -539,7 +539,7 @@ main_git() {
 
 main_update() {
     printf "\n${BPurple}---------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MAIN UPDATE ---------------------${Color_Off}\n";
+    printf "${BPurple}---------------------- MAIN UPDATE ----------------------${Color_Off}\n";
     printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
@@ -605,7 +605,7 @@ main_update() {
 
 main_compile() {
     printf "\n${BPurple}----------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MAIN COMPILE ---------------------${Color_Off}\n";
+    printf "${BPurple}---------------------- MAIN COMPILE ----------------------${Color_Off}\n";
     printf "${BPurple}----------------------------------------------------------${Color_Off}\n\n";
 
     # Lesspass
@@ -646,7 +646,7 @@ main_compile() {
 
 main_clean() {
     printf "\n${BPurple}--------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}--------------------- MAIN CLEAN ---------------------${Color_Off}\n";
+    printf "${BPurple}---------------0------ MAIN CLEAN ----------------------${Color_Off}\n";
     printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
