@@ -26,21 +26,8 @@ Engines configuration (local).
 Use absolute paths for executables.
 
 ```shell
-<path_to_leelazero_executable>
---gtp --noponder -w <neural_net_path>
-
 <path_to_katago_executable>
 gtp -model <neural_net_path> -config <config_path>
-```
-
-Engines configuration (remote).
-
-```shell
-ssh
--t <user>@<ip> -p <port> <path_to_leelazero_executable> --gtp --noponder -w <neural_net_path>
-
-ssh
--t <user>@<ip> -p <port> <path_to_katago_executable> gtp -model <neural_net_path> -config <config_path>
 ```
 
 ## SSH
