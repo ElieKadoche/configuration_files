@@ -79,7 +79,6 @@ sudo apt -y install gnome-tweak-tool
 sudo apt -y install graphviz
 sudo apt -y install hardinfo
 sudo apt -y install imagemagick
-sudo apt -y install leela-zero
 sudo apt -y install libavdevice-dev
 sudo apt -y install libavformat-dev
 sudo apt -y install libboost-all-dev

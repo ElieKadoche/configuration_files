@@ -42,7 +42,6 @@ brew install jpeg-turbo
 brew install katago
 brew install languagetool
 brew install latexindent
-brew install leela-zero
 brew install lua
 brew install lynx
 brew install meson
