@@ -527,7 +527,7 @@ main_git() {
     printf "${BPurple}------------------------------------------------------${Color_Off}\n\n";
 
     _private_git_command $ORIGIN/git_apps $1;
-    _private_git_command $ORIGIN/git_apps/0_public $1;
+    _private_git_command $ORIGIN/git_apps/_custom $1;
 
     cd $ORIGIN;
 }
