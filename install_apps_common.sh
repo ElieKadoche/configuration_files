@@ -37,10 +37,12 @@ echo "Configuring neovim..."
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 
+# To compile YouCompleteMe
+cd ~/.config/nvim/plugged/YouCompleteMe
+python install.py --all
+
 # Neovim specific syntax
 mkdir ~/.config/nvim/syntax
-cp others/cypher.vim ~/.config/nvim/syntax/cypher.vim
-cp others/sparql.vim ~/.config/nvim/syntax/sparql.vim
 cp others/log.vim ~/.config/nvim/syntax/log.vim
 
 # Neovim custom snippets
