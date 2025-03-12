@@ -10,10 +10,8 @@ General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Term
 ## Firefox extensions
 
 - Dark Reader.
-- Firefox Color.
-- HTTPS Everywhere.
-- LessPass.
 - uBlock Origin.
+- LessPass.
 
 ## KataGo
 
