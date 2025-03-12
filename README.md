@@ -11,7 +11,6 @@ General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Term
 
 - Dark Reader.
 - Firefox Color.
-- Google Scholar Button.
 - HTTPS Everywhere.
 - LessPass.
 - uBlock Origin.
@@ -21,9 +20,6 @@ General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Term
 Run the benchmark function to get the best parameters.
 
 ## Sabaki
-
-Engines configuration (local).
-Use absolute paths for executables.
 
 ```shell
 <path_to_katago_executable>
