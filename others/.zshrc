@@ -641,7 +641,7 @@ main_compile() {
 
 main_clean() {
     printf "\n${BPurple}--------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}---------------0------ MAIN CLEAN ----------------------${Color_Off}\n";
+    printf "${BPurple}---------------------- MAIN CLEAN ----------------------${Color_Off}\n";
     printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
