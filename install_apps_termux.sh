@@ -40,6 +40,7 @@ pkg install -y iproute2
 pkg install -y libxml2
 pkg install -y libxslt
 pkg install -y libzmq
+pkg install -y lua-language-server
 pkg install -y matplotlib
 pkg install -y mpv
 pkg install -y neofetch
@@ -57,6 +58,7 @@ pkg install -y python-pip
 pkg install -y rsync
 pkg install -y ruby
 pkg install -y screen
+pkg install -y stylua
 pkg install -y termux-api
 pkg install -y tesseract
 pkg install -y tmux
