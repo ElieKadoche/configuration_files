@@ -3,6 +3,7 @@ atari-py
 autokeras
 autopep8
 bandit
+basedpyright
 box2d.py
 bpytop
 build

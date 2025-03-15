@@ -31,41 +31,9 @@ git config --global credential.helper store
 
 echo "Configuring neovim..."
 
-# For Termux only
-# Change custom init.vim
-# Comment the YouCompleteMe Plug line
+# Configuration
 mkdir ~/.config/nvim
-cp init.vim ~/.config/nvim/init.vim
-
-# To compile YouCompleteMe
-cd ~/.config/nvim/plugged/YouCompleteMe
-python install.py --all
-
-# Neovim specific syntax
-mkdir ~/.config/nvim/syntax
-cp others/log.vim ~/.config/nvim/syntax/log.vim
-
-# Neovim custom snippets
-mkdir ~/.config/nvim/custom_snippets
-cp others/all.snippets ~/.config/nvim/custom_snippets/all.snippets
-cp others/python.snippets ~/.config/nvim/custom_snippets/python.snippets
-
-# Install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# Install plugins
-nvim +"PlugInstall" +qa;
-
-# On Ubuntu, I use coc.nvim only for TEX and YAML files
-nvim tmp.tex +"CocInstall coc-texlab" +qa;
-nvim tmp.yml +"CocInstall coc-yaml" +qa;
-
-# For Termux only
-nvim tmp +"CocInstall coc-pyright" +qa;
-
-# nvim-treesitter languages
-nvim tmp +"TSInstall bash bibtex cpp html javascript json latex python yaml" +qa;
+cp init.lua ~/.config/nvim/init.lua
 
 # Python packages
 # ------------------------------------------

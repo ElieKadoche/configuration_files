@@ -1,5 +1,8 @@
 # configuration_files
 
+:Lazy sync
+:Mason
+
 General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Termux).
 
 - `init.vim`: neovim configuration.

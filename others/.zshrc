@@ -67,7 +67,7 @@ elif [[ $_SYSTEM = "darwin" ]]; then
 fi
 
 # Custom prompt
-PROMPT="%B%K{236}%F{magenta}%n%f%k%b%K{236}@%k%B%K{236}%F{magenta}%m%f%k%b%K{236}[%k%K{236}%F{magenta}%D%f%k%K{236}%F{magenta}-%f%k%K{236}%F{magenta}%D{%I:%M%p}%f%k%K{236}]%k%F{blue}%~%B%F{green}$%f%b"
+PROMPT='%F{red}%m@%n[%D|%t]%F{blue}(%~)%f%F{red}$%f'
 
 # gems
 export GEM_HOME="$HOME/gems"
@@ -586,16 +586,12 @@ main_update() {
 
     # Neovim
     printf "${BBlue}\nneovim${Color_Off}\n\n";
-    vim +"PlugUpgrade" +qa;
-    vim +"PlugUpdate" +qa;
-    vim +"PlugInstall" +qa;
-    vim +"TSUpdate" +qa;
+    nvim --headless +"TSUpdate" +q
+    nvim --headless +"Lazy sync" +q
+    nvim --headless +"MasonUpdate" +q
 
     # gems
     bundle-update;
-
-    # Because coc is activated only for tex files
-    vim tmp.tex +"CocUpdate" +qa;
 }
 
 # Main compile
@@ -688,10 +684,6 @@ main_clean() {
     # PIP
     printf "${BBlue}\nPIP${Color_Off}\n\n";
     pip cache purge;
-
-    # neovim
-    printf "${BBlue}\nneovim${Color_Off}\n\n";
-    vim +"PlugClean" +qa;
 }
 
 # Main all

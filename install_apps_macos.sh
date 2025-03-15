@@ -17,7 +17,7 @@ chsh -s /usr/local/bin/zsh
 brew install python@3.10
 
 # Install Brew packages
-brew install bibclean
+brew install bibtex-tidy
 brew install box2d
 brew install cgoban
 brew install clang-format
