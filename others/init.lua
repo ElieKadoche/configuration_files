@@ -152,7 +152,9 @@ vim.keymap.set("n", "<leader>l", ":bn<CR>", { silent = true })
 vim.keymap.set("n", "<leader>x", ":BD<CR>", { silent = true })
 
 -- 1 sentence per line
-vim.keymap.set("n", "<leader>p", ":s/\\. /.\r/g<CR>:noh<CR>", { silent = true })
+vim.keymap.set("n", "<leader>p", function()
+	vim.cmd([[%s/\. \+/\.\r/g]])
+end, { silent = true })
 
 -- Sort selected lines by length
 vim.keymap.set(
