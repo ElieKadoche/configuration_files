@@ -82,7 +82,6 @@ brew install --cask calibre
 brew install --cask discord
 brew install --cask firefox
 brew install --cask google-chrome
-brew install --cask google-earth-pro
 brew install --cask gopanda
 brew install --cask inkscape
 brew install --cask keepassxc
