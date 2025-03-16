@@ -156,14 +156,6 @@ vim.keymap.set("n", "<leader>p", function()
 	vim.cmd([[%s/\. \+/\.\r/g]])
 end, { silent = true })
 
--- Sort selected lines by length
-vim.keymap.set(
-	"x",
-	"<leader>l",
-	":'<,'>! awk '{ print length(), $0 | \"sort -n | cut -d\\  -f2-\" }'<CR>",
-	{ silent = true }
-)
-
 -- Install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
