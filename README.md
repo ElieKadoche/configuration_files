@@ -1,14 +1,6 @@
 # configuration_files
 
-:Lazy sync
-:Mason
-
-General configuration files for Darwin (MacOS), Ubuntu (Linux) and Android (Termux).
-
-- `init.vim`: neovim configuration.
-- `requirements.txt`: python pip packages.
-- `.zshrc`: zsh configuration (specific to my usage).
-- `install_apps_X.*`: installation and configuration script for system X.
+Installation and configuration files.
 
 ## Firefox extensions
 
