@@ -357,6 +357,7 @@ require("lazy").setup({
 	},
 
 	-- nvim-lspconfig
+	-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
 	-- ------------------------------------------
 	-- ------------------------------------------
 	{
@@ -422,23 +423,78 @@ require("lazy").setup({
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			-- Enable the following language servers
+			-- Listed here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 			local servers = {
+				pylsp = {
+					cmd = { "pylsp" },
+					filetypes = { "python" },
+					settings = {
+						pylsp = {
+							plugins = {
+								pycodestyle = {
+									ignore = { "W391" },
+									maxLineLength = 100,
+								},
+							},
+						},
+					},
+				},
 				lua_ls = {
+					cmd = { "lua-language-server" },
+					filetypes = { "lua" },
 					settings = {
 						Lua = {
 							completion = {
 								callSnippet = "Replace",
 							},
 						},
+						diagnostics = { disable = { "missing-fields" } },
 					},
 				},
-				jedi_language_server = {},
+				ltex = {
+					cmd = { "ltex-ls" },
+					filetypes = {
+						"bib",
+						"gitcommit",
+						"markdown",
+						"org",
+						"plaintex",
+						"rst",
+						"rnoweb",
+						"tex",
+						"pandoc",
+						"quarto",
+						"rmd",
+						"context",
+						"html",
+						"xhtml",
+						"mail",
+						-- "text",
+					},
+					settings = {
+						ltex = {
+							language = "en-US",
+						},
+					},
+				},
 			}
 
 			-- Ensure the servers and tools above are installed
+			-- Listed here: https://mason-registry.dev/registry/list
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
+				"python-lsp-server",
+				"lua-language-server",
+				"ltex-ls",
+				"bandit",
+				"pydocstyle",
+				"flake8",
+				"typos",
 				"stylua",
+				"bibtex-tidy",
+				"isort",
+				"autopep8",
+				"clang-format",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -464,10 +520,11 @@ require("lazy").setup({
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
+			-- Listed here: https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
 			lint.linters_by_ft = {
-				cpp = { "clangtidy" },
-				python = { "bandit", "pycodestyle", "pydocstyle", "flake8" },
+				python = { "bandit", "pycodestyle", "pydocstyle", "flake8", "typos" },
 				text = { "languagetool" },
+				tex = { "lacheck" },
 			}
 
 			-- Create autocommand which carries out the actual linting on the specified events
@@ -517,11 +574,12 @@ require("lazy").setup({
 					lsp_format = lsp_format_opt,
 				}
 			end,
+			-- Listed here: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
 				bib = { "bibtex-tidy" },
 				python = { "isort", "autopep8" },
-				cpp = { "uncrustify", "clang-format" },
+				cpp = { "clang-format" },
 				tex = { "latexindent" },
 				["*"] = { "trim_whitespace" },
 			},
