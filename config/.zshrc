@@ -522,9 +522,8 @@ _removeGithistory() {
 
 # Argument is the command to execute (status, pull, etc.)
 main_git() {
-    printf "\n${BPurple}------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}---------------------- MAIN GIT ----------------------${Color_Off}\n";
-    printf "${BPurple}------------------------------------------------------${Color_Off}\n\n";
+    printf "${BPurple}MAIN GIT${Color_Off}\n";
+    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
 
     _private_git_command $ORIGIN/git_apps $1;
     _private_git_command $ORIGIN/git_apps/_custom $1;
@@ -537,9 +536,8 @@ main_git() {
 # ------------------------------------------
 
 main_update() {
-    printf "\n${BPurple}---------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}---------------------- MAIN UPDATE ----------------------${Color_Off}\n";
-    printf "${BPurple}---------------------------------------------------------${Color_Off}\n\n";
+    printf "${BPurple}MAIN UPDATE${Color_Off}\n";
+    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
         # Termux (pkg)
@@ -584,12 +582,6 @@ main_update() {
     python -m pip install --upgrade pip;
     pip-review --local --auto;
 
-    # Neovim
-    printf "${BBlue}\nneovim${Color_Off}\n\n";
-    nvim --headless +"TSUpdate" +q
-    nvim --headless +"Lazy sync" +q
-    nvim --headless +"MasonUpdate" +q
-
     # gems
     bundle-update;
 }
@@ -599,9 +591,8 @@ main_update() {
 # ------------------------------------------
 
 main_compile() {
-    printf "\n${BPurple}----------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}---------------------- MAIN COMPILE ----------------------${Color_Off}\n";
-    printf "${BPurple}----------------------------------------------------------${Color_Off}\n\n";
+    printf "${BPurple}MAIN COMPILE${Color_Off}\n";
+    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
 
     # Lesspass
     printf "${BBlue}lesspass${Color_Off}\n\n";
@@ -640,9 +631,8 @@ main_compile() {
 # ------------------------------------------
 
 main_clean() {
-    printf "\n${BPurple}--------------------------------------------------------${Color_Off}\n";
-    printf "${BPurple}---------------------- MAIN CLEAN ----------------------${Color_Off}\n";
-    printf "${BPurple}--------------------------------------------------------${Color_Off}\n\n";
+    printf "${BPurple}MAIN CLEAN${Color_Off}\n";
+    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
         # Termux (pkg)
@@ -697,6 +687,12 @@ main_all() {
     main_compile;
     main_clean;
     omz update;
+
+    printf "${BBlue}\nneovim${Color_Off}\n\n";
+    nvim --headless +"TSUpdate" +q
+    nvim --headless +"Lazy sync" +q
+    nvim --headless +"MasonUpdate" +q
+    nvim --headless +"MasonToolsClean" +q
 
     if [[ $_SYSTEM = "linux" ]]; then
         sudo killall -3 gnome-shell;
