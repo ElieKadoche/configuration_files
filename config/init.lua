@@ -452,7 +452,7 @@ require("lazy").setup({
 					},
 				},
 				ltex = {
-					cmd = { "ltex-ls" },
+					cmd = { "ltex-ls-plus" },
 					filetypes = {
 						"bib",
 						"gitcommit",
@@ -485,7 +485,6 @@ require("lazy").setup({
 			vim.list_extend(ensure_installed, {
 				"python-lsp-server",
 				"lua-language-server",
-				"ltex-ls",
 				"bandit",
 				"pydocstyle",
 				"flake8",

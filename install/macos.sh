@@ -42,7 +42,7 @@ brew install jpeg-turbo
 brew install katago
 brew install languagetool
 brew install latexindent
-brew install ltex-ls
+brew install ltex-ls-plus
 brew install lua
 brew install lua-language-server
 brew install lynx
