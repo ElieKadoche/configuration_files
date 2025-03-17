@@ -481,6 +481,7 @@ require("lazy").setup({
 
 			-- Ensure the servers and tools above are installed
 			-- Listed here: https://mason-registry.dev/registry/list
+			-- TODO: comment these lines if specific installation required
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"python-lsp-server",
