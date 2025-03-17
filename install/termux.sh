@@ -87,8 +87,3 @@ echo "Configuring Termux..."
 mv fira_code.ttf ~/.termux/font.ttf
 
 termux-reload-settings
-
-# Compile and update everything
-# ------------------------------------------
-
-master_all
