@@ -61,6 +61,7 @@ brew install pwgen
 brew install rsync
 brew install ruby
 brew install screen
+brew install stylua
 brew install tesseract
 brew install tldr
 brew install tmux
