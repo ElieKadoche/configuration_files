@@ -57,7 +57,10 @@ vim.opt.listchars = { tab = "> ", trail = "·", nbsp = "~" }
 vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+
+-- Maximum column
+vim.opt.colorcolumn = "79"
 
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 10
@@ -99,7 +102,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 vim.cmd("colorscheme vim")
 
--- Change colors
+-- Change colors (use :highlight)
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3b3b3b" })
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#3b3b3b" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000", fg = "#00FF00" })
 vim.api.nvim_set_hl(0, "Normal", { bg = "#000000", fg = "#FFFFFF" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000", fg = "#FFFFFF" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000", fg = "#FFFFFF" })
