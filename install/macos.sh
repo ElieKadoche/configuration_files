@@ -19,20 +19,17 @@ brew install python@3.10
 # Install Brew packages
 brew install bibtex-tidy
 brew install box2d
-brew install cgoban
 brew install clang-format
 brew install cmake
 brew install cmatrix
 brew install coreutils
 brew install curl
-brew install docker
 brew install dos2unix
 brew install ffmpeg
 brew install fzf
 brew install gcc
 brew install ghostscript
 brew install git
-brew install gmsh
 brew install gnu-sed
 brew install go
 brew install graphviz
@@ -45,7 +42,6 @@ brew install latexindent
 brew install ltex-ls-plus
 brew install lua
 brew install lua-language-server
-brew install lynx
 brew install meson
 brew install ncdu
 brew install neovim
@@ -56,7 +52,6 @@ brew install openssh
 brew install pandoc
 brew install pastel
 brew install poppler
-brew install prettier
 brew install pwgen
 brew install rsync
 brew install ruby
@@ -88,7 +83,6 @@ brew install --cask mpv
 brew install --cask rawtherapee
 brew install --cask sabaki
 brew install --cask skim
-brew install --cask texstudio
 brew install --cask tor-browser
 brew install --cask transmission
 brew install --cask vlc
