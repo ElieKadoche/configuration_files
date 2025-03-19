@@ -374,8 +374,7 @@ alias sshX="ssh -X $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT";
 sshL() { ssh -L 16006:127.0.0.1:$1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP -p $_SSH_PORT; }
 scpp() { scp -r -p -P $_SSH_PORT $1 $_SSH_USER_NAME@$_SSH_PUBLIC_IP:~/Downloads; }
 
-# Functions to download videos (format index, link): youtube-dl and yt-dl (much better)
-_yyy() { youtube-dl --verbose --output "%(title)s.mp3" $2 -f $1 -x --audio-format "mp3" --rm-cache-dir; }
+# Functions to download videos (format index, link)
 yyy() { yt-dlp --verbose --output "%(title)s.mp3" $2 -f $1 -x --audio-format "mp3" --rm-cache-dir; }
 
 
@@ -536,9 +535,6 @@ main_update() {
     printf "${BBlue}\nPIP${Color_Off}\n\n";
     python -m pip install --upgrade pip;
     pip-review --local --auto;
-
-    # gems
-    bundle-update;
 }
 
 # Main compile
@@ -554,10 +550,6 @@ main_compile() {
     python -m pip install $ORIGIN/git_apps/lesspass/cli;
 
     if [[ $_SYSTEM = "linux" ]]; then
-        # YouCompleteMe
-        printf "${BBlue}\nYouCompleteMe${Color_Off}\n\n";
-        python ~/.config/nvim/plugged/YouCompleteMe/install.py --all;
-
         # Neovim
         printf "${BBlue}\nneovim${Color_Off}\n\n";
         cd $ORIGIN/git_apps/neovim;
