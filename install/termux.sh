@@ -75,6 +75,7 @@ pkg install -y texlive-installer
 termux-install-tl
 
 # Python
+# Check https://github.com/termux/termux-packages/discussions/19126
 # ------------------------------------------
 
 # Install specific packages
