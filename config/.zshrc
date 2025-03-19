@@ -139,6 +139,7 @@ plugins=(
     cp
     extract
     genpass
+    git
     vi-mode
 )
 
@@ -650,7 +651,7 @@ main_all() {
     fi
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh;
+# Additional plugins
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh;
 source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 
