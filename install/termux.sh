@@ -59,7 +59,6 @@ pkg install -y rsync
 pkg install -y ruby
 pkg install -y screen
 pkg install -y stylua
-pkg install -y stylua
 pkg install -y termux-api
 pkg install -y tesseract
 pkg install -y tmux
