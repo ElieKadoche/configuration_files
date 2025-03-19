@@ -72,9 +72,6 @@ pkg install -y zip
 pkg install -y texlive-installer
 termux-install-tl
 
-# jekyll
-gem install jekyll bundler
-
 # Termux configuration
 # ------------------------------------------
 
