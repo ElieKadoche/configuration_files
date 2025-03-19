@@ -38,6 +38,7 @@ pkg install -y htop
 pkg install -y imagemagick
 pkg install -y iproute2
 pkg install -y libandroid-execinfo
+pkg install -y libicu
 pkg install -y libopenblas
 pkg install -y libxml2
 pkg install -y libxslt
@@ -77,7 +78,7 @@ termux-install-tl
 # ------------------------------------------
 
 # Install specific packages
-pip3 install setuptools wheel packaging pyproject_metadata cython meson-python versioneer
+pip3 install setuptools wheel packaging pyproject_metadata cython meson-python versioner
 
 # Check version
 python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")'
