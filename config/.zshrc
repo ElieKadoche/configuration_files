@@ -13,15 +13,6 @@ PROMPT='%F{green}%m@%n[%D{%d/%m/%y}-%D{%I:%M:%S%p}]%F{white}(%~)%f%F{green}$%f'
 # Vim bindkeys
 bindkey -v;
 
-# TODO: which python version?
-alias python="python3";
-
-# Automatically activate virtual environment
-VENV_PATH="$HOME/.venv"
-if [ -d "$VENV_PATH" ]; then
-    source "$VENV_PATH/bin/activate"
-fi
-
 # System specific
 # ------------------------------------------
 # ------------------------------------------
@@ -666,6 +657,18 @@ main_all() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh;
 source $ORIGIN/git_apps/zsh-autosuggestions/zsh-autosuggestions.zsh;
 source $ORIGIN/git_apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
+
+# Python
+# ------------------------------------------
+
+# TODO: which python version?
+alias python="python3";
+
+# Automatically activate virtual environment
+VENV_PATH="$HOME/.venv"
+if [ -d "$VENV_PATH" ]; then
+    source "$VENV_PATH/bin/activate"
+fi
 
 # Most used commands are kept in a custom history
 # When a session is closed, history is reset to default
