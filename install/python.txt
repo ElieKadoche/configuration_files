@@ -4,12 +4,11 @@ bandit
 box2d.py
 bpytop
 build
-ciphey
 configparser
 dash
 flake8
 floris
-glances[all]
+glances
 graphviz
 grip
 gym
@@ -20,7 +19,6 @@ ipdb
 isort
 jupyter
 kaleido
-manim
 matplotlib
 neovim
 Pillow

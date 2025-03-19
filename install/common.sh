@@ -40,7 +40,13 @@ cp init.lua ~/.config/nvim/init.lua
 
 echo "Installing python packages..."
 
+# TODO: carefully choose the python version
+python3 -m venv ~/.venv
+
+# Virtual environment
+source ~/.venv/bin/activate
+
 # All packages will not work on Termux, be careful
 # Choose carefully which packages to install globally
 # Packages can be used globally, in a virtual environment, in a Docker container, etc.
-pip install -r requirements.txt
+pip install -r python.txt

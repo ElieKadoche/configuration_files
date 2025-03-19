@@ -7,6 +7,25 @@ elif [[ $(uname -o) = "Darwin" ]]; then
     _SYSTEM="darwin";
 fi
 
+# Custom prompt
+PROMPT='%F{green}%m@%n[%D{%d/%m/%y}-%D{%I:%M:%S%p}]%F{white}(%~)%f%F{green}$%f'
+
+# gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+# Vim bindkeys
+bindkey -v;
+
+# TODO: which python version?
+alias python="python3";
+
+# Automatically activate virtual environment
+VENV_PATH="$HOME/.venv"
+if [ -d "$VENV_PATH" ]; then
+    source "$VENV_PATH/bin/activate"
+fi
+
 # System specific
 # ------------------------------------------
 # ------------------------------------------
@@ -15,8 +34,6 @@ fi
 if [[ $_SYSTEM = "linux" ]]; then
     ORIGIN="/home/$USERNAME/data";
 
-    alias python="python3";
-    alias pip="pip3";
     alias open="xdg-open";
     alias pbcopy="xclip -selection clipboard";
     alias pbpaste="xclip -selection clipboard -o";
@@ -31,8 +48,6 @@ if [[ $_SYSTEM = "linux" ]]; then
 elif [[ $_SYSTEM = "android" ]]; then
     ORIGIN="/data/data/com.termux/files/home/storage/shared/data";
 
-    alias python="python3";
-    alias pip="pip3";
     alias mm="cd $ORIGIN/../Download";
     alias open="termux-open";
     alias pbcopy="termux-clipboard-set";
@@ -58,23 +73,11 @@ elif [[ $_SYSTEM = "darwin" ]]; then
     alias sed="gsed";
     alias rmtrash="rm -rf ~/.Trash/*";
     alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
-    alias python="python3.10";
-    alias pip="pip3.10";
 
     export ZSH="/Users/elie_kadoche/.oh-my-zsh";
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH";
     export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 fi
-
-# Custom prompt
-PROMPT='%F{green}%m@%n[%D{%d/%m/%y}-%D{%I:%M:%S%p}]%F{white}(%~)%f%F{green}$%f'
-
-# gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-
-# Vim bindkeys
-bindkey -v;
 
 # Colors
 # ------------------------------------------
@@ -172,8 +175,6 @@ plugins=(
     extract
     genpass
     pep8
-    pip
-    python
     rand-quote
     vi-mode
     web-search
