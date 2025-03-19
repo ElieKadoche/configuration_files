@@ -515,6 +515,11 @@ main_update() {
         printf "${BBlue}\nSNAP${Color_Off}\n\n";
         sudo snap refresh;
 
+        # PIP
+        printf "${BBlue}\nPIP${Color_Off}\n\n";
+        python -m pip install --upgrade pip;
+        pip-review --local --auto;
+
 
     elif [[ $_SYSTEM = "darwin" ]]; then
         printf "${BBlue}darwin${Color_Off}\n\n";
@@ -529,12 +534,11 @@ main_update() {
         printf "${BBlue}Node.js${Color_Off}\n\n";
         npm install -g npm;
 
+        # PIP
+        printf "${BBlue}\nPIP${Color_Off}\n\n";
+        python -m pip install --upgrade pip;
+        pip-review --local --auto;
     fi
-
-    # PIP
-    printf "${BBlue}\nPIP${Color_Off}\n\n";
-    python -m pip install --upgrade pip;
-    pip-review --local --auto;
 }
 
 # Main compile
