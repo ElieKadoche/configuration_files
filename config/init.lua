@@ -90,6 +90,10 @@ vim.opt.laststatus = 2
 -- Set show matching parenthesis
 vim.opt.showmatch = true
 
+-- Indent comments starting with #
+vim.opt.cindent = true
+vim.opt.cinkeys:remove("0#")
+
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
