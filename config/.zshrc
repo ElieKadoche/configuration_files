@@ -10,10 +10,6 @@ fi
 # Custom prompt
 PROMPT='%F{green}%m@%n[%D{%d/%m/%y}-%D{%I:%M:%S%p}]%F{white}(%~)%f%F{green}$%f'
 
-# gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-
 # Vim bindkeys
 bindkey -v;
 
