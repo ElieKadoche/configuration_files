@@ -159,7 +159,9 @@ vim.keymap.set("n", "<leader>se", ":set spelllang=en<CR>:set spell<CR>", { silen
 -- Move around buffers
 vim.keymap.set("n", "<leader>h", ":bp<CR>", { silent = true })
 vim.keymap.set("n", "<leader>l", ":bn<CR>", { silent = true })
-vim.keymap.set("n", "<leader>x", ":BD<CR>", { silent = true })
+
+-- Close file and keep buffer
+vim.keymap.set("n", "<leader>x", ":bp<bar>bd #<CR>", { silent = true, noremap = true })
 
 -- 1 sentence per line
 vim.keymap.set("n", "<leader>p", function()
