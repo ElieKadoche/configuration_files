@@ -258,8 +258,7 @@ clearThumbnails() {
 # A different compilator can be used, as pdflatex for example
 compiletex() {
     lualatex "$1.tex";
-    bibtex "$1";
-    # biber "$1";
+    biber "$1";
     makeglossaries "$1";
     makeindex $1.nlo -s nomencl.ist -o $1.nls;
     lualatex "$1.tex";
