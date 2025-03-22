@@ -69,7 +69,6 @@ torchinfo
 torchvision
 tqdm
 ultralytics
-virtualenv
 windrose
 xlrd
 yt-dlp
