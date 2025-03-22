@@ -359,18 +359,11 @@ renameAll() {
 
 # Clean Tex files, argument for maxdepth
 rmtex() {
-    local maxdepth="${1:-1}"
-    local extensions="aux|log|out|toc|bbl|blg|bcf|glg|gls|glo|lof|lot|mtc.*|maf|run.xml|acn|acr|alg|ist|synctex.gz|synctex\(.*\)|dvi|nav|snm|vrb|fls|fdb_latexmk|brf|loc|soc|ilg|ind|nlo|nls"
-
-    # Remove biblatex-generated .bib files (e.g., main-blx.bib)
-    find . -maxdepth "$maxdepth" -name "main-blx.bib" -delete
-
-    if [[ "$_SYSTEM" == "darwin" ]]; then
-        # macOS uses BSD find
-        find -E . -maxdepth "$maxdepth" -regex ".*\.(${extensions})" -delete
+    find . -maxdepth $1 -name "main-blx.bib" -delete;
+    if [[ $_SYSTEM = "darwin" ]]; then
+        find -E . -maxdepth $1 -regex ".*\.(aux|dvi|log|out|toc|bbl|blg|synctex.gz|acn|acr|alg|bcf|glg|glo|gls|ist|run.xml|nav|snm|vrb|fls|fdb_latexmk|brf|loc|soc|ilg|ind|nlo|nls|lof|lot|maf|mtc.*)" -delete;
     else
-        # Linux uses GNU find
-        find . -maxdepth "$maxdepth" -regex ".*\.(${extensions})" -delete
+        find . -maxdepth $1 -regex ".*\.\(aux\|dvi\|log\|out\|toc\|bbl\|blg\|synctex.gz\|acn\|acr\|alg\|bcf\|glg\|glo\|gls\|ist\|run.xml\|nav\|snm\|vrb\|fls\|fdb_latexmk\|brf\|loc\|soc\|ilg\|ind\|nlo\|nls\|lof\|lot\|maf\|mtc.*\)" -delete;
     fi
 }
 
