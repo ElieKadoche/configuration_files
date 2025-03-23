@@ -63,6 +63,7 @@ pkg install -y screen
 pkg install -y stylua
 pkg install -y termux-api
 pkg install -y tesseract
+pkg install -y texlab
 pkg install -y tmux
 pkg install -y tor
 pkg install -y tree
