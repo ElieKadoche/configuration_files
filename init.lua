@@ -126,6 +126,9 @@ vim.keymap.set("v", ">", ">gv", { silent = true })
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+-- Compile tex document
+vim.keymap.set("n", "<leader>b", ":TexlabBuild<CR>", { noremap = true, silent = true })
+
 -- Disable arrow keys in normal mode
 -- vim.keymap.set("n", "<left>", "<cmd>echo "Use h to move!!"<CR>")
 -- vim.keymap.set("n", "<right>", "<cmd>echo "Use l to move!!"<CR>")
@@ -316,7 +319,7 @@ require("lazy").setup({
 	{
 		"ibhagwan/fzf-lua",
 		config = function()
-			vim.keymap.set("n", "<leader>f", ":FzfLua files<cr>")
+			vim.keymap.set("n", "<leader>o", ":FzfLua files<cr>")
 		end,
 	},
 
@@ -343,17 +346,6 @@ require("lazy").setup({
 		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 	},
 
-	-- vimtex
-	-- ------------------------------------------
-	-- ------------------------------------------
-	{
-		"lervag/vimtex",
-		lazy = false,
-		init = function()
-			vim.g.vimtex_view_method = "skim"
-		end,
-	},
-
 	-- lazydev.nvim
 	-- ------------------------------------------
 	-- ------------------------------------------
@@ -369,7 +361,7 @@ require("lazy").setup({
 	},
 
 	-- nvim-lspconfig
-	-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
+	-- NOTE: `opts = {}` is the same as calling `require("mason").setup({})`
 	-- ------------------------------------------
 	-- ------------------------------------------
 	{
@@ -455,6 +447,33 @@ require("lazy").setup({
 									ignore = { "W391" },
 									maxLineLength = 100,
 								},
+							},
+						},
+					},
+				},
+				texlab = {
+					cmd = { "texlab" },
+					filetypes = { "tex", "plaintex" },
+					settings = {
+						texlab = {
+							build = {
+								args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+								executable = "latexmk",
+								forwardSearchAfter = true,
+								onSave = false,
+							},
+							chktex = {
+								onEdit = false,
+								onOpenAndSave = true,
+							},
+							diagnosticsDelay = 300,
+							forwardSearch = {
+								executable = "open",
+								args = { "-a", "Skim", "%p" },
+							},
+							latexFormatter = "latexindent",
+							latexindent = {
+								modifyLineBreaks = false,
 							},
 						},
 					},
@@ -600,7 +619,7 @@ require("lazy").setup({
 				bib = { "bibtex-tidy" },
 				python = { "isort", "autopep8" },
 				cpp = { "clang-format" },
-				tex = { "latexindent" },
+				-- tex = { "latexindent" },
 				["*"] = { "trim_whitespace" },
 			},
 		},
@@ -696,9 +715,8 @@ plt.show()]],
 
 				-- Please read `:help ins-completion`
 				mapping = cmp.mapping.preset.insert({
-					-- Select the [n]ext item
+					-- Select the [n]ext / [p]revious item
 					["<C-n>"] = cmp.mapping.select_next_item(),
-					-- Select the [p]revious item
 					["<C-p>"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
