@@ -58,6 +58,7 @@ brew install ruby
 brew install screen
 brew install stylua
 brew install tesseract
+brew install texlab
 brew install tldr
 brew install tmux
 brew install tor
