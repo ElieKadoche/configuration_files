@@ -536,19 +536,7 @@ require("lazy").setup({
 			-- Listed here: https://mason-registry.dev/registry/list
 			-- TODO: comment these lines if specific installation required
 			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, {
-				"python-lsp-server",
-				"lua-language-server",
-				"bandit",
-				"pydocstyle",
-				"flake8",
-				"typos",
-				"stylua",
-				"bibtex-tidy",
-				"isort",
-				"autopep8",
-				"clang-format",
-			})
+			vim.list_extend(ensure_installed, {})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
