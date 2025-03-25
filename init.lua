@@ -168,7 +168,7 @@ vim.keymap.set("n", "<leader>x", ":bp<bar>bd #<CR>", { silent = true, noremap = 
 
 -- 1 sentence per line
 vim.keymap.set("n", "<leader>p", function()
-	vim.cmd([[%s/\. \+/\.\r/g]])
+	vim.cmd([[:.s/\. \+/\.\r/g]])
 end, { silent = true })
 
 -- Install lazy
