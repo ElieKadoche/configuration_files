@@ -526,7 +526,7 @@ require("lazy").setup({
 								"typst",
 								"xhtml",
 							},
-							language = "en-US",
+							language = { "en-US", "fr" },
 						},
 					},
 				},
