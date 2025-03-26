@@ -63,7 +63,7 @@ vim.opt.cursorline = true
 vim.opt.colorcolumn = "79"
 
 -- Minimal number of screen lines to keep above and below the cursor
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 0
 
 -- Ask to save file if unsaved changes
 vim.opt.confirm = true
