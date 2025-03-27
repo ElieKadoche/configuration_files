@@ -700,34 +700,12 @@ plt.show()]],
 
 				-- Please read `:help ins-completion`
 				mapping = cmp.mapping.preset.insert({
-					-- Select the [n]ext / [p]revious item
-					["<C-n>"] = cmp.mapping.select_next_item(),
-					["<C-p>"] = cmp.mapping.select_prev_item(),
-
-					-- Scroll the documentation window [b]ack / [f]orward
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-
-					-- More traditional completion keymaps
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<Tab>"] = cmp.mapping.select_next_item(),
-					["<S-Tab>"] = cmp.mapping.select_prev_item(),
-
-					-- Manually trigger a completion from nvim-cmp
-					["<C-Space>"] = cmp.mapping.complete({}),
-
-					-- <c-l> will move you to the right of each of the expansion locations
-					-- <c-h> is similar, except moving you backwards
-					["<C-l>"] = cmp.mapping(function()
-						if luasnip.expand_or_locally_jumpable() then
-							luasnip.expand_or_jump()
-						end
-					end, { "i", "s" }),
-					["<C-h>"] = cmp.mapping(function()
-						if luasnip.locally_jumpable(-1) then
-							luasnip.jump(-1)
-						end
-					end, { "i", "s" }),
+					["<Tab>"] = cmp.mapping.confirm({ select = true }),
+					["<S-j>"] = cmp.mapping.select_next_item(),
+					["<S-k>"] = cmp.mapping.select_prev_item(),
+					["<S-Space>"] = cmp.mapping.complete({}),
+					["<S-h>"] = cmp.mapping.scroll_docs(-4),
+					["<S-l>"] = cmp.mapping.scroll_docs(4),
 				}),
 				sources = {
 					{
