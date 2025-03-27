@@ -642,8 +642,6 @@ main_all() {
     printf "${BBlue}\nneovim${Color_Off}\n\n";
     nvim --headless +"TSUpdate" +q
     nvim --headless +"Lazy sync" +q
-    nvim --headless +"MasonUpdate" +q
-    nvim --headless +"MasonToolsClean" +q
 
     if [[ $_SYSTEM = "linux" ]]; then
         sudo killall -3 gnome-shell;
