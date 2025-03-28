@@ -31,7 +31,6 @@ brew install gcc
 brew install ghostscript
 brew install git
 brew install gnu-sed
-brew install go
 brew install graphviz
 brew install htop
 brew install imagemagick
@@ -98,9 +97,6 @@ brew install --cask font-source-sans-pro
 # LaTeX
 # brew install texlive
 brew install --cask mactex
-
-# Install neovim node package
-npm install -g neovim
 
 # Apple toolbox for machine learning
 pip install coremltools
