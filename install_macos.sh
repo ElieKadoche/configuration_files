@@ -106,12 +106,13 @@ npm install -g neovim
 pip install coremltools
 
 # Change default parameters
-defaults write com.apple.finder QuitMenuItem -bool YES
-defaults write com.apple.screencapture location ~/Downloads
-defaults write com.apple.finder DisableAllAnimations -bool true
-defaults write com.apple.dock launchanim -bool false
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g QLPanelAnimationDuration -float 0
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.finder AppleShowAllFiles YES
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder QuitMenuItem -bool YES
+defaults write com.apple.screencapture location ~/Downloads
 
 # Others
 # Install https://github.com/textext/textext/releases
