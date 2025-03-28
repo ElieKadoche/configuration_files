@@ -102,19 +102,8 @@ vim.g.loaded_netrwPlugin = 1
 -- ------------------------------------------
 -- ------------------------------------------
 
--- Use vim colorscheme
+-- Colors
 vim.opt.termguicolors = true
-vim.cmd("colorscheme vim")
-
--- Change colors (use :highlight)
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3b3b3b" })
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#3b3b3b" })
-vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000", fg = "#00FF00" })
-vim.api.nvim_set_hl(0, "Normal", { bg = "#000000", fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000", fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000", fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#FFFFFF", bg = "#000000" })
-vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "#FFFFFF" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -723,6 +712,39 @@ plt.show()]],
 		end,
 	},
 })
+
+-- Use vim colorscheme
+-- Change colors (use :highlight)
+vim.cmd("colorscheme vim")
+
+-- Main
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#3b3b3b" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3b3b3b" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000", fg = "#00ff00" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "#000000", fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "#00ff00", fg = "#000000", bold = true })
+vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#000000" })
+vim.api.nvim_set_hl(0, "Type", { bg = "#000000", fg = "#ffffff" })
+
+-- nvim-tree
+vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "NvimTreeFileName", { fg = "#ffffff", bg = "#000000" })
+vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#ff0000" })
+vim.api.nvim_set_hl(0, "NvimTreeModifiedFile", { fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "NvimTreeOpenedFile", { fg = "#ffffff", bold = true })
+vim.api.nvim_set_hl(0, "NvimTreeSymlink", { fg = "#ffffff", italic = true })
+vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = "#00ff00", fg = "#000000" })
+
+-- bufferline
+vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "#000000" })
+vim.api.nvim_set_hl(0, "BufferLineBuffer", { bg = "#000000", fg = "#000000" })
+vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { bg = "#000000", fg = "#00ff00" })
+vim.api.nvim_set_hl(0, "BufferLineBufferVisible", { bg = "#000000", fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#000000", fg = "#000000" })
+vim.api.nvim_set_hl(0, "BufferLineGroupLabel", { bg = "#000000", fg = "#000000" })
+vim.api.nvim_set_hl(0, "BufferLineSeparator", { bg = "#000000", fg = "#000000" })
+vim.api.nvim_set_hl(0, "BufferLineSeparatorSelected", { bg = "#000000", fg = "#000000" })
+vim.api.nvim_set_hl(0, "BufferLineSeparatorVisible", { bg = "#000000", fg = "#000000" })
 
 -- Update modeline
 -- vim: ts=4 sts=4 sw=4 et
