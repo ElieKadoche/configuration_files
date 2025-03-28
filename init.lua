@@ -700,12 +700,12 @@ plt.show()]],
 
 				-- Please read `:help ins-completion`
 				mapping = cmp.mapping.preset.insert({
-					["<Tab>"] = cmp.mapping.confirm({ select = true }),
-					["<S-j>"] = cmp.mapping.select_next_item(),
-					["<S-k>"] = cmp.mapping.select_prev_item(),
 					["<S-Space>"] = cmp.mapping.complete({}),
-					["<S-h>"] = cmp.mapping.scroll_docs(-4),
-					["<S-l>"] = cmp.mapping.scroll_docs(4),
+					["<Tab>"] = cmp.mapping.select_next_item({}),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<S-k>"] = cmp.mapping.scroll_docs(-4),
+					["<S-j>"] = cmp.mapping.scroll_docs(4),
 				}),
 				sources = {
 					{
