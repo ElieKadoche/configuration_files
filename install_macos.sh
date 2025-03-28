@@ -58,7 +58,7 @@ brew install screen
 brew install stylua
 brew install tesseract
 brew install texlab
-brew install tldr
+brew install tlrc
 brew install tmux
 brew install tor
 brew install transmission-cli
