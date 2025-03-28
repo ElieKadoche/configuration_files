@@ -455,7 +455,7 @@ gitss() { for i in */.git; do ( echo "-----> " $i; cd $i/../; git status; ); don
 _private_git_command() {
     cd $1;
     for i in */.git; do (
-        printf "${BBlue}$i${Color_Off}\n";
+        printf "$i\n";
         cd $i/..;
         git $2;
         echo "";
@@ -476,12 +476,10 @@ _removeGithistory() {
 
 # Argument is the command to execute (status, pull, etc.)
 main_git() {
-    printf "${BPurple}MAIN GIT${Color_Off}\n";
-    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
-
+    printf "MAIN GIT\n";
+    printf "------------------------------------------\n\n";
     _private_git_command $ORIGIN/git_apps $1;
     _private_git_command $ORIGIN/git_apps/_custom $1;
-
     cd $ORIGIN;
 }
 
@@ -490,52 +488,46 @@ main_git() {
 # ------------------------------------------
 
 main_update() {
-    printf "${BPurple}MAIN UPDATE${Color_Off}\n";
-    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
+    printf "MAIN UPDATE\n";
+    printf "------------------------------------------\n\n";
 
     if [[ $_SYSTEM = "android" ]]; then
-        # Termux (pkg)
-        printf "${BBlue}PKG${Color_Off}\n\n";
+        printf "---> PKG\n";
         pkg upgrade -y;
         pkg update -y;
 
     elif [[ $_SYSTEM = "linux" ]]; then
-        # Node
-        printf "${BBlue}NPM${Color_Off}\n\n";
+        printf "---> NPM\n";
         sudo n latest;
 
-        # APT
-        printf "${BBlue}\nAPT${Color_Off}\n\n";
+        printf "---> APT\n";
         sudo apt -y update;
         sudo apt -y upgrade;
         sudo apt dist-upgrade;
         # sudo update-grub;  # Only if necessary
 
-        # Snap
-        printf "${BBlue}\nSNAP${Color_Off}\n\n";
+        printf "---> SNAP\n";
         sudo snap refresh;
 
-        # PIP
-        printf "${BBlue}\nPIP${Color_Off}\n\n";
+        printf "---> PIP\n";
         python -m pip install --upgrade pip;
         pip-review --local --auto;
 
 
     elif [[ $_SYSTEM = "darwin" ]]; then
-        printf "${BBlue}darwin${Color_Off}\n\n";
+        printf "---> darwin\n";
         softwareupdate --install --all;
 
-        printf "${BBlue}Homebrew${Color_Off}\n\n";
+        printf "---> Homebrew\n";
         brew update;
         brew outdated;
         brew upgrade;
         brew upgrade --cask --greedy;
 
-        printf "${BBlue}Node.js${Color_Off}\n\n";
+        printf "Node.js\n\n";
         npm install -g npm;
 
-        # PIP
-        printf "${BBlue}\nPIP${Color_Off}\n\n";
+        printf "\nPIP\n\n";
         python -m pip install --upgrade pip;
         pip-review --local --auto;
     fi
@@ -546,30 +538,26 @@ main_update() {
 # ------------------------------------------
 
 main_compile() {
-    printf "${BPurple}MAIN COMPILE${Color_Off}\n";
-    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
+    printf "MAIN COMPILE\n";
+    printf "------------------------------------------\n\n";
 
-    # Lesspass
-    printf "${BBlue}lesspass${Color_Off}\n\n";
+    printf "---> lesspass\n";
     python -m pip install $ORIGIN/git_apps/lesspass/cli;
 
     if [[ $_SYSTEM = "linux" ]]; then
-        # Neovim
-        printf "${BBlue}\nneovim${Color_Off}\n\n";
+        printf "---> neovim\n";
         cd $ORIGIN/git_apps/neovim;
         sudo make CMAKE_BUILD_TYPE=RelWithDebInfo;
         sudo make install;
 
-        # Katago
-        printf "${BBlue}\nKatago${Color_Off}\n\n";
+        printf "---> Katago\n";
         cd $ORIGIN/git_apps/KataGo/cpp;
         if [[ ! -d "./build" ]]; then mkdir build; fi
         cd build;
         cmake .. -DUSE_BACKEND=CUDA -DCUDNN_INCLUDE_DIR=/usr/local/cuda/include -DCUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so
         make;
 
-        # fzf
-        printf "${BBlue}\nfzf${Color_Off}\n\n";
+        printf "---> fzf\n";
         cd $ORIGIN/git_apps/fzf;
         ./install --all --no-bash --no-zsh;
     fi
@@ -582,49 +570,43 @@ main_compile() {
 # ------------------------------------------
 
 main_clean() {
-    printf "${BPurple}MAIN CLEAN${Color_Off}\n";
-    printf "${BPurple}------------------------------------------${Color_Off}\n\n";
+    printf "MAIN CLEAN\n";
+    printf "------------------------------------------\n\n";
+
+    printf "---> PIP\n";
+    pip cache purge;
 
     if [[ $_SYSTEM = "android" ]]; then
-        # Termux (pkg)
-        printf "${BBlue}PKG${Color_Off}\n\n";
+        printf "---> PKG\n";
         pkg autoclean;
         pkg clean;
 
     elif [[ $_SYSTEM = "linux" ]]; then
-        # Node
-        printf "${BBlue}NPM${Color_Off}\n\n";
+        printf "---> NPM\n";
         npm cache verify;
         npm cache clean;
 
-        # Logs
-        printf "${BBlue}\nLOGS${Color_Off}\n\n";
+        printf "---> LOGS\n";
         journalctl --disk-usage;
         sudo journalctl --vacuum-time=1d;
 
-        # APT
-        printf "${BBlue}\nAPT${Color_Off}\n\n";
+        printf "---> APT\n";
         sudo apt -y autoclean;
         sudo apt -y clean;
         sudo apt -y autoremove;
 
-        # Snaps
-        printf "${BBlue}\nSNAP${Color_Off}\n\n";
+        printf "---> SNAP\n";
         LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
         while read snapname revision; do
             sudo snap remove "$snapname" --revision="$revision";
         done
 
     elif [[ $_SYSTEM = "darwin" ]]; then
-        printf "${BBlue}\nHomebrew${Color_Off}\n\n";
+        printf "---> Homebrew\n";
         brew doctor;
         brew cleanup;
         brew autoremove;
     fi
-
-    # PIP
-    printf "${BBlue}\nPIP${Color_Off}\n\n";
-    pip cache purge;
 }
 
 # Main all
@@ -639,7 +621,7 @@ main_all() {
     main_clean;
     omz update;
 
-    printf "${BBlue}\nneovim${Color_Off}\n\n";
+    printf "---> neovim\n";
     nvim --headless +"TSUpdate" +q
     nvim --headless +"Lazy sync" +q
 
