@@ -456,6 +456,7 @@ require("lazy").setup({
 								executable = "open",
 								args = { "-a", "Skim", "%p" },
 							},
+							bibtexFormatter = "texlab",
 							latexFormatter = "latexindent",
 							latexindent = {
 								modifyLineBreaks = false,
@@ -593,7 +594,7 @@ require("lazy").setup({
 				bib = { "bibtex-tidy" },
 				python = { "isort", "autopep8" },
 				cpp = { "clang-format" },
-				-- tex = { "latexindent" },
+				tex = { "latexindent" },
 				["*"] = { "trim_whitespace" },
 			},
 		},
