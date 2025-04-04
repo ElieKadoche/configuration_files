@@ -155,6 +155,9 @@ vim.keymap.set("n", "<leader>l", ":bn<CR>", { silent = true })
 -- Close file and keep buffer
 vim.keymap.set("n", "<leader>x", ":bp<bar>bd #<CR>", { silent = true, noremap = true })
 
+-- Display full errors
+vim.keymap.set("n", "<leader><space>", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>", { silent = true })
+
 -- 1 sentence per line
 vim.keymap.set("n", "<leader>p", function()
 	vim.cmd([[:.s/\. \+/\.\r/g]])
