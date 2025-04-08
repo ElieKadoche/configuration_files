@@ -46,6 +46,7 @@ brew install ncdu
 brew install neovim
 brew install nmap
 brew install node
+brew install ollama
 brew install openjdk
 brew install openssh
 brew install pandoc

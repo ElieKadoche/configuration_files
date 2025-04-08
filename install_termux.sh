@@ -51,6 +51,7 @@ pkg install -y netcat-openbsd
 pkg install -y ninja
 pkg install -y nmap
 pkg install -y nodejs
+pkg install -y ollama
 pkg install -y openssh
 pkg install -y openssl-tool
 pkg install -y pastel
