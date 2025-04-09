@@ -2,7 +2,6 @@ atari-py
 autopep8
 bandit
 box2d.py
-bpytop
 build
 configparser
 dash
