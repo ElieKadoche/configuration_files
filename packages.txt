@@ -7,7 +7,6 @@ configparser
 dash
 flake8
 floris
-glances
 graphviz
 grip
 gym
