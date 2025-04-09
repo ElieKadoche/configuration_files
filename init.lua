@@ -163,6 +163,12 @@ vim.keymap.set("n", "<leader>p", function()
 	vim.cmd([[:.s/\. \+/\.\r/g]])
 end, { silent = true })
 
+-- Enable / disable wrap
+vim.keymap.set("n", "<leader>w", function()
+	vim.opt.wrap = not vim.opt.wrap:get()
+	print("wrap: " .. tostring(vim.opt.wrap:get()))
+end, { desc = "Toggle wrap" })
+
 -- Install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -336,6 +342,7 @@ require("lazy").setup({
 			parser = { comments = { "#", "//" } },
 		},
 		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+		keys = { { "<leader>c", ":CsvViewEnable display_mode=border header_lnum=1<CR>", mode = "n" } },
 	},
 
 	-- lazydev.nvim
