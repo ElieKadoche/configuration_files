@@ -1,3 +1,4 @@
+ale-py
 atari-py
 autopep8
 bandit
