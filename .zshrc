@@ -497,9 +497,6 @@ main_update() {
         pkg update -y;
 
     elif [[ $_SYSTEM = "linux" ]]; then
-        printf "---> NPM\n";
-        sudo n latest;
-
         printf "---> APT\n";
         sudo apt -y update;
         sudo apt -y upgrade;
@@ -523,9 +520,6 @@ main_update() {
         brew outdated;
         brew upgrade;
         brew upgrade --cask --greedy;
-
-        printf "Node.js\n\n";
-        npm install -g npm;
 
         printf "\nPIP\n\n";
         python -m pip install --upgrade pip;
@@ -582,10 +576,6 @@ main_clean() {
         pkg clean;
 
     elif [[ $_SYSTEM = "linux" ]]; then
-        printf "---> NPM\n";
-        npm cache verify;
-        npm cache clean;
-
         printf "---> LOGS\n";
         journalctl --disk-usage;
         sudo journalctl --vacuum-time=1d;
