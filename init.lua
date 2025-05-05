@@ -65,8 +65,9 @@ vim.opt.colorcolumn = "79"
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 0
 
+-- DISABLED
 -- Ask to save file if unsaved changes
-vim.opt.confirm = true
+-- vim.opt.confirm = true
 
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
