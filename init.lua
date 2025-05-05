@@ -467,7 +467,7 @@ require("lazy").setup({
                 },
                 texlab = {
                     cmd = { "texlab" },
-                    filetypes = { "tex", "plaintex" },
+                    filetypes = { "tex", "plaintex", "bib" },
                     settings = {
                         texlab = {
                             build = {
