@@ -20,11 +20,9 @@ jupyter
 kaleido
 matplotlib
 neovim
-Pillow
 networkx
 nevergrad
 numpy
-PyYAML
 ollama
 onnx
 onnxscript
@@ -32,6 +30,7 @@ open_spiel
 opencv-python
 pandas
 pettingzoo
+Pillow
 pip-review
 plotly
 py_wake
@@ -45,6 +44,7 @@ python-lsp-isort
 python-lsp-server[all]
 pytorch_forecasting
 pytorchcv
+PyYAML
 ray[all]
 regex
 requests
