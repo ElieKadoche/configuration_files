@@ -41,6 +41,7 @@ pydocstyle
 pygame
 pygments
 pytest
+python-lsp-isort
 python-lsp-server[all]
 pytorch_forecasting
 pytorchcv
