@@ -27,7 +27,6 @@ vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand("~/.vim_runtime/temp_dirs/undodir")
 
 -- Use many much levels of undo
 vim.opt.undolevels = 1000
