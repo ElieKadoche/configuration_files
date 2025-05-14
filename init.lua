@@ -432,6 +432,20 @@ require("lazy").setup({
             -- Enable the following language servers
             -- Listed here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
             local servers = {
+                ruff = {
+                    cmd = { "ruff", "server" },
+                    filetypes = { "python" },
+                    root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
+                    init_options = {
+                        settings = {
+                            lint = {
+                                args = {
+                                    "--line-length=79",
+                                },
+                            },
+                        },
+                    },
+                },
                 pylsp = {
                     cmd = { "pylsp" },
                     filetypes = { "python" },
@@ -454,12 +468,7 @@ require("lazy").setup({
                                 pyflakes = { enabled = false },
                                 pylint = { enabled = false },
                                 isort = { enabled = true },
-                                ruff = {
-                                    enabled = true,
-                                    formatEnabled = true,
-                                    lineLength = 79,
-                                    preview = false,
-                                },
+                                ruff = { enabled = false },
                             },
                         },
                     },
@@ -683,10 +692,10 @@ plt.show()]],
                 mapping = cmp.mapping.preset.insert({
                     ["<S-Space>"] = cmp.mapping.complete({}),
                     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-                    ["<S-j>"] = cmp.mapping.select_next_item({}),
-                    ["<S-k>"] = cmp.mapping.select_prev_item(),
-                    ["<S-h>"] = cmp.mapping.scroll_docs(-4),
-                    ["<S-l>"] = cmp.mapping.scroll_docs(4),
+                    ["<S-Uown>"] = cmp.mapping.select_next_item({}),
+                    ["<S-Up>"] = cmp.mapping.select_prev_item(),
+                    ["<S-Left>"] = cmp.mapping.scroll_docs(-4),
+                    ["<S-Right>"] = cmp.mapping.scroll_docs(4),
                 }),
                 sources = {
                     {
