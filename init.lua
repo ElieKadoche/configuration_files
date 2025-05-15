@@ -711,6 +711,7 @@ vim.cmd("colorscheme vim")
 
 -- Main
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#3b3b3b" })
+vim.api.nvim_set_hl(0, "Comment", { bg = "#000000", fg = "#808080" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3b3b3b" })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000", fg = "#00ff00" })
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "#00ff00", fg = "#000000", bold = true })
@@ -720,7 +721,7 @@ vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "@function.method.call.python", { bg = "#000000", fg = "#ff1493" })
 vim.api.nvim_set_hl(0, "@variable.member.python", { bg = "#000000", fg = "#ff00ff" })
 vim.api.nvim_set_hl(0, "@variable.python", { bg = "#000000", fg = "#00ffff" })
-vim.api.nvim_set_hl(0, "Constant", { bg = "#000000", fg = "#a9a9a9" })
+vim.api.nvim_set_hl(0, "Constant", { bg = "#000000", fg = "#729fcf" })
 vim.api.nvim_set_hl(0, "Special", { bg = "#000000", fg = "#00ff00" })
 
 -- nvim-tree
