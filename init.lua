@@ -256,6 +256,15 @@ require("lazy").setup({
                         },
                     },
                 },
+                filters = {
+                    dotfiles = false,
+                    git_clean = false,
+                    no_buffer = false,
+                },
+                git = {
+                    enable = true,
+                    ignore = false,
+                },
             })
             vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<cr>")
             vim.api.nvim_create_autocmd("VimEnter", {
