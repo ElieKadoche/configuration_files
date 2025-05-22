@@ -349,19 +349,6 @@ require("lazy").setup({
         opts = {},
     },
 
-    -- csvview.nvim
-    -- ------------------------------------------
-    -- ------------------------------------------
-    {
-        "hat0uma/csvview.nvim",
-        ---@module "csvview"
-        opts = {
-            parser = { comments = { "#", "//" } },
-        },
-        cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
-        keys = { { "<leader>c", ":CsvViewEnable display_mode=border header_lnum=1<CR>", mode = "n" } },
-    },
-
     -- lazydev.nvim
     -- ------------------------------------------
     -- ------------------------------------------
