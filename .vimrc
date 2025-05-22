@@ -16,7 +16,7 @@ let mapleader=","
 nnoremap <leader>v :vsplit<cr>
 
 " Clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " Enable mouse
 set mouse=a
