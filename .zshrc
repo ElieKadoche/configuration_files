@@ -280,7 +280,7 @@ countdown() {
 cpr() { rsync --archive --human-readable --info=progress2 $1 $2; }
 
 # Display CSV files
-csvv() { column -s, -t < $1 | less -#2 -N -S; }
+alias csvv='vi -c "set nowrap" -c "set scrolloff=5" -c "set number" -c "1split | wincmd w"'
 
 # Find $1 largest files
 # duuu() { find . -type f -printf '%s %p\n' | sort -nr | head -$1; }
